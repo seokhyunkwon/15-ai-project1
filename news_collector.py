@@ -61,6 +61,15 @@ def _publisher_from_url(url: str) -> str:
     return host.removeprefix("www.") if host else ""
 
 
+def _outlet_from_link(link: str) -> str:
+    host = _publisher_from_url(link)
+    if not host:
+        return ""
+    if "naver.com" in host:
+        return "news.naver.com"
+    return host
+
+
 def classify_category(text: str, search_keyword: str = "") -> str:
     blob = f"{text} {search_keyword}".lower()
     for category, tokens in CATEGORY_RULES.items():
@@ -128,14 +137,19 @@ def collect_from_naver(keywords: List[str], display: int = 10) -> List[Dict[str,
             if EXCLUDED_COMPANY.lower() in text_blob.lower():
                 continue
 
+            link = raw.get("link", "")
+            original_link = raw.get("originallink", "") or link
+            outlet = _outlet_from_link(original_link) or _outlet_from_link(link)
+
             items.append(
                 _build_item(
                     keyword=keyword,
                     title=title,
                     summary=summary,
-                    link=raw.get("link", ""),
+                    link=link,
                     source="naver",
-                    publisher="네이버 뉴스",
+                    publisher="네이버",
+                    outlet=outlet,
                     published=raw.get("pubDate", ""),
                     category=classify_category(text_blob, keyword),
                 )
@@ -266,7 +280,14 @@ def dataframe_to_records(df: pd.DataFrame) -> List[Dict[str, str]]:
     out["published_dt"] = out["published_dt"].apply(
         lambda dt: dt.isoformat(timespec="seconds") if pd.notna(dt) else ""
     )
-    return out.drop(columns=["published_dt"], errors="ignore").to_dict(orient="records")
+    if "outlet" in out.columns:
+        out["outlet"] = out["outlet"].fillna("").astype(str)
+        out.loc[out["outlet"].str.lower() == "nan", "outlet"] = ""
+    records = out.drop(columns=["published_dt"], errors="ignore").to_dict(orient="records")
+    return [
+        {k: v for k, v in row.items() if k != "outlet" or (v and str(v).lower() != "nan")}
+        for row in records
+    ]
 
 
 def collect_news(

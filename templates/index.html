@@ -90,7 +90,7 @@
                 <span class="badge category">{{ item.category }}</span>
                 <span class="badge keyword">{{ item.keyword }}</span>
                 <span class="badge source">{{ source_labels.get(item.source, item.source) }}</span>
-                {% if item.outlet %}
+                {% if item.outlet and item.outlet|string|lower not in ['', 'nan', 'none'] %}
                   <span class="badge outlet">{{ item.outlet }}</span>
                 {% endif %}
                 {% if item.published %}
