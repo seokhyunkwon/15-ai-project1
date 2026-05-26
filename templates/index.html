@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>현대자동차 1차 협력사 경상권 뉴스</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="container">
+    <h1>현대자동차 1차 협력사 경상권 최신 뉴스</h1>
+    <p class="notice">THN 관련 뉴스는 자동 제외됩니다.</p>
+
+    {% if news_items %}
+      <ul class="news-list">
+        {% for item in news_items %}
+          <li class="news-item">
+            <span class="badge">{{ item.company }}</span>
+            <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">
+              {{ item.title }}
+            </a>
+            <small>({{ item.source }})</small>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>아직 수집된 뉴스가 없습니다. 먼저 수집 스크립트를 실행하세요.</p>
+    {% endif %}
+  </main>
+</body>
+</html>
