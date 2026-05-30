@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}산업뉴스{% endblock %}
+
+{% block content %}
+<section class="page-title">
+  <span class="eyebrow">Industry News</span>
+  <h1>자동차 산업뉴스</h1>
+  <p>면접 답변과 자기소개서에 연결하기 좋은 최신 이슈를 모았습니다.</p>
+</section>
+
+<section class="news-list">
+  {% for item in news %}
+  <article class="news-item">
+    <img src="{{ item.image }}" alt="" />
+    <div>
+      <span class="badge-soft">자동차 산업</span>
+      <h3>{{ item.title | safe }}</h3>
+      <p>{{ item.description[:140] }}...</p>
+      <a href="{{ item.link }}" class="btn btn-outline-primary btn-sm">기사 보기</a>
+    </div>
+  </article>
+  {% endfor %}
+</section>
+{% endblock %}

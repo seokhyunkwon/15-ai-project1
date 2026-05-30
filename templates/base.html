@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}현대차 협력사 취업 플랫폼{% endblock %}</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="/">
+          <span class="brand-mark">H</span>
+          <span>
+            <strong>현대 협력사 채용</strong>
+            <small>취업 준비 통합 플랫폼</small>
+          </span>
+        </a>
+
+        <nav class="main-nav" aria-label="주요 메뉴">
+          <a class="{% if request.path == '/' %}active{% endif %}" href="/">홈</a>
+          <a class="{% if request.path.startswith('/companies') or request.path.startswith('/company') %}active{% endif %}" href="/companies">기업정보</a>
+          <a class="{% if request.path.startswith('/jobs') %}active{% endif %}" href="/jobs">채용공고</a>
+          <a class="{% if request.path.startswith('/news') %}active{% endif %}" href="/news">산업뉴스</a>
+          <a class="{% if request.path.startswith('/interview') %}active{% endif %}" href="/interview">면접준비</a>
+          <a class="{% if request.path.startswith('/briefing') %}active{% endif %}" href="/briefing">AI 브리핑</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      {% block content %}{% endblock %}
+    </main>
+  </body>
+</html>

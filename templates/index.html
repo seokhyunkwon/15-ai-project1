@@ -1,115 +1,113 @@
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>산업 키워드 뉴스 대시보드</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-  <main class="container">
-    <header class="page-header">
-      <h1>산업 키워드 뉴스 대시보드</h1>
-      <p class="subtitle">네이버 뉴스 API·카카오 웹 검색 API로 키워드별 최신 기사를 수집합니다.</p>
-      {% if updated_at %}
-        <p class="meta">최신 업데이트: <time>{{ updated_at }}</time></p>
-      {% else %}
-        <p class="meta">아직 수집 기록이 없습니다.</p>
-      {% endif %}
-    </header>
+{% extends "base.html" %}
 
-    <section class="panel api-status">
-      <span class="status-pill {{ 'ok' if api_status.naver else 'off' }}">네이버 API {{ '연결됨' if api_status.naver else '미설정' }}</span>
-      <span class="status-pill {{ 'ok' if api_status.kakao else 'off' }}">카카오 API {{ '연결됨' if api_status.kakao else '미설정' }}</span>
-      {% if used_keywords %}
-        <span class="meta-inline">마지막 검색 키워드: {{ used_keywords | join(', ') }}</span>
-      {% endif %}
-    </section>
+{% block title %}현대차 협력사 취업 플랫폼{% endblock %}
 
-    {% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-        <ul class="flash-list">
-          {% for category, message in messages %}
-            <li class="flash {{ category }}">{{ message }}</li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-    {% endwith %}
+{% block content %}
+<section class="hero-section">
+  <div class="hero-copy">
+    <span class="eyebrow">현대자동차 협력사 취업 준비</span>
+    <h1>기업 정보부터 면접 준비까지 한 화면에서 확인하세요.</h1>
+    <p>
+      주요 협력사 정보, 자동차 산업 뉴스, 직무 키워드를 취업 준비생이 읽기 쉬운 구조로 모았습니다.
+    </p>
 
-    <section class="panel">
-      <h2>1. 산업 키워드 입력 &amp; 수집</h2>
-      <form class="collect-form" method="post" action="{{ url_for('collect') }}">
-        <label for="keywords">키워드 (쉼표로 구분)</label>
-        <textarea id="keywords" name="keywords" rows="2" placeholder="예: 에스엘, 전기차, 자동차 부품, 공급망">{{ default_keywords }}</textarea>
-        <div class="checkbox-row">
-          <label><input type="checkbox" name="include_companies"> 1차 협력사 목록 포함 검색</label>
-          <label><input type="checkbox" name="region_only"> 경상권 키워드만 표시</label>
+    <form class="search-panel" action="/search" method="get">
+      <i class="bi bi-search"></i>
+      <input
+        type="text"
+        name="q"
+        class="form-control"
+        placeholder="직무, 기업명, 산업 키워드를 검색해 보세요"
+        aria-label="검색어"
+      />
+      <button class="btn btn-primary" type="submit">검색</button>
+    </form>
+  </div>
+
+  <aside class="hero-card" aria-label="오늘의 취업 준비 요약">
+    <strong>오늘의 준비 체크</strong>
+    <ul>
+      <li>관심 기업 3곳 비교하기</li>
+      <li>지원 직무 핵심 역량 정리하기</li>
+      <li>최근 산업 뉴스 1개 면접 답변에 연결하기</li>
+    </ul>
+  </aside>
+</section>
+
+<section class="action-grid" aria-label="취업 준비 바로가기">
+  <a href="/companies" class="action-card">
+    <i class="bi bi-building"></i>
+    <span>기업 비교</span>
+    <strong>협력사별 지역, 업종, 직무를 비교해 보세요.</strong>
+  </a>
+  <a href="/jobs" class="action-card">
+    <i class="bi bi-briefcase"></i>
+    <span>채용공고 확인</span>
+    <strong>관심 기업의 최신 채용공고를 바로 확인하세요.</strong>
+  </a>
+  <a href="/interview" class="action-card">
+    <i class="bi bi-chat-square-text"></i>
+    <span>면접 준비</span>
+    <strong>기업 이슈와 직무 역량을 답변으로 정리하세요.</strong>
+  </a>
+</section>
+
+<section class="content-grid">
+  <div class="content-main">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">Company</span>
+        <h2>주요 협력사</h2>
+      </div>
+      <a href="/companies" class="text-link">전체보기</a>
+    </div>
+
+    <div class="company-grid">
+      {% for company in companies %}
+      <a href="/company/{{ company }}" class="company-chip">
+        <span>{{ company }}</span>
+        <i class="bi bi-chevron-right"></i>
+      </a>
+      {% endfor %}
+    </div>
+
+    <div class="section-heading mt-5">
+      <div>
+        <span class="eyebrow">News</span>
+        <h2>최신 자동차 산업 뉴스</h2>
+      </div>
+      <a href="/news" class="text-link">뉴스 더보기</a>
+    </div>
+
+    <div class="news-list">
+      {% for item in news %}
+      <article class="news-item">
+        <img src="{{ item.image }}" alt="" />
+        <div>
+          <span class="badge-soft">자동차 산업</span>
+          <h3>{{ item.title | safe }}</h3>
+          <p>{{ item.description[:120] }}...</p>
+          <a href="{{ item.link }}" class="btn btn-outline-primary btn-sm">기사 보기</a>
         </div>
-        <button type="submit" class="btn primary">뉴스 수집 실행</button>
-      </form>
-      <p class="hint">대표 테스트: 키워드에 <strong>에스엘</strong>만 입력 후 수집을 누르세요.</p>
-    </section>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
 
-    <section class="panel">
-      <h2>2. 검색 &amp; 필터</h2>
-      <form class="filter-form" method="get" action="{{ url_for('index') }}">
-        <div class="filter-grid">
-          <label>
-            제목/요약 검색
-            <input type="search" name="q" value="{{ search_q }}" placeholder="예: 배터리, 공장">
-          </label>
-          <label>
-            수집 키워드
-            <input type="text" name="keyword" value="{{ selected_keyword }}" placeholder="예: 에스엘">
-          </label>
-          <label>
-            카테고리
-            <select name="category">
-              {% for cat in categories %}
-                <option value="{{ cat }}" {% if cat == selected_category %}selected{% endif %}>{{ cat }}</option>
-              {% endfor %}
-            </select>
-          </label>
-          <label class="checkbox-inline">
-            <input type="checkbox" name="region_only" value="1" {% if region_only %}checked{% endif %}>
-            경상권만
-          </label>
-        </div>
-        <button type="submit" class="btn">필터 적용</button>
-        <a class="btn ghost" href="{{ url_for('index') }}">초기화</a>
-      </form>
-    </section>
-
-    <section class="panel">
-      <h2>3. 뉴스 목록 <span class="count">({{ news_items | length }}건)</span></h2>
-      {% if news_items %}
-        <ul class="news-list">
-          {% for item in news_items %}
-            <li class="news-item">
-              <div class="news-meta">
-                <span class="badge category">{{ item.category }}</span>
-                <span class="badge keyword">{{ item.keyword }}</span>
-                <span class="badge source">{{ source_labels.get(item.source, item.source) }}</span>
-                {% if item.outlet and item.outlet|string|lower not in ['', 'nan', 'none'] %}
-                  <span class="badge outlet">{{ item.outlet }}</span>
-                {% endif %}
-                {% if item.published %}
-                  <time class="date">{{ item.published }}</time>
-                {% endif %}
-              </div>
-              <h3 class="news-title">
-                <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
-              </h3>
-              {% if item.summary %}
-                <p class="summary">{{ item.summary }}</p>
-              {% endif %}
-            </li>
-          {% endfor %}
-        </ul>
-      {% else %}
-        <p class="empty">표시할 뉴스가 없습니다. API 키를 설정한 뒤 위에서 키워드를 입력하고 수집을 실행하세요.</p>
-      {% endif %}
-    </section>
-  </main>
-</body>
-</html>
+  <aside class="side-panel">
+    <h2>취업 준비 바로가기</h2>
+    <a href="/jobs">
+      <i class="bi bi-briefcase"></i>
+      <span>채용공고 탐색</span>
+    </a>
+    <a href="/interview">
+      <i class="bi bi-chat-square-text"></i>
+      <span>면접 질문 준비</span>
+    </a>
+    <a href="/briefing">
+      <i class="bi bi-stars"></i>
+      <span>AI 브리핑 확인</span>
+    </a>
+  </aside>
+</section>
+{% endblock %}

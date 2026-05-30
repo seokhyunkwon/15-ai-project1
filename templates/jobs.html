@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}채용공고{% endblock %}
+
+{% block content %}
+<section class="page-title">
+  <span class="eyebrow">Jobs</span>
+  <h1>기업별 채용공고</h1>
+  <p>관심 기업을 선택하면 검색 API를 통해 최신 채용 관련 공고와 안내 페이지를 모아 보여줍니다.</p>
+</section>
+
+<section class="jobs-layout">
+  <aside class="job-company-panel">
+    <h2>기업 선택</h2>
+    <div class="company-selector">
+      {% for company in companies %}
+      <a
+        href="/jobs?company={{ company }}"
+        class="{% if company == selected_company %}active{% endif %}"
+      >
+        {{ company }}
+      </a>
+      {% endfor %}
+    </div>
+  </aside>
+
+  <div class="job-results">
+    <div class="selected-company-summary">
+      <div>
+        <span class="badge-soft">{{ selected_info.industry }}</span>
+        <h2>{{ selected_company }} 채용공고</h2>
+        <p>{{ selected_info.description }}</p>
+      </div>
+      <dl>
+        <div>
+          <dt>지역</dt>
+          <dd>{{ selected_info.location }}</dd>
+        </div>
+        <div>
+          <dt>주요 직무</dt>
+          <dd>{{ selected_info.jobs|join(', ') }}</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">{{ api_source }}</span>
+        <h2>검색된 채용 정보</h2>
+      </div>
+    </div>
+
+    <div class="job-post-list">
+      {% for job in job_posts %}
+      <article class="job-post-card">
+        <div>
+          <span class="badge-soft">{{ job.source }}</span>
+          <h3>{{ job.title }}</h3>
+          <p>{{ job.description }}</p>
+        </div>
+        <a href="{{ job.link }}" class="btn btn-outline-primary" target="_blank" rel="noreferrer">
+          공고 보기
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

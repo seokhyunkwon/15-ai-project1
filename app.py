@@ -1,102 +1,106 @@
-from pathlib import Path
+from flask import Flask, render_template, request
+print("현재 실행 중인 app.py:", __file__)
+from company_info import company_data
+from interview_api import get_company_interviews
+from jobs_api import get_company_jobs
+from news_api import get_news
+from search_api import search_career_content
 
-from dotenv import load_dotenv
-from flask import Flask, flash, redirect, render_template, request, url_for
+app = Flask(__name__)
 
-from config import CATEGORY_RULES, DEFAULT_INDUSTRY_KEYWORDS
-
-SOURCE_LABELS = {"naver": "네이버", "kakao": "카카오"}
-from news_collector import (
-    collect_news,
-    filter_loaded_items,
-    load_payload,
-    save_items,
-)
+companies = list(company_data.keys())
 
 
-def create_app() -> Flask:
-    load_dotenv(Path(__file__).resolve().parent / ".env", override=True)
-    app = Flask(__name__)
-    app.secret_key = "dev-news-dashboard"
+@app.route('/')
+def home():
 
-    @app.route("/", methods=["GET"])
-    def index():
-        payload = load_payload()
-        search_q = request.args.get("q", "").strip()
-        category = request.args.get("category", "전체")
-        keyword = request.args.get("keyword", "").strip()
-        region_only = request.args.get("region_only") == "1"
+    news = get_news("현대자동차 자동차 산업")
 
-        news_items = filter_loaded_items(
-            payload,
-            keyword_filter=keyword,
-            category_filter=category,
-            search_query=search_q,
-            region_only=region_only,
-        )
+    return render_template(
+        'index.html',
+        companies=companies,
+        news=news
+    )
 
-        categories = payload.get(
-            "categories", ["전체"] + list(CATEGORY_RULES.keys()) + ["기타"]
-        )
-        used_keywords = payload.get("keywords", DEFAULT_INDUSTRY_KEYWORDS)
+@app.route('/jobs')
+def jobs():
+    selected_company = request.args.get('company', companies[0])
 
-        return render_template(
-            "index.html",
-            news_items=news_items,
-            updated_at=payload.get("updated_at", ""),
-            categories=categories,
-            used_keywords=used_keywords,
-            default_keywords=", ".join(DEFAULT_INDUSTRY_KEYWORDS),
-            search_q=search_q,
-            selected_category=category,
-            selected_keyword=keyword,
-            region_only=region_only,
-            api_status=_api_status(),
-            source_labels=SOURCE_LABELS,
-        )
+    if selected_company not in company_data:
+        selected_company = companies[0]
 
-    @app.route("/collect", methods=["POST"])
-    def collect():
-        raw = request.form.get("keywords", "").strip()
-        include_companies = request.form.get("include_companies") == "on"
-        region_only = request.form.get("region_only") == "on"
+    job_posts, api_source = get_company_jobs(selected_company)
 
-        if raw:
-            keywords = [k.strip() for k in raw.replace("\n", ",").split(",") if k.strip()]
-        else:
-            keywords = DEFAULT_INDUSTRY_KEYWORDS
+    return render_template(
+        'jobs.html',
+        companies=companies,
+        selected_company=selected_company,
+        selected_info=company_data[selected_company],
+        job_posts=job_posts,
+        api_source=api_source
+    )
 
-        try:
-            items = collect_news(
-                keywords,
-                include_companies=include_companies,
-                region_only=region_only,
-            )
-            save_items(items, keywords)
-            flash(f"뉴스 {len(items)}건을 수집했습니다.", "success")
-        except Exception as exc:
-            flash(f"수집 실패: {exc}", "error")
+@app.route('/news')
+def news():
+    news_items = get_news("현대자동차 자동차 산업 채용")
+    return render_template('news.html', news=news_items)
 
-        return redirect(url_for("index"))
+@app.route('/search')
+def search():
+    query = request.args.get('q', '')
+    results, api_source, message = search_career_content(query)
 
-    return app
+    return render_template(
+        'search.html',
+        query=query.strip(),
+        results=results,
+        api_source=api_source,
+        message=message
+    )
+
+@app.route('/interview')
+def interview():
+    selected_company = request.args.get('company', companies[0])
+
+    if selected_company not in company_data:
+        selected_company = companies[0]
+
+    interview_posts, api_source = get_company_interviews(selected_company)
+
+    return render_template(
+        'interview.html',
+        companies=companies,
+        selected_company=selected_company,
+        selected_info=company_data[selected_company],
+        interview_posts=interview_posts,
+        api_source=api_source
+    )
+
+@app.route('/briefing')
+def briefing():
+    return render_template('briefing.html')
+
+@app.route('/companies')
+def company_info_page():
+    return render_template('companies.html', companies=companies, company_data=company_data)
+
+@app.route('/company/<name>')
+def company_page(name):
+
+    company = company_data[name]
+
+    news = get_news(company['search_keyword'])
+
+    return render_template(
+        'company.html',
+        name=name,
+        company=company,
+        news=news
+    )
+
+@app.route('/test')
+def test():
+    return "EUNJIN PROJECT"
 
 
-def _api_status() -> dict:
-    load_dotenv(Path(__file__).resolve().parent / ".env", override=True)
-    from importlib import reload
-
-    import config as config_module
-
-    reload(config_module)
-    cfg = config_module.Config
-
-    return {
-        "naver": bool(cfg.NAVER_CLIENT_ID and cfg.NAVER_CLIENT_SECRET),
-        "kakao": bool(cfg.KAKAO_REST_API_KEY),
-    }
-
-
-if __name__ == "__main__":
-    app = create_app()
-    app.run(debug=True)
+app.run(debug=True)

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}기업정보{% endblock %}
+
+{% block content %}
+<section class="page-title">
+  <span class="eyebrow">Company</span>
+  <h1>협력사 기업정보</h1>
+  <p>지역, 업종, 주요 직무를 비교하며 지원할 기업을 좁혀보세요.</p>
+</section>
+
+<section class="company-directory">
+  {% for company in companies %}
+  {% set info = company_data[company] %}
+  <article class="company-card">
+    <div>
+      <span class="badge-soft">{{ info.industry }}</span>
+      <h2>{{ company }}</h2>
+      <p>{{ info.description }}</p>
+    </div>
+    <dl>
+      <div>
+        <dt>지역</dt>
+        <dd>{{ info.location }}</dd>
+      </div>
+      <div>
+        <dt>주요 직무</dt>
+        <dd>{{ info.jobs|join(', ') }}</dd>
+      </div>
+    </dl>
+    <a href="/company/{{ company }}" class="btn btn-outline-primary">상세보기</a>
+  </article>
+  {% endfor %}
+</section>
+{% endblock %}

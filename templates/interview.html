@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block title %}면접준비{% endblock %}
+
+{% block content %}
+<section class="page-title">
+  <span class="eyebrow">Interview</span>
+  <h1>기업별 면접준비</h1>
+  <p>관심 기업을 선택하면 면접후기, 면접질문, 준비 자료를 검색 API로 모아 보여줍니다.</p>
+</section>
+
+<section class="jobs-layout">
+  <aside class="job-company-panel">
+    <h2>기업 선택</h2>
+    <div class="company-selector">
+      {% for company in companies %}
+      <a
+        href="/interview?company={{ company }}"
+        class="{% if company == selected_company %}active{% endif %}"
+      >
+        {{ company }}
+      </a>
+      {% endfor %}
+    </div>
+  </aside>
+
+  <div class="job-results">
+    <div class="selected-company-summary">
+      <div>
+        <span class="badge-soft">{{ selected_info.industry }}</span>
+        <h2>{{ selected_company }} 면접준비</h2>
+        <p>{{ selected_info.description }}</p>
+      </div>
+      <dl>
+        <div>
+          <dt>주요 직무</dt>
+          <dd>{{ selected_info.jobs|join(', ') }}</dd>
+        </div>
+        <div>
+          <dt>면접 포인트</dt>
+          <dd>기업 이해, 직무 경험, 자동차 산업 이슈</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="tool-grid interview-guide">
+      <article class="info-card">
+        <i class="bi bi-person-check section-icon"></i>
+        <h2>기본 질문</h2>
+        <ul class="clean-list">
+          <li>이 기업에 지원한 이유는 무엇인가요?</li>
+          <li>지원 직무에서 가장 중요한 역량은 무엇이라고 생각하나요?</li>
+          <li>협업 과정에서 갈등을 해결했던 경험을 설명해 주세요.</li>
+        </ul>
+      </article>
+
+      <article class="info-card">
+        <i class="bi bi-newspaper section-icon"></i>
+        <h2>산업 이슈 연결</h2>
+        <p>전동화, 자율주행, 품질관리, 공급망 이슈 중 하나를 골라 기업의 직무와 연결하면 답변의 설득력이 높아집니다.</p>
+      </article>
+    </div>
+
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">{{ api_source }}</span>
+        <h2>면접후기·질문 자료</h2>
+      </div>
+    </div>
+
+    <div class="job-post-list">
+      {% for post in interview_posts %}
+      <article class="job-post-card interview-card">
+        <div class="interview-card-body">
+          <span class="badge-soft">{{ post.source }}</span>
+          <h3>{{ post.title }}</h3>
+          {% if post.description %}
+          <p class="interview-summary">{{ post.description }}</p>
+          {% else %}
+          <p class="interview-summary">검색 결과 요약이 제공되지 않았습니다. 출처 페이지에서 상세 내용을 확인해 주세요.</p>
+          {% endif %}
+          <div class="interview-tips">
+            <span>준비 포인트</span>
+            <ul>
+              {% for tip in post.tips %}
+              <li>{{ tip }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <a href="{{ post.link }}" class="btn btn-outline-primary" target="_blank" rel="noreferrer">
+          출처 보기
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}
