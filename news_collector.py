@@ -11,7 +11,11 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
-from config import CATEGORY_RULES, Config, DEFAULT_INDUSTRY_KEYWORDS
+from config import (
+    CATEGORY_RULES,
+    Config,
+    DEFAULT_INDUSTRY_KEYWORDS,
+)
 
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -19,18 +23,114 @@ DATA_DIR = BASE_DIR / "data"
 OUTPUT_FILE = DATA_DIR / "news.json"
 
 EXCLUDED_COMPANY = "THN"
-REGION_KEYWORDS = ["경상", "부산", "울산", "대구", "경남", "경북"]
-
-# 현대 1차 협력사 (기존 목록 유지)
-TARGET_COMPANIES = [
-    "서연이화",
-    "화신",
-    "세원정공",
-    "성우하이텍",
-    "대원강업",
-    "에스엘",
+COMPANY_ALIASES = {
+    "아진": "아진산업",
+}
+AMBIGUOUS_COMPANY_KEYWORDS = set(COMPANY_ALIASES)
+RELEVANT_CONTEXT_TERMS = [
+    "자동차",
+    "부품",
+    "전장",
+    "전기차",
+    "배터리",
+    "공급망",
+    "제조",
+    "공장",
+    "생산",
+    "품질",
+    "산업",
+    "기업",
+    "실적",
+    "매출",
+    "영업이익",
+    "투자",
+    "수주",
+    "채용",
+    "현대차",
+    "현대자동차",
+    "기아",
+    "모빌리티",
 ]
-
+IRRELEVANT_CONTEXT_TERMS = [
+    "로또",
+    "복권",
+    "당첨",
+    "판매점",
+    "도로명",
+    "주소",
+    "공인중개사",
+    "아파트",
+    "성분",
+    "화장품",
+    "술",
+    "소주",
+    "맛집",
+    "쇼핑몰",
+    "닥트",
+    "설비사",
+]
+BLOCKED_FILE_EXTENSIONS = (
+    ".jpg",
+    ".jpeg",
+    ".png",
+    ".gif",
+    ".webp",
+    ".svg",
+    ".pdf",
+    ".xls",
+    ".xlsx",
+    ".csv",
+    ".doc",
+    ".docx",
+    ".ppt",
+    ".pptx",
+    ".zip",
+)
+BLOCKED_DOMAINS = [
+    "dcinside.com",
+    "teamblind.com",
+    "blind.com",
+    "instiz.net",
+    "dogdrip.net",
+    "fmkorea.com",
+    "theqoo.net",
+    "ruliweb.com",
+    "clien.net",
+    "ppomppu.co.kr",
+    "82cook.com",
+    "mlbpark.donga.com",
+    "todayhumor.co.kr",
+    "humoruniv.com",
+    "bobaedream.co.kr",
+    "ygosu.com",
+    "etoland.co.kr",
+    "inven.co.kr",
+    "arca.live",
+    "quasarzone.com",
+    "gigglehd.com",
+    "namu.wiki",
+    "saramin.co.kr",
+    "weseb.com",
+    "life114.co.kr",
+    "dokdokinfo.kr",
+    "voiceofyouth.co.kr",
+    "invione.com",
+    "report.hangyeong.com",
+]
+BLOCKED_TEXT_HINTS = [
+    "디시인사이드",
+    "블라인드",
+    "blind",
+    "인스티즈",
+    "개드립",
+    "더쿠",
+    "에펨코리아",
+    "루리웹",
+    "클리앙",
+    "뽐뿌",
+    "보배드림",
+    "아카라이브",
+]
 
 def _strip_html(text: str) -> str:
     return BeautifulSoup(text or "", "html.parser").get_text(" ", strip=True)
@@ -59,6 +159,90 @@ def _parse_published(value: str) -> Optional[datetime]:
 def _publisher_from_url(url: str) -> str:
     host = urlparse(url).netloc or ""
     return host.removeprefix("www.") if host else ""
+
+
+def _is_blocked_source(link: str, text: str = "") -> bool:
+    host = _publisher_from_url(link).lower()
+    parsed = urlparse(link)
+    path = parsed.path.lower()
+    query = parsed.query.lower()
+    if path.endswith(BLOCKED_FILE_EXTENSIONS) or any(ext in query for ext in BLOCKED_FILE_EXTENSIONS):
+        return True
+    if any(host == domain or host.endswith(f".{domain}") for domain in BLOCKED_DOMAINS):
+        return True
+
+    blob = text.lower()
+    compact_blob = re.sub(r"\s+", "", blob)
+    if compact_blob in {"img", "image", "pdf", "xlsx", "xls"}:
+        return True
+    if any(compact_blob.endswith(ext) for ext in BLOCKED_FILE_EXTENSIONS):
+        return True
+    return any(hint.lower() in blob for hint in BLOCKED_TEXT_HINTS)
+
+
+def _is_news_like_web_result(link: str) -> bool:
+    parsed = urlparse(link)
+    host = parsed.netloc.lower().removeprefix("www.")
+    path = parsed.path.lower()
+    if host == "v.daum.net":
+        return True
+    if "news" in host:
+        return True
+    if any(token in path for token in ("/news/", "/article", "articleview", "view.php")):
+        return True
+    return False
+
+
+def _canonical_keyword(keyword: str) -> str:
+    compact = re.sub(r"\s+", "", keyword.strip())
+    return COMPANY_ALIASES.get(compact, keyword.strip())
+
+
+def _title_contains_keyword(title: str, keyword: str) -> bool:
+    title_norm = re.sub(r"\s+", "", title.lower())
+    keyword_norm = re.sub(r"\s+", "", keyword.lower())
+    canonical_norm = re.sub(r"\s+", "", _canonical_keyword(keyword).lower())
+    return keyword_norm in title_norm or canonical_norm in title_norm
+
+
+def _is_file_like_title(title: str) -> bool:
+    compact = re.sub(r"\s+", "", title.lower())
+    if compact in {"img", "image", "pdf", "xlsx", "xls"}:
+        return True
+    return any(compact.endswith(ext) for ext in BLOCKED_FILE_EXTENSIONS)
+
+
+def _contains_keyword(text: str, keyword: str) -> bool:
+    text_norm = re.sub(r"\s+", "", text.lower())
+    keyword_norm = re.sub(r"\s+", "", keyword.lower())
+    canonical_norm = re.sub(r"\s+", "", _canonical_keyword(keyword).lower())
+    return keyword_norm in text_norm or canonical_norm in text_norm
+
+
+def _has_relevant_context(text: str) -> bool:
+    blob = re.sub(r"\s+", "", text.lower())
+    return any(term.lower() in blob for term in RELEVANT_CONTEXT_TERMS)
+
+
+def _is_title_or_context_match(title: str, summary: str, keyword: str) -> bool:
+    if _title_contains_keyword(title, keyword):
+        return True
+    text = f"{title} {summary}"
+    return _contains_keyword(text, keyword) and _has_relevant_context(text)
+
+
+def _is_relevant_item(keyword: str, text: str) -> bool:
+    compact_keyword = re.sub(r"\s+", "", keyword.strip())
+    blob = re.sub(r"\s+", "", text.lower())
+    if compact_keyword in AMBIGUOUS_COMPANY_KEYWORDS:
+        canonical = COMPANY_ALIASES[compact_keyword]
+        has_canonical = canonical.lower() in blob
+        has_context = _has_relevant_context(text)
+        has_irrelevant = any(term.lower() in blob for term in IRRELEVANT_CONTEXT_TERMS)
+        if "기업보고서" in blob and not has_canonical:
+            return False
+        return (has_canonical or has_context) and not has_irrelevant
+    return not any(term.lower() in blob for term in IRRELEVANT_CONTEXT_TERMS)
 
 
 def _outlet_from_link(link: str) -> str:
@@ -120,7 +304,8 @@ def collect_from_naver(keywords: List[str], display: int = 10) -> List[Dict[str,
     endpoint = "https://openapi.naver.com/v1/search/news.json"
 
     for keyword in keywords:
-        params = {"query": keyword, "display": display, "sort": "date"}
+        query = _canonical_keyword(keyword)
+        params = {"query": query, "display": display, "sort": "date"}
         try:
             response = requests.get(endpoint, headers=headers, params=params, timeout=10)
             response.raise_for_status()
@@ -134,12 +319,20 @@ def collect_from_naver(keywords: List[str], display: int = 10) -> List[Dict[str,
             summary = _strip_html(raw.get("description", ""))
             text_blob = f"{title} {summary}"
 
+            if _is_file_like_title(title):
+                continue
             if EXCLUDED_COMPANY.lower() in text_blob.lower():
+                continue
+            if not _is_title_or_context_match(title, summary, keyword):
+                continue
+            if not _is_relevant_item(keyword, text_blob):
                 continue
 
             link = raw.get("link", "")
             original_link = raw.get("originallink", "") or link
             outlet = _outlet_from_link(original_link) or _outlet_from_link(link)
+            if _is_blocked_source(original_link or link, text_blob):
+                continue
 
             items.append(
                 _build_item(
@@ -167,7 +360,8 @@ def collect_from_kakao(keywords: List[str], size: int = 10) -> List[Dict[str, st
     endpoint = "https://dapi.kakao.com/v2/search/web.json"
 
     for keyword in keywords:
-        params = {"query": keyword, "sort": "recency", "size": min(size, 50)}
+        query = _canonical_keyword(keyword)
+        params = {"query": query, "sort": "recency", "size": min(size, 50)}
         try:
             response = requests.get(
                 endpoint, headers=headers, params=params, timeout=10
@@ -184,7 +378,17 @@ def collect_from_kakao(keywords: List[str], size: int = 10) -> List[Dict[str, st
             link = raw.get("url", "")
             text_blob = f"{title} {summary}"
 
+            if _is_file_like_title(title):
+                continue
             if EXCLUDED_COMPANY.lower() in text_blob.lower():
+                continue
+            if not _is_title_or_context_match(title, summary, keyword):
+                continue
+            if not _is_relevant_item(keyword, text_blob):
+                continue
+            if _is_blocked_source(link, text_blob):
+                continue
+            if not _is_news_like_web_result(link):
                 continue
 
             dt_raw = raw.get("datetime", "")
@@ -217,7 +421,6 @@ def process_dataframe(
     keyword_filter: Optional[str] = None,
     category_filter: Optional[str] = None,
     search_query: Optional[str] = None,
-    region_only: bool = False,
 ) -> pd.DataFrame:
     if not items:
         return pd.DataFrame(
@@ -235,6 +438,36 @@ def process_dataframe(
         )
 
     df = pd.DataFrame(items)
+    if "link" in df.columns:
+        mask = df.apply(
+            lambda row: not _is_blocked_source(
+                str(row.get("link", "")),
+                f"{row.get('title', '')} {row.get('summary', '')} {row.get('outlet', '')}",
+            ),
+            axis=1,
+        )
+        df = df[mask]
+    if "keyword" in df.columns:
+        file_title_mask = df["title"].fillna("").astype(str).apply(lambda value: not _is_file_like_title(value))
+        df = df[file_title_mask]
+        relevance_mask = df.apply(
+            lambda row: _is_relevant_item(
+                str(row.get("keyword", "")),
+                f"{row.get('title', '')} {row.get('summary', '')}",
+            ),
+            axis=1,
+        )
+        df = df[relevance_mask]
+        title_mask = df.apply(
+            lambda row: _is_title_or_context_match(
+                str(row.get("title", "")),
+                str(row.get("summary", "")),
+                str(row.get("keyword", "")),
+            ),
+            axis=1,
+        )
+        df = df[title_mask]
+
     df["published_dt"] = df["published"].apply(
         lambda v: _parse_published(v) if isinstance(v, str) else None
     )
@@ -253,16 +486,6 @@ def process_dataframe(
             | df["keyword"].str.contains(pattern, case=False, na=False)
         )
         df = df[mask]
-
-    if region_only:
-        region_mask = df.apply(
-            lambda row: any(
-                kw in f"{row['title']} {row['summary']}"
-                for kw in REGION_KEYWORDS
-            ),
-            axis=1,
-        )
-        df = df[region_mask]
 
     df = df.drop_duplicates(subset=["title", "link"], keep="first")
     df = df.sort_values(
@@ -293,21 +516,16 @@ def dataframe_to_records(df: pd.DataFrame) -> List[Dict[str, str]]:
 def collect_news(
     keywords: List[str],
     *,
-    include_companies: bool = False,
-    region_only: bool = False,
-    display: int = 10,
+    display: int = 20,
 ) -> List[Dict[str, str]]:
     search_terms = [k.strip() for k in keywords if k.strip()]
-    if include_companies:
-        search_terms.extend(
-            c for c in TARGET_COMPANIES if c not in search_terms and c != EXCLUDED_COMPANY
-        )
 
-    naver_items = collect_from_naver(search_terms, display=display)
-    kakao_items = collect_from_kakao(search_terms, size=display)
+    fetch_size = min(max(display * 4, display), 50)
+    naver_items = collect_from_naver(search_terms, display=fetch_size)
+    kakao_items = collect_from_kakao(search_terms, size=fetch_size)
     merged = naver_items + kakao_items
 
-    df = process_dataframe(merged, region_only=region_only)
+    df = process_dataframe(merged)
     return dataframe_to_records(df)
 
 
@@ -336,14 +554,9 @@ def load_payload() -> Dict:
         return json.load(f)
 
 
-def run_collection(
-    keywords: Optional[List[str]] = None,
-    *,
-    include_companies: bool = False,
-    region_only: bool = False,
-) -> List[Dict[str, str]]:
+def run_collection(keywords: Optional[List[str]] = None) -> List[Dict[str, str]]:
     kw = keywords or DEFAULT_INDUSTRY_KEYWORDS
-    items = collect_news(kw, include_companies=include_companies, region_only=region_only)
+    items = collect_news(kw)
     save_items(items, kw)
     return items
 
@@ -354,7 +567,6 @@ def filter_loaded_items(
     keyword_filter: str = "",
     category_filter: str = "전체",
     search_query: str = "",
-    region_only: bool = False,
 ) -> List[Dict[str, str]]:
     items = payload.get("items", [])
     df = process_dataframe(
@@ -362,7 +574,6 @@ def filter_loaded_items(
         keyword_filter=keyword_filter or None,
         category_filter=category_filter,
         search_query=search_query or None,
-        region_only=region_only,
     )
     return dataframe_to_records(df)
 
@@ -375,24 +586,10 @@ def main() -> None:
         default=None,
         help='검색 키워드 (예: "에스엘" "전기차")',
     )
-    parser.add_argument(
-        "--companies",
-        action="store_true",
-        help="1차 협력사 목록도 함께 검색",
-    )
-    parser.add_argument(
-        "--region-only",
-        action="store_true",
-        help="경상권 키워드가 포함된 기사만 유지",
-    )
     args = parser.parse_args()
 
     keywords = args.keywords or DEFAULT_INDUSTRY_KEYWORDS
-    items = run_collection(
-        keywords,
-        include_companies=args.companies,
-        region_only=args.region_only,
-    )
+    items = run_collection(keywords)
     print(f"수집 완료: {len(items)}건 (키워드: {', '.join(keywords)})")
     if not Config.NAVER_CLIENT_ID and not Config.KAKAO_REST_API_KEY:
         print("경고: .env에 NAVER 또는 KAKAO REST API 키가 없습니다.")

@@ -1,0 +1,1177 @@
+{
+  "898ab7632de0f9655fcbf903f03236358aeef2e623fb034880b94c3bf9c4489a": {
+    "company": "티에이치엔",
+    "highlights": [
+      {
+        "claim": "티에이치엔은 현대차, 기아, 현대모비스와 같은 주요 고객사를 보유하고 있다.",
+        "why_it_matters": "이러한 고객사들은 티에이치엔의 안정적인 매출원으로 작용하며, 자동차 산업의 성장과 함께 회사의 성장 가능성을 높인다.",
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341495"
+        ]
+      },
+      {
+        "claim": "티에이치엔의 직원 평균 연봉은 7100만 원으로, 업계에서 높은 수준이다.",
+        "why_it_matters": "높은 연봉은 인재 유치와 유지에 긍정적인 영향을 미치며, 회사의 경쟁력을 강화하는 요소로 작용한다.",
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341436"
+        ]
+      },
+      {
+        "claim": "티에이치엔은 로봇 기술과 관련된 사업 확장을 모색하고 있다.",
+        "why_it_matters": "자동차 산업의 변화에 발맞추어 로봇 기술을 활용한 제품 개발은 미래 성장 가능성을 높이는 중요한 전략이다.",
+        "evidence_links": [
+          "https://n.news.naver.com/mnews/article/088/0001011818?sid=101"
+        ]
+      }
+    ],
+    "risks_and_watchouts": [
+      {
+        "item": "자동차 산업의 경기 변동성",
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341495"
+        ]
+      }
+    ],
+    "likely_interview_questions": [
+      {
+        "question": "티에이치엔의 주요 고객사는 누구이며, 그들과의 관계는 어떻게 유지하고 있습니까?",
+        "intent": "회사의 비즈니스 모델과 고객 관리 전략에 대한 이해를 평가하기 위함.",
+        "answer_outline": [
+          "주요 고객사: 현대차, 기아, 현대모비스",
+          "고객 관계 유지: 품질 관리, 지속적인 소통, 기술 지원"
+        ],
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341495"
+        ]
+      },
+      {
+        "question": "로봇 기술의 발전이 티에이치엔의 사업에 어떤 영향을 미칠 것이라고 생각합니까?",
+        "intent": "산업 트렌드에 대한 이해와 회사의 미래 전략에 대한 통찰력을 평가하기 위함.",
+        "answer_outline": [
+          "로봇 기술의 필요성 증가",
+          "자동차 산업의 변화에 대응",
+          "미래 성장 가능성"
+        ],
+        "evidence_links": [
+          "https://n.news.naver.com/mnews/article/088/0001011818?sid=101"
+        ]
+      }
+    ],
+    "keywords_to_prepare": [
+      "자동차 전장부품",
+      "로봇 기술",
+      "고객 관리",
+      "산업 동향",
+      "연봉 및 복지"
+    ],
+    "sources": [
+      {
+        "title": "\"車 부품사 로봇 만든다\"…현대차 중견 밴더사들도 '들썩들썩'",
+        "link": "https://www.greened.kr/news/articleView.html?idxno=341495",
+        "published": "Thu, 28 May 2026 15:33:00 +0900",
+        "outlet": "greened.kr"
+      },
+      {
+        "title": "[데이터 뉴스룸] 에너지 기업 중 직원 급여 '억'소리 나는 9곳은?…HD현...",
+        "link": "https://www.greened.kr/news/articleView.html?idxno=341436",
+        "published": "Thu, 28 May 2026 09:11:00 +0900",
+        "outlet": "greened.kr"
+      },
+      {
+        "title": "로봇 신경망·두뇌·근육까지…대구경북 소부장, 휴머노이드 밸류체인 ...",
+        "link": "https://n.news.naver.com/mnews/article/088/0001011818?sid=101",
+        "published": "Wed, 27 May 2026 14:34:00 +0900",
+        "outlet": "imaeil.com"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "9a98c21ba5c6561c015f87c36f323634e1e6cd706528b2dfa130356e173937be": {
+    "company": "에스엘",
+    "highlights": [
+      {
+        "claim": "에스엘이 코리아밸류업지수에 새로 편입됨.",
+        "why_it_matters": "이는 에스엘의 시장에서의 신뢰도와 안정성을 높이며, 투자자들에게 긍정적인 신호로 작용할 수 있다.",
+        "evidence_links": [
+          "https://www.public25.com/news/articleView.html?idxno=47259"
+        ]
+      },
+      {
+        "claim": "에스엘이 MVP 상위 20선에 포함됨.",
+        "why_it_matters": "이러한 성과는 에스엘의 펀더멘탈이 강하다는 것을 나타내며, 투자자들에게 긍정적인 평가를 받을 가능성이 높다.",
+        "evidence_links": [
+          "https://www.itooza.com/common/iview.php?no=2026052907153408496"
+        ]
+      },
+      {
+        "claim": "에스엘이 대구 지역 경제를 이끄는 대표 기업으로 조사됨.",
+        "why_it_matters": "지역 경제에서의 중요성을 강조하며, 지역 내에서의 브랜드 이미지와 시장 점유율을 강화할 수 있다.",
+        "evidence_links": [
+          "https://www.ajunews.com/view/20260528114352218"
+        ]
+      }
+    ],
+    "risks_and_watchouts": [
+      {
+        "item": "가상자산 투자 관련 법적 리스크.",
+        "evidence_links": [
+          "https://n.news.naver.com/mnews/article/009/0005686501?sid=101"
+        ]
+      }
+    ],
+    "keywords_to_prepare": [
+      "코리아밸류업지수",
+      "MVP 상위 20선",
+      "지역 경제",
+      "가상자산 투자",
+      "펀더멘탈"
+    ],
+    "sources": [
+      {
+        "title": "[코스피·코스닥, 코리아밸류업지수 삼성증권 셀트리온 파두 HD현대마린...",
+        "link": "https://www.public25.com/news/articleView.html?idxno=47259",
+        "published": "Fri, 29 May 2026 08:08:00 +0900",
+        "outlet": "public25.com"
+      },
+      {
+        "title": "[리스트] MVP 상위 20선...엘케이켐, 토탈소프트 등 - 29일",
+        "link": "https://www.itooza.com/common/iview.php?no=2026052907153408496",
+        "published": "Fri, 29 May 2026 07:32:00 +0900",
+        "outlet": "itooza.com"
+      },
+      {
+        "title": "국내 1000대 기업 본사 수도권에 70% 집중…서울 강남구 '최다'",
+        "link": "https://www.ajunews.com/view/20260528114352218",
+        "published": "Thu, 28 May 2026 18:02:00 +0900",
+        "outlet": "ajunews.com"
+      },
+      {
+        "title": "\"주식 금투세 빼주더니 코인은 과세?\" 가상자산 투자자들 거센 반발 변...",
+        "link": "https://n.news.naver.com/mnews/article/009/0005686501?sid=101",
+        "published": "Thu, 28 May 2026 18:02:00 +0900",
+        "outlet": "mk.co.kr"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "3a8a5f7c46f6676d8cdac4a545f68ea6ddee4ffbc506c67259af2b7f4dc4e951": {
+    "company": "SL",
+    "highlights": [],
+    "risks_and_watchouts": [],
+    "keywords_to_prepare": [],
+    "sources": [],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "15259b597eda6ea66b1e3be0d19c9e2c74620a08ad74d7d5d7a5f0d6d39af563": {
+    "company": "현대자동차",
+    "highlights": [],
+    "risks_and_watchouts": [],
+    "keywords_to_prepare": [],
+    "sources": [],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "b293df052b15d6efa51c0e5bd20514fcc0ee1e432c4b1d603940d6ca8f064506": {
+    "company": "현대자동차",
+    "highlights": [
+      {
+        "claim": "현대자동차의 로봇 '아틀라스'가 FIFA 월드컵 2026 공식 파트너로서 축구 동작 학습을 통해 로보틱스 기술을 고도화하고 있다.",
+        "why_it_matters": "이 캠페인은 현대자동차의 첨단 기술력을 전 세계에 알리는 기회가 되며, 브랜드 이미지 강화에 기여할 수 있다.",
+        "evidence_links": [
+          "https://www.etoday.co.kr/news/view/2588923",
+          "https://www.businessplus.kr/news/articleView.html?idxno=112355"
+        ]
+      },
+      {
+        "claim": "아틀라스는 고난도 킥을 포함한 다양한 축구 기술을 시연하며 글로벌 축구 팬들의 관심을 끌고 있다.",
+        "why_it_matters": "이러한 기술적 진보는 현대자동차의 로보틱스 분야에서의 리더십을 강조하며, 고객의 흥미를 유도할 수 있다.",
+        "evidence_links": [
+          "https://n.news.naver.com/mnews/article/008/0005364575?sid=101",
+          "https://www.wolyo.co.kr/news/articleView.html?idxno=312822"
+        ]
+      }
+    ],
+    "risks_and_watchouts": [
+      {
+        "item": "로봇 기술의 발전이 예상보다 느릴 경우, 브랜드 이미지에 부정적인 영향을 미칠 수 있다.",
+        "evidence_links": [
+          "https://www.viva100.com/article/20260529500128"
+        ]
+      }
+    ],
+    "keywords_to_prepare": [
+      "로보틱스",
+      "AI 기술",
+      "FIFA 월드컵",
+      "브랜드 이미지",
+      "기술 혁신"
+    ],
+    "sources": [
+      {
+        "title": "손흥민도 감탄했다⋯ 공 차는 로봇 ‘아틀라스’, 5일 만에 3300만명 홀...",
+        "link": "https://www.viva100.com/article/20260529500128",
+        "published": "Fri, 29 May 2026 09:44:00 +0900",
+        "outlet": "viva100.com"
+      },
+      {
+        "title": "현대 차, FIFA 월드컵 2026 기념 아틀라스 축구 도전기 캠페인 공개",
+        "link": "https://www.etoday.co.kr/news/view/2588923",
+        "published": "Fri, 29 May 2026 09:44:00 +0900",
+        "outlet": "etoday.co.kr"
+      },
+      {
+        "title": "현대 차, 월드컵 2026 기념 로봇 '아틀라스' 축구 캠페인 공개",
+        "link": "https://www.businessplus.kr/news/articleView.html?idxno=112355",
+        "published": "Fri, 29 May 2026 09:44:00 +0900",
+        "outlet": "businessplus.kr"
+      },
+      {
+        "title": "손흥민도 놀란 '축구하는 아틀라스'…고난도 킥도 거뜬[영상]",
+        "link": "https://n.news.naver.com/mnews/article/008/0005364575?sid=101",
+        "published": "Fri, 29 May 2026 09:43:00 +0900",
+        "outlet": "mt.co.kr"
+      },
+      {
+        "title": "\"손흥민도 놀란 아틀라스 축구 실력\"… 현대 차, 월드컵 캠페인 영상 공개",
+        "link": "https://www.wolyo.co.kr/news/articleView.html?idxno=312822",
+        "published": "Fri, 29 May 2026 09:42:00 +0900",
+        "outlet": "wolyo.co.kr"
+      },
+      {
+        "title": "현대자동차 , '아틀라스' 축구 도전기 캠페인 영상 공개",
+        "link": "http://www.press9.kr/news/articleView.html?idxno=77213",
+        "published": "Fri, 29 May 2026 09:42:00 +0900",
+        "outlet": "press9.kr"
+      },
+      {
+        "title": "페인팅 동작에 라보나 킥까지…진화하는 '아틀라스'",
+        "link": "https://n.news.naver.com/mnews/article/277/0005769414?sid=103",
+        "published": "Fri, 29 May 2026 09:42:00 +0900",
+        "outlet": "view.asiae.co.kr"
+      },
+      {
+        "title": "아틀라스의 라보나킥… 현대 차, 월드컵 캠페인 영상 공개",
+        "link": "https://n.news.naver.com/mnews/article/001/0016106729?sid=105",
+        "published": "Fri, 29 May 2026 09:41:00 +0900",
+        "outlet": "yna.co.kr"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "e766cdb592125bc15191d666dacf8367953f26a1b1f75c02a26489d04c5b33c9": {
+    "company": "에스엘",
+    "highlights": [],
+    "risks_and_watchouts": [],
+    "keywords_to_prepare": [],
+    "sources": [],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "bc97d6d072153d4e4c7eb6ad1813a1c9393d9b846c5ec30073c65113171c8435": {
+    "company": "현대자동차",
+    "highlights": [
+      {
+        "claim": "현대자동차는 FIFA 월드컵 2026의 공식 파트너로서 로보틱스 기술을 활용한 캠페인을 진행하고 있다.",
+        "why_it_matters": "이 캠페인은 현대자동차의 혁신적인 기술과 브랜드 이미지를 강화하며, 글로벌 이벤트와의 연계를 통해 마케팅 효과를 극대화할 수 있다.",
+        "evidence_links": [
+          "https://m.sports.naver.com/wfootball/article/001/0016106938",
+          "https://m.sports.naver.com/wfootball/article/001/0016106933",
+          "https://m.sports.naver.com/wfootball/article/001/0016106932",
+          "https://m.sports.naver.com/wfootball/article/001/0016106930"
+        ]
+      },
+      {
+        "claim": "현대자동차는 정부와 협력하여 전기차 충전 편의성을 높이기 위한 PnC 인증체계 구축에 착수했다.",
+        "why_it_matters": "이 프로젝트는 전기차 사용자의 편의를 증대시키고, 현대자동차의 전기차 시장에서의 경쟁력을 강화하는 데 기여할 것이다.",
+        "evidence_links": [
+          "https://www.electimes.com/news/articleView.html?idxno=368560"
+        ]
+      },
+      {
+        "claim": "현대자동차는 지역 인재 양성을 위한 프로그램에 참여하고 있다.",
+        "why_it_matters": "이러한 노력은 지역 사회와의 관계를 강화하고, 인재 확보에 긍정적인 영향을 미칠 수 있다.",
+        "evidence_links": [
+          "https://www.cnbnews.com/news/articleView.html?idxno=1003066"
+        ]
+      }
+    ],
+    "risks_and_watchouts": [
+      {
+        "item": "전기차 시장의 경쟁 심화",
+        "evidence_links": [
+          "https://www.electimes.com/news/articleView.html?idxno=368560"
+        ]
+      }
+    ],
+    "keywords_to_prepare": [
+      "FIFA 월드컵 2026",
+      "전기차 충전",
+      "로보틱스 기술",
+      "지역 인재 양성",
+      "K-시드볼"
+    ],
+    "sources": [
+      {
+        "title": "HD 현대 , 정부와 조선·건설기계 지역 인재 양성한다",
+        "link": "https://www.cnbnews.com/news/articleView.html?idxno=1003066",
+        "published": "Fri, 29 May 2026 10:20:00 +0900",
+        "outlet": "cnbnews.com"
+      },
+      {
+        "title": "전기차 충전 편의 높인다…정부, PnC 인증체계 구축 착수",
+        "link": "https://www.electimes.com/news/articleView.html?idxno=368560",
+        "published": "Fri, 29 May 2026 10:20:00 +0900",
+        "outlet": "electimes.com"
+      },
+      {
+        "title": "현대 차, FIFA 월드컵 2026 기념해 아틀라스의 축구 도전기 담은 캠페인 ...",
+        "link": "https://m.sports.naver.com/wfootball/article/001/0016106938",
+        "published": "Fri, 29 May 2026 10:19:00 +0900",
+        "outlet": "yna.co.kr"
+      },
+      {
+        "title": "‘K-시드볼’, 산불피해지 복원 도우미",
+        "link": "https://n.news.naver.com/mnews/article/011/0004625744?sid=102",
+        "published": "Fri, 29 May 2026 10:16:00 +0900",
+        "outlet": "sedaily.com"
+      },
+      {
+        "title": "손흥민도 놀랐다…아틀라스, '라보나 킥' 성공",
+        "link": "https://n.news.naver.com/mnews/article/079/0004152013?sid=101",
+        "published": "Fri, 29 May 2026 10:16:00 +0900",
+        "outlet": "nocutnews.co.kr"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "cfd58841ca5cb70d54c771557b6aa536e8da662eeeb4548c2e78b788fa15bbd0": {
+    "company": "에스엘",
+    "likely_interview_questions": [],
+    "sources": [],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "eb7364fe8e2dab217a6106693ac36d51e286da547be994fb74693a71573ed636": {
+    "company": "현대자동차",
+    "likely_interview_questions": [
+      {
+        "question": "현대자동차가 FIFA 월드컵 2026의 공식 파트너로서 어떤 캠페인을 진행하고 있나요?",
+        "intent": "회사와 관련된 최신 프로젝트 이해도 평가",
+        "answer_outline": [
+          "FIFA 월드컵 2026의 공식 파트너로서 캠페인 진행",
+          "보스턴다이나믹스의 로봇 '아틀라스' 활용",
+          "축구 동작 학습을 통한 로보틱스 기술 고도화"
+        ],
+        "evidence_links": [
+          "https://m.sports.naver.com/wfootball/article/001/0016106938",
+          "https://m.sports.naver.com/wfootball/article/001/0016106933"
+        ]
+      },
+      {
+        "question": "현대자동차가 전기차 충전 편의성을 높이기 위해 어떤 노력을 하고 있나요?",
+        "intent": "전기차 관련 기술 및 정책 이해도 평가",
+        "answer_outline": [
+          "PnC 인증체계 구축 참여",
+          "자동 차량 인식 및 충전/결제 시스템 개발",
+          "기후에너지환경부와 협력"
+        ],
+        "evidence_links": [
+          "https://www.electimes.com/news/articleView.html?idxno=368560"
+        ]
+      },
+      {
+        "question": "현대자동차가 지역 인재 양성을 위해 어떤 프로그램을 운영하고 있나요?",
+        "intent": "사회적 책임 및 인재 개발 관련 이해도 평가",
+        "answer_outline": [
+          "HD 현대의 조선 계열사와 협력",
+          "울산과 영암에서 300명의 지역 인재 양성",
+          "10대 그룹과의 협력"
+        ],
+        "evidence_links": [
+          "https://www.cnbnews.com/news/articleView.html?idxno=1003066"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "HD 현대 , 정부와 조선·건설기계 지역 인재 양성한다",
+        "link": "https://www.cnbnews.com/news/articleView.html?idxno=1003066",
+        "published": "Fri, 29 May 2026 10:20:00 +0900",
+        "outlet": "cnbnews.com"
+      },
+      {
+        "title": "전기차 충전 편의 높인다…정부, PnC 인증체계 구축 착수",
+        "link": "https://www.electimes.com/news/articleView.html?idxno=368560",
+        "published": "Fri, 29 May 2026 10:20:00 +0900",
+        "outlet": "electimes.com"
+      },
+      {
+        "title": "현대 차, FIFA 월드컵 2026 기념해 아틀라스의 축구 도전기 담은 캠페인 ...",
+        "link": "https://m.sports.naver.com/wfootball/article/001/0016106938",
+        "published": "Fri, 29 May 2026 10:19:00 +0900",
+        "outlet": "yna.co.kr"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "a8a6fb9becf6666b675e4f29c1df0d0000ca45576f96c887228768e6979ce81f": {
+    "company": "현대자동차",
+    "highlights": [
+      {
+        "claim": "현대자동차는 FIFA 월드컵 2026의 공식 파트너로 참여하고 있으며, 로봇 기술을 활용한 마케팅 캠페인을 진행하고 있다.",
+        "why_it_matters": "이 캠페인은 현대자동차의 혁신적인 기술력과 브랜드 이미지를 강화하는 데 기여하며, 글로벌 시장에서의 경쟁력을 높인다.",
+        "evidence_links": [
+          "http://www.popcornnews.net/news/articleView.html?idxno=122640",
+          "https://www.tjb.co.kr/news05/bodo/view/id/98796",
+          "https://www.newspim.com/news/view/20260529000908"
+        ]
+      },
+      {
+        "claim": "현대자동차는 AI 교육 프로그램에 참여하여 산업 현장 중심의 실무형 교육을 확대할 예정이다.",
+        "why_it_matters": "AI 인재 양성은 현대자동차의 기술 혁신과 경쟁력 강화를 위한 중요한 요소로, 기업의 지속 가능한 성장에 기여할 수 있다.",
+        "evidence_links": [
+          "http://www.biztribune.co.kr/news/articleView.html?idxno=354262"
+        ]
+      },
+      {
+        "claim": "현대자동차는 HL만도와 협력하여 북미 시장에 전자식 제동장치, 전동식 조향장치 등 핵심 전장 제품을 공급할 예정이다.",
+        "why_it_matters": "이 협력은 현대자동차의 전기차 및 자율주행차 기술 발전에 중요한 역할을 하며, 북미 시장에서의 입지를 강화할 수 있다.",
+        "evidence_links": [
+          "https://www.pointdaily.co.kr/news/articleView.html?idxno=306506"
+        ]
+      }
+    ],
+    "risks_and_watchouts": [
+      {
+        "item": "글로벌 모빌리티 시장에서의 치열한 경쟁.",
+        "evidence_links": [
+          "http://www.popcornnews.net/news/articleView.html?idxno=122640"
+        ]
+      }
+    ],
+    "keywords_to_prepare": [
+      "AI 교육",
+      "로봇 기술",
+      "전장 제품",
+      "글로벌 마케팅",
+      "전기차"
+    ],
+    "sources": [
+      {
+        "title": "\"공대생만 AI 인재 아니다\"…최태원이 던진 교육 혁신론",
+        "link": "http://www.biztribune.co.kr/news/articleView.html?idxno=354262",
+        "published": "Fri, 29 May 2026 15:32:00 +0900",
+        "outlet": "biztribune.co.kr"
+      },
+      {
+        "title": "하반기 회복 시동 거는 HL만도, 3대 전장 공급망 강화",
+        "link": "https://www.pointdaily.co.kr/news/articleView.html?idxno=306506",
+        "published": "Fri, 29 May 2026 15:28:00 +0900",
+        "outlet": "pointdaily.co.kr"
+      },
+      {
+        "title": "자동차 업계, 글로벌 모빌리티 시장서 마케팅 각축전 치열",
+        "link": "http://www.popcornnews.net/news/articleView.html?idxno=122640",
+        "published": "Fri, 29 May 2026 15:12:00 +0900",
+        "outlet": "popcornnews.net"
+      },
+      {
+        "title": "아틀라스, 라보나킥 슛! 골인!…월드컵 캠페인 영상 3천300만뷰 돌파",
+        "link": "https://www.tjb.co.kr/news05/bodo/view/id/98796",
+        "published": "Fri, 29 May 2026 15:12:00 +0900",
+        "outlet": "tjb.co.kr"
+      },
+      {
+        "title": "현대 차 '아틀라스'의 라보나 킥...손흥민도 '와우~' 탄성",
+        "link": "https://www.newspim.com/news/view/20260529000908",
+        "published": "Fri, 29 May 2026 15:09:00 +0900",
+        "outlet": "newspim.com"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "0ca59640772b2fc786850dafcee5f4a93afc0e705d7a02ba916198307a748278": {
+    "company": "현대자동차",
+    "likely_interview_questions": [
+      {
+        "question": "현대자동차가 최근 AI 교육 프로그램에 참여하는 이유는 무엇인가요?",
+        "intent": "이해도 평가",
+        "answer_outline": [
+          "AI 기술의 중요성",
+          "산업 현장 중심의 실무형 교육 필요성",
+          "경쟁력 확보를 위한 국가 차원의 노력"
+        ],
+        "evidence_links": [
+          "http://www.biztribune.co.kr/news/articleView.html?idxno=354262"
+        ]
+      },
+      {
+        "question": "현대자동차의 로보틱스 기술이 FIFA 월드컵에서 어떻게 활용되었나요?",
+        "intent": "기술 이해도 평가",
+        "answer_outline": [
+          "휴머노이드 로봇 '아틀라스'의 역할",
+          "차세대 피지컬 AI 경쟁력",
+          "글로벌 마케팅 전략의 일환"
+        ],
+        "evidence_links": [
+          "http://www.popcornnews.net/news/articleView.html?idxno=122640",
+          "https://www.newspim.com/news/view/20260529000908"
+        ]
+      },
+      {
+        "question": "현대자동차의 전장 제품 공급 확대에 대해 설명해 주세요.",
+        "intent": "업계 동향 이해도 평가",
+        "answer_outline": [
+          "통합 전자식 제동장치(IDB) 등 3대 핵심 제품",
+          "북미 시장에서의 전략",
+          "기술 혁신과 시장 대응"
+        ],
+        "evidence_links": [
+          "https://www.pointdaily.co.kr/news/articleView.html?idxno=306506"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "\"공대생만 AI 인재 아니다\"…최태원이 던진 교육 혁신론",
+        "link": "http://www.biztribune.co.kr/news/articleView.html?idxno=354262",
+        "published": "Fri, 29 May 2026 15:32:00 +0900",
+        "outlet": "biztribune.co.kr"
+      },
+      {
+        "title": "하반기 회복 시동 거는 HL만도, 3대 전장 공급망 강화",
+        "link": "https://www.pointdaily.co.kr/news/articleView.html?idxno=306506",
+        "published": "Fri, 29 May 2026 15:28:00 +0900",
+        "outlet": "pointdaily.co.kr"
+      },
+      {
+        "title": "자동차 업계, 글로벌 모빌리티 시장서 마케팅 각축전 치열",
+        "link": "http://www.popcornnews.net/news/articleView.html?idxno=122640",
+        "published": "Fri, 29 May 2026 15:12:00 +0900",
+        "outlet": "popcornnews.net"
+      },
+      {
+        "title": "현대 차 '아틀라스'의 라보나 킥...손흥민도 '와우~' 탄성",
+        "link": "https://www.newspim.com/news/view/20260529000908",
+        "published": "Fri, 29 May 2026 15:09:00 +0900",
+        "outlet": "newspim.com"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "86200dd4cadfc63559d494c6bc8493102b683d942607224bae36c35adbff1253": {
+    "company": "똥",
+    "highlights": [
+      {
+        "claim": "똥 관련 발명품이 일본에서 유행하고 있다.",
+        "why_it_matters": "이 발명품은 똥을 싸기 전에 사용하여 냄새를 없애는 기능이 있어, 개인 위생과 환경 문제에 기여할 수 있다.",
+        "evidence_links": [
+          "https://m.entertain.naver.com/article/609/0001129293"
+        ]
+      },
+      {
+        "claim": "사회적 책임과 지속 가능한 성장에 대한 논의가 이루어지고 있다.",
+        "why_it_matters": "회사가 작더라도 큰 꿈을 가질 수 있다는 메시지는 기업의 비전과 가치관을 반영하며, 면접에서 자신의 가치관을 표현하는 데 도움이 될 수 있다.",
+        "evidence_links": [
+          "https://www.ajunews.com/view/20260529145057159",
+          "https://www.viva100.com/article/20260529500501"
+        ]
+      }
+    ],
+    "risks_and_watchouts": [
+      {
+        "item": "농장 내 전염병 발생 위험",
+        "evidence_links": [
+          "https://n.news.naver.com/mnews/article/005/0001851725?sid=101"
+        ]
+      }
+    ],
+    "keywords_to_prepare": [
+      "발명품",
+      "사회적 책임",
+      "지속 가능한 성장",
+      "위생",
+      "농장 관리"
+    ],
+    "sources": [
+      {
+        "title": "김태균, 아내 일본서 사온 발명품에 깜짝 “한국에 없는 듯‥잘 쓰는 중...",
+        "link": "https://m.entertain.naver.com/article/609/0001129293",
+        "published": "Fri, 29 May 2026 15:33:00 +0900",
+        "outlet": "newsen.com"
+      },
+      {
+        "title": "초과이익 두고 엇갈린 장관들…노동장관 '양극화 해소'vs산업장관 '투자...' ",
+        "link": "https://www.ajunews.com/view/20260529145057159",
+        "published": "Fri, 29 May 2026 15:32:00 +0900",
+        "outlet": "ajunews.com"
+      },
+      {
+        "title": "삼성전자 초과 이익 놓고 김정관 산업장관 “생산적 재투자”…김영훈...",
+        "link": "https://www.viva100.com/article/20260529500501",
+        "published": "Fri, 29 May 2026 15:16:00 +0900",
+        "outlet": "viva100.com"
+      },
+      {
+        "title": "“전염병 터지면 가족 생이별이지만… 먹거리 불안 줄여 뿌듯”",
+        "link": "https://n.news.naver.com/mnews/article/005/0001851725?sid=101",
+        "published": "Fri, 29 May 2026 00:07:00 +0900",
+        "outlet": "kmib.co.kr"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "5025e82c14697b918352515e4cfd2143a8a5e168d2b3a09bf414f5a39aac79e2": {
+    "company": "똥",
+    "likely_interview_questions": [
+      {
+        "question": "회사가 작다고 생각하십니까? 꿈은 작아야 한다고 생각하십니까?",
+        "intent": "이 회사의 비전과 개인의 목표를 연결짓기 위한 질문",
+        "answer_outline": [
+          "회사의 규모와 상관없이 큰 꿈을 가질 수 있다.",
+          "작은 회사에서의 성장 가능성을 강조할 수 있다.",
+          "개인의 목표와 회사의 비전을 어떻게 조화시킬 수 있는지 설명할 수 있다."
+        ],
+        "evidence_links": [
+          "https://www.ajunews.com/view/20260529145057159",
+          "https://www.viva100.com/article/20260529500501"
+        ]
+      },
+      {
+        "question": "최근에 흥미로운 제품이나 아이디어를 접한 적이 있습니까?",
+        "intent": "창의성과 혁신에 대한 지원자의 사고 방식을 평가하기 위한 질문",
+        "answer_outline": [
+          "일본에서의 발명품 사례를 언급할 수 있다.",
+          "실생활에서의 문제 해결을 위한 창의적인 접근 방식을 설명할 수 있다.",
+          "자신의 경험이나 아이디어를 통해 회사에 기여할 수 있는 방안을 제시할 수 있다."
+        ],
+        "evidence_links": [
+          "https://m.entertain.naver.com/article/609/0001129293"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "김태균, 아내 일본서 사온 발명품에 깜짝 “한국에 없는 듯‥잘 쓰는 중...",
+        "link": "https://m.entertain.naver.com/article/609/0001129293",
+        "published": "Fri, 29 May 2026 15:33:00 +0900",
+        "outlet": "newsen.com"
+      },
+      {
+        "title": "초과이익 두고 엇갈린 장관들…노동장관 '양극화 해소'vs산업장관 '투자...",
+        "link": "https://www.ajunews.com/view/20260529145057159",
+        "published": "Fri, 29 May 2026 15:32:00 +0900",
+        "outlet": "ajunews.com"
+      },
+      {
+        "title": "삼성전자 초과 이익 놓고 김정관 산업장관 “생산적 재투자”…김영훈...",
+        "link": "https://www.viva100.com/article/20260529500501",
+        "published": "Fri, 29 May 2026 15:16:00 +0900",
+        "outlet": "viva100.com"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "2223ff6aa2573287ce89ded6545f38f8d065e2f4e4e19a5e15342b1c2d5a90bc": {
+    "company": "전기차",
+    "highlights": [],
+    "risks_and_watchouts": [],
+    "keywords_to_prepare": [],
+    "sources": [],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "faa7d539317a949555976a0ed8780d4d5ecb1471ae556e4b3fc44e7b89706035": {
+    "company": "오은진",
+    "highlights": [
+      {
+        "claim": "오은진 대표는 캐릭터 IP의 상업 활용을 위한 B2B 플랫폼을 운영하고 있다.",
+        "why_it_matters": "이너부스는 IP 홀더들이 자신의 IP를 사업화하는 데 도움을 주며, 이는 기업의 성장 가능성을 높이는 중요한 요소이다.",
+        "evidence_links": [
+          "https://magazine.hankyung.com/job-joy/article/202603239106d"
+        ]
+      }
+    ],
+    "risks_and_watchouts": [],
+    "keywords_to_prepare": [
+      "캐릭터 IP",
+      "B2B 플랫폼",
+      "사업화",
+      "오은진 대표"
+    ],
+    "sources": [
+      {
+        "title": "[광주정보문화산업진흥원 창업도약패키지 수행기업] 캐릭터 IP 비즈니스...",
+        "link": "https://magazine.hankyung.com/job-joy/article/202603239106d",
+        "published": "Mon, 23 Mar 2026 09:50:00 +0900",
+        "outlet": "magazine.hankyung.com"
+      },
+      {
+        "title": "오은진",
+        "link": "https://bizno.net/article/1371748982",
+        "published": "Sun, 15 Mar 2026 00:00:00 +0900",
+        "outlet": "bizno.net"
+      },
+      {
+        "title": "경산시, 미래 30년 성장 전략 마련 위한 '경산미래혁신위원회' 출범",
+        "link": "https://www.idaegu.com/news/articleView.html?idxno=657914",
+        "published": "Tue, 03 Mar 2026 13:20:00 +0900",
+        "outlet": "idaegu.com"
+      },
+      {
+        "title": "광주대 '함께랑께' 또래상담자 성과보고회",
+        "link": "http://www.namdonews.com/news/articleView.html?idxno=843831",
+        "published": "Mon, 29 Dec 2025 17:20:00 +0900",
+        "outlet": "naver"
+      },
+      {
+        "title": "광주대 ‘함께랑께’ 또래상담자 성과보고회",
+        "link": "http://www.jndn.com/article.php?aid=1766913221424338011",
+        "published": "Sun, 28 Dec 2025 18:16:00 +0900",
+        "outlet": "naver"
+      },
+      {
+        "title": "광주대 '함께랑께' 또래상담자 성과보고회 진행",
+        "link": "http://www.veritas-a.com/news/articleView.html?idxno=591966",
+        "published": "Fri, 26 Dec 2025 19:22:00 +0900",
+        "outlet": "naver"
+      },
+      {
+        "title": "광주대, '함께랑께' 또래상담자 성과보고회",
+        "link": "http://www.kyosu.net/news/articleView.html?idxno=153569",
+        "published": "Fri, 26 Dec 2025 17:16:00 +0900",
+        "outlet": "naver"
+      },
+      {
+        "title": "광주대, ‘함께랑께’ 또래상담자 성과보고회",
+        "link": "https://dhnews.co.kr/news/view/1065600374156265",
+        "published": "Fri, 26 Dec 2025 17:10:00 +0900",
+        "outlet": "naver"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "a79e6e6098145477bfcbf7fdccd4b2d8d430843f739c1b1d7d49f3f337d24b20": {
+    "company": "에스엘",
+    "highlights": [
+      {
+        "claim": "에스엘은 대구를 대표하는 기업 중 하나로, 매출 1조 클럽에 가입했다.",
+        "why_it_matters": "매출 1조 클럽에 가입한 것은 기업의 성장성과 시장에서의 입지를 나타내며, 이는 면접에서 회사의 안정성과 성장 가능성을 강조하는 데 유리하다.",
+        "evidence_links": [
+          "http://www.worktoday.co.kr/news/articleView.html?idxno=85035",
+          "https://www.seoultimes.news/news/article.html?no=2000096087",
+          "https://www.insightkorea.co.kr/news/articleView.html?idxno=247196"
+        ]
+      },
+      {
+        "claim": "에스엘은 스마트팩토리 투자와 자동차 전장 분야에서 긍정적인 기대감을 받고 있다.",
+        "why_it_matters": "스마트팩토리와 자동차 전장 분야는 현재 산업 트렌드로, 이러한 분야에서의 성장은 회사의 미래 비전과 혁신성을 보여준다.",
+        "evidence_links": [
+          "https://www.pinpointnews.co.kr/news/articleView.html?idxno=455879"
+        ]
+      },
+      {
+        "claim": "에스엘은 R&D 투자에 적극적이며, 이는 경쟁력을 높이는 데 기여하고 있다.",
+        "why_it_matters": "R&D 투자는 기업의 혁신과 기술 발전을 이끄는 중요한 요소로, 면접에서 회사의 장기적인 비전과 전략을 논의할 때 유용하다.",
+        "evidence_links": [
+          "https://dealsite.co.kr/articles/162294"
+        ]
+      }
+    ],
+    "risks_and_watchouts": [
+      {
+        "item": "수도권에 본사가 집중되어 있는 기업 환경에서의 경쟁 심화.",
+        "evidence_links": [
+          "https://www.insightkorea.co.kr/news/articleView.html?idxno=247196"
+        ]
+      }
+    ],
+    "keywords_to_prepare": [
+      "매출 1조 클럽",
+      "스마트팩토리",
+      "자동차 전장",
+      "R&D 투자",
+      "기업 성장성"
+    ],
+    "sources": [
+      {
+        "title": "상장사 10곳 중 7곳 '수도권 본사' … 기업 입지 편중 심화",
+        "link": "http://www.worktoday.co.kr/news/articleView.html?idxno=85035",
+        "published": "Thu, 28 May 2026 11:08:00 +0900",
+        "outlet": "worktoday.co.kr"
+      },
+      {
+        "title": "[뉴스 앤 데이터] ‘서울공화국’ 여전했다…1000대 기업 본사 수도권에...",
+        "link": "https://www.seoultimes.news/news/article.html?no=2000096087",
+        "published": "Thu, 28 May 2026 11:00:00 +0900",
+        "outlet": "seoultimes.news"
+      },
+      {
+        "title": "1000대 기업 본사 70% 수도권 집중…서울에만 405곳 몰려",
+        "link": "https://www.insightkorea.co.kr/news/articleView.html?idxno=247196",
+        "published": "Thu, 28 May 2026 11:00:00 +0900",
+        "outlet": "insightkorea.co.kr"
+      },
+      {
+        "title": "스마트팩토리 투자 열풍에 방긋…계양전기, 산업용 자동화 수혜주 부각",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=455879",
+        "published": "Thu, 28 May 2026 10:32:00 +0900",
+        "outlet": "pinpointnews.co.kr"
+      },
+      {
+        "title": "에스엘 플랫폼, 가정의 달 커뮤니티 프로그램으로 전국 10개 단지 운영",
+        "link": "https://www.etoday.co.kr/news/view/2588528",
+        "published": "Thu, 28 May 2026 10:04:00 +0900",
+        "outlet": "etoday.co.kr"
+      },
+      {
+        "title": "[벤더사 줌인] [새론오토모티브] 매출 9% 쏟은 R&D…과실은 日 닛신보",
+        "link": "https://dealsite.co.kr/articles/162294",
+        "published": "Thu, 28 May 2026 09:02:00 +0900",
+        "outlet": "dealsite.co.kr"
+      },
+      {
+        "title": "[리스트] MVP 상위 20선...비츠로셀, 한양이엔지 등 - 28일",
+        "link": "https://www.itooza.com/common/iview.php?no=2026052807152601064",
+        "published": "Thu, 28 May 2026 07:36:00 +0900",
+        "outlet": "itooza.com"
+      },
+      {
+        "title": "[랭킹연구소] 韓 1000대 기업 본사, 수도권에 70%…강남구>성남·서울 중구>서초구>영등포구>화성>종로...",
+        "link": "https://www.newsspace.kr/news/article.html?no=14097",
+        "published": "Thu, 28 May 2026 00:00:00 +0900",
+        "outlet": "newsspace.kr"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "57c32c91899a045e8e4e1f89644c309b47798630eddd78f305f810d65d7f7e7d": {
+    "company": "에스엘",
+    "likely_interview_questions": [
+      {
+        "question": "에스엘의 최근 매출 성장에 대한 전략은 무엇인가요?",
+        "intent": "회사의 성장 전략 이해",
+        "answer_outline": [
+          "에스엘은 자동차 전장 및 스마트 생산라인에 대한 투자를 통해 매출 성장을 도모하고 있다.",
+          "R&D 투자 비율이 높아 혁신적인 제품 개발에 집중하고 있다.",
+          "지역 산업을 이끌고 있는 기업으로서의 역할을 강조할 수 있다."
+        ],
+        "evidence_links": [
+          "https://www.pinpointnews.co.kr/news/articleView.html?idxno=455879",
+          "https://dealsite.co.kr/articles/162294"
+        ]
+      },
+      {
+        "question": "에스엘이 지역 사회에 기여하는 방법은 무엇인가요?",
+        "intent": "사회적 책임 및 커뮤니티 참여",
+        "answer_outline": [
+          "가정의 달을 맞아 가족 참여형 커뮤니티 프로그램을 운영하여 지역 주민과의 관계를 강화하고 있다.",
+          "전국 10개 단지에서 6207세대 입주민들을 대상으로 프로그램을 진행하였다.",
+          "지역 산업 발전에 기여하는 기업으로서의 비전을 설명할 수 있다."
+        ],
+        "evidence_links": [
+          "https://www.etoday.co.kr/news/view/2588528"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "상장사 10곳 중 7곳 '수도권 본사' … 기업 입지 편중 심화",
+        "link": "http://www.worktoday.co.kr/news/articleView.html?idxno=85035",
+        "published": "Thu, 28 May 2026 11:08:00 +0900",
+        "outlet": "worktoday.co.kr"
+      },
+      {
+        "title": "[뉴스 앤 데이터] ‘서울공화국’ 여전했다…1000대 기업 본사 수도권에...",
+        "link": "https://www.seoultimes.news/news/article.html?no=2000096087",
+        "published": "Thu, 28 May 2026 11:00:00 +0900",
+        "outlet": "seoultimes.news"
+      },
+      {
+        "title": "스마트팩토리 투자 열풍에 방긋…계양전기, 산업용 자동화 수혜주 부각",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=455879",
+        "published": "Thu, 28 May 2026 10:32:00 +0900",
+        "outlet": "pinpointnews.co.kr"
+      },
+      {
+        "title": "에스엘 플랫폼, 가정의 달 커뮤니티 프로그램으로 전국 10개 단지 운영",
+        "link": "https://www.etoday.co.kr/news/view/2588528",
+        "published": "Thu, 28 May 2026 10:04:00 +0900",
+        "outlet": "etoday.co.kr"
+      },
+      {
+        "title": "[벤더사 줌인] [새론오토모티브] 매출 9% 쏟은 R&D…과실은 日 닛신보",
+        "link": "https://dealsite.co.kr/articles/162294",
+        "published": "Thu, 28 May 2026 09:02:00 +0900",
+        "outlet": "dealsite.co.kr"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "a2098ffe0e4e3e391dfd78b2fed9a32333d8ff1a6b897ee5be8f50f90803373a": {
+    "company": "아진산업",
+    "highlights": [
+      {
+        "claim": "아진산업은 자동차 부품 제조업체로, 직원 급여가 업계에서 상위권에 위치하고 있다.",
+        "why_it_matters": "높은 급여는 아진산업의 경쟁력을 나타내며, 우수한 인재 유치에 기여할 수 있다.",
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341278"
+        ]
+      },
+      {
+        "claim": "아진산업은 경북 지역의 로봇 산업 스케일업에 참여하고 있다.",
+        "why_it_matters": "로봇 산업의 발전은 아진산업의 기술력과 시장 경쟁력을 강화할 수 있는 기회를 제공한다.",
+        "evidence_links": [
+          "https://www.kbmaeil.com/article/20260522500235",
+          "https://www.kbsm.net/news/view.php?idx=520512"
+        ]
+      },
+      {
+        "claim": "아진산업은 관광 산업과의 협력을 통해 지역 경제 활성화에 기여하고 있다.",
+        "why_it_matters": "기업과 지역 사회 간의 협력은 브랜드 이미지와 사회적 책임을 강화할 수 있다.",
+        "evidence_links": [
+          "https://www.seoulfn.com/news/articleView.html?idxno=629481",
+          "https://n.news.naver.com/mnews/article/277/0005766825?sid=102"
+        ]
+      }
+    ],
+    "risks_and_watchouts": [
+      {
+        "item": "아진산업은 최근 주가가 약세를 보이고 있다.",
+        "evidence_links": [
+          "https://www.pinpointnews.co.kr/news/articleView.html?idxno=455873"
+        ]
+      }
+    ],
+    "keywords_to_prepare": [
+      "자동차 부품",
+      "로봇 산업",
+      "관광 협력",
+      "직원 급여",
+      "시장 경쟁력"
+    ],
+    "sources": [
+      {
+        "title": "에이엔피, 자동차 전장화 열풍 타고 PCB·부품 경쟁력 재부각",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456191",
+        "published": "Fri, 29 May 2026 10:08:00 +0900",
+        "outlet": "pinpointnews.co.kr"
+      },
+      {
+        "title": "AI 데이터센터發 전력 대란 해결사…신성에스티, ESS 장비 수혜주로 우...",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=455873",
+        "published": "Thu, 28 May 2026 10:18:00 +0900",
+        "outlet": "pinpointnews.co.kr"
+      },
+      {
+        "title": "[데이터 뉴스룸] 車업체 50곳 중 작년 직원 급여 4위는 현대차…그럼 1~...",
+        "link": "https://www.greened.kr/news/articleView.html?idxno=341278",
+        "published": "Tue, 26 May 2026 10:51:00 +0900",
+        "outlet": "greened.kr"
+      },
+      {
+        "title": "중소벤처기업진흥공단, 경북 로봇 산업 밸류체인 스케일업 업무협약",
+        "link": "https://www.kbsm.net/news/view.php?idx=520512",
+        "published": "Mon, 25 May 2026 11:24:00 +0900",
+        "outlet": "kbsm.net"
+      },
+      {
+        "title": "[6·3 현장/화제]우홍섭 완도군수 후보, ‘기업 대상 관광 유치’ 화제",
+        "link": "https://www.thepowernews.co.kr/view.php?ud=202605221652471235caa2b7671d_7",
+        "published": "Sat, 23 May 2026 10:54:00 +0900",
+        "outlet": "thepowernews.co.kr"
+      },
+      {
+        "title": "경북 로봇 산업 스케일업 위해 뭉쳐",
+        "link": "https://www.kbmaeil.com/article/20260522500235",
+        "published": "Fri, 22 May 2026 16:48:00 +0900",
+        "outlet": "kbmaeil.com"
+      },
+      {
+        "title": "[6·3지선] 민주당 우홍섭 후보\"해양치유 완도, 기업 관광의 새 길 연다...",
+        "link": "https://www.seoulfn.com/news/articleView.html?idxno=629481",
+        "published": "Fri, 22 May 2026 15:57:00 +0900",
+        "outlet": "naver"
+      },
+      {
+        "title": "[6·3선거]“1만 5천명 방문”…우홍섭· 아진산업 완도 관광 빅딜",
+        "link": "https://n.news.naver.com/mnews/article/277/0005766825?sid=102",
+        "published": "Fri, 22 May 2026 13:31:00 +0900",
+        "outlet": "view.asiae.co.kr"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "060360fe94bb1b8780ee9c89d5fef21b9371b9effac14c844e103f9db0b77a3c": {
+    "company": "아진",
+    "likely_interview_questions": [
+      {
+        "question": "아진산업의 최근 협력 사업에 대해 설명해 주세요.",
+        "intent": "회사에 대한 이해도 및 관심도 평가",
+        "answer_outline": [
+          "아진산업은 경북 로봇 산업 밸류체인 스케일업을 위해 여러 기업과 협력하고 있다.",
+          "삼광, 에스엘, 화신 등과 함께 스마트 제조 전환 및 로봇 활용 확대를 목표로 하고 있다.",
+          "이러한 협력은 지역 제조 산업의 발전에 기여할 것으로 기대된다."
+        ],
+        "evidence_links": [
+          "https://www.kbsm.net/news/view.php?idx=520512",
+          "https://www.kbmaeil.com/article/20260522500235"
+        ]
+      },
+      {
+        "question": "아진산업이 현대·기아차의 공급망에서 어떤 역할을 하고 있는지 설명해 주세요.",
+        "intent": "산업 내 위치 및 역할 이해도 평가",
+        "answer_outline": [
+          "아진산업은 현대·기아차의 글로벌 공급망에 중요한 역할을 하고 있다.",
+          "서중호 회장은 2003년 회사를 인수하여 코스닥 재상장을 이끌었다.",
+          "이러한 배경은 아진산업의 성장과 안정성을 보여준다."
+        ],
+        "evidence_links": [
+          "https://www.seoulfn.com/news/articleView.html?idxno=629481"
+        ]
+      },
+      {
+        "question": "아진산업의 직원 급여 수준에 대해 어떻게 생각하십니까?",
+        "intent": "회사의 재무적 안정성 및 직원 복지에 대한 인식 평가",
+        "answer_outline": [
+          "아진산업은 지난해 직원 급여에서 상위 5위에 위치하고 있다.",
+          "이는 회사의 재무적 안정성과 직원 복지에 대한 투자 의지를 나타낸다.",
+          "급여 수준은 직원의 만족도와 직무 수행에 긍정적인 영향을 미칠 수 있다."
+        ],
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341278"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "에이엔피, 자동차 전장화 열풍 타고 PCB·부품 경쟁력 재부각",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456191",
+        "published": "Fri, 29 May 2026 10:08:00 +0900",
+        "outlet": "pinpointnews.co.kr"
+      },
+      {
+        "title": "AI 데이터센터發 전력 대란 해결사…신성에스티, ESS 장비 수혜주로 우...",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=455873",
+        "published": "Thu, 28 May 2026 10:18:00 +0900",
+        "outlet": "pinpointnews.co.kr"
+      },
+      {
+        "title": "[데이터 뉴스룸] 車업체 50곳 중 작년 직원 급여 4위는 현대차…그럼 1~...",
+        "link": "https://www.greened.kr/news/articleView.html?idxno=341278",
+        "published": "Tue, 26 May 2026 10:51:00 +0900",
+        "outlet": "greened.kr"
+      },
+      {
+        "title": "중소벤처기업진흥공단, 경북 로봇 산업 밸류체인 스케일업 업무협약",
+        "link": "https://www.kbsm.net/news/view.php?idx=520512",
+        "published": "Mon, 25 May 2026 11:24:00 +0900",
+        "outlet": "kbsm.net"
+      },
+      {
+        "title": "[6·3 현장/화제]우홍섭 완도군수 후보, ‘기업 대상 관광 유치’ 화제",
+        "link": "https://www.thepowernews.co.kr/view.php?ud=202605221652471235caa2b7671d_7",
+        "published": "Sat, 23 May 2026 10:54:00 +0900",
+        "outlet": "thepowernews.co.kr"
+      },
+      {
+        "title": "[6·3선거]“1만 5천명 방문”…우홍섭· 아진산업 완도 관광 빅딜",
+        "link": "https://n.news.naver.com/mnews/article/277/0005766825?sid=102",
+        "published": "Fri, 22 May 2026 13:31:00 +0900",
+        "outlet": "view.asiae.co.kr"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  }
+}
