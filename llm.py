@@ -11,6 +11,7 @@ import requests
 BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "data"
 CACHE_FILE = DATA_DIR / "llm_cache.json"
+CACHE_SCHEMA_VERSION = "saramin-interview-review-v4"
 
 
 def llm_status() -> Dict[str, Any]:
@@ -122,6 +123,9 @@ def build_news_brief(
 
     parsed.setdefault("company", company)
     parsed.setdefault("sources", _sources_from_articles(articles))
+    parsed["answer_strategy"] = _sanitize_answer_strategy(
+        parsed.get("answer_strategy", [])
+    )
     parsed["llm"] = {"enabled": True, "provider": "openai", "model": model}
     parsed["cached"] = False
     _cache_set(cache_key, parsed)
@@ -423,7 +427,14 @@ def _company_research_prompt(
         f"자동 생성 검색어: {generated_queries}\n\n"
         "아래 공개 검색 결과와 뉴스 스니펫만 근거로 취업 준비용 AI 기업 리서치를 작성하라.\n"
         "블라인드/커뮤니티/비공개 후기를 본 것처럼 말하지 마라.\n"
-        "복지, 워라밸, 근무제도는 단정하지 말고 공개 자료에서 보이는 '신호'와 '확인 필요 포인트'로 정리하라.\n"
+        "복지, 워라밸, 근무제도는 회사정보/기업정보/복리후생 공개 페이지에 나온 내용만 정리하라.\n"
+        "채용공고, 커뮤니티, 블라인드, 비공개 후기는 복리후생 근거로 사용하지 마라.\n"
+        "근거가 부족하면 확인 필요라고 짧게 적어라.\n"
+        "지원자가 회사 복리후생이나 근무환경을 직접 경험한 것처럼 쓰지 마라.\n"
+        "answer_strategy에는 '복리후생/근무환경에 대한 긍정적인 경험 공유' 같은 문장을 절대 넣지 마라.\n"
+        "answer_strategy는 제품/사업/뉴스/직무 연결과, 확인된 제도에 대한 질문 준비로만 작성하라.\n"
+        "source_type이 interview_review인 자료는 사람인 면접후기이므로 예상 면접 질문, 면접 분위기, 전형 준비에만 참고하라.\n"
+        "면접후기는 개인 후기이므로 회사 공식 사실처럼 단정하지 말고 '후기 기준'으로 표현하라.\n"
         "각 주장에는 가능한 evidence_links를 포함하라.\n\n"
         "출력은 JSON 하나로만 반환하라. 스키마:\n"
         "{\n"
@@ -496,7 +507,8 @@ def _fallback_company_research(
     sources = _sources_from_articles(articles + research_docs)
     welfare_docs = [
         d for d in research_docs
-        if any(token in f"{d.get('title', '')} {d.get('summary', '')}" for token in ("복지", "복리후생", "근무제도", "채용", "면접"))
+        if (d.get("source_type") == "company_info")
+        and any(token in f"{d.get('title', '')} {d.get('summary', '')}" for token in ("복지", "복리후생", "근무제도", "휴가", "식당", "통근", "수당"))
     ]
     return {
         "company": company,
@@ -521,14 +533,14 @@ def _fallback_company_research(
         "welfare_signals": [
             {
                 "signal": d.get("title", ""),
-                "confidence": "낮음",
+                "confidence": "",
                 "evidence_links": [d.get("link", "")] if d.get("link") else [],
             }
             for d in welfare_docs[:4]
         ],
         "work_life_notes": [
-            "공개 검색 스니펫만으로 워라밸을 단정할 수 없습니다.",
-            "채용공고의 근무제도, 복리후생, 조직/직무 설명을 면접 전 추가 확인하세요.",
+            "회사정보 공개 페이지 기준으로 확인된 복리후생만 참고하세요.",
+            "자료가 부족한 항목은 면접 전 회사 채용/기업정보 페이지에서 추가 확인하세요.",
         ],
         "likely_interview_questions": [
             {
@@ -540,12 +552,34 @@ def _fallback_company_research(
         ],
         "answer_strategy": [
             "기사 제목만 외우기보다 이슈가 회사의 제품, 고객, 품질, 공급망에 주는 영향을 정리하세요.",
-            "복지와 워라밸은 단정 표현 대신 공개 채용 자료 기준으로 확인한 내용만 말하세요.",
+            "복리후생과 근무환경은 회사정보 공개 페이지 기준으로 확인한 제도를 질문할 준비만 하세요.",
         ],
         "generated_queries": generated_queries,
         "sources": sources,
         "llm": {"enabled": False, "provider": "", "model": ""},
     }
+
+
+def _sanitize_answer_strategy(items: Any) -> List[str]:
+    if not isinstance(items, list):
+        return []
+
+    blocked_patterns = (
+        "복리후생과 근무환경에 대한 긍정적인 경험",
+        "복리후생과 근무환경에 대한 경험 공유",
+        "복지와 근무환경에 대한 긍정적인 경험",
+        "긍정적인 경험 공유",
+        "직접 경험",
+    )
+    cleaned: List[str] = []
+    for item in items:
+        text = str(item).strip()
+        if not text:
+            continue
+        if any(pattern in text for pattern in blocked_patterns):
+            continue
+        cleaned.append(text)
+    return cleaned
 
 
 def _sources_from_articles(articles: List[Dict[str, str]]) -> List[Dict[str, str]]:
@@ -584,6 +618,7 @@ def _cache_key(
     src = _sources_from_articles(articles)
     material = {
         "kind": kind,
+        "version": CACHE_SCHEMA_VERSION,
         "company": company,
         "model": model,
         "sources": src,

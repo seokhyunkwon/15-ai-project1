@@ -1173,5 +1173,1665 @@
       "model": "gpt-4o-mini"
     },
     "cached": false
+  },
+  "c36e70fd9a988515cf6372d157f0e3f8ec7ef4c4cefa3d073e4f2542e8e19293": {
+    "company": "아진",
+    "highlights": [
+      {
+        "claim": "아진산업은 완도 지역의 관광 유치를 위한 약속을 받아냈다.",
+        "why_it_matters": "이러한 약속은 지역 경제 활성화에 기여할 수 있으며, 아진산업의 사회적 책임을 강조한다.",
+        "evidence_links": [
+          "https://n.news.naver.com/mnews/article/277/0005769801?sid=102"
+        ]
+      },
+      {
+        "claim": "아진산업은 경북 로봇 산업 밸류체인 스케일업 업무협약에 참여했다.",
+        "why_it_matters": "로봇 산업의 발전은 아진산업의 기술력과 시장 경쟁력을 강화할 수 있는 기회를 제공한다.",
+        "evidence_links": [
+          "https://www.kbsm.net/news/view.php?idx=520512"
+        ]
+      },
+      {
+        "claim": "아진산업은 직원 급여에서 상위 5위에 해당한다.",
+        "why_it_matters": "높은 급여 수준은 인재 유치 및 유지에 긍정적인 영향을 미치며, 기업의 재정적 안정성을 나타낸다.",
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341278"
+        ]
+      }
+    ],
+    "risks_and_watchouts": [
+      {
+        "item": "아진산업은 최근 주가가 약세를 보이고 있다.",
+        "evidence_links": [
+          "https://www.pinpointnews.co.kr/news/articleView.html?idxno=455873"
+        ]
+      }
+    ],
+    "keywords_to_prepare": [
+      "관광 유치",
+      "로봇 산업",
+      "직원 급여",
+      "주가 동향"
+    ],
+    "sources": [
+      {
+        "title": "정청래·박지원·민형배 총출동…민주당, 완도서 '원팀 유세' 총력전",
+        "link": "https://n.news.naver.com/mnews/article/277/0005769801?sid=102",
+        "published": "Sat, 30 May 2026 14:09:00 +0900",
+        "outlet": "view.asiae.co.kr"
+      },
+      {
+        "title": "에이엔피, 자동차 전장화 열풍 타고 PCB·부품 경쟁력 재부각",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456191",
+        "published": "Fri, 29 May 2026 10:08:00 +0900",
+        "outlet": "pinpointnews.co.kr"
+      },
+      {
+        "title": "AI 데이터센터發 전력 대란 해결사…신성에스티, ESS 장비 수혜주로 우...",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=455873",
+        "published": "Thu, 28 May 2026 10:18:00 +0900",
+        "outlet": "pinpointnews.co.kr"
+      },
+      {
+        "title": "[데이터 뉴스룸] 車업체 50곳 중 작년 직원 급여 4위는 현대차…그럼 1~...",
+        "link": "https://www.greened.kr/news/articleView.html?idxno=341278",
+        "published": "Tue, 26 May 2026 10:51:00 +0900",
+        "outlet": "greened.kr"
+      },
+      {
+        "title": "중소벤처기업진흥공단, 경북 로봇 산업 밸류체인 스케일업 업무협약",
+        "link": "https://www.kbsm.net/news/view.php?idx=520512",
+        "published": "Mon, 25 May 2026 11:24:00 +0900",
+        "outlet": "kbsm.net"
+      },
+      {
+        "title": "[6·3 현장/화제]우홍섭 완도군수 후보, ‘기업 대상 관광 유치’ 화제",
+        "link": "https://www.thepowernews.co.kr/view.php?ud=202605221652471235caa2b7671d_7",
+        "published": "Sat, 23 May 2026 10:54:00 +0900",
+        "outlet": "thepowernews.co.kr"
+      },
+      {
+        "title": "경북 로봇 산업 스케일업 위해 뭉쳐",
+        "link": "https://www.kbmaeil.com/article/20260522500235",
+        "published": "Fri, 22 May 2026 16:48:00 +0900",
+        "outlet": "kbmaeil.com"
+      },
+      {
+        "title": "[6·3지선] 민주당 우홍섭 후보\"해양치유 완도, 기업 관광의 새 길 연다...",
+        "link": "https://www.seoulfn.com/news/articleView.html?idxno=629481",
+        "published": "Fri, 22 May 2026 15:57:00 +0900",
+        "outlet": "naver"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "b3485b37f092c1cffc6a9b472a6b2766e8f4d93f7b74b63a5f21600164e7d56b": {
+    "company": "아진",
+    "company_overview": [
+      "아진은 자동차 부품 및 전자부품 제조업체로, 최근 자동차 전장 분야에서 경쟁력을 높이고 있다.",
+      "아진산업은 현대·기아차의 글로벌 공급망에 포함되어 있으며, 다양한 사업을 통해 성장하고 있다."
+    ],
+    "recent_issues": [
+      {
+        "point": "아진산업의 관광 유치 협약",
+        "evidence_links": [
+          "https://n.news.naver.com/mnews/article/277/0005766825?sid=102",
+          "https://www.thepowernews.co.kr/view.php?ud=202605221652471235caa2b7671d_7"
+        ]
+      },
+      {
+        "point": "아진산업의 급등 이후 숨고르기 장세",
+        "evidence_links": [
+          "https://www.pinpointnews.co.kr/news/articleView.html?idxno=455873"
+        ]
+      }
+    ],
+    "business_keywords": [
+      "자동차 부품",
+      "전자부품",
+      "전장 사업",
+      "로봇 제어",
+      "스마트 제조"
+    ],
+    "welfare_signals": [
+      {
+        "signal": "복리후생으로 의료보험 및 성과급 제공",
+        "confidence": "신호",
+        "evidence_links": [
+          "https://www.worldjob.or.kr/advnc/view.do?menuId=1000006335&dobType=1&joCrtfcNo=E20230210005&joCrtfcDsp=26&joCrtfcDspSn=1"
+        ]
+      },
+      {
+        "signal": "장기근무 가능자 우대",
+        "confidence": "신호",
+        "evidence_links": [
+          "https://www.jobkorea.co.kr/Recruit/GI_Read/48118656?Oem_Code=C1"
+        ]
+      }
+    ],
+    "work_life_notes": [
+      "근무시간은 평균 40시간으로 보이며, 복리후생에 대한 정보는 추가 확인이 필요하다."
+    ],
+    "likely_interview_questions": [
+      {
+        "question": "아진산업의 전장 사업에 대해 어떻게 생각하나요?",
+        "intent": "업계 이해도 및 관심도 확인",
+        "answer_direction": [
+          "전장 사업의 중요성",
+          "아진의 경쟁력",
+          "미래 전망"
+        ],
+        "evidence_links": [
+          "https://www.ezday.co.kr/bbs/view_board.html?q_sq_board=8966312"
+        ]
+      }
+    ],
+    "answer_strategy": [
+      "아진산업의 최근 동향과 사업 방향에 대해 충분히 연구하고, 관련 질문에 대해 구체적인 사례를 들어 답변 준비하기."
+    ],
+    "generated_queries": [
+      "아진 기업정보",
+      "아진 사업 제품",
+      "아진 채용 복리후생",
+      "아진 근무제도",
+      "아진 면접"
+    ],
+    "sources": [
+      {
+        "title": "정청래·박지원·민형배 총출동…민주당, 완도서 '원팀 유세' 총력전",
+        "link": "https://n.news.naver.com/mnews/article/277/0005769801?sid=102",
+        "outlet": "view.asiae.co.kr",
+        "source_type": "news"
+      },
+      {
+        "title": "AI 데이터센터發 전력 대란 해결사…신성에스티, ESS 장비 수혜주로 우...",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=455873",
+        "outlet": "pinpointnews.co.kr",
+        "source_type": "news"
+      },
+      {
+        "title": "미국 채용 , 현기차 1차 아진 USA 생산기술팀 신입/경력직 채용",
+        "link": "https://www.worldjob.or.kr/advnc/view.do?menuId=1000006335&dobType=1&joCrtfcNo=E20230210005&joCrtfcDsp=26&joCrtfcDspSn=1",
+        "outlet": "worldjob.or.kr",
+        "source_type": "public"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "3bd7c4d05a64d60ce2258b11409fe34aad17888958d119e52b65d38ddf96692e": {
+    "company": "아진",
+    "likely_interview_questions": [
+      {
+        "question": "아진산업이 최근 완도 지역 발전을 위해 어떤 역할을 하고 있다고 생각하나요?",
+        "intent": "지원자의 회사에 대한 이해도 평가",
+        "answer_outline": [
+          "아진산업이 완도 지역 방문객 유치를 위한 약속을 했다는 점",
+          "지역 발전을 위한 봉사 정신 강조",
+          "사업가의 마인드로 성과를 내는 중요성"
+        ],
+        "evidence_links": [
+          "https://n.news.naver.com/mnews/article/277/0005769801?sid=102"
+        ]
+      },
+      {
+        "question": "아진산업의 최근 성과나 사업 방향에 대해 어떻게 생각하나요?",
+        "intent": "업계 동향 및 회사 비전 이해도 평가",
+        "answer_outline": [
+          "아진산업이 자동차 부품 산업에서의 경쟁력",
+          "로봇 산업과의 협력 및 스마트 제조 전환",
+          "지속 가능한 성장 가능성"
+        ],
+        "evidence_links": [
+          "https://www.kbsm.net/news/view.php?idx=520512",
+          "https://www.kbmaeil.com/article/20260522500235"
+        ]
+      },
+      {
+        "question": "아진산업의 임직원 가족을 대상으로 한 관광 유치 사업에 대해 어떻게 생각하나요?",
+        "intent": "사회적 책임 및 기업 문화에 대한 이해도 평가",
+        "answer_outline": [
+          "임직원 가족을 포함한 지역 사회와의 관계 강화",
+          "관광 유치를 통한 지역 경제 활성화",
+          "기업의 사회적 책임 강조"
+        ],
+        "evidence_links": [
+          "https://www.thepowernews.co.kr/view.php?ud=202605221652471235caa2b7671d_7"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "정청래·박지원·민형배 총출동…민주당, 완도서 '원팀 유세' 총력전",
+        "link": "https://n.news.naver.com/mnews/article/277/0005769801?sid=102",
+        "published": "Sat, 30 May 2026 14:09:00 +0900",
+        "outlet": "view.asiae.co.kr"
+      },
+      {
+        "title": "중소벤처기업진흥공단, 경북 로봇 산업 밸류체인 스케일업 업무협약",
+        "link": "https://www.kbsm.net/news/view.php?idx=520512",
+        "published": "Mon, 25 May 2026 11:24:00 +0900",
+        "outlet": "kbsm.net"
+      },
+      {
+        "title": "[6·3지선] 민주당 우홍섭 후보\"해양치유 완도, 기업 관광의 새 길 연다...",
+        "link": "https://www.thepowernews.co.kr/view.php?ud=202605221652471235caa2b7671d_7",
+        "published": "Fri, 22 May 2026 15:57:00 +0900",
+        "outlet": "seoulfn.com"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "1dcc0ba977ef2884667f5fbbe8a4a14ff7f64b2fb35eb944c0e6106ad017becb": {
+    "company": "영진정공",
+    "highlights": [],
+    "risks_and_watchouts": [],
+    "keywords_to_prepare": [],
+    "sources": [],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "981f9f1531353ec2b90d84ed07631614f4299d4ad651dca13cec12346fc9cd03": {
+    "company": "영진정공",
+    "company_overview": [
+      "영진정공은 전기차 동력전달장치 및 변속기 부품을 제조하는 중소기업이다.",
+      "본사는 경기도 시흥시에 위치하고 있으며, 직원 수는 51~300명 사이이다."
+    ],
+    "recent_issues": [],
+    "business_keywords": [
+      "전기차",
+      "동력전달장치",
+      "변속기 부품",
+      "중소기업"
+    ],
+    "welfare_signals": [
+      {
+        "signal": "구내식사 지원",
+        "confidence": "신호",
+        "evidence_links": [
+          "https://www.jobkorea.co.kr/Recruit/GI_Read/48357533"
+        ]
+      },
+      {
+        "signal": "국민연금, 고용보험, 산재보험, 건강보험 제공",
+        "confidence": "신호",
+        "evidence_links": [
+          "https://www.jobkorea.co.kr/Recruit/GI_Read/34333420?Oem_Code=C1"
+        ]
+      }
+    ],
+    "work_life_notes": [
+      "주 5일 근무제도 (월~금)로 운영되고 있으며, 근무 시간은 08:00 ~ 17:00이다."
+    ],
+    "likely_interview_questions": [
+      {
+        "question": "회사의 비전과 목표는 무엇인가요?",
+        "intent": "회사의 방향성과 개인의 목표 일치 여부 확인",
+        "answer_direction": [
+          "회사의 비전과 개인의 목표를 연결짓는 답변",
+          "회사의 최근 성과나 프로젝트 언급"
+        ],
+        "evidence_links": []
+      },
+      {
+        "question": "전기차 부품 산업의 현재 동향에 대해 어떻게 생각하나요?",
+        "intent": "업계에 대한 이해도 평가",
+        "answer_direction": [
+          "전기차 시장 성장 전망 언급",
+          "기술 발전과 경쟁사 분석"
+        ],
+        "evidence_links": []
+      }
+    ],
+    "answer_strategy": [
+      "회사의 비전과 목표에 대한 이해를 바탕으로 답변 준비",
+      "전기차 산업에 대한 최신 정보와 동향 파악"
+    ],
+    "generated_queries": [
+      "영진정공 채용 복리후생",
+      "영진정공 근무제도",
+      "영진정공 면접 준비"
+    ],
+    "sources": [
+      {
+        "title": "영진 정공 정책자금 108건 - 비즈탑",
+        "link": "https://www.biztop.co.kr/v2/api_member/policy_fund.php?bncode=13YPdsdwI7gJ",
+        "outlet": "biztop.co.kr",
+        "source_type": "public",
+        "published": "2026-04-05 11:44"
+      },
+      {
+        "title": "(주) 영진 모빌리티 구매관리 신입 채용",
+        "link": "https://www.jobkorea.co.kr/Recruit/GI_Read/49004416?Oem_Code=C1",
+        "outlet": "jobkorea.co.kr",
+        "source_type": "career",
+        "published": "2026-04-17 00:00"
+      },
+      {
+        "title": "[구인의뢰] (주) 영진 정공 신규채용 공고",
+        "link": "https://career.jvision.ac.kr/main/?menu=54&mode=view&no=8141",
+        "outlet": "career.jvision.ac.kr",
+        "source_type": "public",
+        "published": "2024-07-23 10:26"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "156b8b14dd9315df7896d3033167e68b72e36e815fdb64b672689d1209380ff9": {
+    "company": "영진정공",
+    "likely_interview_questions": [],
+    "sources": [],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "09c0458e85c86bfffd3e36a208e1903bce4c3e522598956102ac00e0bf4ff4be": {
+    "company": "에스엘",
+    "highlights": [
+      {
+        "claim": "에스엘은 자율주행 및 전동화 부품 확대 기대가 반영되며 상승 흐름을 보이고 있다.",
+        "why_it_matters": "자동차 산업의 전환이 이루어지고 있는 가운데, 에스엘의 부품이 자율주행 및 전동화에 기여할 경우 회사의 성장 가능성이 높아질 수 있다.",
+        "evidence_links": [
+          "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456322"
+        ]
+      },
+      {
+        "claim": "에스엘이 자동차부품 테마에서 약세 흐름을 보이고 있다.",
+        "why_it_matters": "투자 심리가 위축되고 있는 상황에서 에스엘의 주가가 영향을 받을 수 있으며, 이는 면접 시 회사의 현재 상황을 이해하는 데 중요하다.",
+        "evidence_links": [
+          "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456191"
+        ]
+      },
+      {
+        "claim": "에스엘이 소비재 업종에서 새로 편입되었다.",
+        "why_it_matters": "회사가 새로운 시장에서의 입지를 다지고 있다는 점은 면접 시 긍정적인 요소로 작용할 수 있다.",
+        "evidence_links": [
+          "https://www.public25.com/news/articleView.html?idxno=47259"
+        ]
+      }
+    ],
+    "risks_and_watchouts": [
+      {
+        "item": "투자 심리 위축으로 인한 주가 하락 가능성.",
+        "evidence_links": [
+          "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456191"
+        ]
+      },
+      {
+        "item": "에스엘 디티의 손실이 무신사 연결 실적에 부담을 주고 있다.",
+        "evidence_links": [
+          "https://v.daum.net/v/BbiXUCWIHx"
+        ]
+      }
+    ],
+    "keywords_to_prepare": [
+      "자율주행",
+      "전동화 부품",
+      "투자 심리",
+      "소비재 업종",
+      "손실"
+    ],
+    "sources": [
+      {
+        "title": "단순 부품사에서 친환경 플랫폼으로... 한온시스템, 단기 가치 재평가 ...",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456322",
+        "published": "Fri, 29 May 2026 15:58:00 +0900",
+        "outlet": "pinpointnews.co.kr"
+      },
+      {
+        "title": "에이엔피, 자동차 전장화 열풍 타고 PCB·부품 경쟁력 재부각",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456191",
+        "published": "Fri, 29 May 2026 10:08:00 +0900",
+        "outlet": "pinpointnews.co.kr"
+      },
+      {
+        "title": "[코스피·코스닥, 코리아밸류업지수 삼성증권 셀트리온 파두 HD현대마린...",
+        "link": "https://www.public25.com/news/articleView.html?idxno=47259",
+        "published": "Fri, 29 May 2026 08:08:00 +0900",
+        "outlet": "public25.com"
+      },
+      {
+        "title": "무신사, 본체는 벌고 자회사는 손실 …성장 뒤편의 ‘아픈손가락’ - 콘텐츠뷰",
+        "link": "https://v.daum.net/v/BbiXUCWIHx",
+        "published": "Fri, 29 May 2026 00:00:00 +0900",
+        "outlet": "v.daum.net"
+      },
+      {
+        "title": "국내 1000대 기업 본사 수도권에 70% 집중…서울 강남구 '최다'",
+        "link": "https://www.ajunews.com/view/20260528114352218",
+        "published": "Thu, 28 May 2026 18:02:00 +0900",
+        "outlet": "ajunews.com"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "75742f359141bd64ae78fb38a4e888da63bedf5c876693ff0f97e3449e17565a": {
+    "company": "에스엘",
+    "company_overview": [
+      "에스엘은 자동차 부품 제조업체로, 현대차그룹의 주요 공급업체 중 하나입니다.",
+      "회사는 전동화 부품 및 자율주행 기술에 대한 투자를 확대하고 있습니다."
+    ],
+    "recent_issues": [
+      {
+        "point": "자동차 전장화 및 자율주행 부품 시장에서의 성장 기대",
+        "evidence_links": [
+          "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456322",
+          "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456191"
+        ]
+      },
+      {
+        "point": "주가 상승 후 수급 둔화 신호",
+        "evidence_links": [
+          "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456322",
+          "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456191"
+        ]
+      }
+    ],
+    "business_keywords": [
+      "자동차 부품",
+      "전동화",
+      "자율주행",
+      "친환경 플랫폼"
+    ],
+    "welfare_signals": [
+      {
+        "signal": "복리후생에 대한 정보는 제한적이나, 일부 채용 공고에서 의료보험 및 퇴직금 언급",
+        "confidence": "신호",
+        "evidence_links": [
+          "https://www.foodnjob.com/cms/s01_v.php?idx=558215"
+        ]
+      },
+      {
+        "signal": "사내 근로 복지 기금 운영",
+        "confidence": "확인 필요 포인트",
+        "evidence_links": [
+          "https://bizno.net/article/1348209993"
+        ]
+      }
+    ],
+    "work_life_notes": [
+      "근무 형태에 대한 구체적인 정보는 부족하지만, 일부 채용 공고에서 주 5일 근무 언급."
+    ],
+    "likely_interview_questions": [
+      {
+        "question": "에스엘의 주요 제품은 무엇인가요?",
+        "intent": "제품 이해도 확인",
+        "answer_direction": [
+          "자동차 부품",
+          "전동화 부품",
+          "자율주행 관련 기술"
+        ],
+        "evidence_links": [
+          "https://v.daum.net/v/46fwwKZwaz",
+          "https://autoelectronics.co.kr/article/articleView.asp?idx=57"
+        ]
+      },
+      {
+        "question": "회사의 성장 전략은 무엇인가요?",
+        "intent": "비즈니스 전략 이해도 확인",
+        "answer_direction": [
+          "전동화 및 자율주행 부품 확대",
+          "친환경 플랫폼으로의 전환"
+        ],
+        "evidence_links": [
+          "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456322"
+        ]
+      }
+    ],
+    "answer_strategy": [
+      "회사의 비전과 제품에 대한 깊은 이해를 바탕으로 답변 준비.",
+      "업계 동향 및 경쟁사와의 비교를 통해 에스엘의 위치를 강조."
+    ],
+    "generated_queries": [
+      "에스엘",
+      "에스엘 기업정보",
+      "에스엘 사업 제품",
+      "에스엘 채용 복리후생",
+      "에스엘 복지",
+      "에스엘 근무제도",
+      "에스엘 면접"
+    ],
+    "sources": [
+      {
+        "title": "단순 부품사에서 친환경 플랫폼으로... 한온시스템, 단기 가치 재평가 ...",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456322",
+        "outlet": "pinpointnews.co.kr",
+        "source_type": "news"
+      },
+      {
+        "title": "에스엘, 현대차그룹 '신차효과' 성장궤도 진입",
+        "link": "https://v.daum.net/v/XkhnaIZvE3",
+        "outlet": "v.daum.net",
+        "source_type": "news"
+      },
+      {
+        "title": "에스엘 플랫폼(신영그룹 계열사) 커뮤니티 운영 부문 경력 채용",
+        "link": "https://www.jobkorea.co.kr/Recruit/GI_Read/49179567?Oem_Code=C1",
+        "outlet": "jobkorea.co.kr",
+        "source_type": "career"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "f63fde38d04a7ebd6e468116fa1c68231fa1d5cb26c4e113bd7d80fd0b8d6e62": {
+    "company": "에스엘",
+    "likely_interview_questions": [
+      {
+        "question": "에스엘이 자율주행 및 전동화 부품 확대에 어떻게 기여할 수 있다고 생각하나요?",
+        "intent": "지원자의 업계 이해도 및 기여 가능성 평가",
+        "answer_outline": [
+          "자율주행 및 전동화 기술의 중요성 설명",
+          "에스엘의 현재 기술력 및 제품 라인업 언급",
+          "자신의 경험과 기술이 어떻게 기여할 수 있을지 구체적으로 설명"
+        ],
+        "evidence_links": [
+          "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456322"
+        ]
+      },
+      {
+        "question": "최근 에스엘의 주가가 상승세를 보였는데, 그 이유는 무엇이라고 생각하나요?",
+        "intent": "시장 동향 및 회사 이해도 평가",
+        "answer_outline": [
+          "자동차 전장 부품 시장의 성장 설명",
+          "자율주행 및 전동화 부품의 수요 증가 언급",
+          "에스엘의 전략적 방향성과 그에 따른 주가 상승 설명"
+        ],
+        "evidence_links": [
+          "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456322"
+        ]
+      },
+      {
+        "question": "에스엘이 현재 투자심리 위축의 영향을 받고 있다고 하는데, 이에 대한 당신의 의견은 무엇인가요?",
+        "intent": "위기 관리 및 분석 능력 평가",
+        "answer_outline": [
+          "투자심리 위축의 원인 분석",
+          "에스엘의 대응 전략 제안",
+          "개인적인 의견 및 해결 방안 제시"
+        ],
+        "evidence_links": [
+          "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456191"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "단순 부품사에서 친환경 플랫폼으로... 한온시스템, 단기 가치 재평가 ...",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456322",
+        "published": "Fri, 29 May 2026 15:58:00 +0900",
+        "outlet": "pinpointnews.co.kr"
+      },
+      {
+        "title": "에이엔피, 자동차 전장화 열풍 타고 PCB·부품 경쟁력 재부각",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456191",
+        "published": "Fri, 29 May 2026 10:08:00 +0900",
+        "outlet": "pinpointnews.co.kr"
+      },
+      {
+        "title": "국내 1000대 기업 본사 수도권에 70% 집중…서울 강남구 '최다'",
+        "link": "https://www.ajunews.com/view/20260528114352218",
+        "published": "Thu, 28 May 2026 18:02:00 +0900",
+        "outlet": "ajunews.com"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "85ce63a557e4286a1c3b7fdb1be748be4a65d3c52f677b38e15da90c76cb30c0": {
+    "company": "티에이치엔",
+    "highlights": [
+      {
+        "claim": "티에이치엔은 전기차 및 로봇 시장으로의 사업 확장이 기대된다.",
+        "why_it_matters": "전기차와 로봇 산업의 성장 가능성은 회사의 매출 증가와 시장 점유율 확대에 기여할 수 있다.",
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341317",
+          "https://www.asiatime.co.kr/article/20260526500162"
+        ]
+      },
+      {
+        "claim": "티에이치엔은 현대차그룹의 주요 고객사로, 차량용 와이어링 하네스를 주력으로 생산하고 있다.",
+        "why_it_matters": "현대차그룹과의 관계는 안정적인 매출원으로 작용하며, 자동차 전장부품 시장에서의 경쟁력을 강화한다.",
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341495"
+        ]
+      },
+      {
+        "claim": "티에이치엔의 직원 평균 연봉은 7100만 원으로, 업계에서 높은 수준이다.",
+        "why_it_matters": "높은 연봉은 인재 유치와 유지에 긍정적인 영향을 미치며, 회사의 경쟁력을 높인다.",
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341436"
+        ]
+      }
+    ],
+    "risks_and_watchouts": [
+      {
+        "item": "자동차 부품 시장의 경쟁 심화",
+        "evidence_links": [
+          "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456191"
+        ]
+      },
+      {
+        "item": "전기차 및 로봇 시장의 변동성",
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341317"
+        ]
+      }
+    ],
+    "keywords_to_prepare": [
+      "전기차",
+      "로봇 산업",
+      "와이어링 하네스",
+      "현대차그룹",
+      "경쟁력"
+    ],
+    "sources": [
+      {
+        "title": "에이엔피, 자동차 전장화 열풍 타고 PCB·부품 경쟁력 재부각",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456191",
+        "published": "Fri, 29 May 2026 10:08:00 +0900",
+        "outlet": "pinpointnews.co.kr"
+      },
+      {
+        "title": "\"車 부품사 로봇 만든다\"…현대차 중견 밴더사들도 '들썩들썩'",
+        "link": "https://www.greened.kr/news/articleView.html?idxno=341495",
+        "published": "Thu, 28 May 2026 15:33:00 +0900",
+        "outlet": "greened.kr"
+      },
+      {
+        "title": "[데이터 뉴스룸] 에너지 기업 중 직원 급여 '억'소리 나는 9곳은?…HD현...",
+        "link": "https://www.greened.kr/news/articleView.html?idxno=341436",
+        "published": "Thu, 28 May 2026 09:11:00 +0900",
+        "outlet": "greened.kr"
+      },
+      {
+        "title": "로봇 신경망·두뇌·근육까지…대구경북 소부장, 휴머노이드 밸류체인 ...",
+        "link": "https://n.news.naver.com/mnews/article/088/0001011818?sid=101",
+        "published": "Wed, 27 May 2026 14:34:00 +0900",
+        "outlet": "imaeil.com"
+      },
+      {
+        "title": "[급등락주 짚어보기] AI·양자컴퓨팅 관련주 상한가⋯SK네트웍스ㆍ삼화...",
+        "link": "https://www.etoday.co.kr/news/view/2587941",
+        "published": "Tue, 26 May 2026 19:18:00 +0900",
+        "outlet": "etoday.co.kr"
+      },
+      {
+        "title": "\" 티에이치엔 , 전기차·로봇 수혜 기대…초저평가 부각\"-리서치알음",
+        "link": "https://www.greened.kr/news/articleView.html?idxno=341317",
+        "published": "Tue, 26 May 2026 14:26:00 +0900",
+        "outlet": "greened.kr"
+      },
+      {
+        "title": "[특징주] 티에이치엔 , \"로봇 시장으로 사업 확장 가능성\" '상한가'",
+        "link": "https://www.asiatime.co.kr/article/20260526500162",
+        "published": "Tue, 26 May 2026 11:40:00 +0900",
+        "outlet": "asiatime.co.kr"
+      },
+      {
+        "title": "한주라이트메탈 주가 더 내달린다… 전기차 경량화·알루미늄 부품 공급...",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=455236",
+        "published": "Tue, 26 May 2026 09:40:00 +0900",
+        "outlet": "pinpointnews.co.kr"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "1793073b97d32f308a0d1d15231c72883a546a1682f19dc26f3411768f9edcd3": {
+    "company": "티에이치엔",
+    "company_overview": [
+      "티에이치엔은 1986년에 설립된 자동차 전장부품 전문 기업으로, 주로 차량용 와이어링 하네스를 생산하고 있습니다.",
+      "현대차, 기아, 현대모비스 등과 같은 대형 자동차 제조업체를 주요 고객으로 두고 있습니다."
+    ],
+    "recent_issues": [
+      {
+        "point": "채철 회장의 건강 악화와 지분 승계 문제",
+        "evidence_links": [
+          "https://v.daum.net/v/V9oPodFYYH",
+          "https://v.daum.net/v/3MmphOPKCM"
+        ]
+      }
+    ],
+    "business_keywords": [
+      "자동차 전장부품",
+      "와이어링 하네스",
+      "로봇 시장",
+      "전기차",
+      "고부가가치 제품"
+    ],
+    "welfare_signals": [
+      {
+        "signal": "티에이치엔은 지역 사회에 기부를 통해 사회적 책임을 다하고 있다는 신호가 있습니다.",
+        "confidence": "신호",
+        "evidence_links": [
+          "http://www.gunponews.net/front/news/view.do?articleId=ARTICLE_00020361",
+          "http://www.dalseonews.co.kr/front/news/view.do?articleId=ARTICLE_00020469"
+        ]
+      }
+    ],
+    "work_life_notes": [
+      "근무환경과 복리후생에 대한 구체적인 정보는 부족하여 확인이 필요합니다."
+    ],
+    "likely_interview_questions": [
+      {
+        "question": "티에이치엔에서 어떤 기술적 도전에 직면할 것이라고 생각하나요?",
+        "intent": "지원자의 기술적 이해도 및 문제 해결 능력 평가",
+        "answer_direction": [
+          "전기차 및 로봇 관련 기술",
+          "와이어링 하네스의 중요성"
+        ],
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341495",
+          "https://www.greened.kr/news/articleView.html?idxno=341317"
+        ]
+      }
+    ],
+    "answer_strategy": [
+      "회사의 주요 제품과 시장 동향에 대한 이해를 바탕으로 답변 준비",
+      "기술적 도전과 관련된 최신 트렌드에 대한 지식 활용"
+    ],
+    "generated_queries": [
+      "티에이치엔 기업정보",
+      "티에이치엔 채용 복리후생",
+      "티에이치엔 면접 질문"
+    ],
+    "sources": [
+      {
+        "title": "에이엔피, 자동차 전장화 열풍 타고 PCB·부품 경쟁력 재부각",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456191",
+        "outlet": "pinpointnews.co.kr",
+        "source_type": "news"
+      },
+      {
+        "title": "티에이치엔 A019180 기업 분석 리포트 및 투자 정보(IR)",
+        "link": "https://www.forwarder.kr/krx/A019180",
+        "outlet": "forwarder.kr",
+        "source_type": "public"
+      },
+      {
+        "title": "티에이치엔 기업 정보",
+        "link": "https://www.jobkorea.co.kr/company/1336832/Info",
+        "outlet": "jobkorea.co.kr",
+        "source_type": "career"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "2e16577cf7a8510d12b656e01e29a6188abc18491c93b023623f9f691d77b812": {
+    "company": "티에이치엔",
+    "likely_interview_questions": [
+      {
+        "question": "티에이치엔의 주요 제품은 무엇이며, 이 제품들이 자동차 산업에서 어떤 역할을 하는지 설명해 주세요.",
+        "intent": "제품 이해도 확인",
+        "answer_outline": [
+          "주요 제품: 차량용 와이어링 하네스",
+          "자동차 전장부품으로서의 역할",
+          "고전압 하네스 및 커넥터 집합체의 중요성"
+        ],
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341495",
+          "https://n.news.naver.com/mnews/article/088/0001011818?sid=101"
+        ]
+      },
+      {
+        "question": "전기차와 로봇 산업의 성장에 따라 티에이치엔이 어떤 기회를 가질 것으로 보나요?",
+        "intent": "산업 전망 및 전략 이해도 확인",
+        "answer_outline": [
+          "전기차 수요 증가에 따른 본업 성장",
+          "로봇 산업으로의 사업 확장 가능성",
+          "친환경차 중심의 제품 믹스 개선"
+        ],
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341317",
+          "https://www.asiatime.co.kr/article/20260526500162"
+        ]
+      },
+      {
+        "question": "최근 티에이치엔의 주가가 급등한 이유는 무엇인가요?",
+        "intent": "시장 반응 및 기업 가치 이해도 확인",
+        "answer_outline": [
+          "로봇 시장으로의 사업 확장 기대",
+          "현대차그룹 내 점유율 확대",
+          "전기차용 와이어링 하네스 수요 증가"
+        ],
+        "evidence_links": [
+          "https://www.etoday.co.kr/news/view/2587941",
+          "https://www.pinpointnews.co.kr/news/articleView.html?idxno=455236"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "에이엔피, 자동차 전장화 열풍 타고 PCB·부품 경쟁력 재부각",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456191",
+        "published": "Fri, 29 May 2026 10:08:00 +0900",
+        "outlet": "pinpointnews.co.kr"
+      },
+      {
+        "title": "\"車 부품사 로봇 만든다\"…현대차 중견 밴더사들도 '들썩들썩'",
+        "link": "https://www.greened.kr/news/articleView.html?idxno=341495",
+        "published": "Thu, 28 May 2026 15:33:00 +0900",
+        "outlet": "greened.kr"
+      },
+      {
+        "title": "[데이터 뉴스룸] 에너지 기업 중 직원 급여 '억'소리 나는 9곳은?…HD현...",
+        "link": "https://www.greened.kr/news/articleView.html?idxno=341436",
+        "published": "Thu, 28 May 2026 09:11:00 +0900",
+        "outlet": "greened.kr"
+      },
+      {
+        "title": "로봇 신경망·두뇌·근육까지…대구경북 소부장, 휴머노이드 밸류체인 ...",
+        "link": "https://n.news.naver.com/mnews/article/088/0001011818?sid=101",
+        "published": "Wed, 27 May 2026 14:34:00 +0900",
+        "outlet": "imaeil.com"
+      },
+      {
+        "title": "[급등락주 짚어보기] AI·양자컴퓨팅 관련주 상한가⋯SK네트웍스ㆍ삼화...",
+        "link": "https://www.etoday.co.kr/news/view/2587941",
+        "published": "Tue, 26 May 2026 19:18:00 +0900",
+        "outlet": "etoday.co.kr"
+      },
+      {
+        "title": "\" 티에이치엔 , 전기차·로봇 수혜 기대…초저평가 부각\"-리서치알음",
+        "link": "https://www.greened.kr/news/articleView.html?idxno=341317",
+        "published": "Tue, 26 May 2026 14:26:00 +0900",
+        "outlet": "greened.kr"
+      },
+      {
+        "title": "[특징주] 티에이치엔 , \"로봇 시장으로 사업 확장 가능성\" '상한가'",
+        "link": "https://www.asiatime.co.kr/article/20260526500162",
+        "published": "Tue, 26 May 2026 11:40:00 +0900",
+        "outlet": "asiatime.co.kr"
+      },
+      {
+        "title": "한주라이트메탈 주가 더 내달린다… 전기차 경량화·알루미늄 부품 공급...",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=455236",
+        "published": "Tue, 26 May 2026 09:40:00 +0900",
+        "outlet": "pinpointnews.co.kr"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "bb5a03d9a139828d53718c5f4e40b58b85115a9e397b09f40aa9f52e2711d469": {
+    "company": "티에이치엔",
+    "company_overview": [
+      "티에이치엔은 1986년에 설립된 자동차 전장부품 업체로, 차량용 와이어링 하네스를 주력으로 생산하고 있습니다.",
+      "현대차, 기아, 현대모비스 등을 고객사로 두고 있으며, 최근 로봇 시장으로의 사업 확장 가능성이 주목받고 있습니다."
+    ],
+    "recent_issues": [
+      {
+        "point": "티에이치엔의 전기차 및 로봇 시장 진출 기대감",
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341495",
+          "https://www.greened.kr/news/articleView.html?idxno=341317"
+        ]
+      },
+      {
+        "point": "임직원 인건비가 500억 원을 상회",
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341436"
+        ]
+      }
+    ],
+    "business_keywords": [
+      "자동차 전장부품",
+      "와이어링 하네스",
+      "로봇 시장",
+      "전기차",
+      "고부가가치 제품"
+    ],
+    "welfare_signals": [
+      {
+        "signal": "청년들이 근무할 만한 곳으로 선정된 기업",
+        "confidence": "신호",
+        "evidence_links": [
+          "https://www.jobkorea.co.kr/company/1336832/Info"
+        ]
+      },
+      {
+        "signal": "복리후생으로 건강검진, 자녀학자금 지원 등 제공",
+        "confidence": "신호",
+        "evidence_links": [
+          "https://www.saramin.co.kr/zf_user/jobs/relay/pop-view?rec_idx=46006587"
+        ]
+      }
+    ],
+    "work_life_notes": [
+      "근무환경에 대한 정보가 부족하여 확인이 필요합니다."
+    ],
+    "likely_interview_questions": [
+      {
+        "question": "티에이치엔에서 어떤 역할을 하고 싶습니까?",
+        "intent": "지원자의 직무에 대한 이해도 확인",
+        "answer_direction": [
+          "직무 관련 경험",
+          "회사의 비전과 목표에 대한 이해"
+        ],
+        "evidence_links": []
+      },
+      {
+        "question": "전기차 및 로봇 시장에 대한 본인의 생각은 무엇입니까?",
+        "intent": "산업에 대한 관심과 이해도 평가",
+        "answer_direction": [
+          "시장 트렌드",
+          "회사의 성장 가능성"
+        ],
+        "evidence_links": []
+      }
+    ],
+    "answer_strategy": [
+      "회사의 비전과 목표에 맞춘 답변 준비",
+      "산업 동향에 대한 최신 정보 숙지"
+    ],
+    "generated_queries": [
+      "티에이치엔",
+      "티에이치엔 기업정보",
+      "티에이치엔 사업 제품",
+      "티에이치엔 채용 복리후생",
+      "티에이치엔 면접"
+    ],
+    "sources": [
+      {
+        "title": "에이엔피, 자동차 전장화 열풍 타고 PCB·부품 경쟁력 재부각",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456191",
+        "outlet": "pinpointnews.co.kr",
+        "source_type": "news"
+      },
+      {
+        "title": "\"車 부품사 로봇 만든다\"…현대차 중견 밴더사들도 '들썩들썩'",
+        "link": "https://www.greened.kr/news/articleView.html?idxno=341495",
+        "outlet": "greened.kr",
+        "source_type": "news"
+      },
+      {
+        "title": "[데이터 뉴스룸] 에너지 기업 중 직원 급여 '억'소리 나는 9곳은?",
+        "link": "https://www.greened.kr/news/articleView.html?idxno=341436",
+        "outlet": "greened.kr",
+        "source_type": "news"
+      },
+      {
+        "title": "티에이치엔 A019180 기업 분석 리포트 및 투자 정보(IR)",
+        "link": "https://www.forwarder.kr/krx/A019180",
+        "outlet": "forwarder.kr",
+        "source_type": "public"
+      },
+      {
+        "title": "(주) 티에이치엔 기업 정보",
+        "link": "https://www.jobkorea.co.kr/company/1336832/Info",
+        "outlet": "jobkorea.co.kr",
+        "source_type": "career"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "319de3ec47fda7c57e530048f0f392249a15f1fcbb21b5b92e51cbdad5da33b1": {
+    "company": "티에이치엔",
+    "highlights": [
+      {
+        "claim": "티에이치엔은 전기차 및 로봇 시장으로의 사업 확장이 기대된다.",
+        "why_it_matters": "전기차와 로봇 산업의 성장은 티에이치엔의 매출 증가와 시장 점유율 확대에 기여할 수 있다.",
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341317",
+          "https://www.asiatime.co.kr/article/20260526500162"
+        ]
+      },
+      {
+        "claim": "티에이치엔의 직원 평균 연봉은 7100만 원으로, 업계에서 높은 수준이다.",
+        "why_it_matters": "높은 연봉은 인재 유치와 유지에 긍정적인 영향을 미치며, 회사의 경쟁력을 강화할 수 있다.",
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341436"
+        ]
+      },
+      {
+        "claim": "티에이치엔은 현대차그룹의 주요 고객사로, 자동차 전장부품을 주력으로 생산하고 있다.",
+        "why_it_matters": "현대차그룹과의 관계는 안정적인 매출원으로 작용하며, 시장에서의 신뢰도를 높인다.",
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341495"
+        ]
+      }
+    ],
+    "risks_and_watchouts": [
+      {
+        "item": "투자 심리가 위축된 상태로, 중소형주에 대한 차익 실현 매물이 집중되고 있다.",
+        "evidence_links": [
+          "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456191"
+        ]
+      }
+    ],
+    "keywords_to_prepare": [
+      "전기차",
+      "로봇 산업",
+      "자동차 전장부품",
+      "현대차그룹",
+      "인건비"
+    ],
+    "sources": [
+      {
+        "title": "에이엔피, 자동차 전장화 열풍 타고 PCB·부품 경쟁력 재부각",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456191",
+        "published": "Fri, 29 May 2026 10:08:00 +0900",
+        "outlet": "pinpointnews.co.kr"
+      },
+      {
+        "title": "\"車 부품사 로봇 만든다\"…현대차 중견 밴더사들도 '들썩들썩'",
+        "link": "https://www.greened.kr/news/articleView.html?idxno=341495",
+        "published": "Thu, 28 May 2026 15:33:00 +0900",
+        "outlet": "greened.kr"
+      },
+      {
+        "title": "[데이터 뉴스룸] 에너지 기업 중 직원 급여 '억'소리 나는 9곳은?…HD현...",
+        "link": "https://www.greened.kr/news/articleView.html?idxno=341436",
+        "published": "Thu, 28 May 2026 09:11:00 +0900",
+        "outlet": "greened.kr"
+      },
+      {
+        "title": "로봇 신경망·두뇌·근육까지…대구경북 소부장, 휴머노이드 밸류체인 ...",
+        "link": "https://n.news.naver.com/mnews/article/088/0001011818?sid=101",
+        "published": "Wed, 27 May 2026 14:34:00 +0900",
+        "outlet": "imaeil.com"
+      },
+      {
+        "title": "[급등락주 짚어보기] AI·양자컴퓨팅 관련주 상한가⋯SK네트웍스ㆍ삼화...",
+        "link": "https://www.etoday.co.kr/news/view/2587941",
+        "published": "Tue, 26 May 2026 19:18:00 +0900",
+        "outlet": "etoday.co.kr"
+      },
+      {
+        "title": "\" 티에이치엔 , 전기차·로봇 수혜 기대…초저평가 부각\"-리서치알음",
+        "link": "https://www.greened.kr/news/articleView.html?idxno=341317",
+        "published": "Tue, 26 May 2026 14:26:00 +0900",
+        "outlet": "greened.kr"
+      },
+      {
+        "title": "[특징주] 티에이치엔 , \"로봇 시장으로 사업 확장 가능성\" '상한가'",
+        "link": "https://www.asiatime.co.kr/article/20260526500162",
+        "published": "Tue, 26 May 2026 11:40:00 +0900",
+        "outlet": "asiatime.co.kr"
+      },
+      {
+        "title": "한주라이트메탈 주가 더 내달린다… 전기차 경량화·알루미늄 부품 공급...",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=455236",
+        "published": "Tue, 26 May 2026 09:40:00 +0900",
+        "outlet": "pinpointnews.co.kr"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "7c9a5bdf674be31ca0bb67e2470bb59bd1ebd354b2025f0ae901b556680b86aa": {
+    "company": "티에이치엔",
+    "company_overview": [
+      "티에이치엔은 1986년에 설립된 자동차 전장부품 업체로, 차량용 와이어링 하네스를 주력으로 생산하고 있다.",
+      "현대차·기아·현대모비스 등을 고객사로 두고 있으며, 최근 로봇 산업으로의 사업 확장이 기대되고 있다."
+    ],
+    "recent_issues": [
+      {
+        "point": "티에이치엔의 전기차 및 로봇 시장 진출 가능성이 주목받고 있다.",
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341495",
+          "https://www.greened.kr/news/articleView.html?idxno=341317"
+        ]
+      }
+    ],
+    "business_keywords": [
+      "자동차 전장부품",
+      "와이어링 하네스",
+      "로봇 산업",
+      "전기차"
+    ],
+    "welfare_signals": [
+      {
+        "signal": "청년들이 근무할 만한 곳으로 선정된 기업",
+        "confidence": "신뢰할 수 있는 정보",
+        "evidence_links": [
+          "https://www.jobkorea.co.kr/company/1336832/Info"
+        ]
+      },
+      {
+        "signal": "장기근속수당, 통근버스 운영, 멘토링제도 등 다양한 복리후생 제공",
+        "confidence": "신뢰할 수 있는 정보",
+        "evidence_links": [
+          "https://www.saramin.co.kr/zf_user/company-info/view/csn/aHc5ZTBEbkJoQ1F5WXF3MldzNWtVZz09/company_nm/(%EC%A3%BC)%ED%8B%B0%EC%97%90%EC%9D%B4%EC%B9%98%EC%97%94"
+        ]
+      }
+    ],
+    "work_life_notes": [
+      "주 5일 근무제",
+      "구내식당 운영"
+    ],
+    "likely_interview_questions": [
+      {
+        "question": "티에이치엔의 주요 제품은 무엇인가요?",
+        "intent": "제품 이해도 확인",
+        "answer_direction": [
+          "와이어링 하네스",
+          "전장부품"
+        ],
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341495"
+        ]
+      },
+      {
+        "question": "회사의 비전은 무엇인가요?",
+        "intent": "장기적 목표 이해도 확인",
+        "answer_direction": [
+          "로봇 산업 진출",
+          "전기차 부품 생산 확대"
+        ],
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341317"
+        ]
+      }
+    ],
+    "answer_strategy": [
+      "회사의 비전과 제품에 대한 깊은 이해를 바탕으로 답변 준비",
+      "복리후생과 근무환경에 대한 긍정적인 경험 공유"
+    ],
+    "generated_queries": [
+      "티에이치엔 기업정보",
+      "티에이치엔 복리후생",
+      "티에이치엔 면접 질문"
+    ],
+    "sources": [
+      {
+        "title": "티에이치엔 A019180 기업 분석 리포트 및 투자 정보(IR)",
+        "link": "https://www.forwarder.kr/krx/A019180",
+        "outlet": "forwarder.kr",
+        "source_type": "public"
+      },
+      {
+        "title": "(주) 티에이치엔 기업 정보 - 직원수, 근무환경, 복리후생 등 | 잡코리아",
+        "link": "https://www.jobkorea.co.kr/company/1336832/Info",
+        "outlet": "jobkorea.co.kr",
+        "source_type": "company_info"
+      },
+      {
+        "title": "(주) 티에이치엔 기업 정보 - 직원수, 근무환경, 복리후생 등 | 사람인",
+        "link": "https://www.saramin.co.kr/zf_user/company-info/view/csn/aHc5ZTBEbkJoQ1F5WXF3MldzNWtVZz09/company_nm/(%EC%A3%BC)%ED%8B%B0%EC%97%90%EC%9D%B4%EC%B9%98%EC%97%94",
+        "outlet": "saramin.co.kr",
+        "source_type": "company_info"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "5b7a630a93ace30a5c4c16b6c722232cb43918bb937eecf8d028c86f35708b3c": {
+    "company": "티에이치엔",
+    "likely_interview_questions": [
+      {
+        "question": "티에이치엔의 주요 제품은 무엇이며, 이 제품들이 시장에서 어떤 경쟁력을 가지고 있다고 생각하나요?",
+        "intent": "제품 이해도 및 시장 분석",
+        "answer_outline": [
+          "주요 제품은 차량용 와이어링 하네스이다.",
+          "전기차 및 로봇 산업의 성장과 관련하여 수요가 증가하고 있다.",
+          "현대차 및 기아와 같은 대형 고객사를 보유하고 있어 안정적인 매출 기반이 있다."
+        ],
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341495",
+          "https://www.greened.kr/news/articleView.html?idxno=341317"
+        ]
+      },
+      {
+        "question": "전기차 및 로봇 산업의 확장 가능성에 대해 어떻게 생각하나요?",
+        "intent": "산업 트렌드 이해도",
+        "answer_outline": [
+          "전기차의 수요 증가로 인해 와이어링 하네스의 필요성이 커지고 있다.",
+          "로봇 시장으로의 사업 확장이 기대되고 있다.",
+          "이러한 변화에 대응하기 위한 전략이 필요하다."
+        ],
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341317",
+          "https://www.asiatime.co.kr/article/20260526500162"
+        ]
+      },
+      {
+        "question": "티에이치엔의 최근 주가 상승 원인은 무엇이라고 생각하나요?",
+        "intent": "시장 반응 분석",
+        "answer_outline": [
+          "전기차 및 로봇 산업의 성장 기대감이 반영되었다.",
+          "친환경차 중심의 제품 믹스 개선이 긍정적으로 작용하고 있다.",
+          "투자 심리가 회복되고 있는 상황이다."
+        ],
+        "evidence_links": [
+          "https://www.etoday.co.kr/news/view/2587941",
+          "https://www.pinpointnews.co.kr/news/articleView.html?idxno=455236"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "에이엔피, 자동차 전장화 열풍 타고 PCB·부품 경쟁력 재부각",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456191",
+        "published": "Fri, 29 May 2026 10:08:00 +0900",
+        "outlet": "pinpointnews.co.kr"
+      },
+      {
+        "title": "\"車 부품사 로봇 만든다\"…현대차 중견 밴더사들도 '들썩들썩'",
+        "link": "https://www.greened.kr/news/articleView.html?idxno=341495",
+        "published": "Thu, 28 May 2026 15:33:00 +0900",
+        "outlet": "greened.kr"
+      },
+      {
+        "title": "[데이터 뉴스룸] 에너지 기업 중 직원 급여 '억'소리 나는 9곳은?…HD현...",
+        "link": "https://www.greened.kr/news/articleView.html?idxno=341436",
+        "published": "Thu, 28 May 2026 09:11:00 +0900",
+        "outlet": "greened.kr"
+      },
+      {
+        "title": "로봇 신경망·두뇌·근육까지…대구경북 소부장, 휴머노이드 밸류체인 ...",
+        "link": "https://n.news.naver.com/mnews/article/088/0001011818?sid=101",
+        "published": "Wed, 27 May 2026 14:34:00 +0900",
+        "outlet": "imaeil.com"
+      },
+      {
+        "title": "[급등락주 짚어보기] AI·양자컴퓨팅 관련주 상한가⋯SK네트웍스ㆍ삼화...",
+        "link": "https://www.etoday.co.kr/news/view/2587941",
+        "published": "Tue, 26 May 2026 19:18:00 +0900",
+        "outlet": "etoday.co.kr"
+      },
+      {
+        "title": "\" 티에이치엔 , 전기차·로봇 수혜 기대…초저평가 부각\"-리서치알음",
+        "link": "https://www.greened.kr/news/articleView.html?idxno=341317",
+        "published": "Tue, 26 May 2026 14:26:00 +0900",
+        "outlet": "greened.kr"
+      },
+      {
+        "title": "[특징주] 티에이치엔 , \"로봇 시장으로 사업 확장 가능성\" '상한가'",
+        "link": "https://www.asiatime.co.kr/article/20260526500162",
+        "published": "Tue, 26 May 2026 11:40:00 +0900",
+        "outlet": "asiatime.co.kr"
+      },
+      {
+        "title": "한주라이트메탈 주가 더 내달린다… 전기차 경량화·알루미늄 부품 공급...",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=455236",
+        "published": "Tue, 26 May 2026 09:40:00 +0900",
+        "outlet": "pinpointnews.co.kr"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "10ab5af18e0c4de9f8c3e6eff6d533d9d6713cd95477972458af7af9c61defe7": {
+    "company": "티에이치엔",
+    "highlights": [
+      {
+        "claim": "티에이치엔은 전기차 및 로봇 산업에서의 성장 가능성이 높다.",
+        "why_it_matters": "전기차와 로봇 시장의 확대는 티에이치엔의 본업 성장에 긍정적인 영향을 미칠 것으로 예상된다.",
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341317",
+          "https://www.asiatime.co.kr/article/20260526500162"
+        ]
+      },
+      {
+        "claim": "티에이치엔은 현대차그룹의 주요 고객사로, 차량용 와이어링 하네스를 주력으로 생산하고 있다.",
+        "why_it_matters": "현대차그룹과의 관계는 안정적인 매출원으로 작용하며, 전기차 수요 증가에 따른 성장 기회를 제공한다.",
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341495",
+          "https://www.greened.kr/news/articleView.html?idxno=341317"
+        ]
+      },
+      {
+        "claim": "티에이치엔의 직원 평균 연봉은 7100만 원으로, 업계에서 높은 수준이다.",
+        "why_it_matters": "높은 연봉은 인재 유치와 유지에 긍정적인 영향을 미치며, 회사의 경쟁력을 강화한다.",
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341436"
+        ]
+      }
+    ],
+    "risks_and_watchouts": [
+      {
+        "item": "자동차 부품 시장의 경쟁 심화",
+        "evidence_links": [
+          "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456191"
+        ]
+      },
+      {
+        "item": "투자 심리 위축",
+        "evidence_links": [
+          "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456191"
+        ]
+      }
+    ],
+    "keywords_to_prepare": [
+      "전기차",
+      "로봇 산업",
+      "와이어링 하네스",
+      "현대차그룹",
+      "경쟁 심화"
+    ],
+    "sources": [
+      {
+        "title": "에이엔피, 자동차 전장화 열풍 타고 PCB·부품 경쟁력 재부각",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456191",
+        "published": "Fri, 29 May 2026 10:08:00 +0900",
+        "outlet": "pinpointnews.co.kr"
+      },
+      {
+        "title": "\"車 부품사 로봇 만든다\"…현대차 중견 밴더사들도 '들썩들썩'",
+        "link": "https://www.greened.kr/news/articleView.html?idxno=341495",
+        "published": "Thu, 28 May 2026 15:33:00 +0900",
+        "outlet": "greened.kr"
+      },
+      {
+        "title": "[데이터 뉴스룸] 에너지 기업 중 직원 급여 '억'소리 나는 9곳은?…HD현...",
+        "link": "https://www.greened.kr/news/articleView.html?idxno=341436",
+        "published": "Thu, 28 May 2026 09:11:00 +0900",
+        "outlet": "greened.kr"
+      },
+      {
+        "title": "로봇 신경망·두뇌·근육까지…대구경북 소부장, 휴머노이드 밸류체인 ...",
+        "link": "https://n.news.naver.com/mnews/article/088/0001011818?sid=101",
+        "published": "Wed, 27 May 2026 14:34:00 +0900",
+        "outlet": "imaeil.com"
+      },
+      {
+        "title": "[급등락주 짚어보기] AI·양자컴퓨팅 관련주 상한가⋯SK네트웍스ㆍ삼화...",
+        "link": "https://www.etoday.co.kr/news/view/2587941",
+        "published": "Tue, 26 May 2026 19:18:00 +0900",
+        "outlet": "etoday.co.kr"
+      },
+      {
+        "title": "\" 티에이치엔 , 전기차·로봇 수혜 기대…초저평가 부각\"-리서치알음",
+        "link": "https://www.greened.kr/news/articleView.html?idxno=341317",
+        "published": "Tue, 26 May 2026 14:26:00 +0900",
+        "outlet": "greened.kr"
+      },
+      {
+        "title": "[특징주] 티에이치엔 , \"로봇 시장으로 사업 확장 가능성\" '상한가'",
+        "link": "https://www.asiatime.co.kr/article/20260526500162",
+        "published": "Tue, 26 May 2026 11:40:00 +0900",
+        "outlet": "asiatime.co.kr"
+      },
+      {
+        "title": "한주라이트메탈 주가 더 내달린다… 전기차 경량화·알루미늄 부품 공급...",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=455236",
+        "published": "Tue, 26 May 2026 09:40:00 +0900",
+        "outlet": "pinpointnews.co.kr"
+      }
+    ],
+    "answer_strategy": [],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "cb83b65fdf2692887332e099ee307e7a9ea4daf61a0afff21262020bf1b5e25e": {
+    "company": "티에이치엔",
+    "company_overview": [
+      "티에이치엔은 1986년에 설립된 자동차 전장부품 업체로, 주로 차량용 와이어링 하네스를 생산하고 있습니다.",
+      "현대차, 기아, 현대모비스 등을 고객사로 두고 있으며, 최근 로봇 산업으로의 사업 확장 가능성이 주목받고 있습니다."
+    ],
+    "recent_issues": [
+      {
+        "point": "티에이치엔의 전기차 및 로봇 시장 진출 기대감이 높아지고 있습니다.",
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341495",
+          "https://www.greened.kr/news/articleView.html?idxno=341317"
+        ]
+      },
+      {
+        "point": "2026년 임직원 인건비가 602억 원을 초과하며, 연봉이 7100만 원에 달하는 것으로 보도되었습니다.",
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341436"
+        ]
+      }
+    ],
+    "business_keywords": [
+      "자동차 전장부품",
+      "와이어링 하네스",
+      "로봇 산업",
+      "전기차",
+      "고부가가치 제품"
+    ],
+    "welfare_signals": [
+      {
+        "signal": "복리후생으로 국민연금, 건강보험, 고용보험, 산재보험이 포함되어 있습니다.",
+        "confidence": "확인 필요",
+        "evidence_links": [
+          "https://www.jobkorea.co.kr/company/1336832/Info"
+        ]
+      },
+      {
+        "signal": "장기근속수당, 통근버스 운영, 멘토링 제도, 포상휴가 등의 복지 제도가 언급되었습니다.",
+        "confidence": "확인 필요",
+        "evidence_links": [
+          "https://www.saramin.co.kr/zf_user/company-info/view/csn/aHc5ZTBEbkJoQ1F5WXF3MldzNWtVZz09/company_nm/(%EC%A3%BC)%ED%8B%B0%EC%97%90%EC%9D%B4%EC%B9%98%EC%97%94"
+        ]
+      }
+    ],
+    "work_life_notes": [
+      "티에이치엔은 고용노동부가 선정한 강소기업으로, 초임, 근로시간, 복지혜택 등이 우수하다고 평가받고 있습니다."
+    ],
+    "likely_interview_questions": [
+      {
+        "question": "티에이치엔의 주요 제품과 시장에 대해 설명해 주세요.",
+        "intent": "제품 및 사업 이해도 확인",
+        "answer_direction": [
+          "와이어링 하네스의 중요성",
+          "전기차 및 로봇 산업으로의 확장"
+        ],
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341495"
+        ]
+      },
+      {
+        "question": "티에이치엔의 복리후생 제도에 대해 알고 있나요?",
+        "intent": "복리후생에 대한 이해도 확인",
+        "answer_direction": [
+          "장기근속수당, 통근버스 운영 등",
+          "직원 건강 우선 정책"
+        ],
+        "evidence_links": [
+          "https://www.saramin.co.kr/zf_user/company-info/view/csn/aHc5ZTBEbkJoQ1F5WXF3MldzNWtVZz09/company_nm/(%EC%A3%BC)%ED%8B%B0%EC%97%90%EC%9D%B4%EC%B9%98%EC%97%94"
+        ]
+      }
+    ],
+    "answer_strategy": [
+      "제품 및 사업에 대한 이해도를 높이고, 복리후생 제도에 대한 질문을 준비하세요."
+    ],
+    "generated_queries": [
+      "티에이치엔",
+      "티에이치엔 기업정보",
+      "티에이치엔 사업 제품",
+      "티에이치엔 기업 복리후생",
+      "티에이치엔 면접"
+    ],
+    "sources": [
+      {
+        "title": "티에이치엔 A019180 기업 분석 리포트 및 투자 정보(IR)",
+        "link": "https://www.forwarder.kr/krx/A019180",
+        "outlet": "forwarder.kr",
+        "source_type": "public"
+      },
+      {
+        "title": "티에이치엔 기업 정보 - 직원수, 근무환경, 복리후생 등 | 잡코리아",
+        "link": "https://www.jobkorea.co.kr/company/1336832/Info",
+        "outlet": "jobkorea.co.kr",
+        "source_type": "company_info"
+      },
+      {
+        "title": "티에이치엔 기업 정보 - 직원수, 근무환경, 복리후생 등 | 사람인",
+        "link": "https://www.saramin.co.kr/zf_user/company-info/view/csn/aHc5ZTBEbkJoQ1F5WXF3MldzNWtVZz09/company_nm/(%EC%A3%BC)%ED%8B%B0%EC%97%90%EC%9D%B4%EC%B9%98%EC%97%94",
+        "outlet": "saramin.co.kr",
+        "source_type": "company_info"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "be6d61f1a554f0e52024c7b0cab853cc17b81b39c41e2379e0dac5dbaba9a347": {
+    "company": "티에이치엔",
+    "likely_interview_questions": [
+      {
+        "question": "티에이치엔의 주요 제품은 무엇이며, 이 제품들이 시장에서 어떤 경쟁력을 가지고 있다고 생각하나요?",
+        "intent": "제품 이해도 및 시장 분석",
+        "answer_outline": [
+          "주요 제품: 차량용 와이어링 하네스",
+          "경쟁력: 현대차 그룹 내 고객사 확보, 전기차 및 로봇 산업 확장 가능성",
+          "시장 동향: 전기차 수요 증가 및 로봇 시장으로의 사업 확장 기대"
+        ],
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341495",
+          "https://www.greened.kr/news/articleView.html?idxno=341317"
+        ]
+      },
+      {
+        "question": "최근 티에이치엔의 주가가 급등한 이유는 무엇인가요?",
+        "intent": "시장 반응 및 기업 성과 이해",
+        "answer_outline": [
+          "주가 급등: 로봇 시장으로의 사업 확장 기대",
+          "전기차 및 친환경차 중심의 제품 믹스 개선",
+          "투자 심리 자극: 글로벌 완성차 업체들의 생산 확대"
+        ],
+        "evidence_links": [
+          "https://www.asiatime.co.kr/article/20260526500162",
+          "https://www.pinpointnews.co.kr/news/articleView.html?idxno=455236"
+        ]
+      },
+      {
+        "question": "티에이치엔의 인건비가 높은 이유는 무엇이라고 생각하나요?",
+        "intent": "인사 정책 및 기업 문화 이해",
+        "answer_outline": [
+          "높은 인건비: 우수 인재 확보 및 유지",
+          "업계 평균 이상의 연봉 제공",
+          "직원 복지 및 근무 환경 개선 노력"
+        ],
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341436"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "에이엔피, 자동차 전장화 열풍 타고 PCB·부품 경쟁력 재부각",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456191",
+        "published": "Fri, 29 May 2026 10:08:00 +0900",
+        "outlet": "pinpointnews.co.kr"
+      },
+      {
+        "title": "\"車 부품사 로봇 만든다\"…현대차 중견 밴더사들도 '들썩들썩'",
+        "link": "https://www.greened.kr/news/articleView.html?idxno=341495",
+        "published": "Thu, 28 May 2026 15:33:00 +0900",
+        "outlet": "greened.kr"
+      },
+      {
+        "title": "[데이터 뉴스룸] 에너지 기업 중 직원 급여 '억'소리 나는 9곳은?…HD현...",
+        "link": "https://www.greened.kr/news/articleView.html?idxno=341436",
+        "published": "Thu, 28 May 2026 09:11:00 +0900",
+        "outlet": "greened.kr"
+      },
+      {
+        "title": "로봇 신경망·두뇌·근육까지…대구경북 소부장, 휴머노이드 밸류체인 ...",
+        "link": "https://n.news.naver.com/mnews/article/088/0001011818?sid=101",
+        "published": "Wed, 27 May 2026 14:34:00 +0900",
+        "outlet": "imaeil.com"
+      },
+      {
+        "title": "[급등락주 짚어보기] AI·양자컴퓨팅 관련주 상한가⋯SK네트웍스ㆍ삼화...",
+        "link": "https://www.etoday.co.kr/news/view/2587941",
+        "published": "Tue, 26 May 2026 19:18:00 +0900",
+        "outlet": "etoday.co.kr"
+      },
+      {
+        "title": "\" 티에이치엔 , 전기차·로봇 수혜 기대…초저평가 부각\"-리서치알음",
+        "link": "https://www.greened.kr/news/articleView.html?idxno=341317",
+        "published": "Tue, 26 May 2026 14:26:00 +0900",
+        "outlet": "greened.kr"
+      },
+      {
+        "title": "[특징주] 티에이치엔 , \"로봇 시장으로 사업 확장 가능성\" '상한가'",
+        "link": "https://www.asiatime.co.kr/article/20260526500162",
+        "published": "Tue, 26 May 2026 11:40:00 +0900",
+        "outlet": "asiatime.co.kr"
+      },
+      {
+        "title": "한주라이트메탈 주가 더 내달린다… 전기차 경량화·알루미늄 부품 공급...",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=455236",
+        "published": "Tue, 26 May 2026 09:40:00 +0900",
+        "outlet": "pinpointnews.co.kr"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
   }
 }

@@ -430,6 +430,7 @@ select:focus {
   box-shadow: var(--shadow-sm);
 }
 
+.recommendation-panel,
 .status-panel,
 .filter-panel,
 .keyword-panel {
@@ -521,6 +522,36 @@ select:focus {
   border: 1px solid var(--line);
   color: #475467;
   font-size: 0.78rem;
+}
+
+.recommendation-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  max-height: 260px;
+  margin-top: 13px;
+  padding-right: 3px;
+  overflow: auto;
+}
+
+.recommendation-grid a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 5px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-soft);
+  color: #475467;
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.recommendation-grid a:hover {
+  border-color: #b9c8f3;
+  background: var(--primary-soft);
+  color: var(--primary);
 }
 
 .brief-panel,

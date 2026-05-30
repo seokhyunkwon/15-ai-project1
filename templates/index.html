@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>취업 뉴스 브리핑</title>
+  <title>BriefJob - 취업 뉴스 브리핑</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -16,6 +16,7 @@
         </a>
         <nav class="main-nav" aria-label="주요 메뉴">
           <a href="#search">검색</a>
+          <a href="#recommend">추천</a>
           <a href="#brief">브리핑</a>
           <a href="#news">뉴스</a>
         </nav>
@@ -60,15 +61,14 @@
           <label for="keywords">회사명, 산업, 직무 키워드</label>
           <div class="search-input-wrap">
             <span class="search-glyph" aria-hidden="true"></span>
-            <input id="keywords" type="text" name="keywords" value="{{ selected_keyword or company or '' }}" placeholder="예: 현대자동차, 에스엘, 전기차, 품질관리">
+            <input id="keywords" type="text" name="keywords" value="{{ selected_keyword or company or '' }}" placeholder="예: 현대위아, 전기차, 품질관리">
             <button type="submit">검색</button>
           </div>
           <div class="popular-keywords">
-            <span>추천</span>
-            <a href="{{ url_for('index', keyword='자동차 부품') }}">자동차 부품</a>
-            <a href="{{ url_for('index', keyword='전기차') }}">전기차</a>
-            <a href="{{ url_for('index', keyword='공급망') }}">공급망</a>
-            <a href="{{ url_for('index', keyword='에스엘') }}">에스엘</a>
+            <span>추천 키워드</span>
+            {% for keyword_name in recommended_keywords %}
+              <a href="{{ url_for('collect', keywords=keyword_name) }}">{{ keyword_name }}</a>
+            {% endfor %}
           </div>
         </form>
       </section>
@@ -86,6 +86,18 @@
 
         <div class="workspace-grid">
           <aside class="side-panel">
+            <section id="recommend" class="panel recommendation-panel">
+              <div class="panel-title-row">
+                <h2>추천 기업</h2>
+                <span class="tiny-label">{{ recommended_companies | length }}개</span>
+              </div>
+              <div class="recommendation-grid">
+                {% for company_name in recommended_companies %}
+                  <a href="{{ url_for('collect', keywords=company_name) }}">{{ company_name }}</a>
+                {% endfor %}
+              </div>
+            </section>
+
             <section class="panel status-panel">
               <div class="panel-title-row">
                 <h2>연동 상태</h2>
@@ -94,15 +106,19 @@
               <div class="connector-list">
                 <div class="connector-item">
                   <span class="connector-name">네이버</span>
-                  <span class="status-pill {{ 'ok' if api_status.naver else 'off' }}">{{ '연결' if api_status.naver else '미설정' }}</span>
+                  <span class="status-pill {{ 'ok' if api_status.naver else 'off' }}">{{ '연결됨' if api_status.naver else '미설정' }}</span>
                 </div>
                 <div class="connector-item">
                   <span class="connector-name">카카오</span>
-                  <span class="status-pill {{ 'ok' if api_status.kakao else 'off' }}">{{ '연결' if api_status.kakao else '미설정' }}</span>
+                  <span class="status-pill {{ 'ok' if api_status.kakao else 'off' }}">{{ '연결됨' if api_status.kakao else '미설정' }}</span>
                 </div>
                 <div class="connector-item">
                   <span class="connector-name">LLM</span>
-                  <span class="status-pill {{ 'ok' if llm_status.enabled else 'off' }}">{{ '연결' if llm_status.enabled else '미설정' }}</span>
+                  <span class="status-pill {{ 'ok' if llm_status.enabled else 'off' }}">{{ '연결됨' if llm_status.enabled else '미설정' }}</span>
+                </div>
+                <div class="connector-item">
+                  <span class="connector-name">고용24</span>
+                  <span class="status-pill {{ 'ok' if work24_status.jobs else 'off' }}">{{ '연결됨' if work24_status.jobs else '미설정' }}</span>
                 </div>
               </div>
             </section>
@@ -113,9 +129,10 @@
               </div>
               <form class="filter-form" method="get" action="{{ url_for('index') }}">
                 <input type="hidden" name="keyword" value="{{ selected_keyword }}">
+                <input type="hidden" name="company" value="{{ company }}">
                 <label>
                   기사 내 검색
-                  <input type="search" name="q" value="{{ search_q }}" placeholder="배터리, 공장">
+                  <input type="search" name="q" value="{{ search_q }}" placeholder="배터리, 공장, 채용">
                 </label>
                 <label>
                   카테고리
@@ -163,9 +180,9 @@
                   <div class="info-box">
                     <strong>AI 분석 기준</strong>
                     {% if brief_mode == 'company' %}
-                      <p>현재 표시된 뉴스와 추가 공개 검색 결과를 근거로 기업 정보, 복지·근무제도 신호, 면접 준비 방향을 생성합니다.</p>
+                      <p>현재 표시된 뉴스와 공개 검색 결과를 근거로 기업 정보, 복지·근무제도, 면접 준비 방향을 생성합니다.</p>
                     {% else %}
-                      <p>현재 표시된 뉴스 제목, 요약, 발행일, 출처 링크만 근거로 산업 동향, 리스크, 준비 키워드를 생성합니다.</p>
+                      <p>현재 표시된 뉴스 제목, 요약, 발행처, 출처 링크를 근거로 산업 동향과 준비 키워드를 생성합니다.</p>
                     {% endif %}
                   </div>
 
@@ -196,6 +213,68 @@
 
                       <div class="research-grid">
                         <article class="research-card wide">
+                          <h4>고용24 채용 현황</h4>
+                          {% if work24_jobs and work24_jobs.enabled %}
+                            {% if work24_jobs["items"] %}
+                              <ul>
+                                {% for job in work24_jobs["items"] %}
+                                  <li>
+                                    <strong>{{ job.title }}</strong>
+                                    {% if job.company %}<span class="meta-inline"> · {{ job.company }}</span>{% endif %}
+                                    <p class="meta-inline">
+                                      {{ job.region or '지역 미표기' }}
+                                      {% if job.close_at %} · 마감 {{ job.close_at }}{% endif %}
+                                      {% if job.salary %} · {{ job.salary_type }} {{ job.salary }}{% endif %}
+                                    </p>
+                                    {% if job.url %}
+                                      <p class="meta-inline"><a href="{{ job.url }}" target="_blank" rel="noopener noreferrer">고용24 공고 보기</a></p>
+                                    {% endif %}
+                                  </li>
+                                {% endfor %}
+                              </ul>
+                            {% else %}
+                              <p class="empty">고용24 기준 현재 표시할 채용공고가 없습니다.</p>
+                            {% endif %}
+                          {% elif work24_jobs and work24_jobs.error %}
+                            <p class="empty">{{ work24_jobs.error }}</p>
+                          {% else %}
+                            <p class="empty">고용24 API 키를 설정하면 현재 채용중 여부를 표시할 수 있습니다.</p>
+                          {% endif %}
+                        </article>
+                      </div>
+
+                      {% if company_info_docs %}
+                        <h4 class="research-subhead">공개 회사정보 복리후생</h4>
+                        <ul class="research-list">
+                          {% for doc in company_info_docs[:3] %}
+                            <li>
+                              <strong>{{ doc.title }}</strong>
+                              <p>{{ doc.summary }}</p>
+                              {% if doc.link %}
+                                <p class="meta-inline">근거: <a href="{{ doc.link }}" target="_blank" rel="noopener noreferrer">{{ doc.outlet or doc.link }}</a></p>
+                              {% endif %}
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+
+                      {% if interview_review_docs %}
+                        <h4 class="research-subhead">사람인 면접후기 요약</h4>
+                        <ul class="research-list">
+                          {% for doc in interview_review_docs[:3] %}
+                            <li>
+                              <strong>{{ doc.title }}</strong>
+                              <p>{{ doc.summary }}</p>
+                              {% if doc.link %}
+                                <p class="meta-inline">근거: <a href="{{ doc.link }}" target="_blank" rel="noopener noreferrer">{{ doc.outlet or doc.link }}</a></p>
+                              {% endif %}
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+
+                      <div class="research-grid">
+                        <article class="research-card wide">
                           <h4>기업 개요</h4>
                           {% if company_research.company_overview %}
                             <ul>
@@ -222,7 +301,7 @@
                         </article>
 
                         <article class="research-card">
-                          <h4>워라밸 참고 포인트</h4>
+                          <h4>지원자 참고 포인트</h4>
                           {% if company_research.work_life_notes %}
                             <ul>
                               {% for item in company_research.work_life_notes %}
@@ -254,12 +333,11 @@
                       {% endif %}
 
                       {% if company_research.welfare_signals %}
-                        <h4 class="research-subhead">복지·근무제도 신호</h4>
+                        <h4 class="research-subhead">복리후생·근무제도</h4>
                         <ul class="research-list">
                           {% for signal in company_research.welfare_signals %}
                             <li>
                               <strong>{{ signal.signal }}</strong>
-                              {% if signal.confidence %}<span class="confidence">{{ signal.confidence }}</span>{% endif %}
                               {% if signal.evidence_links %}
                                 <p class="meta-inline">근거:
                                   {% for link in signal.evidence_links %}
@@ -339,7 +417,7 @@
                         {% endfor %}
                       </ul>
                     {% else %}
-                      <p class="empty">하이라이트를 만들기엔 표시된 뉴스가 부족합니다.</p>
+                      <p class="empty">하이라이트를 만들기에 표시된 뉴스가 부족합니다.</p>
                     {% endif %}
 
                     {% if news_brief.keywords_to_prepare %}
@@ -389,7 +467,7 @@
                   {% endif %}
                 </div>
                 {% if news_items and (selected_keyword or search_q or company) %}
-                  <a class="btn primary" href="{{ url_for('index', keyword=selected_keyword, q=search_q, category=selected_category, page=pagination.page, brief='1') }}">뉴스 요약</a>
+                  <a class="btn primary" href="{{ url_for('index', keyword=selected_keyword, company=company, q=search_q, category=selected_category, page=pagination.page, brief='1') }}">뉴스 요약</a>
                 {% endif %}
               </div>
 
@@ -425,13 +503,13 @@
                 {% if pagination.total_pages > 1 %}
                   <nav class="pagination" aria-label="뉴스 페이지">
                     {% if pagination.has_prev %}
-                      <a class="page-link" href="{{ url_for('index', keyword=selected_keyword, q=search_q, category=selected_category, page=pagination.prev_page) }}">이전</a>
+                      <a class="page-link" href="{{ url_for('index', keyword=selected_keyword, company=company, q=search_q, category=selected_category, page=pagination.prev_page, brief=('1' if brief_requested else none)) }}">이전</a>
                     {% else %}
                       <span class="page-link disabled">이전</span>
                     {% endif %}
                     <span class="page-current">{{ pagination.page }} / {{ pagination.total_pages }}</span>
                     {% if pagination.has_next %}
-                      <a class="page-link" href="{{ url_for('index', keyword=selected_keyword, q=search_q, category=selected_category, page=pagination.next_page) }}">다음</a>
+                      <a class="page-link" href="{{ url_for('index', keyword=selected_keyword, company=company, q=search_q, category=selected_category, page=pagination.next_page, brief=('1' if brief_requested else none)) }}">다음</a>
                     {% else %}
                       <span class="page-link disabled">다음</span>
                     {% endif %}
@@ -440,7 +518,7 @@
               {% else %}
                 <div class="empty-state">
                   <strong>표시할 뉴스가 없습니다.</strong>
-                  <p>상단 검색창에 회사명이나 산업 키워드를 입력하고 뉴스 검색을 실행하세요.</p>
+                  <p>상단 검색창에 회사명이나 산업 키워드를 입력하고 뉴스 검색을 실행해 주세요.</p>
                 </div>
               {% endif %}
             </section>

@@ -15,6 +15,7 @@ from config import (
     CATEGORY_RULES,
     Config,
     DEFAULT_INDUSTRY_KEYWORDS,
+    HYUNDAI_KIA_FIRST_TIER_VENDORS,
 )
 
 
@@ -22,11 +23,17 @@ BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "data"
 OUTPUT_FILE = DATA_DIR / "news.json"
 
-EXCLUDED_COMPANY = "THN"
 COMPANY_ALIASES = {
     "아진": "아진산업",
+    "THN": "티에이치엔",
+    "thn": "티에이치엔",
 }
 AMBIGUOUS_COMPANY_KEYWORDS = set(COMPANY_ALIASES)
+RECOMMENDED_COMPANY_SET = {
+    re.sub(r"\s+", "", company.lower()) for company in HYUNDAI_KIA_FIRST_TIER_VENDORS
+}
+MIN_RESULTS_BEFORE_SUPPLEMENTAL_SEARCH = 8
+MAX_RESULTS_PER_PROVIDER_KEYWORD = 50
 RELEVANT_CONTEXT_TERMS = [
     "자동차",
     "부품",
@@ -109,7 +116,6 @@ BLOCKED_DOMAINS = [
     "quasarzone.com",
     "gigglehd.com",
     "namu.wiki",
-    "saramin.co.kr",
     "weseb.com",
     "life114.co.kr",
     "dokdokinfo.kr",
@@ -196,6 +202,25 @@ def _is_news_like_web_result(link: str) -> bool:
 def _canonical_keyword(keyword: str) -> str:
     compact = re.sub(r"\s+", "", keyword.strip())
     return COMPANY_ALIASES.get(compact, keyword.strip())
+
+
+def _search_queries_for_keyword(keyword: str) -> List[str]:
+    canonical = _canonical_keyword(keyword)
+    compact = re.sub(r"\s+", "", canonical.lower())
+    if compact not in RECOMMENDED_COMPANY_SET:
+        return [canonical]
+
+    queries = [
+        canonical,
+        f"{canonical} 자동차부품",
+        f"{canonical} 현대차",
+        f"{canonical} 채용",
+    ]
+    return list(dict.fromkeys(queries))
+
+
+def _accepted_count(items: List[Dict[str, str]], keyword: str) -> int:
+    return sum(1 for item in items if item.get("keyword") == keyword)
 
 
 def _title_contains_keyword(title: str, keyword: str) -> bool:
@@ -304,49 +329,56 @@ def collect_from_naver(keywords: List[str], display: int = 10) -> List[Dict[str,
     endpoint = "https://openapi.naver.com/v1/search/news.json"
 
     for keyword in keywords:
-        query = _canonical_keyword(keyword)
-        params = {"query": query, "display": display, "sort": "date"}
-        try:
-            response = requests.get(endpoint, headers=headers, params=params, timeout=10)
-            response.raise_for_status()
-            data = response.json()
-        except requests.RequestException as exc:
-            print(f"[naver] '{keyword}' 수집 실패: {exc}")
-            continue
-
-        for raw in data.get("items", []):
-            title = _strip_html(raw.get("title", ""))
-            summary = _strip_html(raw.get("description", ""))
-            text_blob = f"{title} {summary}"
-
-            if _is_file_like_title(title):
-                continue
-            if EXCLUDED_COMPANY.lower() in text_blob.lower():
-                continue
-            if not _is_title_or_context_match(title, summary, keyword):
-                continue
-            if not _is_relevant_item(keyword, text_blob):
+        for query_index, query in enumerate(_search_queries_for_keyword(keyword)):
+            if (
+                query_index > 0
+                and _accepted_count(items, keyword) >= MIN_RESULTS_BEFORE_SUPPLEMENTAL_SEARCH
+            ):
+                break
+            params = {"query": query, "display": display, "sort": "date"}
+            try:
+                response = requests.get(endpoint, headers=headers, params=params, timeout=10)
+                response.raise_for_status()
+                data = response.json()
+            except requests.RequestException as exc:
+                print(f"[naver] '{query}' 수집 실패: {exc}")
                 continue
 
-            link = raw.get("link", "")
-            original_link = raw.get("originallink", "") or link
-            outlet = _outlet_from_link(original_link) or _outlet_from_link(link)
-            if _is_blocked_source(original_link or link, text_blob):
-                continue
+            for raw in data.get("items", []):
+                title = _strip_html(raw.get("title", ""))
+                summary = _strip_html(raw.get("description", ""))
+                text_blob = f"{title} {summary}"
 
-            items.append(
-                _build_item(
-                    keyword=keyword,
-                    title=title,
-                    summary=summary,
-                    link=link,
-                    source="naver",
-                    publisher="네이버",
-                    outlet=outlet,
-                    published=raw.get("pubDate", ""),
-                    category=classify_category(text_blob, keyword),
+                if _is_file_like_title(title):
+                    continue
+                if not _is_title_or_context_match(title, summary, keyword):
+                    continue
+                if not _is_relevant_item(keyword, text_blob):
+                    continue
+
+                link = raw.get("link", "")
+                original_link = raw.get("originallink", "") or link
+                outlet = _outlet_from_link(original_link) or _outlet_from_link(link)
+                if _is_blocked_source(original_link or link, text_blob):
+                    continue
+
+                items.append(
+                    _build_item(
+                        keyword=keyword,
+                        title=title,
+                        summary=summary,
+                        link=link,
+                        source="naver",
+                        publisher="네이버",
+                        outlet=outlet,
+                        published=raw.get("pubDate", ""),
+                        category=classify_category(text_blob, keyword),
+                    )
                 )
-            )
+                if _accepted_count(items, keyword) >= MAX_RESULTS_PER_PROVIDER_KEYWORD:
+                    break
+            if _accepted_count(items, keyword) >= MAX_RESULTS_PER_PROVIDER_KEYWORD:
+                break
     return items
 
 
@@ -360,58 +392,65 @@ def collect_from_kakao(keywords: List[str], size: int = 10) -> List[Dict[str, st
     endpoint = "https://dapi.kakao.com/v2/search/web.json"
 
     for keyword in keywords:
-        query = _canonical_keyword(keyword)
-        params = {"query": query, "sort": "recency", "size": min(size, 50)}
-        try:
-            response = requests.get(
-                endpoint, headers=headers, params=params, timeout=10
-            )
-            response.raise_for_status()
-            data = response.json()
-        except requests.RequestException as exc:
-            print(f"[kakao] '{keyword}' 수집 실패: {exc}")
-            continue
-
-        for raw in data.get("documents", []):
-            title = _strip_html(raw.get("title", ""))
-            summary = _strip_html(raw.get("contents", ""))
-            link = raw.get("url", "")
-            text_blob = f"{title} {summary}"
-
-            if _is_file_like_title(title):
-                continue
-            if EXCLUDED_COMPANY.lower() in text_blob.lower():
-                continue
-            if not _is_title_or_context_match(title, summary, keyword):
-                continue
-            if not _is_relevant_item(keyword, text_blob):
-                continue
-            if _is_blocked_source(link, text_blob):
-                continue
-            if not _is_news_like_web_result(link):
-                continue
-
-            dt_raw = raw.get("datetime", "")
-            published = ""
-            if dt_raw:
-                parsed = _parse_published(str(dt_raw))
-                published = parsed.strftime("%a, %d %b %Y %H:%M:%S +0900") if parsed else str(dt_raw)
-
-            outlet = _publisher_from_url(link)
-
-            items.append(
-                _build_item(
-                    keyword=keyword,
-                    title=title,
-                    summary=summary,
-                    link=link,
-                    source="kakao",
-                    publisher="카카오",
-                    outlet=outlet,
-                    published=published,
-                    category=classify_category(text_blob, keyword),
+        for query_index, query in enumerate(_search_queries_for_keyword(keyword)):
+            if (
+                query_index > 0
+                and _accepted_count(items, keyword) >= MIN_RESULTS_BEFORE_SUPPLEMENTAL_SEARCH
+            ):
+                break
+            params = {"query": query, "sort": "recency", "size": min(size, 50)}
+            try:
+                response = requests.get(
+                    endpoint, headers=headers, params=params, timeout=10
                 )
-            )
+                response.raise_for_status()
+                data = response.json()
+            except requests.RequestException as exc:
+                print(f"[kakao] '{query}' 수집 실패: {exc}")
+                continue
+
+            for raw in data.get("documents", []):
+                title = _strip_html(raw.get("title", ""))
+                summary = _strip_html(raw.get("contents", ""))
+                link = raw.get("url", "")
+                text_blob = f"{title} {summary}"
+
+                if _is_file_like_title(title):
+                    continue
+                if not _is_title_or_context_match(title, summary, keyword):
+                    continue
+                if not _is_relevant_item(keyword, text_blob):
+                    continue
+                if _is_blocked_source(link, text_blob):
+                    continue
+                if not _is_news_like_web_result(link):
+                    continue
+
+                dt_raw = raw.get("datetime", "")
+                published = ""
+                if dt_raw:
+                    parsed = _parse_published(str(dt_raw))
+                    published = parsed.strftime("%a, %d %b %Y %H:%M:%S +0900") if parsed else str(dt_raw)
+
+                outlet = _publisher_from_url(link)
+
+                items.append(
+                    _build_item(
+                        keyword=keyword,
+                        title=title,
+                        summary=summary,
+                        link=link,
+                        source="kakao",
+                        publisher="카카오",
+                        outlet=outlet,
+                        published=published,
+                        category=classify_category(text_blob, keyword),
+                    )
+                )
+                if _accepted_count(items, keyword) >= MAX_RESULTS_PER_PROVIDER_KEYWORD:
+                    break
+            if _accepted_count(items, keyword) >= MAX_RESULTS_PER_PROVIDER_KEYWORD:
+                break
     return items
 
 
@@ -534,7 +573,6 @@ def save_items(items: List[Dict[str, str]], keywords_used: List[str]) -> None:
     payload = {
         "updated_at": datetime.now().isoformat(timespec="seconds"),
         "keywords": keywords_used,
-        "excluded_company": EXCLUDED_COMPANY,
         "categories": ["전체"] + list(CATEGORY_RULES.keys()) + ["기타"],
         "items": items,
     }

@@ -66,6 +66,7 @@ from llm import (
     build_news_brief,
     llm_status,
 )
+from work24_client import fetch_jobs, work24_status
 
 
 def create_app() -> Flask:
@@ -82,7 +83,7 @@ def create_app() -> Flask:
         keyword = request.args.get("keyword", "").strip()
         brief_requested = request.args.get("brief") == "1"
         page = _positive_int(request.args.get("page"), default=1)
-        per_page = 20
+        per_page = 50
         brief_topic = company or keyword or search_q
         search_warning = _search_validation_message(brief_topic) if brief_topic else ""
         brief_mode = _brief_mode(brief_topic)
@@ -118,6 +119,7 @@ def create_app() -> Flask:
         news_brief = None
         interview = None
         company_research = None
+        work24_jobs = None
         research_payload = {"queries": [], "items": [], "error": ""}
         if brief_requested and brief_topic and not search_warning:
             news_brief = build_news_brief(
@@ -126,6 +128,7 @@ def create_app() -> Flask:
                 company_profile={},
             )
             if brief_mode == "company":
+                work24_jobs = fetch_jobs(keyword=_work24_company_query(brief_topic), display=5)
                 try:
                     research_payload = collect_company_research(brief_topic)
                 except Exception as exc:  # noqa: BLE001
@@ -168,6 +171,8 @@ def create_app() -> Flask:
             categories=categories,
             used_keywords=used_keywords,
             default_keywords=", ".join(DEFAULT_INDUSTRY_KEYWORDS),
+            recommended_keywords=DEFAULT_INDUSTRY_KEYWORDS,
+            recommended_companies=HYUNDAI_KIA_FIRST_TIER_VENDORS,
             search_q=search_q,
             selected_category=category,
             selected_keyword=keyword,
@@ -183,11 +188,22 @@ def create_app() -> Flask:
             interview=interview,
             company_research=company_research,
             research_docs=research_payload.get("items", []),
+            company_info_docs=_unique_docs_by_outlet([
+                doc for doc in research_payload.get("items", [])
+                if doc.get("source_type") == "company_info" and doc.get("summary")
+            ]),
+            interview_review_docs=_unique_docs_by_outlet([
+                doc for doc in research_payload.get("items", [])
+                if doc.get("source_type") == "interview_review" and doc.get("summary")
+            ]),
+            work24_jobs=work24_jobs,
+            work24_status=work24_status(),
         )
 
-    @app.route("/collect", methods=["POST"])
+    @app.route("/collect", methods=["GET", "POST"])
     def collect():
-        raw = request.form.get("keywords", "").strip()
+        source = request.form if request.method == "POST" else request.args
+        raw = source.get("keywords", "").strip()
         if raw:
             keywords = [k.strip() for k in raw.replace("\n", ",").split(",") if k.strip()]
         else:
@@ -253,6 +269,24 @@ def _brief_mode(value: str) -> str:
     if any(hint in normalized for hint in INDUSTRY_HINTS):
         return "industry"
     return "industry"
+
+
+def _work24_company_query(value: str) -> str:
+    normalized = _normalize_search_term(value)
+    if normalized in {"thn", _normalize_search_term("티에이치엔")}:
+        return "티에이치엔"
+    return value
+
+
+def _unique_docs_by_outlet(docs: list[dict], *, limit: int = 3) -> list[dict]:
+    best_by_outlet = {}
+    for doc in docs:
+        outlet = (doc.get("outlet") or doc.get("link") or "").lower()
+        key = outlet.removeprefix("www.")
+        current = best_by_outlet.get(key)
+        if current is None or len(doc.get("summary", "")) > len(current.get("summary", "")):
+            best_by_outlet[key] = doc
+    return list(best_by_outlet.values())[:limit]
 
 
 def _positive_int(value: str | None, *, default: int = 1) -> int:
