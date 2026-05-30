@@ -7,9 +7,35 @@
   <span class="eyebrow">Company Profile</span>
   <h1>{{ name }}</h1>
   <p>{{ company.description }}</p>
+  <div class="profile-badges" aria-label="기업 요약">
+    <span><i class="bi bi-geo-alt"></i>{{ company.location }}</span>
+    <span><i class="bi bi-diagram-3"></i>{{ company.industry }}</span>
+    <span><i class="bi bi-briefcase"></i>{{ company.jobs | length }}개 주요 직무</span>
+  </div>
   <a href="{{ company.homepage }}" class="btn btn-primary" target="_blank" rel="noreferrer">
     홈페이지 이동
   </a>
+</section>
+
+<section class="company-profile-grid" aria-label="{{ name }} 취업 준비 요약">
+  <article class="profile-summary-card">
+    <span class="eyebrow">Overview</span>
+    <h2>{{ name }} 한눈에 보기</h2>
+    <p>
+      {{ name }}은 {{ company.location }} 기반의 {{ company.industry }} 분야 기업입니다.
+      {{ company.description }}에 관심이 있다면 주요 직무와 최근 이슈를 함께 확인해 보세요.
+    </p>
+  </article>
+
+  <article class="profile-summary-card">
+    <span class="eyebrow">Career Point</span>
+    <h2>채용 준비 포인트</h2>
+    <ul class="clean-list">
+      <li>{{ company.industry }} 산업 흐름을 지원 직무와 연결하기</li>
+      <li>{{ company.jobs[0] }} 직무에서 필요한 역량을 경험으로 정리하기</li>
+      <li>최근 뉴스 1개를 면접 답변 소재로 준비하기</li>
+    </ul>
+  </article>
 </section>
 
 <section class="detail-grid">
@@ -50,6 +76,99 @@
   </article>
 </section>
 
+<section class="career-dashboard" aria-label="{{ name }} 지원 정보">
+  <article class="info-card">
+    <i class="bi bi-clipboard-check section-icon"></i>
+    <h2>지원 전 확인 정보</h2>
+    <dl class="info-list">
+      {% for fact in profile.facts %}
+      <div>
+        <dt>{{ fact.label }}</dt>
+        <dd>{{ fact.value }}</dd>
+      </div>
+      {% endfor %}
+    </dl>
+  </article>
+
+  <article class="info-card">
+    <i class="bi bi-list-check section-icon"></i>
+    <h2>채용 절차 체크</h2>
+    <ol class="step-list">
+      {% for step in profile.recruit_steps %}
+      <li>{{ step }}</li>
+      {% endfor %}
+    </ol>
+  </article>
+
+  <article class="info-card">
+    <i class="bi bi-patch-check section-icon"></i>
+    <h2>복리후생 확인 항목</h2>
+    <ul class="check-list">
+      {% for item in profile.benefit_checks %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+  </article>
+</section>
+
+<section class="section-block">
+  <div class="section-heading">
+    <div>
+      <span class="eyebrow">Job Fit</span>
+      <h2>직무별 준비 역량</h2>
+    </div>
+  </div>
+
+  <div class="job-guide-grid">
+    {% for guide in profile.job_guides %}
+    <article class="job-guide-card">
+      <h3>{{ guide.name }}</h3>
+      <div class="tag-list">
+        {% for competency in guide.competencies %}
+        <span>{{ competency }}</span>
+        {% endfor %}
+      </div>
+      <p>{{ guide.preparation }}</p>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="info-card application-tip-card">
+  <i class="bi bi-stars section-icon"></i>
+  <h2>자기소개서 연결 포인트</h2>
+  <ul class="clean-list">
+    {% for tip in profile.application_tips %}
+    <li>{{ tip }}</li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="prep-grid" aria-label="{{ name }} 면접 준비">
+  <article class="info-card highlight-card">
+    <i class="bi bi-search section-icon"></i>
+    <h2>조사 키워드</h2>
+    <div class="tag-list">
+      <span>{{ name }}</span>
+      <span>{{ company.industry }}</span>
+      <span>{{ company.location }}</span>
+      {% for job in company.jobs[:2] %}
+      <span>{{ job }}</span>
+      {% endfor %}
+    </div>
+  </article>
+
+  <article class="info-card highlight-card">
+    <i class="bi bi-chat-square-text section-icon"></i>
+    <h2>면접 연결 질문</h2>
+    <ol class="numbered">
+      <li>{{ company.industry }} 산업 변화가 {{ name }}에 어떤 기회가 될까요?</li>
+      <li>{{ company.jobs[0] }} 직무에서 본인의 강점을 어떻게 보여줄 수 있나요?</li>
+      <li>최근 기업 뉴스에서 지원 직무와 연결할 수 있는 이슈는 무엇인가요?</li>
+    </ol>
+  </article>
+</section>
+
 <section class="section-block">
   <div class="section-heading">
     <div>
@@ -66,7 +185,25 @@
         <span class="badge-soft">기업 이슈</span>
         <h3>{{ item.title | safe }}</h3>
         <p>{{ item.description[:120] }}...</p>
-        <a href="{{ item.link }}" class="btn btn-outline-primary btn-sm">기사 보기</a>
+        <div class="news-actions">
+          <a href="{{ item.link }}" class="btn btn-outline-primary btn-sm">기사 보기</a>
+          {% if item.free_summary %}
+          <button
+            class="summary-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="company-summary-{{ loop.index }}"
+          >
+            요약 보기
+          </button>
+          <div class="inline-summary-panel" id="company-summary-{{ loop.index }}" hidden>
+            <strong>핵심 요약</strong>
+            <p>{{ item.free_summary.summary }}</p>
+            <strong>면접 연결 포인트</strong>
+            <p>{{ item.free_summary.interview_point }}</p>
+          </div>
+          {% endif %}
+        </div>
       </div>
     </article>
     {% endfor %}

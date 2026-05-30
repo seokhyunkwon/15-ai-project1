@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
-{% block title %}현대차 협력사 취업 플랫폼{% endblock %}
+{% block title %}AutoHub | 현대차 협력사 취업 플랫폼{% endblock %}
 
 {% block content %}
 <section class="hero-section">
   <div class="hero-copy">
-    <span class="eyebrow">현대자동차 협력사 취업 준비</span>
+    <span class="eyebrow">AutoHub</span>
     <h1>기업 정보부터 면접 준비까지 한 화면에서 확인하세요.</h1>
     <p>
       주요 협력사 정보, 자동차 산업 뉴스, 직무 키워드를 취업 준비생이 읽기 쉬운 구조로 모았습니다.
@@ -24,32 +24,27 @@
     </form>
   </div>
 
-  <aside class="hero-card" aria-label="오늘의 취업 준비 요약">
-    <strong>오늘의 준비 체크</strong>
-    <ul>
-      <li>관심 기업 3곳 비교하기</li>
-      <li>지원 직무 핵심 역량 정리하기</li>
-      <li>최근 산업 뉴스 1개 면접 답변에 연결하기</li>
-    </ul>
+  <aside class="hero-card today-news-card" aria-label="오늘의 산업 뉴스">
+    <div class="hero-card-head">
+      <strong>오늘의 산업 뉴스</strong>
+      <a href="/news" class="text-link">전체보기</a>
+    </div>
+    <div class="today-news-scroll" aria-label="오늘의 산업 뉴스 목록">
+      {% for item in news[:3] %}
+      <article class="today-news-slide" id="today-news-{{ loop.index }}">
+        <span class="badge-soft">자동차 산업</span>
+        <h2>{{ item.title | safe }}</h2>
+        <p>{{ item.description[:95] }}...</p>
+        <a href="{{ item.link }}" class="btn btn-outline-primary btn-sm">기사 보기</a>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="news-dots" aria-label="뉴스 이동">
+      {% for item in news[:3] %}
+      <a href="#today-news-{{ loop.index }}" aria-label="{{ loop.index }}번째 뉴스 보기"></a>
+      {% endfor %}
+    </div>
   </aside>
-</section>
-
-<section class="action-grid" aria-label="취업 준비 바로가기">
-  <a href="/companies" class="action-card">
-    <i class="bi bi-building"></i>
-    <span>기업 비교</span>
-    <strong>협력사별 지역, 업종, 직무를 비교해 보세요.</strong>
-  </a>
-  <a href="/jobs" class="action-card">
-    <i class="bi bi-briefcase"></i>
-    <span>채용공고 확인</span>
-    <strong>관심 기업의 최신 채용공고를 바로 확인하세요.</strong>
-  </a>
-  <a href="/interview" class="action-card">
-    <i class="bi bi-chat-square-text"></i>
-    <span>면접 준비</span>
-    <strong>기업 이슈와 직무 역량을 답변으로 정리하세요.</strong>
-  </a>
 </section>
 
 <section class="content-grid">
@@ -87,7 +82,25 @@
           <span class="badge-soft">자동차 산업</span>
           <h3>{{ item.title | safe }}</h3>
           <p>{{ item.description[:120] }}...</p>
-          <a href="{{ item.link }}" class="btn btn-outline-primary btn-sm">기사 보기</a>
+          <div class="news-actions">
+            <a href="{{ item.link }}" class="btn btn-outline-primary btn-sm">기사 보기</a>
+            {% if item.free_summary %}
+            <button
+              class="summary-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="home-summary-{{ loop.index }}"
+            >
+              요약 보기
+            </button>
+            <div class="inline-summary-panel" id="home-summary-{{ loop.index }}" hidden>
+              <strong>핵심 요약</strong>
+              <p>{{ item.free_summary.summary }}</p>
+              <strong>면접 연결 포인트</strong>
+              <p>{{ item.free_summary.interview_point }}</p>
+            </div>
+            {% endif %}
+          </div>
         </div>
       </article>
       {% endfor %}

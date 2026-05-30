@@ -5,16 +5,28 @@ from interview_api import get_company_interviews
 from jobs_api import get_company_jobs
 from news_api import get_news
 from search_api import search_career_content
+from free_summarizer import summarize_news_item
+from company_profile import build_company_profile
 
 app = Flask(__name__)
 
 companies = list(company_data.keys())
 
 
+def add_free_summaries(news_items):
+    for item in news_items:
+        item["free_summary"] = summarize_news_item(
+            item["title"],
+            item["description"]
+        )
+    return news_items
+
+
 @app.route('/')
 def home():
 
     news = get_news("현대자동차 자동차 산업")
+    add_free_summaries(news)
 
     return render_template(
         'index.html',
@@ -43,6 +55,7 @@ def jobs():
 @app.route('/news')
 def news():
     news_items = get_news("현대자동차 자동차 산업 채용")
+    add_free_summaries(news_items)
     return render_template('news.html', news=news_items)
 
 @app.route('/search')
@@ -90,11 +103,13 @@ def company_page(name):
     company = company_data[name]
 
     news = get_news(company['search_keyword'])
+    add_free_summaries(news)
 
     return render_template(
         'company.html',
         name=name,
         company=company,
+        profile=build_company_profile(name, company),
         news=news
     )
 

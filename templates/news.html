@@ -17,7 +17,36 @@
       <span class="badge-soft">자동차 산업</span>
       <h3>{{ item.title | safe }}</h3>
       <p>{{ item.description[:140] }}...</p>
-      <a href="{{ item.link }}" class="btn btn-outline-primary btn-sm">기사 보기</a>
+      {% if item.free_summary %}
+      <div class="news-actions">
+        <a href="{{ item.link }}" class="btn btn-outline-primary btn-sm">기사 보기</a>
+        <button
+          class="summary-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="news-summary-{{ loop.index }}"
+        >
+          요약 보기
+        </button>
+        <div class="inline-summary-panel" id="news-summary-{{ loop.index }}" hidden>
+          <strong>핵심 요약</strong>
+          <p>{{ item.free_summary.summary }}</p>
+          <strong>면접 연결 포인트</strong>
+          <p>{{ item.free_summary.interview_point }}</p>
+          {% if item.free_summary.keywords %}
+          <div class="summary-keywords">
+            {% for keyword in item.free_summary.keywords %}
+            <span>{{ keyword }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% else %}
+      <div class="news-actions">
+        <a href="{{ item.link }}" class="btn btn-outline-primary btn-sm">기사 보기</a>
+      </div>
+      {% endif %}
     </div>
   </article>
   {% endfor %}
