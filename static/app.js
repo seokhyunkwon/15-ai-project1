@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const slides = Array.from(scroller.querySelectorAll(".today-news-slide"));
-  const dots = Array.from(document.querySelectorAll(".news-dots a"));
+  const dots = Array.from(document.querySelectorAll(".news-dots button"));
 
   if (slides.length <= 1) {
     return;
@@ -37,10 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const goToSlide = (nextIndex) => {
     currentIndex = (nextIndex + slides.length) % slides.length;
-    slides[currentIndex].scrollIntoView({
+    scroller.scrollTo({
+      left: slides[currentIndex].offsetLeft - scroller.offsetLeft,
       behavior: "smooth",
-      block: "nearest",
-      inline: "start",
     });
     setActiveDot();
   };

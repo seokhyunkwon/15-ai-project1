@@ -23,8 +23,74 @@
       aria-label="검색어"
     />
     <button class="btn btn-primary" type="submit">검색</button>
+
+    <div class="search-select-grid search-select-grid-expanded">
+      <label>
+        <span>기업</span>
+        <select name="company">
+          <option value="">전체 기업</option>
+          {% for company in companies %}
+          <option value="{{ company }}" {% if company in selected_companies %}selected{% endif %}>
+            {{ company }}
+          </option>
+          {% endfor %}
+        </select>
+      </label>
+      <label>
+        <span>직무</span>
+        <select name="job">
+          <option value="">전체 직무</option>
+          {% for job in job_options %}
+          <option value="{{ job }}" {% if job in selected_jobs %}selected{% endif %}>
+            {{ job }}
+          </option>
+          {% endfor %}
+        </select>
+      </label>
+      <label>
+        <span>지역</span>
+        <select name="region">
+          <option value="">전체 지역</option>
+          {% for region in region_options %}
+          <option value="{{ region }}" {% if region in selected_regions %}selected{% endif %}>
+            {{ region }}
+          </option>
+          {% endfor %}
+        </select>
+      </label>
+      <label>
+        <span>경력</span>
+        <select name="career">
+          <option value="">전체 경력</option>
+          {% for career in career_options %}
+          <option value="{{ career }}" {% if career in selected_careers %}selected{% endif %}>
+            {{ career }}
+          </option>
+          {% endfor %}
+        </select>
+      </label>
+    </div>
   </form>
 </section>
+
+{% if selected_companies or selected_jobs or selected_regions or selected_careers %}
+<section class="active-filter-bar" aria-label="적용된 검색 필터">
+  <span>적용된 필터</span>
+  {% for company in selected_companies %}
+  <b>{{ company }}</b>
+  {% endfor %}
+  {% for job in selected_jobs %}
+  <b>{{ job }}</b>
+  {% endfor %}
+  {% for region in selected_regions %}
+  <b>{{ region }}</b>
+  {% endfor %}
+  {% for career in selected_careers %}
+  <b>{{ career }}</b>
+  {% endfor %}
+  <a href="/search?q={{ query|urlencode }}">필터 초기화</a>
+</section>
+{% endif %}
 
 {% if message %}
 <section class="empty-state">

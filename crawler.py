@@ -1,16 +1,26 @@
 import requests
 from bs4 import BeautifulSoup
+from functools import lru_cache
 
+FALLBACK_IMAGE = "https://picsum.photos/500/300"
+
+
+@lru_cache(maxsize=256)
 def get_news_image(url):
 
     headers = {
         "User-Agent": "Mozilla/5.0"
     }
 
-    response = requests.get(
-        url,
-        headers=headers
-    )
+    try:
+        response = requests.get(
+            url,
+            headers=headers,
+            timeout=2
+        )
+        response.raise_for_status()
+    except requests.RequestException:
+        return FALLBACK_IMAGE
 
     soup = BeautifulSoup(
         response.text,
@@ -24,6 +34,6 @@ def get_news_image(url):
 
     if image:
 
-        return image["content"]
+        return image.get("content", FALLBACK_IMAGE)
 
-    return "https://picsum.photos/500/300"
+    return FALLBACK_IMAGE

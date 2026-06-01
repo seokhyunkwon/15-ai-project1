@@ -1,6 +1,7 @@
 import html
 import os
 import re
+import time
 from datetime import datetime
 from urllib.parse import quote_plus
 from urllib.parse import urlparse
@@ -13,6 +14,8 @@ from company_info import company_data
 NAVER_CLIENT_ID = os.getenv("NAVER_CLIENT_ID", "zcJPKaKkhJpQ4NJpOXgI")
 NAVER_CLIENT_SECRET = os.getenv("NAVER_CLIENT_SECRET", "VAit_CLQ_P")
 KAKAO_REST_API_KEY = os.getenv("KAKAO_REST_API_KEY", "52965b9323dd56cff9cef891d5e2ea1a")
+API_CACHE_SECONDS = 600
+_company_jobs_cache = {}
 
 JOB_DOMAINS = (
     "saramin.co.kr",
@@ -228,6 +231,12 @@ def get_company_jobs(company_name):
     if company_name not in company_data:
         company_name = next(iter(company_data))
 
+    now = time.time()
+    cached = _company_jobs_cache.get(company_name)
+
+    if cached and now - cached["time"] < API_CACHE_SECONDS:
+        return [item.copy() for item in cached["jobs"]], cached["source"]
+
     jobs = []
     sources = []
 
@@ -255,5 +264,11 @@ def get_company_jobs(company_name):
         api_source = "채용 포털 검색 링크"
     elif not api_source:
         api_source = "검색 API"
+
+    _company_jobs_cache[company_name] = {
+        "time": now,
+        "jobs": [item.copy() for item in jobs],
+        "source": api_source,
+    }
 
     return jobs, api_source

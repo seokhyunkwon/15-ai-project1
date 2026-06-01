@@ -1,4 +1,5 @@
 import requests
+import time
 
 from company_info import company_data
 from jobs_api import (
@@ -30,6 +31,8 @@ INTERVIEW_KEYWORDS = (
     "질문",
     "interview",
 )
+INTERVIEW_CACHE_SECONDS = 600
+_interview_cache = {}
 
 
 def make_interview_tips(title, description):
@@ -212,6 +215,12 @@ def get_company_interviews(company_name):
     if company_name not in company_data:
         company_name = next(iter(company_data))
 
+    now = time.time()
+    cached = _interview_cache.get(company_name)
+
+    if cached and now - cached["time"] < INTERVIEW_CACHE_SECONDS:
+        return [item.copy() for item in cached["results"]], cached["source"]
+
     results = []
     sources = []
 
@@ -239,5 +248,11 @@ def get_company_interviews(company_name):
         api_source = "면접후기 검색 링크"
     elif not api_source:
         api_source = "검색 API"
+
+    _interview_cache[company_name] = {
+        "time": now,
+        "results": [item.copy() for item in results],
+        "source": api_source,
+    }
 
     return results, api_source

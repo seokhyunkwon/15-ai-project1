@@ -9,6 +9,8 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
@@ -27,7 +29,9 @@
     <header class="topbar">
       <div class="topbar-inner">
         <a class="brand" href="/">
-          <span class="brand-mark">A</span>
+          <span class="brand-mark">
+            <img src="{{ url_for('static', filename='autohub-logo.svg') }}" alt="" />
+          </span>
           <span>
             <strong>AutoHub</strong>
             <small>현대차 협력사 취업 플랫폼</small>

@@ -1,4 +1,5 @@
 import re
+import time
 
 import requests
 
@@ -13,6 +14,8 @@ from jobs_api import (
     is_domain_match,
     normalize_domain,
 )
+SEARCH_CACHE_SECONDS = 300
+_search_cache = {}
 
 
 BLOCKED_SEARCH_DOMAINS = (
@@ -97,9 +100,31 @@ ALIAS_TO_COMPANY = {
     for alias in aliases
 }
 
+FILTER_ALIASES = {
+    "경영·사무": ("경영", "사무", "기획", "전략"),
+    "인사·노무·HRD": ("인사", "노무", "hrd", "HRD", "교육"),
+    "재무·회계": ("재무", "회계", "세무", "IR"),
+    "영업·판매·무역": ("영업", "판매", "무역", "해외영업"),
+    "구매·자재·물류": ("구매", "자재", "물류", "SCM"),
+    "마케팅·홍보": ("마케팅", "홍보", "브랜드", "PR"),
+    "기계·설계": ("기계", "설계", "기구설계"),
+    "전기·전자·전장": ("전기", "전자", "전장", "회로"),
+    "SW·IT": ("SW", "소프트웨어", "IT", "개발"),
+    "데이터·AI": ("데이터", "AI", "인공지능"),
+    "설비·보전": ("설비", "보전", "정비"),
+}
+
 
 def normalize_query(query):
     return re.sub(r"\s+", " ", (query or "").strip())
+
+
+def normalize_values(values):
+    return [
+        normalize_query(value)
+        for value in values or []
+        if normalize_query(value)
+    ]
 
 
 def is_initial_only(query):
@@ -128,6 +153,34 @@ def expand_company_aliases(query):
     return " ".join(unique_terms)
 
 
+def build_search_query(
+    query,
+    selected_companies=None,
+    selected_jobs=None,
+    selected_regions=None,
+    selected_careers=None,
+):
+    terms = [normalize_query(query)]
+
+    for company in normalize_values(selected_companies):
+        terms.append(company)
+        terms.extend(COMPANY_ALIASES.get(company, ()))
+
+    terms.extend(expand_filter_terms(selected_jobs))
+    terms.extend(expand_filter_terms(selected_regions))
+    terms.extend(expand_filter_terms(selected_careers))
+
+    seen = set()
+    unique_terms = []
+
+    for term in terms:
+        if term and term not in seen:
+            seen.add(term)
+            unique_terms.append(term)
+
+    return " ".join(unique_terms)
+
+
 def is_allowed_query(query):
     normalized = normalize_query(query)
     lowered = normalized.lower()
@@ -144,7 +197,66 @@ def is_allowed_query(query):
     return True, ""
 
 
-def is_allowed_result(title, description, link):
+def includes_any(text, terms):
+    normalized_text = text.lower().replace(" ", "")
+    return any(term.lower().replace(" ", "") in normalized_text for term in terms if term)
+
+
+def expand_filter_terms(terms):
+    expanded = []
+
+    for term in normalize_values(terms):
+        expanded.append(term)
+        expanded.extend(FILTER_ALIASES.get(term, ()))
+
+    return expanded
+
+
+def is_filter_match(
+    title,
+    description,
+    link,
+    selected_companies=None,
+    selected_jobs=None,
+    selected_regions=None,
+    selected_careers=None,
+):
+    text = f"{title} {description} {link}"
+    companies = normalize_values(selected_companies)
+    jobs = expand_filter_terms(selected_jobs)
+    regions = expand_filter_terms(selected_regions)
+    careers = expand_filter_terms(selected_careers)
+
+    if companies:
+        company_terms = []
+        for company in companies:
+            company_terms.append(company)
+            company_terms.extend(COMPANY_ALIASES.get(company, ()))
+
+        if not includes_any(text, company_terms):
+            return False
+
+    if jobs and not includes_any(text, jobs):
+        return False
+
+    if regions and not includes_any(text, regions):
+        return False
+
+    if careers and not includes_any(text, careers):
+        return False
+
+    return True
+
+
+def is_allowed_result(
+    title,
+    description,
+    link,
+    selected_companies=None,
+    selected_jobs=None,
+    selected_regions=None,
+    selected_careers=None,
+):
     domain = normalize_domain(link)
     text = f"{title} {description} {link}".lower()
 
@@ -154,10 +266,24 @@ def is_allowed_result(title, description, link):
     if any(keyword in text for keyword in BAD_KEYWORDS):
         return False
 
-    return True
+    return is_filter_match(
+        title,
+        description,
+        link,
+        selected_companies,
+        selected_jobs,
+        selected_regions,
+        selected_careers,
+    )
 
 
-def filter_results(items):
+def filter_results(
+    items,
+    selected_companies=None,
+    selected_jobs=None,
+    selected_regions=None,
+    selected_careers=None,
+):
     return [
         item
         for item in items
@@ -165,11 +291,22 @@ def filter_results(items):
             item.get("title", ""),
             item.get("description", ""),
             item.get("link", ""),
+            selected_companies,
+            selected_jobs,
+            selected_regions,
+            selected_careers,
         )
     ]
 
 
-def search_naver(query, display=10):
+def search_naver(
+    query,
+    selected_companies=None,
+    selected_jobs=None,
+    selected_regions=None,
+    selected_careers=None,
+    display=10,
+):
     expanded_query = expand_company_aliases(query)
     url = "https://openapi.naver.com/v1/search/webkr.json"
     headers = {
@@ -202,10 +339,23 @@ def search_naver(query, display=10):
                 }
             )
 
-    return filter_results(results)[:display]
+    return filter_results(
+        results,
+        selected_companies,
+        selected_jobs,
+        selected_regions,
+        selected_careers,
+    )[:display]
 
 
-def search_kakao(query, display=10):
+def search_kakao(
+    query,
+    selected_companies=None,
+    selected_jobs=None,
+    selected_regions=None,
+    selected_careers=None,
+    display=10,
+):
     if not KAKAO_REST_API_KEY:
         return []
 
@@ -238,21 +388,63 @@ def search_kakao(query, display=10):
                 }
             )
 
-    return filter_results(results)[:display]
+    return filter_results(
+        results,
+        selected_companies,
+        selected_jobs,
+        selected_regions,
+        selected_careers,
+    )[:display]
 
 
-def search_career_content(query):
+def search_career_content(
+    query,
+    selected_companies=None,
+    selected_jobs=None,
+    selected_regions=None,
+    selected_careers=None,
+):
     query = normalize_query(query)
-    is_valid, message = is_allowed_query(query)
+    selected_companies = normalize_values(selected_companies)
+    selected_jobs = normalize_values(selected_jobs)
+    selected_regions = normalize_values(selected_regions)
+    selected_careers = normalize_values(selected_careers)
+    search_query = build_search_query(
+        query,
+        selected_companies,
+        selected_jobs,
+        selected_regions,
+        selected_careers,
+    )
+    is_valid, message = is_allowed_query(search_query)
 
     if not is_valid:
         return [], "검색 제한", message
+
+    now = time.time()
+    cache_key = (
+        query,
+        tuple(selected_companies),
+        tuple(selected_jobs),
+        tuple(selected_regions),
+        tuple(selected_careers),
+    )
+    cached = _search_cache.get(cache_key)
+
+    if cached and now - cached["time"] < SEARCH_CACHE_SECONDS:
+        return [item.copy() for item in cached["results"]], cached["source"], cached["message"]
 
     results = []
     sources = []
 
     try:
-        naver_results = search_naver(query)
+        naver_results = search_naver(
+            search_query,
+            selected_companies,
+            selected_jobs,
+            selected_regions,
+            selected_careers,
+        )
         if naver_results:
             results.extend(naver_results)
             sources.append("네이버")
@@ -260,7 +452,13 @@ def search_career_content(query):
         pass
 
     try:
-        kakao_results = search_kakao(query)
+        kakao_results = search_kakao(
+            search_query,
+            selected_companies,
+            selected_jobs,
+            selected_regions,
+            selected_careers,
+        )
         if kakao_results:
             results.extend(kakao_results)
             sources.append("카카오")
@@ -272,5 +470,12 @@ def search_career_content(query):
 
     if not results:
         return [], source, "관련 기업, 직무, 산업 자료를 찾지 못했습니다. 검색어를 조금 더 구체적으로 입력해 주세요."
+
+    _search_cache[cache_key] = {
+        "time": now,
+        "results": [item.copy() for item in results],
+        "source": source,
+        "message": "",
+    }
 
     return results, source, ""
