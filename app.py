@@ -1,4 +1,5 @@
 import re
+from hashlib import sha1
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -34,35 +35,18 @@ INDUSTRY_HINTS = {
     "물류",
     "조달",
 }
-BLOCKED_SEARCH_TERMS = {
-    "똥",
-    "똥글",
-    "개똥",
-    "오줌",
-    "방귀",
-    "시발",
-    "씨발",
-    "병신",
-    "빙시",
-    "빙신",
-    "븅신",
-    "병시",
-    "지랄",
-    "좆",
-    "존나",
-    "fuck",
-    "shit",
-}
 from news_collector import (
     collect_news,
     filter_loaded_items,
     load_payload,
     save_items,
 )
+from search_policy import normalize_search_query, validate_search_query
 from company_research import collect_company_research
 from company_directory import company_profiles, vendor_jobs_snapshot
 from job_collector import collect_public_jobs
 from llm import (
+    build_article_summary,
     build_company_research,
     build_interview_questions_fallback,
     build_news_brief,
@@ -76,6 +60,17 @@ def create_app() -> Flask:
     app = Flask(__name__)
     app.secret_key = "dev-news-dashboard"
 
+    @app.context_processor
+    def inject_asset_version():
+        static_dir = Path(app.root_path) / "static"
+        version = 1
+        for filename in ("style.css", "app.js", "briefjob-logo.svg"):
+            try:
+                version = max(version, int((static_dir / filename).stat().st_mtime))
+            except OSError:
+                continue
+        return {"asset_version": version}
+
     @app.route("/", methods=["GET"])
     def index():
         payload = load_payload()
@@ -84,7 +79,8 @@ def create_app() -> Flask:
         category = request.args.get("category", "전체")
         keyword = request.args.get("keyword", "").strip()
         brief_requested = request.args.get("brief") == "1"
-        landing_mode = not any([company, search_q, keyword, brief_requested])
+        article_id = request.args.get("article", "").strip()
+        landing_mode = not any([company, search_q, keyword, brief_requested, article_id])
         page = _positive_int(request.args.get("page"), default=1)
         per_page = 50
         brief_topic = company or keyword or search_q
@@ -107,7 +103,7 @@ def create_app() -> Flask:
         page = min(page, total_pages)
         start = (page - 1) * per_page
         end = start + per_page
-        news_items = filtered_news_items[start:end]
+        news_items = _with_article_ids(filtered_news_items[start:end])
         pagination = {
             "page": page,
             "per_page": per_page,
@@ -125,7 +121,20 @@ def create_app() -> Flask:
         interview = None
         company_research = None
         work24_jobs = None
+        article_summary = None
+        article_summary_id = ""
         research_payload = {"queries": [], "items": [], "error": ""}
+        if article_id and not search_warning:
+            selected_article = next(
+                (item for item in news_items if item.get("article_id") == article_id),
+                None,
+            )
+            if selected_article:
+                article_summary_id = article_id
+                article_summary = build_article_summary(
+                    topic=brief_topic or selected_article.get("keyword", ""),
+                    article=selected_article,
+                )
         if brief_requested and brief_topic and not search_warning:
             news_brief = build_news_brief(
                 company=brief_topic,
@@ -151,17 +160,18 @@ def create_app() -> Flask:
                 if research_payload.get("error"):
                     company_research["search_error"] = research_payload.get("error")
 
-                interview_llm = build_interview_questions_fallback(
-                    company=brief_topic,
-                    articles=news_items,
-                    company_profile={},
-                )
-                interview = {
-                    "provider": "llm",
-                    "questions": interview_llm.get("likely_interview_questions") or [],
-                    "llm_meta": interview_llm.get("llm") or {},
-                    "error": interview_llm.get("error") if isinstance(interview_llm, dict) else None,
-                }
+                if not company_research.get("likely_interview_questions"):
+                    interview_llm = build_interview_questions_fallback(
+                        company=brief_topic,
+                        articles=news_items,
+                        company_profile={},
+                    )
+                    interview = {
+                        "provider": "llm",
+                        "questions": interview_llm.get("likely_interview_questions") or [],
+                        "llm_meta": interview_llm.get("llm") or {},
+                        "error": interview_llm.get("error") if isinstance(interview_llm, dict) else None,
+                    }
 
         categories = payload.get(
             "categories", ["전체"] + list(CATEGORY_RULES.keys()) + ["기타"]
@@ -192,6 +202,8 @@ def create_app() -> Flask:
             landing_mode=landing_mode,
             search_warning=search_warning,
             news_brief=news_brief,
+            article_summary=article_summary,
+            article_summary_id=article_summary_id,
             interview=interview,
             company_research=company_research,
             research_docs=research_payload.get("items", []),
@@ -283,31 +295,11 @@ def create_app() -> Flask:
 
 
 def _normalize_search_term(value: str) -> str:
-    normalized = re.sub(r"[\s\W_]+", "", value.lower(), flags=re.UNICODE)
-    return normalized.translate(str.maketrans({
-        "0": "o",
-        "1": "l",
-        "3": "e",
-        "4": "a",
-        "5": "s",
-        "7": "t",
-        "ㅂ": "븅",
-    }))
+    return normalize_search_query(value)
 
 
 def _search_validation_message(value: str) -> str:
-    normalized = _normalize_search_term(value)
-    collapsed_korean = re.sub(r"[0-9a-z]+", "", normalized)
-    if not normalized:
-        return "검색어를 입력해 주세요."
-    if any(
-        blocked in normalized or blocked in collapsed_korean
-        for blocked in BLOCKED_SEARCH_TERMS
-    ):
-        return "취업 뉴스 분석에 적합하지 않은 검색어입니다. 회사명, 산업명, 직무명 중심으로 검색해 주세요."
-    if len(normalized) < 2:
-        return "검색어가 너무 짧습니다. 회사명, 산업명, 직무명을 2글자 이상 입력해 주세요."
-    return ""
+    return validate_search_query(value)
 
 
 def _brief_mode(value: str) -> str:
@@ -329,13 +321,35 @@ def _work24_company_query(value: str) -> str:
 
 
 def _public_jobs_for_brief(company: str) -> dict:
-    result = collect_public_jobs(company, limit=5)
+    result = collect_public_jobs(
+        company,
+        limit=3,
+        max_queries=1,
+        provider_strategy="first",
+    )
     return {
         "enabled": bool(result.get("providers")),
         "items": result.get("items", []),
         "error": result.get("error", ""),
         "providers": result.get("providers", []),
     }
+
+
+def _with_article_ids(items: list[dict]) -> list[dict]:
+    out = []
+    for item in items:
+        enriched = dict(item)
+        enriched["article_id"] = _article_id(item)
+        out.append(enriched)
+    return out
+
+
+def _article_id(item: dict) -> str:
+    material = "|".join(
+        str(item.get(key, ""))
+        for key in ("link", "title", "published", "outlet")
+    )
+    return sha1(material.encode("utf-8")).hexdigest()[:12]
 
 
 def _analysis_summary(payload: dict, filtered_items: list[dict]) -> dict:

@@ -4,15 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>기업정보 - BriefJob</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=asset_version) }}">
 </head>
 <body>
   <div class="app-shell">
     <header class="site-header">
       <div class="header-inner">
         <a class="brand" href="{{ url_for('index') }}">
-          <span class="brand-mark">B</span>
-          <span>BriefJob</span>
+          <img class="brand-logo" src="{{ url_for('static', filename='briefjob-logo.svg', v=asset_version) }}" alt="BriefJob">
         </a>
         <nav class="main-nav" aria-label="주요 메뉴">
           <a href="{{ url_for('index') }}#search">검색</a>
@@ -95,6 +94,6 @@
       </section>
     </main>
   </div>
-  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='app.js', v=asset_version) }}" defer></script>
 </body>
 </html>

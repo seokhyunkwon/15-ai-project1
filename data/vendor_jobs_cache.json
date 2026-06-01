@@ -4,7 +4,7 @@
   "query": "",
   "api_blocked": false,
   "notice": "채용공고는 고용24 채용정보 API 없이 네이버/카카오 공개 웹검색 결과에서 채용 사이트와 공식 채용 페이지 후보만 필터링해 표시합니다.",
-  "updated_at": "2026-06-01 11:39:18",
+  "updated_at": "2026-06-01 17:16:16",
   "rows": [
     {
       "company": "영진정공",
@@ -16,7 +16,9 @@
           "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49004416?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-04-17"
+          "published": "2026-04-17",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         }
       ],
       "total": 1,
@@ -81,7 +83,9 @@
           "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49273097?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-05-29"
+          "published": "2026-05-29",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "고졸 채용 정보 - 사람인",
@@ -89,18 +93,12 @@
           "url": "https://m.saramin.co.kr/highschool/list?rec_idx=30542621&pos=int&t_category=search&t_content=generic&searchword=%ED%98%84%EB%8C%80%EC%9E%90%EB%8F%99%EC%B0%A8&searchType=popular",
           "outlet": "m.saramin.co.kr",
           "provider": "카카오",
-          "published": "2026-05-28"
-        },
-        {
-          "title": "아산공장 생산직 채용 (신입/경력)",
-          "summary": "㈜ 동보 아산공장 아산공장 생산직 채용 (신입/경력) 채용 정보에 잘못된 내용이 있을 경우 해주세요. 자동차부품/CNC/자동화/기계/조립 (근무기간 24개월, 정규직 전환 가능) (산업기능요원) 직급/직책 회사 내규에...",
-          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49259200?Oem_Code=C1",
-          "outlet": "jobkorea.co.kr",
-          "provider": "카카오",
-          "published": "2026-05-28"
+          "published": "2026-05-28",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         }
       ],
-      "total": 3,
+      "total": 2,
       "error": "",
       "providers": [
         "카카오"
@@ -134,7 +132,9 @@
           "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49142926?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-05-11"
+          "published": "2026-05-11",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "채용 안내 - 인재 채용 - 지엠비코리아",
@@ -142,7 +142,9 @@
           "url": "https://www.gmb.co.kr/kr/recruit/info.php?search_item=subject&search_order=",
           "outlet": "gmb.co.kr",
           "provider": "카카오",
-          "published": "2025-12-07"
+          "published": "2025-12-07",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
         }
       ],
       "total": 2,
@@ -179,7 +181,9 @@
           "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49205549?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-05-19"
+          "published": "2026-05-19",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "충주공장 환경안전팀 수시 채용",
@@ -187,7 +191,9 @@
           "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/48573993?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-04-02"
+          "published": "2026-04-02",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "본사(서울) 원가기획팀 경력 채용",
@@ -195,7 +201,9 @@
           "url": "https://www.invione.com/jobs/recruitment/open/detail/137387",
           "outlet": "invione.com",
           "provider": "카카오",
-          "published": "2025-09-30"
+          "published": "2025-09-30",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
         },
         {
           "title": "충주공장 구매팀 수시 채용",
@@ -203,7 +211,9 @@
           "url": "https://www.gimhae.go.kr/job/html/sub/01_04.jsp?amode=view&empSeqno=138697",
           "outlet": "gimhae.go.kr",
           "provider": "카카오",
-          "published": "2025-09-26"
+          "published": "2025-09-26",
+          "confidence_label": "검색 후보",
+          "confidence_level": "candidate"
         }
       ],
       "total": 4,
@@ -240,7 +250,9 @@
           "url": "https://www.saramin.co.kr/zf_user/?csn=1078114046",
           "outlet": "saramin.co.kr",
           "provider": "카카오",
-          "published": "2026-05-29"
+          "published": "2026-05-29",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "사람인 큐레이션 - 지금껏 본적 없었던 새로운 큐레이션의 시작 - 사람인 큐레이션",
@@ -248,7 +260,9 @@
           "url": "https://www.saramin.co.kr/zf_user/curation",
           "outlet": "saramin.co.kr",
           "provider": "카카오",
-          "published": "2026-05-28"
+          "published": "2026-05-28",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "2026년 상반기 현대 케피코 경력 채용",
@@ -256,7 +270,9 @@
           "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49261598?rPageCode=AM&logpath=20&sn=1&sc=524",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-05-28"
+          "published": "2026-05-28",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "[ 현대 케피코 ] 2026년 상반기 경력 채용 (~05/31) | 캐치",
@@ -264,7 +280,9 @@
           "url": "https://www.catch.co.kr/NCS/RecruitInfoDetails/551975",
           "outlet": "catch.co.kr",
           "provider": "카카오",
-          "published": "2026-05-18"
+          "published": "2026-05-18",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         }
       ],
       "total": 4,
@@ -301,7 +319,9 @@
           "url": "http://www.samkee.com/recruit/inc/fileDown.asp?file=AKE7HLR7PJBLOHVQRUFP%2Epdf%7C2016%EB%85%84+1%EB%B6%84%EA%B8%B0%EB%B3%B4%EA%B3%A0%EC%84%9C%2Epdf&fd=board",
           "outlet": "samkee.com",
           "provider": "카카오",
-          "published": "2026-05-12"
+          "published": "2026-05-12",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
         }
       ],
       "total": 1,
@@ -338,7 +358,9 @@
           "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49222683?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-05-21"
+          "published": "2026-05-21",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "경창산업 ㈜의 기업정보",
@@ -346,7 +368,9 @@
           "url": "https://www.jobkorea.co.kr/company/1775058/info",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-05-07"
+          "published": "2026-05-07",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "경창산업 연봉",
@@ -354,7 +378,9 @@
           "url": "https://www.saramin.co.kr/zf_user/salaries/total-salary/view/csn/5038104241/company_nm/%EA%B2%BD%EC%B0%BD%EC%82%B0%EC%97%85",
           "outlet": "saramin.co.kr",
           "provider": "카카오",
-          "published": "2026-04-24"
+          "published": "2026-04-24",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         }
       ],
       "total": 3,
@@ -419,7 +445,9 @@
           "url": "https://www.mof.go.kr/searchJob/selectSearchJobList.do?menuSeq=779&listUpdtDt=2026-05-28++10%3A00",
           "outlet": "mof.go.kr",
           "provider": "카카오",
-          "published": "2026-05-30"
+          "published": "2026-05-30",
+          "confidence_label": "검색 후보",
+          "confidence_level": "candidate"
         }
       ],
       "total": 1,
@@ -456,7 +484,9 @@
           "url": "https://www.saramin.co.kr/zf_user/salaries/total-salary/view/csn/1238648335/company_nm/%EC%BD%94%EC%98%A4%EB%A1%B1%EC%98%A4%ED%86%A0%EB%AA%A8%ED%8B%B0%EB%B8%8C",
           "outlet": "saramin.co.kr",
           "provider": "카카오",
-          "published": "2026-05-25"
+          "published": "2026-05-25",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "'26년 5월 인팩 그룹 품질 채용 공고",
@@ -464,7 +494,9 @@
           "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49136381?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-05-19"
+          "published": "2026-05-19",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "패키지 경력 영업사원 영업관리자 구인",
@@ -472,7 +504,9 @@
           "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49189750?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-05-18"
+          "published": "2026-05-18",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "[ 인팩 ] 26년 4월 인팩 그룹 채용 (~04/30) | 캐치",
@@ -480,7 +514,9 @@
           "url": "https://www.catch.co.kr/NCS/RecruitInfoDetails/548635",
           "outlet": "catch.co.kr",
           "provider": "카카오",
-          "published": "2026-04-23"
+          "published": "2026-04-23",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         }
       ],
       "total": 4,
@@ -545,7 +581,9 @@
           "url": "https://www.invione.com/jobs/recruitment/all/detail/K180632605130023",
           "outlet": "invione.com",
           "provider": "카카오",
-          "published": "2026-05-18"
+          "published": "2026-05-18",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
         },
         {
           "title": "[자동차부품1차사] 해외자동차부품 설계 경력사원 모집",
@@ -553,7 +591,9 @@
           "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49124280?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-05-07"
+          "published": "2026-05-07",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "채용 행사- 상세보기",
@@ -561,7 +601,9 @@
           "url": "http://work.go.kr/gyeongju/newsPlace/ctrEvent/empEventDetail.do;JOBCENTERSESSION=NzdQTH6PhW2sfx2JDG1mQcqydWfvRYD0DlP1fyZnW9mLHGjdrGwD!460409939!-1304655145?listMode=boardList&eventMegaRegionCd=53&newsDataSeqno=26532",
           "outlet": "work.go.kr",
           "provider": "카카오",
-          "published": "2026-03-12"
+          "published": "2026-03-12",
+          "confidence_label": "공공 채용",
+          "confidence_level": "public"
         }
       ],
       "total": 3,
@@ -626,7 +668,9 @@
           "url": "https://www.gimhae.go.kr/job/html/sub/01_01.jsp?amode=view&wantedAuthNo=KEC0802605200001&infoSvc=VALIDATION",
           "outlet": "gimhae.go.kr",
           "provider": "카카오",
-          "published": "2026-05-20"
+          "published": "2026-05-20",
+          "confidence_label": "검색 후보",
+          "confidence_level": "candidate"
         }
       ],
       "total": 1,
@@ -663,7 +707,9 @@
           "url": "https://m.saramin.co.kr/highschool/list?q=%ED%95%9C%EA%B5%AD%EB%8F%84%EB%A1%9C%EA%B4%80%EB%A6%AC&searchType=connect&order=sales",
           "outlet": "m.saramin.co.kr",
           "provider": "카카오",
-          "published": "2026-05-29"
+          "published": "2026-05-29",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "의왕연구소 현대위아 WIN 11 설치 전환 작업",
@@ -671,7 +717,9 @@
           "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49269501?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-05-29"
+          "published": "2026-05-29",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "MCT가공(두산, 현대위아 ) 경력 정규직 채용",
@@ -679,7 +727,9 @@
           "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49268982?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-05-29"
+          "published": "2026-05-29",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         }
       ],
       "total": 3,
@@ -716,15 +766,19 @@
           "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49281550?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-06-01"
+          "published": "2026-06-01",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
-          "title": "[호텔 더 보타닉 세운 명동] Front Office 사원/주임급 채용 (신입/경력)",
-          "summary": "㈜ 에스엘 플랫폼 세운지팰리스 [호텔 더 보타닉 세운 명동] Front Office 사원/주임급 채용 (신입/경력) 채용 정보에 잘못된 내용이 있을 경우 해주세요. Front Office 사원/주임 급 (수습 2개월) 직급/직책 회사...",
-          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49268553?Oem_Code=C1",
+          "title": "[SWM] 인사팀 과장급 경력직 모집",
+          "summary": "㈜에스더블유엠 [SWM] 인사팀 과장급 경력직 모집 채용 정보에 잘못된 내용이 있을 경우 해주세요. (수습...주소 경기 안양시 동안구 시민대로327번길 28 (관양동, 에스엘 평촌R&D센터) 5,6층 인근지하철 (4년이상)",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49283318?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-05-29"
+          "published": "2026-06-01",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "고졸 채용 정보 - 사람인",
@@ -732,7 +786,9 @@
           "url": "https://m.saramin.co.kr/highschool/list?rec_idx=30542621&pos=int&t_category=search&t_content=generic&searchword=%ED%98%84%EB%8C%80%EC%9E%90%EB%8F%99%EC%B0%A8&searchType=popular",
           "outlet": "m.saramin.co.kr",
           "provider": "카카오",
-          "published": "2026-05-28"
+          "published": "2026-05-28",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "고졸 채용 정보 - 사람인",
@@ -740,7 +796,9 @@
           "url": "https://m.saramin.co.kr/highschool/list?rec_idx=30651687&cn=location-job&cns=domestic-list",
           "outlet": "m.saramin.co.kr",
           "provider": "카카오",
-          "published": "2026-05-26"
+          "published": "2026-05-26",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         }
       ],
       "total": 4,
@@ -805,7 +863,9 @@
           "url": "https://m.saramin.co.kr/highschool/list?rec_idx=27101769&inner_source=m.saramin&inner_medium=pattern&inner_campaign=SRI_M_007_SM_RCM_RCT_END&inner_term=2",
           "outlet": "m.saramin.co.kr",
           "provider": "카카오",
-          "published": "2026-05-29"
+          "published": "2026-05-29",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "충북 청주) 생산관리 담당자 채용",
@@ -813,7 +873,9 @@
           "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49224493?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-05-21"
+          "published": "2026-05-21",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "대원산업 / 인재 채용 / 채용 공고",
@@ -821,7 +883,9 @@
           "url": "https://www.dwsu.co.kr/ko/careers/recruit/view/11/",
           "outlet": "dwsu.co.kr",
           "provider": "카카오",
-          "published": "2026-05-19"
+          "published": "2026-05-19",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
         },
         {
           "title": "대원산업 / 인재 채용 / 채용 공고",
@@ -829,7 +893,9 @@
           "url": "https://www.dwsu.co.kr/ko/careers/recruit/",
           "outlet": "dwsu.co.kr",
           "provider": "카카오",
-          "published": "2026-05-19"
+          "published": "2026-05-19",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
         },
         {
           "title": "생산 교대직 정규사원 채용",
@@ -837,7 +903,9 @@
           "url": "https://www.invione.com/jobs/recruitment/all/detail/K180342605150006",
           "outlet": "invione.com",
           "provider": "카카오",
-          "published": "2026-05-18"
+          "published": "2026-05-18",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
         }
       ],
       "total": 5,
@@ -874,7 +942,9 @@
           "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/48921748?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-04-06"
+          "published": "2026-04-06",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "기업심층분석 1. 대상, 채용 분석 및 기업정보",
@@ -882,7 +952,9 @@
           "url": "https://www.jobkorea.co.kr/starter/companyreport/view?inside_no=18503&schctgr=101012&schctgr=101",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-03-22"
+          "published": "2026-03-22",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "동아화성 주식회사",
@@ -890,7 +962,9 @@
           "url": "https://www.gimhae.go.kr/job/html/sub/01_01.jsp?amode=view&wantedAuthNo=KJSE002510300025&infoSvc=VALIDATION",
           "outlet": "gimhae.go.kr",
           "provider": "카카오",
-          "published": "2025-11-29"
+          "published": "2025-11-29",
+          "confidence_label": "검색 후보",
+          "confidence_level": "candidate"
         },
         {
           "title": "르노삼성자동차 채용 정보 | 총 48건의 검색결과 - 사람인",
@@ -898,7 +972,9 @@
           "url": "https://www.saramin.co.kr/zf_user/search/recruit?searchword=르노삼성자동차",
           "outlet": "saramin.co.kr",
           "provider": "카카오",
-          "published": "2025-03-06"
+          "published": "2025-03-06",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         }
       ],
       "total": 4,
@@ -935,7 +1011,9 @@
           "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49204897?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-05-19"
+          "published": "2026-05-19",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "안양시 동안구 IT(컴퓨터) 유지보수 상주 직원 채용",
@@ -943,7 +1021,9 @@
           "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49094555?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-05-01"
+          "published": "2026-05-01",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         }
       ],
       "total": 2,
@@ -980,7 +1060,9 @@
           "url": "https://www.invione.com/jobs/recruitment/all/detail/KF11532604160001",
           "outlet": "invione.com",
           "provider": "카카오",
-          "published": "2026-04-17"
+          "published": "2026-04-17",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
         },
         {
           "title": "ASUNG | 채용 안내",
@@ -988,7 +1070,9 @@
           "url": "https://www.asung.co.kr/ko/pr-center/recruit.php",
           "outlet": "asung.co.kr",
           "provider": "카카오",
-          "published": "2025-08-22"
+          "published": "2025-08-22",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
         },
         {
           "title": "(주) 아성 프라텍",
@@ -996,7 +1080,9 @@
           "url": "https://www.incruit.com/company/651689/job/",
           "outlet": "incruit.com",
           "provider": "카카오",
-          "published": "2025-03-07"
+          "published": "2025-03-07",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "（주） 아성 프라텍 광주공장",
@@ -1004,7 +1090,9 @@
           "url": "https://www.gimhae.go.kr/job/html/sub/01_01.jsp?amode=view&wantedAuthNo=K1600z2407080004&infoSvc=VALIDATION",
           "outlet": "gimhae.go.kr",
           "provider": "카카오",
-          "published": "2024-07-08"
+          "published": "2024-07-08",
+          "confidence_label": "검색 후보",
+          "confidence_level": "candidate"
         },
         {
           "title": "㈜ 아성 프라텍",
@@ -1012,7 +1100,9 @@
           "url": "https://www.gimhae.go.kr/job/html/sub/01_01.jsp?amode=view&wantedAuthNo=K1600z2308170001&infoSvc=VALIDATION",
           "outlet": "gimhae.go.kr",
           "provider": "카카오",
-          "published": "2023-08-17"
+          "published": "2023-08-17",
+          "confidence_label": "검색 후보",
+          "confidence_level": "candidate"
         }
       ],
       "total": 5,
@@ -1072,20 +1162,24 @@
       "enabled": true,
       "jobs": [
         {
-          "title": "실내건축부(기술부) 직원 채용",
-          "summary": "㈜디자인메소 실내건축부(기술부) 직원 채용 채용 정보에 잘못된 내용이 있을 경우 해주세요. 인테리어 시공...근무지주소 서울 강남구 선릉로100길 32 (삼성동) 삼송 빌딩 4층 인근지하철 신입·경력 초대졸이상...",
-          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49276736?Oem_Code=C1",
+          "title": "EiE 삼송 캠퍼스 초중등영어 전임강사 모집",
+          "summary": "바른교육학원 EiE 삼송 캠퍼스 초중등영어 전임강사 모집 채용 정보에 잘못된 내용이 있을 경우 해주세요. 초중등 영어 전임강사 (수습 3개월) 직급/직책 연봉 2,800만원 이상 (면접 후 결정) 주5일(월~금) 13:00...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49284912?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-05-30"
+          "published": "2026-06-01",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
-          "title": "2D 및 3D 설계직 모집",
-          "summary": "㈜ 삼송 엔지니어링 산업기계 - 2D 및 3D 설계직 모집 채용 정보에 잘못된 내용이 있을 경우 해주세요. 산업기계 - 2D 및 3D 설계직 모집 연봉 3,005~4,500만원 주5일(월~금) 07:30 ~ 04:30 근무지주소 경기 김포시...",
-          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49272655?Oem_Code=C1",
+          "title": "[베이커리 카페] 삼송 빵집 고속터미널점 제빵생산 직원 모집",
+          "summary": "㈜유니에스 [베이커리 카페] 삼송 빵집 고속터미널점 제빵생산 직원 모집 채용 정보에 잘못된 내용이 있을 경우 해주세요. 직급/직책 월급 250~350만원 (면접 후 결정) 주5일 스케줄 근무 06:00 ~ 16:00 휴게 1.5...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49284352?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-05-29"
+          "published": "2026-06-01",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         }
       ],
       "total": 2,
@@ -1122,7 +1216,9 @@
           "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49049567?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-04-24"
+          "published": "2026-04-24",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         }
       ],
       "total": 1,
@@ -1187,7 +1283,9 @@
           "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49281846?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-06-01"
+          "published": "2026-06-01",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "(주) 세동 종합건설",
@@ -1195,7 +1293,9 @@
           "url": "https://www.conjob.co.kr/jobpost/jobpost_view_jnew.php?num=238853",
           "outlet": "conjob.co.kr",
           "provider": "카카오",
-          "published": "2026-05-21"
+          "published": "2026-05-21",
+          "confidence_label": "검색 후보",
+          "confidence_level": "candidate"
         }
       ],
       "total": 2,
@@ -1227,12 +1327,24 @@
       "enabled": true,
       "jobs": [
         {
+          "title": "고졸 채용 정보 - 사람인",
+          "summary": "현장직 모집합니다 (주)엔티엘 화성시 동탄구 평균연봉 상위 10% 채용 시 6월 각 부문 신입/경력 채용 LS 오토모티브 서울전체 생산 지원 TOP100 ~06.14(일) [입사지원금 60만] 쿠팡CLS 장애인 풀타임 재택 사무직...",
+          "url": "https://m.saramin.co.kr/highschool/list?rec_idx=30664551&pos=int&t_category=search&t_content=generic&searchType=connect",
+          "outlet": "m.saramin.co.kr",
+          "provider": "카카오",
+          "published": "2026-06-01",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
           "title": "나에게 딱 맞는 커리어만 매치, 사람인! | 취업, 채용 , 커리어 매칭 플랫폼",
           "summary": "FILA(휠라)와 함께 성장할 인재를 모집합니다. 미스토코리아(FILA) 2026 대졸 신입사원 공개 채용 공고 스크랩 버튼 LS 오토모티브 6월 각 부문 신입/경력 수시 채용 6월 각 부문 신입/경력 수시 채용 매출액 5000억...",
           "url": "https://www.saramin.co.kr/zf_user/?csn=2269036042",
           "outlet": "saramin.co.kr",
           "provider": "카카오",
-          "published": "2026-06-01"
+          "published": "2026-06-01",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "고졸 채용 정보 - 사람인",
@@ -1240,7 +1352,9 @@
           "url": "https://m.saramin.co.kr/highschool/list?rec_idx=30061691&pos=int&t_category=search&t_content=generic&searchType=connect",
           "outlet": "m.saramin.co.kr",
           "provider": "카카오",
-          "published": "2026-05-30"
+          "published": "2026-05-30",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "[안산] LS 오토모티브 사무지원 채용 [소속전환/중식제공]",
@@ -1248,10 +1362,12 @@
           "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49159272?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-05-12"
+          "published": "2026-05-12",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         }
       ],
-      "total": 3,
+      "total": 4,
       "error": "",
       "providers": [
         "카카오"
@@ -1313,7 +1429,9 @@
           "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49274915?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-05-29"
+          "published": "2026-05-29",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "고졸 채용 정보 - 사람인",
@@ -1321,7 +1439,9 @@
           "url": "https://m.saramin.co.kr/highschool/list?sort=rd&lc_m=109000&lc=109090&highschoolEdu=all&exp_lv=0%2C1&page=1",
           "outlet": "m.saramin.co.kr",
           "provider": "카카오",
-          "published": "2026-05-15"
+          "published": "2026-05-15",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         }
       ],
       "total": 2,
@@ -1358,7 +1478,9 @@
           "url": "https://www.jobkorea.co.kr/company/1438752/Info",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-01-18"
+          "published": "2026-01-18",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "'25년 4분기 인팩 그룹 공개 채용",
@@ -1366,7 +1488,9 @@
           "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/48192147?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2025-12-17"
+          "published": "2025-12-17",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "'25년 9월 수시 채용",
@@ -1374,7 +1498,9 @@
           "url": "https://www.invione.com/jobs/recruitment/open/detail/137270",
           "outlet": "invione.com",
           "provider": "카카오",
-          "published": "2025-09-29"
+          "published": "2025-09-29",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
         },
         {
           "title": "'25년 9월 수시 채용",
@@ -1382,7 +1508,9 @@
           "url": "https://www.gimhae.go.kr/job/html/sub/01_04.jsp?amode=view&empSeqno=137270",
           "outlet": "gimhae.go.kr",
           "provider": "카카오",
-          "published": "2025-09-29"
+          "published": "2025-09-29",
+          "confidence_label": "검색 후보",
+          "confidence_level": "candidate"
         },
         {
           "title": "채용 공고_상세 - INFAC 채용 홈페이지",
@@ -1390,7 +1518,9 @@
           "url": "http://career.infac.com/job-description/?id=2180902&announceId=2180902&sDate=202504011300&eDate=202504092359",
           "outlet": "career.infac.com",
           "provider": "카카오",
-          "published": "2025-04-02"
+          "published": "2025-04-02",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
         }
       ],
       "total": 5,
@@ -1427,7 +1557,9 @@
           "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49273277?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-05-29"
+          "published": "2026-05-29",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         }
       ],
       "total": 1,
@@ -1464,7 +1596,9 @@
           "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/47705303?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2025-09-15"
+          "published": "2025-09-15",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "자동차 전장 :: 인크루트 채용 정보",
@@ -1472,7 +1606,9 @@
           "url": "http://job.incruit.com/jobdb_list/searchjob.asp?col=job_all&il=y&kw=%C0%DA%B5%BF%C2%F7+%C0%FC%C0%E5",
           "outlet": "job.incruit.com",
           "provider": "카카오",
-          "published": "2022-07-07"
+          "published": "2022-07-07",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         }
       ],
       "total": 2,
@@ -1509,7 +1645,9 @@
           "url": "https://www.saramin.co.kr/zf_user/?csn=3012983512",
           "outlet": "saramin.co.kr",
           "provider": "카카오",
-          "published": "2025-04-24"
+          "published": "2025-04-24",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "2025년 상반기 공채 시작! | 취업, 채용 , 커리어 매칭 플랫폼",
@@ -1517,7 +1655,9 @@
           "url": "https://www.saramin.co.kr/zf_user/?board_type=upjong&pageCount=20&list=search&categoryCode=8%7C2&code=207&category_level=sub&tcode=8&mcode=8&bcode=2&keyword_text=&page=7",
           "outlet": "saramin.co.kr",
           "provider": "카카오",
-          "published": "2025-03-27"
+          "published": "2025-03-27",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         }
       ],
       "total": 2,
@@ -1554,7 +1694,9 @@
           "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49247367?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-05-26"
+          "published": "2026-05-26",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "고졸 채용 정보 - 사람인",
@@ -1562,7 +1704,9 @@
           "url": "https://m.saramin.co.kr/highschool/list?rec_idx=30711801&cn=search&cns=recruit&t_category=search&t_content=generic&searchword=%ED%98%84%EB%8C%80%EC%9E%90%EB%8F%99%EC%B0%A8&searchType=popular",
           "outlet": "m.saramin.co.kr",
           "provider": "카카오",
-          "published": "2026-05-24"
+          "published": "2026-05-24",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "국내영업 경력 채용",
@@ -1570,7 +1714,9 @@
           "url": "https://www.invione.com/jobs/recruitment/open/detail/160805",
           "outlet": "invione.com",
           "provider": "카카오",
-          "published": "2026-04-24"
+          "published": "2026-04-24",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
         },
         {
           "title": "[ 현대 성우 쏠라이트 ] 인사/노무 신입 채용",
@@ -1578,7 +1724,9 @@
           "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/48896065?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-04-01"
+          "published": "2026-04-01",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "제품기술 신입/경력 채용",
@@ -1586,7 +1734,9 @@
           "url": "https://www.gimhae.go.kr/job/html/sub/01_04.jsp?amode=view&empSeqno=138995",
           "outlet": "gimhae.go.kr",
           "provider": "카카오",
-          "published": "2025-10-16"
+          "published": "2025-10-16",
+          "confidence_label": "검색 후보",
+          "confidence_level": "candidate"
         }
       ],
       "total": 5,
@@ -1623,7 +1773,9 @@
           "url": "https://www.invione.com/jobs/recruitment/all/detail/K140022605120047",
           "outlet": "invione.com",
           "provider": "카카오",
-          "published": "2026-05-18"
+          "published": "2026-05-18",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
         }
       ],
       "total": 1,
@@ -1660,7 +1812,9 @@
           "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/34014743?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2021-02-26"
+          "published": "2021-02-26",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         }
       ],
       "total": 1,
@@ -1697,7 +1851,9 @@
           "url": "https://m.saramin.co.kr/highschool/list?rec_idx=26403321",
           "outlet": "m.saramin.co.kr",
           "provider": "카카오",
-          "published": "2026-05-28"
+          "published": "2026-05-28",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "㈜ 성우하이텍 채용",
@@ -1705,7 +1861,9 @@
           "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49253344?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-05-19"
+          "published": "2026-05-19",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         }
       ],
       "total": 2,
@@ -1737,12 +1895,24 @@
       "enabled": true,
       "jobs": [
         {
+          "title": "세원정공 (주) 재단기 조작원 모집",
+          "summary": "세원정공 ㈜ 세원정공 (주) 재단기 조작원 모집 채용 정보에 잘못된 내용이 있을 경우 해주세요. 재단기 조작원 (수습 3개월) 직급/직책 시급 10,400원 (면접 후 결정) 주5일(월~금) 08:00 ~ 20:00 야간 근무 있음...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49282986?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-06-01",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
           "title": "세원정공 주식회사",
           "summary": "따라 협의 가능 접수마감일 20260605 고용형태 기간의 정함이 없는 근로계약/ 파견근로 비희망/ 대체인력 채용 비희망 임금조건 연봉35,000,000원 이상, 면접 후 재조정 가능 경력조건 경력 (최소3년) 우대 학력...",
           "url": "https://www.gimhae.go.kr/job/html/sub/01_01.jsp?amode=view&wantedAuthNo=K131312605220016&infoSvc=VALIDATION",
           "outlet": "gimhae.go.kr",
           "provider": "카카오",
-          "published": "2026-05-22"
+          "published": "2026-05-22",
+          "confidence_label": "검색 후보",
+          "confidence_level": "candidate"
         },
         {
           "title": "실시간 채용 정보 검색/확인하기",
@@ -1750,15 +1920,9 @@
           "url": "https://www.jobkorea.co.kr/recruit/joblist?ikwrd=10000572457&pref=20",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-05-21"
-        },
-        {
-          "title": "국내영업(서울 근무) 모집 (주임, 대리, 과장급)",
-          "summary": "세원정공 ㈜ 국내영업(서울 근무) 모집 (주임, 대리, 과장급) 채용 정보에 잘못된 내용이 있을 경우 해주세요. (수습 3개월) 직급/직책 회사 내규에 따름 (면접 후 결정) 주5일(월~금) 08:00 ~ 18:00 근무지주소...",
-          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49190433?Oem_Code=C1",
-          "outlet": "jobkorea.co.kr",
-          "provider": "카카오",
-          "published": "2026-05-18"
+          "published": "2026-05-21",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "농기계 부품 용접 및 사상하실 분",
@@ -1766,7 +1930,9 @@
           "url": "https://www.invione.com/jobs/recruitment/all/detail/K131412603130022",
           "outlet": "invione.com",
           "provider": "카카오",
-          "published": "2026-03-18"
+          "published": "2026-03-18",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
         },
         {
           "title": "['26.3.25.(수) 김해고용센터 현장면접] 세원정공 경력직 국내영업원 모집",
@@ -1774,7 +1940,9 @@
           "url": "https://www.invione.com/jobs/recruitment/all/detail/KEC0802603160002",
           "outlet": "invione.com",
           "provider": "카카오",
-          "published": "2026-03-18"
+          "published": "2026-03-18",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
         }
       ],
       "total": 5,
@@ -1811,7 +1979,9 @@
           "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49280724?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-06-01"
+          "published": "2026-06-01",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "주식회사 금창 채용 (26.05.29) | 강릉지역 농협마트 순회직 모집 - 마트잡",
@@ -1819,7 +1989,9 @@
           "url": "https://www.martjob.co.kr/mart-job/44529",
           "outlet": "martjob.co.kr",
           "provider": "카카오",
-          "published": "2026-05-29"
+          "published": "2026-05-29",
+          "confidence_label": "검색 후보",
+          "confidence_level": "candidate"
         },
         {
           "title": "(주) 금창 재무팀(재경팀) 신입/경력 정규직 인재 채용 _#경북영천#현기차",
@@ -1827,18 +1999,12 @@
           "url": "https://www.invione.com/jobs/recruitment/all/detail/K140112605140020",
           "outlet": "invione.com",
           "provider": "카카오",
-          "published": "2026-05-18"
-        },
-        {
-          "title": "㈜ 금창 / 품질보증팀 경력직 채용",
-          "summary": "08시-17시, 업무상황에 따라 연장근무,특근근무, 주 5일 근무, 평균근무시간 : 40 ㈜ 금창 / 품질보증팀 경력직 채용 ■ 구인사항: 품질관리 경력직-신차품질 및 품질보증 ■ 주요업무 1. 담당업무: 현대기아...",
-          "url": "https://www.invione.com/jobs/recruitment/all/detail/K140112605140019",
-          "outlet": "invione.com",
-          "provider": "카카오",
-          "published": "2026-05-18"
+          "published": "2026-05-18",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
         }
       ],
-      "total": 4,
+      "total": 3,
       "error": "",
       "providers": [
         "카카오"
@@ -1865,8 +2031,29 @@
     {
       "company": "경신",
       "enabled": true,
-      "jobs": [],
-      "total": 0,
+      "jobs": [
+        {
+          "title": "(주)이엠코퍼레이션 노무/인사 담당자 모집",
+          "summary": "주)이엠코퍼레이션 노무/인사 담당자 모집 채용 정보에 잘못된 내용이 있을 경우 해주세요. 인사/노무 업무...주소 인천 연수구 벤처로 105 (송도동, (주) 경신 송도2사업장) (주)이엠코퍼레이션 (3년이상) 초대졸...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49283015?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-06-01",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "총무 업무 및 품질관리 직원 채용",
+          "summary": "경신 폴리웰 컴퍼니 총무 업무 및 품질관리 직원 채용 채용 정보에 잘못된 내용이 있을 경우 해주세요. 직급/직책 월급 270만원 이상 주5일(월~금) 08:00 ~ 18:00 근무지주소 충북 진천군 이월면 진광로 309...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49283612?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-06-01",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        }
+      ],
+      "total": 2,
       "error": "",
       "providers": [
         "카카오"
@@ -1900,7 +2087,9 @@
           "url": "https://www.invione.com/jobs/recruitment/open/detail/162722",
           "outlet": "invione.com",
           "provider": "카카오",
-          "published": "2026-05-14"
+          "published": "2026-05-14",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
         },
         {
           "title": "[ 두원 공조 ] 전 부문 경력사원 채용",
@@ -1908,7 +2097,9 @@
           "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49156277?Oem_Code=C1&PageGbn=ST",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-05-13"
+          "published": "2026-05-13",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         }
       ],
       "total": 2,
@@ -1945,7 +2136,9 @@
           "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49209786?Oem_Code=C1",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-05-20"
+          "published": "2026-05-20",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "자동차 부품업체 생산직 사원 모집",
@@ -1953,7 +2146,9 @@
           "url": "https://www.invione.com/jobs/recruitment/all/detail/K172122605130019",
           "outlet": "invione.com",
           "provider": "카카오",
-          "published": "2026-05-18"
+          "published": "2026-05-18",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
         }
       ],
       "total": 2,
@@ -1990,7 +2185,9 @@
           "url": "https://www.gimhae.go.kr/job/html/sub/01_01.jsp?amode=view&wantedAuthNo=K131312605190003&infoSvc=VALIDATION",
           "outlet": "gimhae.go.kr",
           "provider": "카카오",
-          "published": "2026-05-19"
+          "published": "2026-05-19",
+          "confidence_label": "검색 후보",
+          "confidence_level": "candidate"
         },
         {
           "title": "위너콤 （주）",
@@ -1998,7 +2195,9 @@
           "url": "https://www.gimhae.go.kr/job/html/sub/01_01.jsp?amode=view&wantedAuthNo=K131312504040049&infoSvc=VALIDATION",
           "outlet": "gimhae.go.kr",
           "provider": "카카오",
-          "published": "2025-04-04"
+          "published": "2025-04-04",
+          "confidence_label": "검색 후보",
+          "confidence_level": "candidate"
         },
         {
           "title": "채용",
@@ -2006,7 +2205,9 @@
           "url": "https://www.wanted.co.kr/company/29393",
           "outlet": "wanted.co.kr",
           "provider": "카카오",
-          "published": "2023-12-07"
+          "published": "2023-12-07",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "위너콤 연봉",
@@ -2014,7 +2215,9 @@
           "url": "https://www.saramin.co.kr/zf_user/salaries/total-salary/view?csn=RlpTdFpyQ3l5U2VOU0ZxaUZKUXF4dz09",
           "outlet": "saramin.co.kr",
           "provider": "카카오",
-          "published": "2023-11-28"
+          "published": "2023-11-28",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "큐레이션",
@@ -2022,7 +2225,9 @@
           "url": "https://www.saramin.co.kr/zf_user/jobs/list/curation?category_seq=39",
           "outlet": "saramin.co.kr",
           "provider": "카카오",
-          "published": "2023-11-28"
+          "published": "2023-11-28",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         }
       ],
       "total": 5,
@@ -2059,7 +2264,9 @@
           "url": "https://m.saramin.co.kr/highschool/list?rec_idx=30542621&pos=int&t_category=search&t_content=generic&searchword=%ED%98%84%EB%8C%80%EC%9E%90%EB%8F%99%EC%B0%A8&searchType=popular",
           "outlet": "m.saramin.co.kr",
           "provider": "카카오",
-          "published": "2026-05-28"
+          "published": "2026-05-28",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "고졸 채용 정보 - 사람인",
@@ -2067,7 +2274,9 @@
           "url": "https://m.saramin.co.kr/highschool/list?lc_m=106000&apply_mobile=n&mode=domestic&is_detail_search=n&category_level=top&highschoolEdu=all&exp_lv=0%2C1&page=4",
           "outlet": "m.saramin.co.kr",
           "provider": "카카오",
-          "published": "2026-05-01"
+          "published": "2026-05-01",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "[아산시 탕정] 와이엠에스 주식회사_삼성디스플레이...",
@@ -2075,7 +2284,9 @@
           "url": "https://www.invione.com/jobs/recruitment/all/detail/KJ21552509160002",
           "outlet": "invione.com",
           "provider": "카카오",
-          "published": "2026-04-20"
+          "published": "2026-04-20",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
         },
         {
           "title": "한국내화㈜ 기업정보 - 직원수, 근무환경, 복리후생 등 | 잡코리아",
@@ -2083,7 +2294,9 @@
           "url": "https://www.jobkorea.co.kr/company/1932866",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-02-28"
+          "published": "2026-02-28",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         },
         {
           "title": "(주) 트래닛 진행 중인 채용 정보 총 0건 - 채용 히스토리 통계 | 잡코리아",
@@ -2091,7 +2304,9 @@
           "url": "https://www.jobkorea.co.kr/company/1452329/recruit",
           "outlet": "jobkorea.co.kr",
           "provider": "카카오",
-          "published": "2026-01-18"
+          "published": "2026-01-18",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         }
       ],
       "total": 5,
@@ -2128,7 +2343,9 @@
           "url": "https://www.invione.com/jobs/recruitment/all/detail/K171112604150032",
           "outlet": "invione.com",
           "provider": "카카오",
-          "published": "2026-04-17"
+          "published": "2026-04-17",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
         },
         {
           "title": "34명이 참여한 통계 & 리뷰",
@@ -2136,7 +2353,9 @@
           "url": "https://www.saramin.co.kr/zf_user/company-review/view/csn/UVRWWWsvczRYM2toUDRXWmt4VGJNZz09/company_nm/%ED%8F%89%ED%99%94%EC%82%B0%EC%97%85(%EC%A3%BC)",
           "outlet": "saramin.co.kr",
           "provider": "카카오",
-          "published": "2026-03-30"
+          "published": "2026-03-30",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
         }
       ],
       "total": 2,

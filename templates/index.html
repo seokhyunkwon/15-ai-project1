@@ -4,15 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BriefJob - 취업 뉴스 브리핑</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=asset_version) }}">
 </head>
 <body>
   <div class="app-shell">
     <header class="site-header">
       <div class="header-inner">
         <a class="brand" href="{{ url_for('index') }}">
-          <span class="brand-mark">B</span>
-          <span>BriefJob</span>
+          <img class="brand-logo" src="{{ url_for('static', filename='briefjob-logo.svg', v=asset_version) }}" alt="BriefJob">
         </a>
         <nav class="main-nav" aria-label="주요 메뉴">
           <a href="{{ url_for('index') }}#search">검색</a>
@@ -30,7 +29,7 @@
           <span class="product-badge">BriefJob Intelligence</span>
           <h1>뉴스로 보는 기업·산업 인사이트</h1>
           {% if updated_at %}
-            <p class="hero-meta">최근 업데이트 <time>{{ updated_at }}</time></p>
+            <p class="hero-meta">최근 업데이트 <time datetime="{{ updated_at }}">{{ updated_at[:16] | replace('-', '.') | replace('T', ' ') }}</time></p>
           {% else %}
             <p class="hero-meta">아직 수집된 뉴스가 없습니다.</p>
           {% endif %}
@@ -523,10 +522,12 @@
                 {% endif %}
               </div>
 
-              {% if news_items %}
+              {% if search_warning %}
+                <p class="flash error">{{ search_warning }}</p>
+              {% elif news_items %}
                 <ul class="news-list">
                   {% for item in news_items %}
-                    <li class="news-item">
+                    <li id="news-{{ item.article_id }}" class="news-item {% if article_summary_id == item.article_id %}is-expanded{% endif %}">
                       <div class="news-thumb">
                         {% if item.thumbnail %}
                           <img src="{{ item.thumbnail }}" alt="">
@@ -549,11 +550,41 @@
                         {% if item.summary %}
                           <p class="summary">{{ item.summary }}</p>
                         {% endif %}
+                        {% if article_summary_id == item.article_id and article_summary %}
+                          <div class="article-ai-summary">
+                            <div class="article-ai-head">
+                              <span>AI 기사 요약</span>
+                              {% if article_summary.cached %}
+                                <em>cached</em>
+                              {% endif %}
+                            </div>
+                            {% if article_summary.error %}
+                              <p class="article-ai-error">{{ article_summary.error }}</p>
+                            {% endif %}
+                            {% if article_summary.one_line %}
+                              <strong>{{ article_summary.one_line }}</strong>
+                            {% endif %}
+                            {% if article_summary.key_points %}
+                              <ul>
+                                {% for point in article_summary.key_points %}
+                                  <li>{{ point }}</li>
+                                {% endfor %}
+                              </ul>
+                            {% endif %}
+                            {% if article_summary.why_it_matters %}
+                              <p><span>왜 중요한가</span>{{ article_summary.why_it_matters }}</p>
+                            {% endif %}
+                            {% if article_summary.jobseeker_takeaway %}
+                              <p><span>취업 준비 포인트</span>{{ article_summary.jobseeker_takeaway }}</p>
+                            {% endif %}
+                          </div>
+                        {% endif %}
                       </div>
                       <div class="news-side">
                         {% if item.published %}
                           <time class="date">{{ item.published }}</time>
                         {% endif %}
+                        <a class="detail-link ai-summary-link" href="{{ url_for('index', keyword=selected_keyword, company=company, q=search_q, category=selected_category, page=pagination.page, brief=('1' if brief_requested else none), article=item.article_id) }}#news-{{ item.article_id }}" data-loading-link data-loading-message="선택한 기사만 AI 요약하는 중입니다...">AI 요약</a>
                         <a class="detail-link" href="{{ item.link }}" target="_blank" rel="noopener noreferrer">기사 보기</a>
                       </div>
                     </li>
@@ -587,6 +618,6 @@
       </section>
     </main>
   </div>
-  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='app.js', v=asset_version) }}" defer></script>
 </body>
 </html>

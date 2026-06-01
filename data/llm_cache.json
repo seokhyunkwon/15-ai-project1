@@ -3581,5 +3581,438 @@
       "model": "gpt-4o-mini"
     },
     "cached": false
+  },
+  "96af80793bf83f5db8e0938f80d5c479fd12143c995778c16d504b2fc5d54b6f": {
+    "company": "현대케피코",
+    "highlights": [
+      {
+        "claim": "현대케피코가 태양광 발전과 에너지저장장치(ESS)를 연계한 차세대 초고속 충전 솔루션을 구축하고 실증 운영에 들어갔다.",
+        "why_it_matters": "이 프로젝트는 친환경 에너지 기반 충전 인프라의 발전을 의미하며, 현대케피코의 기술력과 지속 가능성에 대한 의지를 보여준다.",
+        "evidence_links": [
+          "https://n.news.naver.com/mnews/article/018/0006291552?sid=103",
+          "https://www.dnews.co.kr/uhtml/view.jsp?idxno=202605261728266940045",
+          "http://autotimes.co.kr/detail.php?number=687852&thread=27"
+        ]
+      },
+      {
+        "claim": "현대케피코의 노조가 사상 첫 9만명 동맹파업을 준비하고 있다.",
+        "why_it_matters": "노조의 파업은 회사의 운영에 큰 영향을 미칠 수 있으며, 이는 직원들의 근무 환경과 회사의 생산성에 대한 중요한 신호일 수 있다.",
+        "evidence_links": [
+          "https://n.news.naver.com/mnews/article/015/0005292903?sid=101",
+          "https://n.news.naver.com/mnews/article/015/0005293005?sid=101"
+        ]
+      }
+    ],
+    "risks_and_watchouts": [
+      {
+        "item": "노조의 파업이 회사 운영에 미치는 영향",
+        "evidence_links": [
+          "https://n.news.naver.com/mnews/article/015/0005292903?sid=101",
+          "https://n.news.naver.com/mnews/article/015/0005293005?sid=101"
+        ]
+      }
+    ],
+    "keywords_to_prepare": [
+      "태양광 발전",
+      "에너지저장장치",
+      "초고속 충전 솔루션",
+      "노조",
+      "파업"
+    ],
+    "sources": [
+      {
+        "title": "현대케피코, 태양광 발전 연계 차세대 초고속 충전 솔루션 구축",
+        "link": "https://n.news.naver.com/mnews/article/018/0006291552?sid=103",
+        "published": "Wed, 27 May 2026 14:04:00 +0900",
+        "outlet": "edaily.co.kr"
+      },
+      {
+        "title": "현대 차그룹·한화·오리온…산업계 '하투' 본격화",
+        "link": "https://n.news.naver.com/mnews/article/015/0005293005?sid=101",
+        "published": "Fri, 29 May 2026 18:26:00 +0900",
+        "outlet": "hankyung.com"
+      },
+      {
+        "title": "[단독] 현대 차그룹 계열사 노조, 사상 첫 9만명 동맹파업 시동",
+        "link": "https://n.news.naver.com/mnews/article/015/0005292903?sid=101",
+        "published": "Fri, 29 May 2026 16:49:00 +0900",
+        "outlet": "hankyung.com"
+      },
+      {
+        "title": "[CAR 브리프] 한국자동차연구원ㆍ한국앤컴퍼니ㆍ한국타이어ㆍ넥센타이...",
+        "link": "https://www.dnews.co.kr/uhtml/view.jsp?idxno=202605261728266940045",
+        "published": "Wed, 27 May 2026 23:20:00 +0900",
+        "outlet": "naver"
+      },
+      {
+        "title": "전력 직접 저장하는 저장소.. 현대케피코 실증 착수",
+        "link": "http://autotimes.co.kr/detail.php?number=687852&thread=27",
+        "published": "Wed, 27 May 2026 09:38:00 +0900",
+        "outlet": "naver"
+      }
+    ],
+    "answer_strategy": [],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "49ea315f009d888a4232cd32fe7fb9f4432f0ccc3afe63d97dc54ce129b544fd": {
+    "company": "현대케피코",
+    "company_overview": [
+      "현대케피코는 현대자동차그룹의 모빌리티 제어 시스템 제조사로, 전기차 충전기 및 관련 기술을 개발하고 있다.",
+      "주요 제품으로는 자동차 엔진 및 변속기 관련 전장 부품이 있으며, 차세대 충전 기술 개발에 주력하고 있다."
+    ],
+    "recent_issues": [
+      {
+        "point": "현대케피코가 태양광 발전과 에너지저장장치(ESS)를 연계한 초고속 충전 솔루션을 구축하고 실증 운영에 들어갔다.",
+        "evidence_links": [
+          "https://www.dnews.co.kr/uhtml/view.jsp?idxno=202605261728266940045",
+          "https://n.news.naver.com/mnews/article/018/0006291552?sid=103"
+        ]
+      },
+      {
+        "point": "현대케피코가 전기차 충전 기술의 보안과 속도 개선을 위한 신기술 개발에 속도를 내고 있다.",
+        "evidence_links": [
+          "https://www.ittimes.com/news/articleView.html?idxno=84971",
+          "https://v.daum.net/v/bQzmSSEoIc"
+        ]
+      }
+    ],
+    "business_keywords": [
+      "전기차 충전기",
+      "모빌리티 제어 시스템",
+      "태양광 발전",
+      "에너지저장장치",
+      "차세대 충전 기술"
+    ],
+    "welfare_signals": [
+      {
+        "signal": "현대케피코가 지역 사회 복지 기관에 기부금을 전달했다.",
+        "confidence": "신뢰할 수 있는 정보",
+        "evidence_links": [
+          "https://www.mimint.co.kr/bbs/view.asp?strBoardID=news&bbstype=S1N17&bidx=4756201",
+          "https://www.ajunews.com/view/20170322110617711?page=46"
+        ]
+      },
+      {
+        "signal": "현대케피코가 지역 복지 사업을 지원하고 있다.",
+        "confidence": "신뢰할 수 있는 정보",
+        "evidence_links": [
+          "http://mhswc.co.kr/bbs/board.php?bo_table=news&wr_id=3433",
+          "http://www.seniorsinmun.com/news/articleView.html?idxno=45682"
+        ]
+      }
+    ],
+    "work_life_notes": [
+      "복지 및 지역 사회 지원 활동이 활발히 이루어지고 있는 것으로 보인다."
+    ],
+    "likely_interview_questions": [
+      {
+        "question": "현대케피코의 전기차 충전 기술에 대해 설명해 주세요.",
+        "intent": "기술 이해도 평가",
+        "answer_direction": [
+          "전기차 충전기 종류 및 특징",
+          "차세대 충전 기술의 중요성",
+          "현대케피코의 기술적 강점"
+        ],
+        "evidence_links": [
+          "https://www.ittimes.com/news/articleView.html?idxno=84971",
+          "https://v.daum.net/v/bQzmSSEoIc"
+        ]
+      },
+      {
+        "question": "현대케피코의 사회적 책임에 대해 어떻게 생각하나요?",
+        "intent": "사회적 책임 의식 평가",
+        "answer_direction": [
+          "기업의 사회적 책임의 중요성",
+          "현대케피코의 기부 및 지원 활동",
+          "사회적 책임이 기업에 미치는 영향"
+        ],
+        "evidence_links": [
+          "https://www.mimint.co.kr/bbs/view.asp?strBoardID=news&bbstype=S1N17&bidx=4756201",
+          "http://mhswc.co.kr/bbs/board.php?bo_table=news&wr_id=3433"
+        ]
+      }
+    ],
+    "answer_strategy": [
+      "제품 및 사업에 대한 이해를 바탕으로 질문 준비",
+      "사회적 책임 및 지역 사회 기여에 대한 논의 준비"
+    ],
+    "generated_queries": [
+      "현대케피코",
+      "현대케피코 기업정보",
+      "현대케피코 사업 제품",
+      "현대케피코 기업 복리후생",
+      "현대케피코 복지",
+      "현대케피코 근무제도",
+      "현대케피코 면접"
+    ],
+    "sources": [
+      {
+        "title": "현대 케피코 , 태양광·ESS 연계 차세대 초고속 충전 솔루션 구축",
+        "link": "https://www.dnews.co.kr/uhtml/view.jsp?idxno=202605261728266940045",
+        "outlet": "dnews.co.kr",
+        "source_type": "news"
+      },
+      {
+        "title": "현대 케피코 , 전기차 충전 보안·속도·V2X 신기술 개발 가속",
+        "link": "https://www.ittimes.com/news/articleView.html?idxno=84971",
+        "outlet": "ittimes.com",
+        "source_type": "news"
+      },
+      {
+        "title": "현대 케피코 가 군포시 지역 복지 공모사업에 기부금 3500만원 전달",
+        "link": "https://www.mimint.co.kr/bbs/view.asp?strBoardID=news&bbstype=S1N17&bidx=4756201",
+        "outlet": "mimint.co.kr",
+        "source_type": "public"
+      },
+      {
+        "title": "당동청소년문화의집 현대 케피코 지역 복지 사업 지원 선정",
+        "link": "https://www.ajunews.com/view/20170322110617711?page=46",
+        "outlet": "ajunews.com",
+        "source_type": "news"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "1138a9af433bbce9844b0be0e2b395a24e387f65b6ea9dc692ccad1a7b677858": {
+    "company": "현대케피코",
+    "likely_interview_questions": [
+      {
+        "question": "현대케피코의 태양광 발전과 ESS 연계 초고속 충전 솔루션에 대해 설명해 주세요.",
+        "intent": "기술 이해도 확인",
+        "answer_outline": [
+          "태양광 발전과 에너지저장장치(ESS)의 개념 설명",
+          "초고속 충전 솔루션의 필요성과 장점",
+          "현대케피코의 실증 운영 계획 및 기대 효과"
+        ],
+        "evidence_links": [
+          "https://n.news.naver.com/mnews/article/018/0006291552?sid=103",
+          "https://www.dnews.co.kr/uhtml/view.jsp?idxno=202605261728266940045"
+        ]
+      },
+      {
+        "question": "최근 현대케피코의 노조 활동에 대해 어떻게 생각하십니까?",
+        "intent": "사회적 이슈에 대한 인식 확인",
+        "answer_outline": [
+          "노조의 역할과 중요성 설명",
+          "현대차그룹의 경영실적과 생산량 축소의 관계",
+          "노조의 요구사항과 기업의 대응 방안"
+        ],
+        "evidence_links": [
+          "https://n.news.naver.com/mnews/article/015/0005292903?sid=101",
+          "https://n.news.naver.com/mnews/article/015/0005293005?sid=101"
+        ]
+      },
+      {
+        "question": "현대케피코의 사회공헌 활동에 대해 알고 있습니까?",
+        "intent": "기업의 사회적 책임에 대한 이해 확인",
+        "answer_outline": [
+          "현대케피코의 사회공헌 활동 사례 소개",
+          "지역사회와의 관계 및 기여도 설명",
+          "사회적 책임의 중요성 강조"
+        ],
+        "evidence_links": [
+          "https://www.christiantoday.co.kr/news/375344",
+          "http://www.gunponews.net/index.do?menu_id=00000521"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "현대케피코 , 태양광 발전 연계 차세대 초고속 충전 솔루션 구축",
+        "link": "https://n.news.naver.com/mnews/article/018/0006291552?sid=103",
+        "published": "Wed, 27 May 2026 14:04:00 +0900",
+        "outlet": "edaily.co.kr"
+      },
+      {
+        "title": "현대 차그룹·한화·오리온…산업계 '하투' 본격화",
+        "link": "https://n.news.naver.com/mnews/article/015/0005293005?sid=101",
+        "published": "Fri, 29 May 2026 18:26:00 +0900",
+        "outlet": "hankyung.com"
+      },
+      {
+        "title": "(사)성민원· 현대케피코 밥퍼봉사단, ‘사랑의 특식 행사’ 진행",
+        "link": "https://www.christiantoday.co.kr/news/375344",
+        "published": "Thu, 28 May 2026 10:38:00 +0900",
+        "outlet": "christiantoday.co.kr"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "30a52e92b9dfafc5aa6851e84b26b368ed6cddaa36f7bd1e5c394e4b9aab8b9f": {
+    "company": "현대케피코",
+    "company_overview": [
+      "현대케피코는 현대자동차의 완전자회사로, 자동차 엔진 및 변속기의 핵심 전장부품을 생산하는 기업이다.",
+      "주요 제품으로는 제어기, 구동기, 센서 등이 있으며, 전기차 충전기 사업에도 참여하고 있다."
+    ],
+    "recent_issues": [
+      {
+        "point": "현대케피코가 차세대 전기차 충전 기술 개발에 속도를 내고 있다.",
+        "evidence_links": [
+          "https://www.ittimes.com/news/articleView.html?idxno=84971",
+          "https://v.daum.net/v/bQzmSSEoIc"
+        ]
+      },
+      {
+        "point": "노조가 현대차그룹의 생산량 축소에 대한 우려를 표명하고 있다.",
+        "evidence_links": [
+          "https://n.news.naver.com/mnews/article/015/0005292903?sid=101"
+        ]
+      }
+    ],
+    "business_keywords": [
+      "전기차 충전기",
+      "자동차 전장부품",
+      "차세대 충전 기술",
+      "모빌리티 산업"
+    ],
+    "welfare_signals": [
+      {
+        "signal": "현대케피코가 지역 사회 복지 기관에 기부금을 전달했다.",
+        "confidence": "신뢰할 수 있는 정보",
+        "evidence_links": [
+          "https://www.mimint.co.kr/bbs/view.asp?strBoardID=news&bbstype=S1N17&bidx=4756201"
+        ]
+      }
+    ],
+    "work_life_notes": [
+      "복지 및 근무제도에 대한 구체적인 정보는 확인 필요."
+    ],
+    "likely_interview_questions": [
+      {
+        "question": "현대케피코의 전기차 충전기 사업에 대해 어떻게 생각하나요?",
+        "intent": "지원자의 사업 이해도 평가",
+        "answer_direction": [
+          "전기차 충전 기술의 중요성",
+          "현대케피코의 시장 내 위치"
+        ],
+        "evidence_links": [
+          "https://v.daum.net/v/5UcEIUbYwh"
+        ]
+      },
+      {
+        "question": "현대케피코의 핵심 제품에 대해 설명해보세요.",
+        "intent": "제품 지식 평가",
+        "answer_direction": [
+          "제어기, 구동기, 센서의 역할",
+          "전기차 충전기 사업의 중요성"
+        ],
+        "evidence_links": [
+          "https://v.daum.net/v/bRQ2WcV7J5"
+        ]
+      }
+    ],
+    "answer_strategy": [
+      "회사의 제품 및 사업 방향에 대한 이해를 바탕으로 질문 준비",
+      "복리후생 및 근무환경에 대한 확인된 제도에 대한 질문 준비"
+    ],
+    "generated_queries": [
+      "현대케피코",
+      "현대케피코 기업정보",
+      "현대케피코 사업 제품",
+      "현대케피코 복지",
+      "현대케피코 근무제도",
+      "현대케피코 면접"
+    ],
+    "sources": [
+      {
+        "title": "현대 케피코 , 전기차 충전 보안·속도·V2X 신기술 개발 가속",
+        "link": "https://www.ittimes.com/news/articleView.html?idxno=84971",
+        "outlet": "ittimes.com",
+        "source_type": "news"
+      },
+      {
+        "title": "현대 케피코 , 군포시 지역 복지 공모사업에 기부금 3500만원 전달",
+        "link": "https://www.mimint.co.kr/bbs/view.asp?strBoardID=news&bbstype=S1N17&bidx=4756201",
+        "outlet": "mimint.co.kr",
+        "source_type": "public"
+      },
+      {
+        "title": "현대 차그룹·한화·오리온…산업계 '하투' 본격화",
+        "link": "https://n.news.naver.com/mnews/article/015/0005292903?sid=101",
+        "outlet": "hankyung.com",
+        "source_type": "news"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "7633b15c86d422963d96b74b98ff1b8fe76d7ee3968a0297d41b2282c97a651e": {
+    "title": "글로벌 공급망 회복의 숨은 진주… 태양기계, 극단적 저평가 매력 부각",
+    "one_line": "현대위아와 에스엘의 실적은 견조하나, 자동차 업종의 투자심리 위축이 영향을 미치고 있다.",
+    "key_points": [
+      "에스엘과 현대위아의 실적이 좋음에도 불구하고 투자심리가 위축됨.",
+      "자동차 업종 전반에 걸쳐 부정적인 투자 심리가 존재.",
+      "다양한 관련 기업들이 언급되며, 시장의 변동성을 시사."
+    ],
+    "why_it_matters": "자동차 산업의 투자 심리와 공급망 회복은 관련 기업들의 성장 가능성에 큰 영향을 미치므로, 이를 이해하는 것이 중요하다.",
+    "jobseeker_takeaway": "자동차 산업에 관심이 있는 구직자는 현재의 시장 동향과 기업 실적을 분석하여 전략적으로 접근할 필요가 있다.",
+    "evidence_links": [
+      "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456841"
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "02ff41400a40732a208f4dd31ba81d0fc6e983b5edc1e23e6fcad6ff548df1e5": {
+    "title": "[리스트] 양극화 장세..관심주는?",
+    "one_line": "에스엘을 포함한 15개 종목이 투자매력점수에서 높은 평가를 받았다.",
+    "key_points": [
+      "에스엘은 스톡봇 투자매력점수에서 높은 순위를 기록했다.",
+      "양극화 장세에서 주목할 만한 종목으로 선정되었다.",
+      "투자매력점수는 종목 선택에 중요한 기준이 될 수 있다."
+    ],
+    "why_it_matters": "투자매력점수가 높은 종목은 향후 성장 가능성이 크고, 주식 투자에 있어 중요한 참고자료가 된다.",
+    "jobseeker_takeaway": "주식 시장의 동향과 투자매력 점수를 이해하는 것은 금융 관련 직종에 지원할 때 유리할 수 있다.",
+    "evidence_links": [
+      "https://www.itooza.com/common/iview.php?no=2026060109354872946"
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "2a78808e290c3beebb355f1694de11dfab2a914283844f91d30aa4c27b147b04": {
+    "title": "인건비 폭등에 공장 무인화 급물살…로보스타, 산업용 로봇 시장 싹쓸이...",
+    "one_line": "인건비 상승으로 인해 공장 무인화가 가속화되고 있으며, 로보스타가 산업용 로봇 시장에서 두각을 나타내고 있다.",
+    "key_points": [
+      "인건비 상승이 공장 자동화 및 무인화에 영향을 미치고 있다.",
+      "로보스타가 산업용 로봇 시장에서 주요 기업으로 부상하고 있다.",
+      "다수의 기업들이 인건비 부담을 반영하고 있는 상황이다."
+    ],
+    "why_it_matters": "산업 자동화와 로봇 기술의 발전은 제조업의 효율성을 높이고, 인력 수요에 변화를 가져올 수 있다.",
+    "jobseeker_takeaway": "제조업 및 로봇 관련 분야에서의 경력 개발이 중요해지며, 관련 기술 및 지식 습득이 필요하다.",
+    "evidence_links": [
+      "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456721"
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
   }
 }

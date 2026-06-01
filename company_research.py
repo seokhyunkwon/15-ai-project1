@@ -1,7 +1,11 @@
 from __future__ import annotations
 
+import json
 import re
+import time
 from datetime import datetime
+from hashlib import sha256
+from pathlib import Path
 from typing import Dict, List
 from urllib.parse import urlparse
 
@@ -16,18 +20,23 @@ from news_collector import (
     _publisher_from_url,
 )
 
+BASE_DIR = Path(__file__).resolve().parent
+DATA_DIR = BASE_DIR / "data"
+RESEARCH_CACHE_FILE = DATA_DIR / "company_research_cache.json"
+RESEARCH_CACHE_SCHEMA_VERSION = "company-research-fast-v1"
+RESEARCH_CACHE_TTL_SECONDS = 60 * 60 * 12
+
 
 RESEARCH_SUFFIXES = [
     "",
     "기업정보",
     "사업 제품",
-    "기업 복리후생",
-    "사람인 기업정보",
-    "사람인 복리후생",
-    "사람인 면접후기",
     "복지",
     "근무제도",
     "면접",
+    "사람인 기업정보",
+    "사람인 면접후기",
+    "채용 복리후생",
 ]
 
 CAREER_DOMAINS = [
@@ -59,10 +68,22 @@ def build_company_research_queries(company: str) -> List[str]:
     return [f"{compact_company} {suffix}".strip() for suffix in RESEARCH_SUFFIXES]
 
 
-def collect_company_research(company: str, *, limit: int = 18) -> Dict[str, object]:
-    queries = build_company_research_queries(company)
+def collect_company_research(
+    company: str,
+    *,
+    limit: int = 12,
+    max_queries: int = 7,
+    page_size: int = 6,
+    enrich_limit: int = 4,
+) -> Dict[str, object]:
+    queries = build_company_research_queries(company)[:max(1, max_queries)]
     items: List[Dict[str, str]] = []
     errors: List[str] = []
+    cache_key = _research_cache_key(company=company, queries=queries, limit=limit)
+    cached = _research_cache_get(cache_key)
+    if cached:
+        cached["cached"] = True
+        return cached
 
     if not Config.KAKAO_REST_API_KEY:
         return {
@@ -73,16 +94,23 @@ def collect_company_research(company: str, *, limit: int = 18) -> Dict[str, obje
 
     for query in queries:
         try:
-            items.extend(_collect_kakao_research(query=query, company=company, size=8))
+            items.extend(_collect_kakao_research(query=query, company=company, size=page_size))
         except requests.RequestException as exc:
             errors.append(f"{query}: {exc}")
 
-    deduped = _dedupe_items(items)[:limit]
-    return {
+    enriched = _enrich_top_research_items(
+        _dedupe_items(items),
+        company=company,
+        limit=limit,
+        enrich_limit=enrich_limit,
+    )
+    result = {
         "queries": queries,
-        "items": deduped,
+        "items": enriched,
         "error": "; ".join(errors[:2]) if errors else "",
     }
+    _research_cache_set(cache_key, result)
+    return result
 
 
 def _collect_kakao_research(*, query: str, company: str, size: int) -> List[Dict[str, str]]:
@@ -125,9 +153,28 @@ def _collect_kakao_research(*, query: str, company: str, size: int) -> List[Dict
             "source_type": source_type,
             "published": _format_kakao_datetime(raw.get("datetime", "")),
         }
-        item = _enrich_career_page(item, company=company)
         items.append(item)
     return items
+
+
+def _enrich_top_research_items(
+    items: List[Dict[str, str]],
+    *,
+    company: str,
+    limit: int,
+    enrich_limit: int,
+) -> List[Dict[str, str]]:
+    out: List[Dict[str, str]] = []
+    enriched_count = 0
+    for item in items:
+        current = item
+        if enriched_count < enrich_limit and current.get("source_type") in {"company_info", "interview_review"}:
+            current = _enrich_career_page(current, company=company)
+            enriched_count += 1
+        out.append(current)
+        if len(out) >= limit:
+            break
+    return out
 
 
 def _strip_html(text: str) -> str:
@@ -397,3 +444,53 @@ def _item_score(item: Dict[str, str]) -> int:
     if item.get("source_type") == "interview_review":
         score += 20
     return score
+
+
+def _research_cache_key(*, company: str, queries: List[str], limit: int) -> str:
+    material = {
+        "version": RESEARCH_CACHE_SCHEMA_VERSION,
+        "company": re.sub(r"\s+", "", company.lower()),
+        "queries": queries,
+        "limit": limit,
+    }
+    blob = json.dumps(material, ensure_ascii=False, sort_keys=True).encode("utf-8")
+    return sha256(blob).hexdigest()
+
+
+def _research_cache_get(key: str) -> Dict[str, object] | None:
+    if not RESEARCH_CACHE_FILE.exists():
+        return None
+    try:
+        with open(RESEARCH_CACHE_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception:  # noqa: BLE001
+        return None
+
+    value = data.get(key) if isinstance(data, dict) else None
+    if not isinstance(value, dict):
+        return None
+    if time.time() - float(value.get("saved_at", 0)) > RESEARCH_CACHE_TTL_SECONDS:
+        return None
+    payload = value.get("payload")
+    return payload if isinstance(payload, dict) else None
+
+
+def _research_cache_set(key: str, payload: Dict[str, object]) -> None:
+    try:
+        DATA_DIR.mkdir(parents=True, exist_ok=True)
+        data: Dict[str, object] = {}
+        if RESEARCH_CACHE_FILE.exists():
+            with open(RESEARCH_CACHE_FILE, "r", encoding="utf-8") as f:
+                loaded = json.load(f)
+            if isinstance(loaded, dict):
+                data = loaded
+        if len(data) > 100:
+            data = {}
+        data[key] = {
+            "saved_at": time.time(),
+            "payload": payload,
+        }
+        with open(RESEARCH_CACHE_FILE, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+    except Exception:  # noqa: BLE001
+        return

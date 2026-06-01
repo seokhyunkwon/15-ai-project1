@@ -132,6 +132,74 @@ def build_news_brief(
     return parsed
 
 
+def build_article_summary(
+    *,
+    topic: str,
+    article: Dict[str, str],
+) -> Dict[str, Any]:
+    """
+    Build a focused summary for one visible news item.
+    """
+    status = llm_status()
+
+    if not status["enabled"]:
+        return _fallback_article_summary(topic=topic, article=article)
+
+    api_key = (os.getenv("OPENAI_API_KEY") or "").strip()
+    model = (os.getenv("OPENAI_MODEL") or "gpt-4o-mini").strip() or "gpt-4o-mini"
+    cache_key = _cache_key(
+        kind="article_summary",
+        company=topic,
+        model=model,
+        articles=[article],
+        company_profile={},
+    )
+    cached = _cache_get(cache_key)
+    if cached:
+        cached.setdefault("llm", {"enabled": True, "provider": "openai", "model": model})
+        cached["cached"] = True
+        return cached
+
+    prompt = _article_summary_prompt(topic=topic, article=article)
+    try:
+        data = _openai_chat_with_retry(
+            api_key=api_key,
+            model=model,
+            messages=[
+                {
+                    "role": "system",
+                    "content": (
+                        "You summarize one Korean news item for job seekers. "
+                        "Use only the provided title, snippet, date, outlet, and link. "
+                        "Do not invent facts from the full article. Return JSON only."
+                    ),
+                },
+                {"role": "user", "content": prompt},
+            ],
+        )
+    except Exception as exc:  # noqa: BLE001
+        out = _fallback_article_summary(topic=topic, article=article)
+        out["error"] = f"LLM 호출 실패: {_format_openai_exception(exc)}"
+        return out
+
+    parsed = _safe_parse_json(data)
+    if not parsed:
+        out = _fallback_article_summary(topic=topic, article=article)
+        out["error"] = "LLM 응답을 JSON으로 파싱하지 못했습니다."
+        return out
+
+    parsed.setdefault("title", article.get("title", ""))
+    parsed.setdefault("one_line", article.get("summary") or article.get("title", ""))
+    parsed.setdefault("key_points", [])
+    parsed.setdefault("why_it_matters", "")
+    parsed.setdefault("jobseeker_takeaway", "")
+    parsed.setdefault("evidence_links", [article.get("link", "")] if article.get("link") else [])
+    parsed["llm"] = {"enabled": True, "provider": "openai", "model": model}
+    parsed["cached"] = False
+    _cache_set(cache_key, parsed)
+    return parsed
+
+
 def build_interview_questions_fallback(
     *,
     company: str,
@@ -329,6 +397,7 @@ def _openai_chat(*, api_key: str, model: str, messages: List[Dict[str, str]]) ->
         "model": model,
         "messages": messages,
         "temperature": 0.2,
+        "max_tokens": _openai_max_tokens(),
         "response_format": {"type": "json_object"},
     }
     resp = requests.post(url, headers=headers, json=payload, timeout=30)
@@ -337,8 +406,15 @@ def _openai_chat(*, api_key: str, model: str, messages: List[Dict[str, str]]) ->
     return body["choices"][0]["message"]["content"]
 
 
+def _openai_max_tokens() -> int:
+    try:
+        return max(600, int(os.getenv("OPENAI_MAX_TOKENS") or "1600"))
+    except ValueError:
+        return 1600
+
+
 def _news_brief_prompt(*, company: str, articles: List[Dict[str, str]], company_profile: Dict[str, Any]) -> str:
-    top = articles[:8]
+    top = articles[:6]
     sources = [
         {
             "title": a.get("title", ""),
@@ -354,7 +430,7 @@ def _news_brief_prompt(*, company: str, articles: List[Dict[str, str]], company_
     return (
         f"회사명: {company}\n"
         f"회사 프로필(가능한 범위): {company_profile}\n\n"
-        "아래는 최신 뉴스 목록(최대 12개)이다. 이 데이터만 근거로 삼아 면접 준비에 도움이 되는 브리핑을 생성하라.\n"
+        "아래는 최신 뉴스 목록(최대 6개)이다. 이 데이터만 근거로 삼아 면접 준비에 도움이 되는 브리핑을 생성하라.\n"
         "반드시 링크를 근거로 포함해야 하며, 모르는 내용은 추측하지 마라.\n\n"
         "출력은 JSON 하나로만 반환하라. 스키마:\n"
         "{\n"
@@ -367,8 +443,39 @@ def _news_brief_prompt(*, company: str, articles: List[Dict[str, str]], company_
         f"뉴스 목록: {sources}\n"
     )
 
+
+def _article_summary_prompt(*, topic: str, article: Dict[str, str]) -> str:
+    source = {
+        "topic": topic,
+        "title": article.get("title", ""),
+        "summary": article.get("summary", ""),
+        "published": article.get("published", ""),
+        "link": article.get("link", ""),
+        "source": article.get("source", ""),
+        "outlet": article.get("outlet", ""),
+        "category": article.get("category", ""),
+        "keyword": article.get("keyword", ""),
+    }
+    return (
+        f"검색/분석 주제: {topic}\n\n"
+        "아래 뉴스 카드 1건만 근거로 빠르게 읽을 수 있는 요약을 작성하라.\n"
+        "원문 전문을 읽은 것처럼 말하지 말고, 제공된 제목과 요약 스니펫 기준임을 지켜라.\n"
+        "면접 질문이나 답변 예시는 만들지 말고, 기사 이해와 취업 준비 관점의 참고 포인트만 작성하라.\n\n"
+        "출력은 JSON 하나로만 반환하라. 스키마:\n"
+        "{\n"
+        '  "title": string,\n'
+        '  "one_line": string,\n'
+        '  "key_points": [string],\n'
+        '  "why_it_matters": string,\n'
+        '  "jobseeker_takeaway": string,\n'
+        '  "evidence_links": [string]\n'
+        "}\n\n"
+        f"뉴스 카드: {source}\n"
+    )
+
+
 def _interview_questions_prompt(*, company: str, articles: List[Dict[str, str]], company_profile: Dict[str, Any]) -> str:
-    top = articles[:8]
+    top = articles[:6]
     sources = [
         {
             "title": a.get("title", ""),
@@ -408,7 +515,7 @@ def _company_research_prompt(
             "link": a.get("link", ""),
             "outlet": a.get("outlet", ""),
         }
-        for a in articles[:10]
+        for a in articles[:6]
     ]
     public_sources = [
         {
@@ -420,7 +527,7 @@ def _company_research_prompt(
             "source_type": d.get("source_type", ""),
             "published": d.get("published", ""),
         }
-        for d in research_docs[:18]
+        for d in research_docs[:10]
     ]
     return (
         f"회사명: {company}\n"
@@ -478,6 +585,28 @@ def _fallback_news_brief(*, company: str, articles: List[Dict[str, str]]) -> Dic
         "sources": sources,
         "llm": {"enabled": False, "provider": "", "model": ""},
     }
+
+
+def _fallback_article_summary(*, topic: str, article: Dict[str, str]) -> Dict[str, Any]:
+    title = (article.get("title") or "").strip()
+    summary = (article.get("summary") or "").strip()
+    link = (article.get("link") or "").strip()
+    key_points = []
+    if summary:
+        key_points.append(summary)
+    elif title:
+        key_points.append(title)
+
+    return {
+        "title": title,
+        "one_line": summary or title or f"{topic} 관련 뉴스입니다.",
+        "key_points": key_points,
+        "why_it_matters": "현재 수집된 기사 제목과 요약 스니펫 기준의 빠른 요약입니다.",
+        "jobseeker_takeaway": "세부 내용은 원문 링크에서 확인하고, 회사/산업 이해 포인트로 정리해 두세요.",
+        "evidence_links": [link] if link else [],
+        "llm": {"enabled": False, "provider": "", "model": ""},
+    }
+
 
 def _fallback_interview_questions(*, company: str, articles: List[Dict[str, str]]) -> Dict[str, Any]:
     sources = _sources_from_articles(articles)
