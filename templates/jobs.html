@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>채용공고 - BriefJob</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=asset_version) }}">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="{{ url_for('index') }}">
+          <img class="brand-logo" src="{{ url_for('static', filename='briefjob-logo.svg', v=asset_version) }}" alt="BriefJob">
+        </a>
+        <nav class="main-nav" aria-label="주요 메뉴">
+          <a href="{{ url_for('index') }}#search">검색</a>
+          <a href="{{ url_for('companies') }}">기업정보</a>
+          <a href="{{ url_for('jobs') }}">채용공고</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="subpage">
+      <section class="page-hero">
+        <p class="section-kicker">Recruiting Board</p>
+        <h1>{{ job_query or '추천 기업' }} 채용공고</h1>
+        <p>네이버/카카오 공개 검색 결과에서 채용 사이트와 공식 채용 페이지 후보만 걸러 보여줍니다.</p>
+      </section>
+
+      <section class="job-search-form">
+        <form method="get" action="{{ url_for('jobs') }}" data-loading-form data-loading-message="채용공고 후보를 검색하는 중입니다..." data-loading-button="검색 중...">
+          <input type="search" name="q" value="{{ job_query }}" placeholder="다른 회사명으로 채용공고 검색">
+          <button class="btn primary" type="submit">검색</button>
+          {% if job_query %}
+            <a class="btn ghost" href="{{ url_for('jobs') }}">추천 기업 전체</a>
+          {% endif %}
+        </form>
+      </section>
+
+      <section class="jobs-summary">
+        <div>
+          <strong>{{ rows | length }}</strong>
+          <span>대상 기업</span>
+        </div>
+        <div>
+          <strong>{{ active_rows | length }}</strong>
+          <span>공고 확인 기업</span>
+        </div>
+        <div>
+          <strong>{{ updated_at or '-' }}</strong>
+          <span>업데이트</span>
+        </div>
+        <a class="btn primary" href="{{ url_for('jobs', q=job_query, refresh='1') }}" data-loading-link data-loading-message="채용공고 후보를 새로 수집하는 중입니다...">공고 새로고침</a>
+      </section>
+
+      {% if notice %}
+        <section class="api-notice">
+          <strong>공개 검색 기반 채용공고</strong>
+          <p>{{ notice }}</p>
+          <p>검색 결과 기반이라 실제 지원 가능 여부와 마감일은 공고 상세 페이지에서 한 번 더 확인해야 합니다.</p>
+        </section>
+      {% endif %}
+
+      {% if errors %}
+        <ul class="flash-list">
+          {% for error in errors %}
+            <li class="flash error">{{ error }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      <section class="job-company-list">
+        {% for row in rows %}
+          <article class="job-company-card">
+            <div class="job-company-head">
+              <h2>{{ row.company }}</h2>
+              <span>{{ row.jobs | length }}건</span>
+            </div>
+            {% if row.jobs %}
+              <ul class="job-list">
+                {% for job in row.jobs %}
+                  <li>
+                    <div>
+                      <strong>{{ job.title }}</strong>
+                      <p>
+                        {% if job.confidence_label %}
+                          <span class="job-trust {{ job.confidence_level }}">{{ job.confidence_label }}</span>
+                        {% endif %}
+                        {{ job.outlet or job.provider or '공개 검색' }}
+                        {% if job.published %} · {{ job.published }}{% endif %}
+                        {% if job.region %} · {{ job.region }}{% endif %}
+                        {% if job.close_at %} · 마감 {{ job.close_at }}{% endif %}
+                        {% if job.salary %} · {{ job.salary_type }} {{ job.salary }}{% endif %}
+                      </p>
+                      {% if job.summary %}
+                        <p class="job-summary">{{ job.summary }}</p>
+                      {% endif %}
+                    </div>
+                    {% if job.url %}
+                      <a class="detail-link" href="{{ job.url }}" target="_blank" rel="noopener noreferrer">공고 보기</a>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <p class="empty">공개 검색에서 채용공고 후보를 찾지 못했습니다. 아래 링크에서 직접 검색해 주세요.</p>
+            {% endif %}
+            {% if row.search_links %}
+              <div class="job-search-links">
+                {% for link in row.search_links %}
+                  <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </article>
+        {% endfor %}
+      </section>
+    </main>
+  </div>
+  <script src="{{ url_for('static', filename='app.js', v=asset_version) }}" defer></script>
+</body>
+</html>

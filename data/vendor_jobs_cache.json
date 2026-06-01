@@ -1,0 +1,2387 @@
+{
+  "version": 3,
+  "mode": "public_search",
+  "query": "",
+  "api_blocked": false,
+  "notice": "채용공고는 고용24 채용정보 API 없이 네이버/카카오 공개 웹검색 결과에서 채용 사이트와 공식 채용 페이지 후보만 필터링해 표시합니다.",
+  "updated_at": "2026-06-01 17:16:16",
+  "rows": [
+    {
+      "company": "영진정공",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "(주) 영진 모빌리티 구매관리 신입 채용",
+          "summary": "잘못된 내용이 있을 경우 해주세요. 영진 모빌리티 구매관리 신입 채용 (수습 3개월) 회사 내규에 따름...월~금) 08:00 ~ 17:00 근무지주소 경기 시흥시 마유로132번길 91 (정왕동, 영진 정공 ) 영진 정공 초대졸이상",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49004416?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-04-17",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        }
+      ],
+      "total": 1,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EC%98%81%EC%A7%84%EC%A0%95%EA%B3%B5"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EC%98%81%EC%A7%84%EC%A0%95%EA%B3%B5"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EC%98%81%EC%A7%84%EC%A0%95%EA%B3%B5+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "네오오토",
+      "enabled": true,
+      "jobs": [],
+      "total": 0,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EB%84%A4%EC%98%A4%EC%98%A4%ED%86%A0"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EB%84%A4%EC%98%A4%EC%98%A4%ED%86%A0"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EB%84%A4%EC%98%A4%EC%98%A4%ED%86%A0+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "동보",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "CS 아웃바운드 멤버 채용 (정규직)",
+          "summary": "한의원 압구정 본점 / CS 아웃바운드 멤버 채용 (정규직) 채용 정보에 잘못된 내용이 있을 경우 해주세요...서울 강남구 논현로159길 16 (신사동, 신사동 동보 빌딩) 5층 (주)메디컬오 인근지하철 스트레스관리...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49273097?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-29",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "고졸 채용 정보 - 사람인",
+          "summary": "영업관리 경력 채용 충남 아산시경력4년↑고졸↑ (주)에스엠벡셀 기업이미지 ~06.11(목) 스크랩 입사지원 동보 경주공장 자동차 부품 제조업 생산직 모집 경북 경주시경력무관고졸↑ (주) 동보 경주공장 기업...",
+          "url": "https://m.saramin.co.kr/highschool/list?rec_idx=30542621&pos=int&t_category=search&t_content=generic&searchword=%ED%98%84%EB%8C%80%EC%9E%90%EB%8F%99%EC%B0%A8&searchType=popular",
+          "outlet": "m.saramin.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-28",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        }
+      ],
+      "total": 2,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EB%8F%99%EB%B3%B4"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EB%8F%99%EB%B3%B4"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EB%8F%99%EB%B3%B4+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "지엠비코리아",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "인사팀 (인사관리 부문) 경력사원 채용",
+          "summary": "지엠비코리아 ㈜ 인사팀 (인사관리 부문) 경력사원 채용 채용 정보에 잘못된 내용이 있을 경우 해주세요. 회사 내규에 따름 근무지주소 경남 창원시 성산구 웅남로 618 (성산동, 지엠비코리아 (주))",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49142926?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-11",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "채용 안내 - 인재 채용 - 지엠비코리아",
+          "summary": "함께 성장하며 꿈을 일구어나가는 지엠비코리아 , 당신을 기다립니다.",
+          "url": "https://www.gmb.co.kr/kr/recruit/info.php?search_item=subject&search_order=",
+          "outlet": "gmb.co.kr",
+          "provider": "카카오",
+          "published": "2025-12-07",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
+        }
+      ],
+      "total": 2,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EC%A7%80%EC%97%A0%EB%B9%84%EC%BD%94%EB%A6%AC%EC%95%84"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EC%A7%80%EC%97%A0%EB%B9%84%EC%BD%94%EB%A6%AC%EC%95%84"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EC%A7%80%EC%97%A0%EB%B9%84%EC%BD%94%EB%A6%AC%EC%95%84+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "현대성우캐스팅",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "[ 현대 성우 캐스팅 ] 본사(서울) 회계팀 경력직 채용",
+          "summary": "현대 성우 그룹 [ 현대 성우 캐스팅 ] 본사(서울) 회계팀 경력직 채용 채용 정보에 잘못된 내용이 있을 경우 해주세요. (수습 3개월) 직급/직책 회사 내규에 따름 주5일(월~금) 근무지주소 서울 강남구 봉은사로 609...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49205549?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-19",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "충주공장 환경안전팀 수시 채용",
+          "summary": "현대 성우 캐스팅 채용 - 충주공장 환경안전팀 수시 채용 | 잡코리아",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/48573993?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-04-02",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "본사(서울) 원가기획팀 경력 채용",
+          "summary": "및 국가보훈대상자는 증빙서류 제출시 관계법령에 의거 우대함 ※ 자세한 사항은 채용 홈페이지 참조 바랍니다. 현대 성우 캐스팅 휴무/휴가/행사: 연차휴가 부여/하계휴가 (휴가비지원)/경조휴가 부여 보장/보상...",
+          "url": "https://www.invione.com/jobs/recruitment/open/detail/137387",
+          "outlet": "invione.com",
+          "provider": "카카오",
+          "published": "2025-09-30",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
+        },
+        {
+          "title": "충주공장 구매팀 수시 채용",
+          "summary": "제출서류, 문의사항, 기타사항 채용 사이트, 모집부분 전체요약정보로 구성된 표 채용 업체명 현대 성우 캐스팅 기업구분 중견기업 채용 시작일자 20250926 채용 종료일자 20251031 고용형태 정규직 합격자발표일 접수...",
+          "url": "https://www.gimhae.go.kr/job/html/sub/01_04.jsp?amode=view&empSeqno=138697",
+          "outlet": "gimhae.go.kr",
+          "provider": "카카오",
+          "published": "2025-09-26",
+          "confidence_label": "검색 후보",
+          "confidence_level": "candidate"
+        }
+      ],
+      "total": 4,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%ED%98%84%EB%8C%80%EC%84%B1%EC%9A%B0%EC%BA%90%EC%8A%A4%ED%8C%85"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%ED%98%84%EB%8C%80%EC%84%B1%EC%9A%B0%EC%BA%90%EC%8A%A4%ED%8C%85"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%ED%98%84%EB%8C%80%EC%84%B1%EC%9A%B0%EC%BA%90%EC%8A%A4%ED%8C%85+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "현대케피코",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "나에게 딱 맞는 커리어만 매치, 사람인! | 취업, 채용 , 커리어 매칭 플랫폼",
+          "summary": "채용 상반기 경력 채용 현대 자동차 계열사 D-2 1987년 설립 (40년차) 사원수 1,742명 (2026년) ㈜ 현대 케피코 상반기 경력 채용 공고 스크랩 버튼 혜인식품㈜ 네네치킨 상반기 각 부문별 인재 채용 상반기 각 부문...",
+          "url": "https://www.saramin.co.kr/zf_user/?csn=1078114046",
+          "outlet": "saramin.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-29",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "사람인 큐레이션 - 지금껏 본적 없었던 새로운 큐레이션의 시작 - 사람인 큐레이션",
+          "summary": "06.15(월) 계전팀/발전운영팀 채용 포승그린파워㈜ 경기 신입/경력 초대졸 D-6 상반기 경력 채용 ㈜ 현대 케피코 경기 3년 대졸 D-3 지점운영 캡틴 모집 ㈜우아한청년들 서울/경기/대구 신입/경력 학력무관 ~06.26...",
+          "url": "https://www.saramin.co.kr/zf_user/curation",
+          "outlet": "saramin.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-28",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "2026년 상반기 현대 케피코 경력 채용",
+          "summary": "㈜ 현대 케피코 2026년 상반기 현대 케피코 경력 채용 채용 정보에 잘못된 내용이 있을 경우 해주세요. 홈페이지 지원 회사 내규에 따름 주5일(월~금) 근무지주소 경기 군포시 고산로 102 (당정동) 현대 케피코 (3...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49261598?rPageCode=AM&logpath=20&sn=1&sc=524",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-28",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "[ 현대 케피코 ] 2026년 상반기 경력 채용 (~05/31) | 캐치",
+          "summary": "[ 현대 케피코 ] 2026년 상반기 경력 채용 [지원자격] 경력 : 경력(3년 이상) 학력 : 대졸(4년)↑ 근무지 : 경기 군포시 고용형태 : undefined 채용 정보 상세 내용 및 즉시지원은 캐치에서 가능합니다 경력 | 전기...",
+          "url": "https://www.catch.co.kr/NCS/RecruitInfoDetails/551975",
+          "outlet": "catch.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-18",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        }
+      ],
+      "total": 4,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%ED%98%84%EB%8C%80%EC%BC%80%ED%94%BC%EC%BD%94"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%ED%98%84%EB%8C%80%EC%BC%80%ED%94%BC%EC%BD%94"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%ED%98%84%EB%8C%80%EC%BC%80%ED%94%BC%EC%BD%94+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "현대파워텍",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "AKE7HLR7PJBLOHVQRUFP.pdf|2016년 1분기보고서.pdf",
+          "summary": "08 현대파워텍 변속기부품 개발 및 양산(AUTO T/M用 VALVE BODY 3종) 2010. 09 정보화시스템(ERP & POP) 구축 2010. 10 일자리우수기업 인증서 획득(경기도) 2010. 06 (주)에코미션 설립 [(주)삼기오토모티브...",
+          "url": "http://www.samkee.com/recruit/inc/fileDown.asp?file=AKE7HLR7PJBLOHVQRUFP%2Epdf%7C2016%EB%85%84+1%EB%B6%84%EA%B8%B0%EB%B3%B4%EA%B3%A0%EC%84%9C%2Epdf&fd=board",
+          "outlet": "samkee.com",
+          "provider": "카카오",
+          "published": "2026-05-12",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
+        }
+      ],
+      "total": 1,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%ED%98%84%EB%8C%80%ED%8C%8C%EC%9B%8C%ED%85%8D"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%ED%98%84%EB%8C%80%ED%8C%8C%EC%9B%8C%ED%85%8D"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%ED%98%84%EB%8C%80%ED%8C%8C%EC%9B%8C%ED%85%8D+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "경창산업",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "[ 경창산업 ] 경영부문 신입 · 경력 채용 공고",
+          "summary": "경창산업 ㈜ [ 경창산업 ] 경영부문 신입 · 경력 채용 공고 채용 정보에 잘못된 내용이 있을 경우 해주세요. 경영부문 신입 및 경력 채용 공고 (근무기간 6개월, 정규직 전환 가능) 회사 내규에 따름 (면접 후 결정...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49222683?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-21",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "경창산업 ㈜의 기업정보",
+          "summary": "유니폼 제공 업무의 편의를 위해 춘추복, 하복, 동복 유니폼 제공 채용 프로세스 채용 시기 : 공개/수시 채용 인사담당자의 리얼 인터뷰 경창산업 인사지원팀 유상욱 차장 신입사원 입사 교육을 비롯해 사내 교육...",
+          "url": "https://www.jobkorea.co.kr/company/1775058/info",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-07",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "경창산업 연봉",
+          "summary": "경력 채용 공고 회계,재무 대학교(4년)↑ 정규직 · 인턴직 대구 달서구 홈페이지 지원 [ 경창산업 ] 사업부문 신입 · 경력 채용 공고 영업관리,생산관리,구매관리 외 대학교(4년)↑ 정규직 · 인턴직 대구 달서구...",
+          "url": "https://www.saramin.co.kr/zf_user/salaries/total-salary/view/csn/5038104241/company_nm/%EA%B2%BD%EC%B0%BD%EC%82%B0%EC%97%85",
+          "outlet": "saramin.co.kr",
+          "provider": "카카오",
+          "published": "2026-04-24",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        }
+      ],
+      "total": 3,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EA%B2%BD%EC%B0%BD%EC%82%B0%EC%97%85"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EA%B2%BD%EC%B0%BD%EC%82%B0%EC%97%85"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EA%B2%BD%EC%B0%BD%EC%82%B0%EC%97%85+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "남양공업",
+      "enabled": true,
+      "jobs": [],
+      "total": 0,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EB%82%A8%EC%96%91%EA%B3%B5%EC%97%85"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EB%82%A8%EC%96%91%EA%B3%B5%EC%97%85"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EB%82%A8%EC%96%91%EA%B3%B5%EC%97%85+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "대승",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "일자리검색 해양수산부",
+          "summary": "법인 식품제조(가공)회사에서 직원을 구합니다. [제주 제주시] [250만원 ~ 250만원] 26-05-29 채용 시까지 26-07-28 대승 ENG 품질관리 사무원 [부산 강서구] [3000만원] 26-05-29 26-06-11 대승 ENG 압력용기 및 열...",
+          "url": "https://www.mof.go.kr/searchJob/selectSearchJobList.do?menuSeq=779&listUpdtDt=2026-05-28++10%3A00",
+          "outlet": "mof.go.kr",
+          "provider": "카카오",
+          "published": "2026-05-30",
+          "confidence_label": "검색 후보",
+          "confidence_level": "candidate"
+        }
+      ],
+      "total": 1,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EB%8C%80%EC%8A%B9"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EB%8C%80%EC%8A%B9"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EB%8C%80%EC%8A%B9+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "인팩",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "코오롱오토모티브 연봉",
+          "summary": "Volvo] Sales사업부 송파전시장 영업사원 경력직 채용 영업관리,영업직,자동차딜러 외 정규직 · 계약직...196억 2,690만원 평균연봉 7,750 만원 인팩 이피엠 관심기업 등록 제조/화학업 매출액 2,112억 1,120만...",
+          "url": "https://www.saramin.co.kr/zf_user/salaries/total-salary/view/csn/1238648335/company_nm/%EC%BD%94%EC%98%A4%EB%A1%B1%EC%98%A4%ED%86%A0%EB%AA%A8%ED%8B%B0%EB%B8%8C",
+          "outlet": "saramin.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-25",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "'26년 5월 인팩 그룹 품질 채용 공고",
+          "summary": "채용 정보에 잘못된 내용이 있을 경우 해주세요. 홈페이지 지원 (수습 3개월) 회사 내규에 따름 근무지주소 서울 송파구 백제고분로 450 (방이동) 인근지하철 (3년이상) 장애인, 유관업무 경험자(인턴·알바...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49136381?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-19",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "패키지 경력 영업사원 영업관리자 구인",
+          "summary": "㈜상운 인팩 패키지 경력 영업사원 영업관리자 구인 채용 정보에 잘못된 내용이 있을 경우 해주세요. 패키지 경력직 영업사원 모집. (수습 1개월) 직급/직책 연봉 3,500~6,000만원 (면접 후 결정) 주5일(월~금...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49189750?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-18",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "[ 인팩 ] 26년 4월 인팩 그룹 채용 (~04/30) | 캐치",
+          "summary": "[마감] [ 인팩 ] 26년 4월 인팩 그룹 채용 [지원자격] 경력 : 신입/경력(3년 이상) 학력 : 대졸(2,3년)↑ 근무지 : 서울 송파구, 전지역, 경기 수원시, 강소성, 폴란드, 켄터키주, 멕시코 고용형태 : 정규직 채용 ...",
+          "url": "https://www.catch.co.kr/NCS/RecruitInfoDetails/548635",
+          "outlet": "catch.co.kr",
+          "provider": "카카오",
+          "published": "2026-04-23",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        }
+      ],
+      "total": 4,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EC%9D%B8%ED%8C%A9"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EC%9D%B8%ED%8C%A9"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EC%9D%B8%ED%8C%A9+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "리한",
+      "enabled": true,
+      "jobs": [],
+      "total": 0,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EB%A6%AC%ED%95%9C"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EB%A6%AC%ED%95%9C"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EB%A6%AC%ED%95%9C+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "코리아에프티",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "[자동차부품1차사] 경주공장 시설관리 및 전기설비 관리(기간제) 채용",
+          "summary": "코리아에프티 (주) | 중견기업 기간의 정함이 있는 근로계약 건물 보수원 및 영선원(아파트 기계·전기 시설관리 제외) 학력 고졸-대졸(4년) 경력 경력 (최소4년) 필수 모집인원 임금 조건 연봉40,000,000원 이상...",
+          "url": "https://www.invione.com/jobs/recruitment/all/detail/K180632605130023",
+          "outlet": "invione.com",
+          "provider": "카카오",
+          "published": "2026-05-18",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
+        },
+        {
+          "title": "[자동차부품1차사] 해외자동차부품 설계 경력사원 모집",
+          "summary": "코리아에프티 ㈜ [자동차부품1차사] 해외자동차부품 설계 경력사원 모집 채용 정보에 잘못된 내용이 있을 경우 해주세요. 자동차부품설계 (수습 3개월) 직급/직책 회사 내규에 따름 (면접 후 결정) 주5일(월~금...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49124280?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-07",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "채용 행사- 상세보기",
+          "summary": "웃는 행복한 나라 고용복지센터가 함께합니다. 홈 채용 박람회 행사명, 행사일시, 행사장소, 부대사항, 문의...제공 행사명 (경주) 구인구직 만남의 날( 코리아에프티 (주), 경주공장) 행사일시 2014-03-12 ~ 2014...",
+          "url": "http://work.go.kr/gyeongju/newsPlace/ctrEvent/empEventDetail.do;JOBCENTERSESSION=NzdQTH6PhW2sfx2JDG1mQcqydWfvRYD0DlP1fyZnW9mLHGjdrGwD!460409939!-1304655145?listMode=boardList&eventMegaRegionCd=53&newsDataSeqno=26532",
+          "outlet": "work.go.kr",
+          "provider": "카카오",
+          "published": "2026-03-12",
+          "confidence_label": "공공 채용",
+          "confidence_level": "public"
+        }
+      ],
+      "total": 3,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EC%BD%94%EB%A6%AC%EC%95%84%EC%97%90%ED%94%84%ED%8B%B0"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EC%BD%94%EB%A6%AC%EC%95%84%EC%97%90%ED%94%84%ED%8B%B0"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EC%BD%94%EB%A6%AC%EC%95%84%EC%97%90%ED%94%84%ED%8B%B0+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "현대성우메탈",
+      "enabled": true,
+      "jobs": [],
+      "total": 0,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%ED%98%84%EB%8C%80%EC%84%B1%EC%9A%B0%EB%A9%94%ED%83%88"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%ED%98%84%EB%8C%80%EC%84%B1%EC%9A%B0%EB%A9%94%ED%83%88"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%ED%98%84%EB%8C%80%EC%84%B1%EC%9A%B0%EB%A9%94%ED%83%88+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "센트랄",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "(사)경남경영자총협회",
+          "summary": "신월동, 센트랄 빌딩) 홈페이지 www.gef.or.kr 모집요강 상세 모집직종, 관련직종, 직무내용, 접수마감일, 고용형태, 임금조건, 경력조건, 학력, 키워드 정보 모집직종 직업 관련 상담사(231400) 관련직종 직무...",
+          "url": "https://www.gimhae.go.kr/job/html/sub/01_01.jsp?amode=view&wantedAuthNo=KEC0802605200001&infoSvc=VALIDATION",
+          "outlet": "gimhae.go.kr",
+          "provider": "카카오",
+          "published": "2026-05-20",
+          "confidence_label": "검색 후보",
+          "confidence_level": "candidate"
+        }
+      ],
+      "total": 1,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EC%84%BC%ED%8A%B8%EB%9E%84"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EC%84%BC%ED%8A%B8%EB%9E%84"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EC%84%BC%ED%8A%B8%EB%9E%84+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "현대위아",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "고졸 채용 정보 - 사람인",
+          "summary": "무관고졸↑ (주)올오버 ~06.26(금) 스크랩 입사지원 인기있는 [대기업/의왕시/통근버스] 현대위아 회계 및 일반사무 채용 경기 의왕시 외상여금 파견·도급·대행 동호에이치알(주) 기업이미지 ~06.12(금) 스크랩...",
+          "url": "https://m.saramin.co.kr/highschool/list?q=%ED%95%9C%EA%B5%AD%EB%8F%84%EB%A1%9C%EA%B4%80%EB%A6%AC&searchType=connect&order=sales",
+          "outlet": "m.saramin.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-29",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "의왕연구소 현대위아 WIN 11 설치 전환 작업",
+          "summary": "올넷피아㈜ 의왕연구소 현대위아 WIN 11 설치 전환 작업 채용 정보에 잘못된 내용이 있을 경우 해주세요. 현대위아 의왕연구소 전산장비 WIN 11 전환 (근무기간 3개월) 아르바이트(근무기간 3개월) 시급 10,320원...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49269501?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-29",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "MCT가공(두산, 현대위아 ) 경력 정규직 채용",
+          "summary": "채용 정보에 잘못된 내용이 있을 경우 해주세요. MCT가공두산, 현대위아 경력 정규직 채용 직급/직책 연봉 3,600만원 이상 (면접 후 결정) 주5일(월~금) 08:30 ~ 17:50 필요시 잔업(주52시간내), 잔업(특근)수당...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49268982?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-29",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        }
+      ],
+      "total": 3,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%ED%98%84%EB%8C%80%EC%9C%84%EC%95%84"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%ED%98%84%EB%8C%80%EC%9C%84%EC%95%84"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%ED%98%84%EB%8C%80%EC%9C%84%EC%95%84+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "에스엘",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "[도산대로240빌딩] 시설 교대근무자 구인",
+          "summary": "㈜ 에스엘 시스템 [도산대로240빌딩] 시설 교대근무자 구인 채용 정보에 잘못된 내용이 있을 경우 해주세요. (근무기간 12개월) 직급/직책 연봉 3,200~3,300만원 주야비(3교대) 08:00 ~ 17:00 주간-야간-비번(3조 2...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49281550?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-06-01",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "[SWM] 인사팀 과장급 경력직 모집",
+          "summary": "㈜에스더블유엠 [SWM] 인사팀 과장급 경력직 모집 채용 정보에 잘못된 내용이 있을 경우 해주세요. (수습...주소 경기 안양시 동안구 시민대로327번길 28 (관양동, 에스엘 평촌R&D센터) 5,6층 인근지하철 (4년이상)",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49283318?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-06-01",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "고졸 채용 정보 - 사람인",
+          "summary": "경주시경력무관고졸↑ (주)동보 경주공장 기업이미지 ~06.27(토) 스크랩 입사지원 (주)티 에스엘 자동화 기계조작원 채용 충북 증평군경력무관고졸↑ (주)티 에스엘 기업이미지 ~06.27(토) 스크랩 입사지원 현대...",
+          "url": "https://m.saramin.co.kr/highschool/list?rec_idx=30542621&pos=int&t_category=search&t_content=generic&searchword=%ED%98%84%EB%8C%80%EC%9E%90%EB%8F%99%EC%B0%A8&searchType=popular",
+          "outlet": "m.saramin.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-28",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "고졸 채용 정보 - 사람인",
+          "summary": "입사지원 오늘 뜬 건축영업팀/공사관리팀 정규직 채용 서울 강남구경력고졸↑ (주)태명실업 기업이미지...모집건 서울 금천구자유로운 연차사용 (주) 에스엘 바이오텍 기업이미지 ~06.23(화) 스크랩 입사지원 (전기...",
+          "url": "https://m.saramin.co.kr/highschool/list?rec_idx=30651687&cn=location-job&cns=domestic-list",
+          "outlet": "m.saramin.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-26",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        }
+      ],
+      "total": 4,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EC%97%90%EC%8A%A4%EC%97%98"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EC%97%90%EC%8A%A4%EC%97%98"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EC%97%90%EC%8A%A4%EC%97%98+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "금강화학",
+      "enabled": true,
+      "jobs": [],
+      "total": 0,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EA%B8%88%EA%B0%95%ED%99%94%ED%95%99"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EA%B8%88%EA%B0%95%ED%99%94%ED%95%99"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EA%B8%88%EA%B0%95%ED%99%94%ED%95%99+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "대원산업",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "고졸 채용 정보 - 사람인",
+          "summary": "인기있는 ~06.18(목) 충북 청주) 생산직 제품포장 담당자 채용 충북 청주시 흥덕구경력무관고졸↑ (주) 대원산업 기업이미지 ~06.17(수) 스크랩 입사지원 (주) 후니드 충북지역 SK하이닉스 3캠퍼스 조리사 모집...",
+          "url": "https://m.saramin.co.kr/highschool/list?rec_idx=27101769&inner_source=m.saramin&inner_medium=pattern&inner_campaign=SRI_M_007_SM_RCM_RCT_END&inner_term=2",
+          "outlet": "m.saramin.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-29",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "충북 청주) 생산관리 담당자 채용",
+          "summary": "㈜ 대원산업 충북 청주) 생산관리 담당자 채용 채용 정보에 잘못된 내용이 있을 경우 해주세요. 충북 청주 생산관리 담당자 채용 (수습 3개월) 직급/직책 연봉 3,000만원 이상 (면접 후 결정) 주5일(월~금) 08:00...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49224493?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-21",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "대원산업 / 인재 채용 / 채용 공고",
+          "summary": "다운로드)-홈페이지 또는 자소설닷컴 채용 공고란 * 경력 지원자의 경우, 입사지원서에 희망연봉 기재할 것. 5. 채용 문의 - 담당자 : 대원산업 ㈜ 총무팀 심현보 대리 - 전 화 : 031-495-2301 (내선 217...",
+          "url": "https://www.dwsu.co.kr/ko/careers/recruit/view/11/",
+          "outlet": "dwsu.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-19",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
+        },
+        {
+          "title": "대원산업 / 인재 채용 / 채용 공고",
+          "summary": "자동차 시트를 위한 대원산업 의 노력은 모빌리티 공간 혁신으로 진화합니다",
+          "url": "https://www.dwsu.co.kr/ko/careers/recruit/",
+          "outlet": "dwsu.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-19",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
+        },
+        {
+          "title": "생산 교대직 정규사원 채용",
+          "summary": "계열사 리조트 할인, 연차 수당) 팩스,고용24 3. 기타(모집절차: 서류 - 면접 - 건강검진 - 채용 ) (주) 대원산업 칩트레이 개발 및 반도체소재 개발 근로자수: 200 명 주소: 13001 경기도 하남시 감일로124번길 8...",
+          "url": "https://www.invione.com/jobs/recruitment/all/detail/K180342605150006",
+          "outlet": "invione.com",
+          "provider": "카카오",
+          "published": "2026-05-18",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
+        }
+      ],
+      "total": 5,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EB%8C%80%EC%9B%90%EC%82%B0%EC%97%85"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EB%8C%80%EC%9B%90%EC%82%B0%EC%97%85"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EB%8C%80%EC%9B%90%EC%82%B0%EC%97%85+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "동아화성",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "자동차 부품 작업",
+          "summary": "채용 정보에 잘못된 내용이 있을 경우 해주세요. 자동차 부품 작업 시급 12,000원 주5일(월~금) 08:30 ~ 18:30 근무지주소 경기 안양시 만안구 만안로 20 (안양동, 명학역) 동아화성 인근지하철",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/48921748?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-04-06",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "기업심층분석 1. 대상, 채용 분석 및 기업정보",
+          "summary": "면접전형 순으로 이루어진다. 대상, 기업 개요 대상그룹의 모회사로 종합식품기업. 1956년에 설립된 동아화성 공업(주)으로 출발, 이 해에 국산 발효 조미료 1호 ‘미원’을 출시했다. 1962년 회사명을 미원(주...",
+          "url": "https://www.jobkorea.co.kr/starter/companyreport/view?inside_no=18503&schctgr=101012&schctgr=101",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-03-22",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "동아화성 주식회사",
+          "summary": "모집직종 생산·품질 사무원 및 관리원(기계·자동차·금속)(028502) 관련직종 직무내용 ** 2025 김해시 채용 박람회_내 꿈을 잡(job)아라 참여업체 ** ◇ 일 시 : 11.12.(수) 14:00 ~ 17:00 [입장마감 16:00...",
+          "url": "https://www.gimhae.go.kr/job/html/sub/01_01.jsp?amode=view&wantedAuthNo=KJSE002510300025&infoSvc=VALIDATION",
+          "outlet": "gimhae.go.kr",
+          "provider": "카카오",
+          "published": "2025-11-29",
+          "confidence_label": "검색 후보",
+          "confidence_level": "candidate"
+        },
+        {
+          "title": "르노삼성자동차 채용 정보 | 총 48건의 검색결과 - 사람인",
+          "summary": "금형, 사출성형, 프레스금형 외 등록일 25/03/14 동아화성 (주) 관심기업 등록 관심기업 등록 동아화성 기업...모아보기 + 점심지원 대리, 과장급 엔지니어 채용 스크랩 ~ 03/27(목) 입사지원 서울 금천구 경력3년...",
+          "url": "https://www.saramin.co.kr/zf_user/search/recruit?searchword=르노삼성자동차",
+          "outlet": "saramin.co.kr",
+          "provider": "카카오",
+          "published": "2025-03-06",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        }
+      ],
+      "total": 4,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EB%8F%99%EC%95%84%ED%99%94%EC%84%B1"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EB%8F%99%EC%95%84%ED%99%94%EC%84%B1"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EB%8F%99%EC%95%84%ED%99%94%EC%84%B1+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "서연이화",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "[아산/스펙UP/복지上] 서연 이화 총무사무지원 채용",
+          "summary": "㈜키스템프 [아산/스펙UP/복지上] 서연 이화 총무사무지원 채용 채용 정보에 잘못된 내용이 있을 경우 해주세요. 키스템프그룹사 월급 235~235만원 주5일(월~금) 08:00 ~ 17:00 실근무기업 중견기업(비상장) 근무지...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49204897?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-19",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "안양시 동안구 IT(컴퓨터) 유지보수 상주 직원 채용",
+          "summary": "PRO PC (주) 서연 이화 - 안양시 동안구 IT(컴퓨터) 유지보수 상주 직원 채용 채용 정보에 잘못된 내용이 있을 경우 해주세요. 안양시 소재 기업체 컴퓨터 유지보수 상주직원 (수습 3개월) 직급/직책 연봉 2,800...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49094555?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-01",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        }
+      ],
+      "total": 2,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EC%84%9C%EC%97%B0%EC%9D%B4%ED%99%94"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EC%84%9C%EC%97%B0%EC%9D%B4%ED%99%94"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EC%84%9C%EC%97%B0%EC%9D%B4%ED%99%94+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "아성프라텍",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "자동차 부품 품질 검사원 모집",
+          "summary": "채용 시까지 （주） 아성 프라텍 | 중견기업 채용 시까지 기간의 정함이 없는 근로계약 플라스틱제품 조립원 및 검사원 학력 경력 모집인원 임금 조건 시급10,320원 이상 퇴직급여 4대보험 국민연금 고용보험 산재...",
+          "url": "https://www.invione.com/jobs/recruitment/all/detail/KF11532604160001",
+          "outlet": "invione.com",
+          "provider": "카카오",
+          "published": "2026-04-17",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
+        },
+        {
+          "title": "ASUNG | 채용 안내",
+          "summary": "개인정보처리방침 ㈜ 아성 프라텍 (이하 ‘회사’라 한다)는 개인정보 보호법 제30조에 따라 정보주체의 개인정보를 보호하고 이와 관련된 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여 다음과 같이 개인...",
+          "url": "https://www.asung.co.kr/ko/pr-center/recruit.php",
+          "outlet": "asung.co.kr",
+          "provider": "카카오",
+          "published": "2025-08-22",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
+        },
+        {
+          "title": "(주) 아성 프라텍",
+          "summary": "관심기업 추가하고 채용 소식 받기",
+          "url": "https://www.incruit.com/company/651689/job/",
+          "outlet": "incruit.com",
+          "provider": "카카오",
+          "published": "2025-03-07",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "（주） 아성 프라텍 광주공장",
+          "summary": "사출성형기 조작원(852201) 관련직종 직무내용 사출 생산직 자동차 플라스틱 내외장재 생산 접수마감일 채용 시까지 고용형태 기간의 정함이 없는 근로계약/ 파견근로 비희망/ 대체인력 채용 비희망 임금조건 시급...",
+          "url": "https://www.gimhae.go.kr/job/html/sub/01_01.jsp?amode=view&wantedAuthNo=K1600z2407080004&infoSvc=VALIDATION",
+          "outlet": "gimhae.go.kr",
+          "provider": "카카오",
+          "published": "2024-07-08",
+          "confidence_label": "검색 후보",
+          "confidence_level": "candidate"
+        },
+        {
+          "title": "㈜ 아성 프라텍",
+          "summary": "29-1, (대곡리 231번지) [화순도곡농공단지] ㈜ 아성 프라텍 소속산업단지 인근전철역 1호선 소태 1번출구...퇴직금 기타복리후생 통근버스 장애인편의시설 채용 담당자 채용 담당자 상세 부서/담당자 전화번호 061...",
+          "url": "https://www.gimhae.go.kr/job/html/sub/01_01.jsp?amode=view&wantedAuthNo=K1600z2308170001&infoSvc=VALIDATION",
+          "outlet": "gimhae.go.kr",
+          "provider": "카카오",
+          "published": "2023-08-17",
+          "confidence_label": "검색 후보",
+          "confidence_level": "candidate"
+        }
+      ],
+      "total": 5,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EC%95%84%EC%84%B1%ED%94%84%EB%9D%BC%ED%85%8D"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EC%95%84%EC%84%B1%ED%94%84%EB%9D%BC%ED%85%8D"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EC%95%84%EC%84%B1%ED%94%84%EB%9D%BC%ED%85%8D+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "아진산업",
+      "enabled": true,
+      "jobs": [],
+      "total": 0,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EC%95%84%EC%A7%84%EC%82%B0%EC%97%85"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EC%95%84%EC%A7%84%EC%82%B0%EC%97%85"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EC%95%84%EC%A7%84%EC%82%B0%EC%97%85+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "삼송",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "EiE 삼송 캠퍼스 초중등영어 전임강사 모집",
+          "summary": "바른교육학원 EiE 삼송 캠퍼스 초중등영어 전임강사 모집 채용 정보에 잘못된 내용이 있을 경우 해주세요. 초중등 영어 전임강사 (수습 3개월) 직급/직책 연봉 2,800만원 이상 (면접 후 결정) 주5일(월~금) 13:00...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49284912?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-06-01",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "[베이커리 카페] 삼송 빵집 고속터미널점 제빵생산 직원 모집",
+          "summary": "㈜유니에스 [베이커리 카페] 삼송 빵집 고속터미널점 제빵생산 직원 모집 채용 정보에 잘못된 내용이 있을 경우 해주세요. 직급/직책 월급 250~350만원 (면접 후 결정) 주5일 스케줄 근무 06:00 ~ 16:00 휴게 1.5...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49284352?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-06-01",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        }
+      ],
+      "total": 2,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EC%82%BC%EC%86%A1"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EC%82%BC%EC%86%A1"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EC%82%BC%EC%86%A1+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "두올",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "[개발] 웹 기반 3D 뷰어 시스템 개발자 모집",
+          "summary": "㈜ 두올 테크 [개발] 웹 기반 3D 뷰어 시스템 개발자 모집 채용 정보에 잘못된 내용이 있을 경우 해주세요. 개발 웹 기반 3D 뷰어 시스템 개발자 (수습 3개월) 직급/직책 회사 내규에 따름 (면접 후 결정) 주5일(월...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49049567?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-04-24",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        }
+      ],
+      "total": 1,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EB%91%90%EC%98%AC"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EB%91%90%EC%98%AC"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EB%91%90%EC%98%AC+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "두올산업",
+      "enabled": true,
+      "jobs": [],
+      "total": 0,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EB%91%90%EC%98%AC%EC%82%B0%EC%97%85"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EB%91%90%EC%98%AC%EC%82%B0%EC%97%85"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EB%91%90%EC%98%AC%EC%82%B0%EC%97%85+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "세동",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "고유 아동복 디자이너 채용",
+          "summary": "채용 정보에 잘못된 내용이 있을 경우 해주세요. 의류디자이너 (수습 3개월) 직급/직책 회사 내규에 따름...18:00 근무지주소 서울 종로구 종로6가 189 세동 빌딩403호 인근지하철 신입·경력(1년이상) 이 기업과...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49281846?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-06-01",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "(주) 세동 종합건설",
+          "summary": "홈페이지 - 회사주소 전남 순천시 연향3로 31 6층 이 채용 공고는 (주) 세동 종합건설에서 제공하였으며, 건설취업포털 콘잡 (www.conjob.co.kr) 내용상의 오류 및 지연 등 이 내용을 신뢰하여 취해진 것에 대하여...",
+          "url": "https://www.conjob.co.kr/jobpost/jobpost_view_jnew.php?num=238853",
+          "outlet": "conjob.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-21",
+          "confidence_label": "검색 후보",
+          "confidence_level": "candidate"
+        }
+      ],
+      "total": 2,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EC%84%B8%EB%8F%99"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EC%84%B8%EB%8F%99"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EC%84%B8%EB%8F%99+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "LS오토모티브",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "고졸 채용 정보 - 사람인",
+          "summary": "현장직 모집합니다 (주)엔티엘 화성시 동탄구 평균연봉 상위 10% 채용 시 6월 각 부문 신입/경력 채용 LS 오토모티브 서울전체 생산 지원 TOP100 ~06.14(일) [입사지원금 60만] 쿠팡CLS 장애인 풀타임 재택 사무직...",
+          "url": "https://m.saramin.co.kr/highschool/list?rec_idx=30664551&pos=int&t_category=search&t_content=generic&searchType=connect",
+          "outlet": "m.saramin.co.kr",
+          "provider": "카카오",
+          "published": "2026-06-01",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "나에게 딱 맞는 커리어만 매치, 사람인! | 취업, 채용 , 커리어 매칭 플랫폼",
+          "summary": "FILA(휠라)와 함께 성장할 인재를 모집합니다. 미스토코리아(FILA) 2026 대졸 신입사원 공개 채용 공고 스크랩 버튼 LS 오토모티브 6월 각 부문 신입/경력 수시 채용 6월 각 부문 신입/경력 수시 채용 매출액 5000억...",
+          "url": "https://www.saramin.co.kr/zf_user/?csn=2269036042",
+          "outlet": "saramin.co.kr",
+          "provider": "카카오",
+          "published": "2026-06-01",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "고졸 채용 정보 - 사람인",
+          "summary": "대규모 채용 (주)바이앤셀파트너스 건설·건축 지원 급상승 ~06.30(화) 6월 각 부문 신입/경력 채용 LS 오토모티브 건설·건축 스크랩 TOP100 ~06.14(일) 데스크 정규직 모집합니다. (주5일/야간X) 심재원한의원...",
+          "url": "https://m.saramin.co.kr/highschool/list?rec_idx=30061691&pos=int&t_category=search&t_content=generic&searchType=connect",
+          "outlet": "m.saramin.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-30",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "[안산] LS 오토모티브 사무지원 채용 [소속전환/중식제공]",
+          "summary": "㈜키스템프 [안산] LS 오토모티브 사무지원 채용 [소속전환/중식제공] 채용 정보에 잘못된 내용이 있을 경우 해주세요. 키스템프그룹사 연봉 2,971~2,971만원 주5일(월~금) 08:30 ~ 17:30 실근무기업 LS 오토모티브 ...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49159272?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-12",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        }
+      ],
+      "total": 4,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=LS%EC%98%A4%ED%86%A0%EB%AA%A8%ED%8B%B0%EB%B8%8C"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=LS%EC%98%A4%ED%86%A0%EB%AA%A8%ED%8B%B0%EB%B8%8C"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=LS%EC%98%A4%ED%86%A0%EB%AA%A8%ED%8B%B0%EB%B8%8C+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "서연전자",
+      "enabled": true,
+      "jobs": [],
+      "total": 0,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EC%84%9C%EC%97%B0%EC%A0%84%EC%9E%90"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EC%84%9C%EC%97%B0%EC%A0%84%EC%9E%90"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EC%84%9C%EC%97%B0%EC%A0%84%EC%9E%90+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "유라코퍼레이션",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "[ 유라 코퍼레이션 ] 해외법인 한국인관리자 채용",
+          "summary": "(주) 유라 코퍼레이션 [ 유라 코퍼레이션 ] 해외법인 한국인관리자 채용 채용 정보에 잘못된 내용이 있을 경우 해주세요. 한국인관리자 (수습 3개월) (정규직 전환 가능) 회사 내규에 따름 주5일(월~금) 08:30 ~ 17:30...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49274915?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-29",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "고졸 채용 정보 - 사람인",
+          "summary": "채용 경기 성남시 분당구평균근속 2~5년 (주) 유라 코퍼레이션 기업이미지 D-2 스크랩 홈페이지 지원 회계...급상승 대기업 SK 계열사 대표이사 비서 채용 [종각역] 서울 종로구경력1년↑고졸↑ 파견·도급·대행...",
+          "url": "https://m.saramin.co.kr/highschool/list?sort=rd&lc_m=109000&lc=109090&highschoolEdu=all&exp_lv=0%2C1&page=1",
+          "outlet": "m.saramin.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-15",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        }
+      ],
+      "total": 2,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EC%9C%A0%EB%9D%BC%EC%BD%94%ED%8D%BC%EB%A0%88%EC%9D%B4%EC%85%98"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EC%9C%A0%EB%9D%BC%EC%BD%94%ED%8D%BC%EB%A0%88%EC%9D%B4%EC%85%98"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EC%9C%A0%EB%9D%BC%EC%BD%94%ED%8D%BC%EB%A0%88%EC%9D%B4%EC%85%98+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "인팩일렉스",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "(주) 인팩 기업정보 - 직원수, 근무환경, 복리후생 등 | 잡코리아",
+          "summary": "인팩 일렉스 (주) 재무분석 재무현황 전체보기 사업분석 툴팁 기업의 주력 사업과 매출 구성을 확인할 수 있습니다. 주력 사업은 서류 전형 뿐 아니라 면접을 대비할 때도 알아두어야 하는 정보입니다. 또한 년도별...",
+          "url": "https://www.jobkorea.co.kr/company/1438752/Info",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-01-18",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "'25년 4분기 인팩 그룹 공개 채용",
+          "summary": "인팩 일렉스 (주) '25년 4분기 인팩 그룹 공개 채용 - 전자제어 설계(수원) 채용 정보에 잘못된 내용이 있을 경우 해주세요. 전자제어 설계 회사 내규에 따름 근무지주소 경기 수원시 권선구 산업로155번길 53...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/48192147?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2025-12-17",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "'25년 9월 수시 채용",
+          "summary": "유의사항 - 입사지원 서류에 허위사실이 발견될 경우, 채용 확정 이후라도 채용 이 취소될 수 있습니다. ※ 자세한 사항은 채용 홈페이지 참조 바랍니다. 인팩 일렉스 휴무/휴가/행사: 휴가제도 보장/보상/지원...",
+          "url": "https://www.invione.com/jobs/recruitment/open/detail/137270",
+          "outlet": "invione.com",
+          "provider": "카카오",
+          "published": "2025-09-29",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
+        },
+        {
+          "title": "'25년 9월 수시 채용",
+          "summary": "문의사항, 기타사항 채용 사이트, 모집부분 전체요약정보로 구성된 표 채용 업체명 인팩 일렉스 기업구분 중견기업 채용 시작일자 20250929 채용 종료일자 20251013 고용형태 정규직 합격자발표일 접수방법 - 홈페이지...",
+          "url": "https://www.gimhae.go.kr/job/html/sub/01_04.jsp?amode=view&empSeqno=137270",
+          "outlet": "gimhae.go.kr",
+          "provider": "카카오",
+          "published": "2025-09-29",
+          "confidence_label": "검색 후보",
+          "confidence_level": "candidate"
+        },
+        {
+          "title": "채용 공고_상세 - INFAC 채용 홈페이지",
+          "summary": "클릭 이력서 : 자사 양식 관련 문의처 인사팀 채용 담당자 ☏ 02-6714-5568 회사소개 업종 : 자동차 부품...Electronics, Horns) 인팩 그룹사 현황 : ㈜ 인팩 , 인팩 이피엠㈜, 인팩 일렉스 ㈜, 인팩 혼시스템㈜...",
+          "url": "http://career.infac.com/job-description/?id=2180902&announceId=2180902&sDate=202504011300&eDate=202504092359",
+          "outlet": "career.infac.com",
+          "provider": "카카오",
+          "published": "2025-04-02",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
+        }
+      ],
+      "total": 5,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EC%9D%B8%ED%8C%A9%EC%9D%BC%EB%A0%89%EC%8A%A4"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EC%9D%B8%ED%8C%A9%EC%9D%BC%EB%A0%89%EC%8A%A4"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EC%9D%B8%ED%8C%A9%EC%9D%BC%EB%A0%89%EC%8A%A4+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "만도",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "[ 만도 브로제] R&D(기구설계) 경력사원 채용",
+          "summary": "만도 브로제㈜ [ 만도 브로제] R&D(기구설계) 경력사원 채용 채용 정보에 잘못된 내용이 있을 경우 해주세요. R&D 설계 (수습 3개월) 회사 내규에 따름 (면접 후 결정) 주5일(월~금) 08:00 ~ 17:00 탄력근무제 근무지...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49273277?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-29",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        }
+      ],
+      "total": 1,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EB%A7%8C%EB%8F%84"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EB%A7%8C%EB%8F%84"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EB%A7%8C%EB%8F%84+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "THN",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "대구 THN ERP 신규 구축 (s00)",
+          "summary": "행복추구 패러다임㈜kcms 대구 THN ERP 신규 구축 (s00) 채용 정보에 잘못된 내용이 있을 경우 해주세요. 대구 THN ERP 신규 구축 (근무기간 6개월) 회사 내규에 따름 주5일(월~금) 근무지주소 대구 달서구 성서로...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/47705303?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2025-09-15",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "자동차 전장 :: 인크루트 채용 정보",
+          "summary": "연구원·연구개발, 기계·금속·재료 ~07.23 (토)(14일전 등록) 티에스커리어 (주) THN - 자동차 전장제어기 S/W 설계자 채용 (코스닥상장사) 경력2년↑ 초대졸이상 경기 군포시 5,000~6,000만원 전자·반도체...",
+          "url": "http://job.incruit.com/jobdb_list/searchjob.asp?col=job_all&il=y&kw=%C0%DA%B5%BF%C2%F7+%C0%FC%C0%E5",
+          "outlet": "job.incruit.com",
+          "provider": "카카오",
+          "published": "2022-07-07",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        }
+      ],
+      "total": 2,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=THN"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=THN"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=THN+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "티에이치엔",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "2025년 상반기 공채 시작! | 취업, 채용 , 커리어 매칭 플랫폼",
+          "summary": "05.06(화) 현대모비스 장학 전환 인턴 모집 현대모비스(주) ~05.12(월) 2025년 현대위아 계약직 채용 [Recruiting Coordinator] 현대위아(주) 내일마감 [(주) 티에이치엔 ] 자재관리팀 경력사원 모집 (주...",
+          "url": "https://www.saramin.co.kr/zf_user/?csn=3012983512",
+          "outlet": "saramin.co.kr",
+          "provider": "카카오",
+          "published": "2025-04-24",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "2025년 상반기 공채 시작! | 취업, 채용 , 커리어 매칭 플랫폼",
+          "summary": "핫한 대기업 공고 공사·공기업 공고 (주)유니크 계약직(품질검사-주간) 모집 (주)유니크 채용 시 각 부문별 신입/경력 채용 (주)소노인터내셔널 ~04.07(월) 품질관리1팀 상주원 모집(경력) (주) 티에이치엔 ~04.25...",
+          "url": "https://www.saramin.co.kr/zf_user/?board_type=upjong&pageCount=20&list=search&categoryCode=8%7C2&code=207&category_level=sub&tcode=8&mcode=8&bcode=2&keyword_text=&page=7",
+          "outlet": "saramin.co.kr",
+          "provider": "카카오",
+          "published": "2025-03-27",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        }
+      ],
+      "total": 2,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%ED%8B%B0%EC%97%90%EC%9D%B4%EC%B9%98%EC%97%94"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%ED%8B%B0%EC%97%90%EC%9D%B4%EC%B9%98%EC%97%94"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%ED%8B%B0%EC%97%90%EC%9D%B4%EC%B9%98%EC%97%94+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "현대성우쏠라이트",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "[ 현대 성우 쏠라이트 ] 공정개발 경력 채용",
+          "summary": "현대 성우 쏠라이트 [ 현대 성우 쏠라이트 ] 공정개발 경력 채용 채용 정보에 잘못된 내용이 있을 경우 해주세요. 제조기술부_공정개발경력 (수습 3개월) 회사 내규에 따름 (면접 후 결정) 주5일(월~금) 09:00 ~ 18:00...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49247367?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-26",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "고졸 채용 정보 - 사람인",
+          "summary": "채용 충남 아산시기숙사 운영 (주)신원 기업이미지 ~06.12(금) 스크랩 입사지원 [ 현대 성우 쏠라이트 ] 임원 수행기사 경력 채용 서울 강남구경력 3~20년고졸↑ 현대 성우 쏠라이트 (주) 기업이미지 내일마감 스크랩...",
+          "url": "https://m.saramin.co.kr/highschool/list?rec_idx=30711801&cn=search&cns=recruit&t_category=search&t_content=generic&searchword=%ED%98%84%EB%8C%80%EC%9E%90%EB%8F%99%EC%B0%A8&searchType=popular",
+          "outlet": "m.saramin.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-24",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "국내영업 경력 채용",
+          "summary": "및 국가보훈대상자는 증빙서류 제출 시 관계 법령에 의거 우대함 ※ 자세한 사항은 채용 홈페이지 참조 바랍니다. 현대 성우 쏠라이트 휴무/휴가/행사: 연차휴가 부여/하계휴가(휴가비 지원)/경조휴가 부여 보장...",
+          "url": "https://www.invione.com/jobs/recruitment/open/detail/160805",
+          "outlet": "invione.com",
+          "provider": "카카오",
+          "published": "2026-04-24",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
+        },
+        {
+          "title": "[ 현대 성우 쏠라이트 ] 인사/노무 신입 채용",
+          "summary": "현대 성우 쏠라이트 채용 - [ 현대 성우 쏠라이트 ] 인사/노무 신입 채용 | 잡코리아",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/48896065?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-04-01",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "제품기술 신입/경력 채용",
+          "summary": "사항, 기타사항 채용 사이트, 모집부분 전체요약정보로 구성된 표 채용 업체명 현대 성우 쏠라이트 기업구분 중견기업 채용 시작일자 20251016 채용 종료일자 20251102 고용형태 정규직 합격자발표일 접수방법...",
+          "url": "https://www.gimhae.go.kr/job/html/sub/01_04.jsp?amode=view&empSeqno=138995",
+          "outlet": "gimhae.go.kr",
+          "provider": "카카오",
+          "published": "2025-10-16",
+          "confidence_label": "검색 후보",
+          "confidence_level": "candidate"
+        }
+      ],
+      "total": 5,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%ED%98%84%EB%8C%80%EC%84%B1%EC%9A%B0%EC%8F%A0%EB%9D%BC%EC%9D%B4%ED%8A%B8"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%ED%98%84%EB%8C%80%EC%84%B1%EC%9A%B0%EC%8F%A0%EB%9D%BC%EC%9D%B4%ED%8A%B8"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%ED%98%84%EB%8C%80%EC%84%B1%EC%9A%B0%EC%8F%A0%EB%9D%BC%EC%9D%B4%ED%8A%B8+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "동원금속",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "동원금속 구내식당 조리원 모집",
+          "summary": "채용 시까지 주식회사 인코컴퍼니 채용 시까지 기간의 정함이 없는 근로계약 사업체 구내식당 급식 조리사...오후) 6시 00분, 주 5일 근무, 평균근무시간 : 40 동원금속 구내식당 조리원 모집 - 업무 : 주 조리...",
+          "url": "https://www.invione.com/jobs/recruitment/all/detail/K140022605120047",
+          "outlet": "invione.com",
+          "provider": "카카오",
+          "published": "2026-05-18",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
+        }
+      ],
+      "total": 1,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EB%8F%99%EC%9B%90%EA%B8%88%EC%86%8D"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EB%8F%99%EC%9B%90%EA%B8%88%EC%86%8D"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EB%8F%99%EC%9B%90%EA%B8%88%EC%86%8D+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "베바스토동희",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "인화 베바스토 동희 지점 채용 - 2021년 상반기 신입사원 모집 | 잡코리아",
+          "summary": "무단전재, 재배포, 재가공할 수 없으며, 구직활동 이외의 용도로 사용될 수 없습니다. 본 채용 정보는 ㈜인화 베바스토 동희 지점에서 제공한 자료를 바탕으로 잡코리아가 편집 및 그 표현방법을 수정하여 완성한 것...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/34014743?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2021-02-26",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        }
+      ],
+      "total": 1,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EB%B2%A0%EB%B0%94%EC%8A%A4%ED%86%A0%EB%8F%99%ED%9D%AC"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EB%B2%A0%EB%B0%94%EC%8A%A4%ED%86%A0%EB%8F%99%ED%9D%AC"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EB%B2%A0%EB%B0%94%EC%8A%A4%ED%86%A0%EB%8F%99%ED%9D%AC+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "성우하이텍",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "고졸 채용 정보 - 사람인",
+          "summary": "복지좋은회사) 서울 금천구퇴직금 (주)디오컴퍼니 기업이미지 ~06.27(토) 스크랩 입사지원 성우하이텍 현장직(계약직) 채용 공고 경남 양산시통근버스 운행 (주) 성우하이텍 기업이미지 ~07.27(월) 스크랩 입사...",
+          "url": "https://m.saramin.co.kr/highschool/list?rec_idx=26403321",
+          "outlet": "m.saramin.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-28",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "㈜ 성우하이텍 채용",
+          "summary": "㈜ 성우하이텍 경력직 수시 채용 채용 정보에 잘못된 내용이 있을 경우 해주세요. 회사 내규에 따름 근무지주소 경남 양산시 소주공단3길 50 (소주동, 성우하이텍 )",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49253344?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-19",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        }
+      ],
+      "total": 2,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EC%84%B1%EC%9A%B0%ED%95%98%EC%9D%B4%ED%85%8D"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EC%84%B1%EC%9A%B0%ED%95%98%EC%9D%B4%ED%85%8D"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EC%84%B1%EC%9A%B0%ED%95%98%EC%9D%B4%ED%85%8D+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "세원정공",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "세원정공 (주) 재단기 조작원 모집",
+          "summary": "세원정공 ㈜ 세원정공 (주) 재단기 조작원 모집 채용 정보에 잘못된 내용이 있을 경우 해주세요. 재단기 조작원 (수습 3개월) 직급/직책 시급 10,400원 (면접 후 결정) 주5일(월~금) 08:00 ~ 20:00 야간 근무 있음...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49282986?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-06-01",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "세원정공 주식회사",
+          "summary": "따라 협의 가능 접수마감일 20260605 고용형태 기간의 정함이 없는 근로계약/ 파견근로 비희망/ 대체인력 채용 비희망 임금조건 연봉35,000,000원 이상, 면접 후 재조정 가능 경력조건 경력 (최소3년) 우대 학력...",
+          "url": "https://www.gimhae.go.kr/job/html/sub/01_01.jsp?amode=view&wantedAuthNo=K131312605220016&infoSvc=VALIDATION",
+          "outlet": "gimhae.go.kr",
+          "provider": "카카오",
+          "published": "2026-05-22",
+          "confidence_label": "검색 후보",
+          "confidence_level": "candidate"
+        },
+        {
+          "title": "실시간 채용 정보 검색/확인하기",
+          "summary": "외 거래처관리, 프라스틱제조, 국내영업 ~06/17(수) 세원정공 ㈜ 제품 개발 품질관리 담당자 모집 경력3년...보증, 프라스틱제조, 제품개발 ~06/18(목) 하이멜 하이멜 생산팀 신입/경력 정규직 채용 신입·경력...",
+          "url": "https://www.jobkorea.co.kr/recruit/joblist?ikwrd=10000572457&pref=20",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-21",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "농기계 부품 용접 및 사상하실 분",
+          "summary": "채용 시까지 주식회사 세원정공 | 중소기업 채용 시까지 기간의 정함이 없는 근로계약 용접 사상원 및 보조원 학력 경력 모집인원 임금 조건 시급10,320원 이상 ~ 10,320원 이하 퇴직급여 4대보험 국민연금 고용보험...",
+          "url": "https://www.invione.com/jobs/recruitment/all/detail/K131412603130022",
+          "outlet": "invione.com",
+          "provider": "카카오",
+          "published": "2026-03-18",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
+        },
+        {
+          "title": "['26.3.25.(수) 김해고용센터 현장면접] 세원정공 경력직 국내영업원 모집",
+          "summary": "담당 채용 -플라스틱 필름, 시트 등 제조업체 - 채용 인원 : 국내영업 담당 (1명) -필수 및 우대사항 : 운전...혹은 *********@****.**.**) 세원정공 주식회사 플라스틱 필름, 시트, 판, 엔지니어링 시트...",
+          "url": "https://www.invione.com/jobs/recruitment/all/detail/KEC0802603160002",
+          "outlet": "invione.com",
+          "provider": "카카오",
+          "published": "2026-03-18",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
+        }
+      ],
+      "total": 5,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EC%84%B8%EC%9B%90%EC%A0%95%EA%B3%B5"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EC%84%B8%EC%9B%90%EC%A0%95%EA%B3%B5"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EC%84%B8%EC%9B%90%EC%A0%95%EA%B3%B5+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "금창",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "레이저 오퍼레이터기사 모집 (주.야 가능)",
+          "summary": "금창 테크㈜ 레이저 오퍼레이터기사 모집 (주.야 가능) 채용 정보에 잘못된 내용이 있을 경우 해주세요. 레이저 오퍼레이터기사 직급/직책 연봉 3,500~4,000만원 (면접 후 결정) 주 5일근무 08:00 ~ 17:00 근무지...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49280724?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-06-01",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "주식회사 금창 채용 (26.05.29) | 강릉지역 농협마트 순회직 모집 - 마트잡",
+          "summary": "(2026-05-29) 주식회사 금창 채용 (26.05.29) | 강릉지역 농협마트 순회직 모집 - 마트잡 채용 /취업/모집/일자리/구인 정보 | 마트정보 : 중대형마트 - 1000㎡~3300㎡(302평~998평) , 급여 : 협의 , 대표근무지...",
+          "url": "https://www.martjob.co.kr/mart-job/44529",
+          "outlet": "martjob.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-29",
+          "confidence_label": "검색 후보",
+          "confidence_level": "candidate"
+        },
+        {
+          "title": "(주) 금창 재무팀(재경팀) 신입/경력 정규직 인재 채용 _#경북영천#현기차",
+          "summary": "의료보험 평일 : (근무시간) (오전) 8시 00분 ~ (오후) 5시 00분, 주 5일 근무, 평균근무시간 : 40 (주) 금창 재무팀(재경팀) 신입/경력 정규직 인재 채용 _#경북영천#현기차 1. 담당업무: 재경팀 소속 신입/경력직...",
+          "url": "https://www.invione.com/jobs/recruitment/all/detail/K140112605140020",
+          "outlet": "invione.com",
+          "provider": "카카오",
+          "published": "2026-05-18",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
+        }
+      ],
+      "total": 3,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EA%B8%88%EC%B0%BD"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EA%B8%88%EC%B0%BD"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EA%B8%88%EC%B0%BD+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "경신",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "(주)이엠코퍼레이션 노무/인사 담당자 모집",
+          "summary": "주)이엠코퍼레이션 노무/인사 담당자 모집 채용 정보에 잘못된 내용이 있을 경우 해주세요. 인사/노무 업무...주소 인천 연수구 벤처로 105 (송도동, (주) 경신 송도2사업장) (주)이엠코퍼레이션 (3년이상) 초대졸...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49283015?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-06-01",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "총무 업무 및 품질관리 직원 채용",
+          "summary": "경신 폴리웰 컴퍼니 총무 업무 및 품질관리 직원 채용 채용 정보에 잘못된 내용이 있을 경우 해주세요. 직급/직책 월급 270만원 이상 주5일(월~금) 08:00 ~ 18:00 근무지주소 충북 진천군 이월면 진광로 309...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49283612?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-06-01",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        }
+      ],
+      "total": 2,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EA%B2%BD%EC%8B%A0"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EA%B2%BD%EC%8B%A0"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EA%B2%BD%EC%8B%A0+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "두원공조",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "[2026-05] 부문별 경력 채용 공고",
+          "summary": "표, 경력증명서) - www.dwdcc.com 홈페이지 채용 정보 참고 1. 1차 : 서류전형 2. 2차 : 면접전형 - ㈜ 두원 공조 관리팀 인사담당자 → Tel : 041 - 530 - 0526 기타 유의사항 ※ 자세한 사항은 채용 홈페이지 참조...",
+          "url": "https://www.invione.com/jobs/recruitment/open/detail/162722",
+          "outlet": "invione.com",
+          "provider": "카카오",
+          "published": "2026-05-14",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
+        },
+        {
+          "title": "[ 두원 공조 ] 전 부문 경력사원 채용",
+          "summary": "㈜ 두원 공조 [ 두원 공조 ] 전 부문 경력사원 채용 채용 정보에 잘못된 내용이 있을 경우 해주세요. 홈페이지 지원 회사 내규에 따름 근무지주소 충남 아산시 음봉면 원남리 산 16-1번지 (직무별 상이 / 상세요강 참고...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49156277?Oem_Code=C1&PageGbn=ST",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-13",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        }
+      ],
+      "total": 2,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EB%91%90%EC%9B%90%EA%B3%B5%EC%A1%B0"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EB%91%90%EC%9B%90%EA%B3%B5%EC%A1%B0"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EB%91%90%EC%9B%90%EA%B3%B5%EC%A1%B0+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "세명테크",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "회계/재무/세무 관리 경력자 채용 (멕시코 몬테레이)",
+          "summary": "㈜ 세명 테크 익산공장 회계/재무/세무 관리 경력자 채용 (멕시코 몬테레이) 채용 정보에 잘못된 내용이 있을 경우 해주세요. 회계/재무/세무관리 경력자 채용 (수습 3개월) 직급/직책 연봉 4,220만원 이상 (면접 후...",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49209786?Oem_Code=C1",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-20",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "자동차 부품업체 생산직 사원 모집",
+          "summary": "채용 시까지 (주) 세명 테크 아산공장 채용 시까지 기간의 정함이 있는 근로계약 기계·금속 분야 단순 종사원 학력 경력 모집인원 임금 조건 시급10,320원 이상 퇴직급여 4대보험 국민연금 고용보험 산재보험 의료...",
+          "url": "https://www.invione.com/jobs/recruitment/all/detail/K172122605130019",
+          "outlet": "invione.com",
+          "provider": "카카오",
+          "published": "2026-05-18",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
+        }
+      ],
+      "total": 2,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EC%84%B8%EB%AA%85%ED%85%8C%ED%81%AC"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EC%84%B8%EB%AA%85%ED%85%8C%ED%81%AC"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EC%84%B8%EB%AA%85%ED%85%8C%ED%81%AC+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "위너콤",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "위너콤 （주）",
+          "summary": "소지자 접수마감일 20260630 고용형태 기간의 정함이 있는 근로계약12 개월/ 파견근로 비희망/ 대체인력 채용 비희망 임금조건 시급10,320원 이상 ~ 10,320원 이하, 면접 후 재조정 가능 경력조건 경력 (최소3년...",
+          "url": "https://www.gimhae.go.kr/job/html/sub/01_01.jsp?amode=view&wantedAuthNo=K131312605190003&infoSvc=VALIDATION",
+          "outlet": "gimhae.go.kr",
+          "provider": "카카오",
+          "published": "2026-05-19",
+          "confidence_label": "검색 후보",
+          "confidence_level": "candidate"
+        },
+        {
+          "title": "위너콤 （주）",
+          "summary": "모집직종 기타 제조 관련 단순 종사원(890000) 관련직종 직무내용 자동차부품 조립 생산직 (계약직 : 채용 시점 ~ 2025년 12월말까지 / 이후 연장검토) [수행 업무] * 자동차부품 조립 및 검사 [지원자격 및 우대...",
+          "url": "https://www.gimhae.go.kr/job/html/sub/01_01.jsp?amode=view&wantedAuthNo=K131312504040049&infoSvc=VALIDATION",
+          "outlet": "gimhae.go.kr",
+          "provider": "카카오",
+          "published": "2025-04-04",
+          "confidence_label": "검색 후보",
+          "confidence_level": "candidate"
+        },
+        {
+          "title": "채용",
+          "summary": "공고, 평균 연봉, 월별 입퇴사자 등의 위너콤 기업 정보를 확인하세요. 지인추천하거나 합격하면 100만원의 보상금까지.",
+          "url": "https://www.wanted.co.kr/company/29393",
+          "outlet": "wanted.co.kr",
+          "provider": "카카오",
+          "published": "2023-12-07",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "위너콤 연봉",
+          "summary": "및 재배포할 수 없음을 알려드립니다. 연봉정보 FAQ 연봉정보 요청 및 문의 진행중 채용 정보2건 진행중인 채용 공고 테이블로 채용 공고명,부서, 경력, 학력, 고용형태, 지역, 일자 내용이 있습니다. [ 위너콤 ...",
+          "url": "https://www.saramin.co.kr/zf_user/salaries/total-salary/view?csn=RlpTdFpyQ3l5U2VOU0ZxaUZKUXF4dz09",
+          "outlet": "saramin.co.kr",
+          "provider": "카카오",
+          "published": "2023-11-28",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "큐레이션",
+          "summary": "코리아(주) A/C 생산팀 직원 채용 생산 조회 급상승 경남 김해시 경력무관 · 정규직 대학교(4년)↑ ~12.10...4년)↑ ~12.09(토) 18일 전 등록 위너콤 (주) 휴맥스그룹 [ 위너콤 - 신입] 생산기술팀 생산운영관리...",
+          "url": "https://www.saramin.co.kr/zf_user/jobs/list/curation?category_seq=39",
+          "outlet": "saramin.co.kr",
+          "provider": "카카오",
+          "published": "2023-11-28",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        }
+      ],
+      "total": 5,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%EC%9C%84%EB%84%88%EC%BD%A4"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%EC%9C%84%EB%84%88%EC%BD%A4"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%EC%9C%84%EB%84%88%EC%BD%A4+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "트래닛",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "고졸 채용 정보 - 사람인",
+          "summary": "스크랩 입사지원 [현대기아/삼성 1차 협력사] (주) 트래닛 사무보조 사원 모집 경기 수원시 권선구통근버스...유니투스(주) 자동차부품 생산 현장 계약직 채용 공고 충남 천안시 서북구자유로운 연차사용 유니투스...",
+          "url": "https://m.saramin.co.kr/highschool/list?rec_idx=30542621&pos=int&t_category=search&t_content=generic&searchword=%ED%98%84%EB%8C%80%EC%9E%90%EB%8F%99%EC%B0%A8&searchType=popular",
+          "outlet": "m.saramin.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-28",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "고졸 채용 정보 - 사람인",
+          "summary": "평균연봉 7,000 이상 [현대기아/삼성 1차 협력사] 트래닛 품질관리 경력 모집(아산) 충남 아산시통근버스...스크랩 입사지원 (주) 디온아이디 사무 담당 채용 서울 강남구경력무관고졸↑ (주)디온아이디 ~05.31...",
+          "url": "https://m.saramin.co.kr/highschool/list?lc_m=106000&apply_mobile=n&mode=domestic&is_detail_search=n&category_level=top&highschoolEdu=all&exp_lv=0%2C1&page=4",
+          "outlet": "m.saramin.co.kr",
+          "provider": "카카오",
+          "published": "2026-05-01",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "[아산시 탕정] 와이엠에스 주식회사_삼성디스플레이...",
+          "summary": "(주) 트래닛 정남공장 전자제품 조립 기간제 모집 주식회사 트래닛 (TRANITCO.,LTD.) 모집 기간: 채용 시까지 26-06-15 학력 : 학력무관 월급 231만원 ~ 231만원",
+          "url": "https://www.invione.com/jobs/recruitment/all/detail/KJ21552509160002",
+          "outlet": "invione.com",
+          "provider": "카카오",
+          "published": "2026-04-20",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
+        },
+        {
+          "title": "한국내화㈜ 기업정보 - 직원수, 근무환경, 복리후생 등 | 잡코리아",
+          "summary": "주) 트래닛 후성홀딩스(주) 퍼스텍(주) (주)후성 (주)한스 (주)오션스글로벌 일광이앤씨(주) 후성글로벌(주) 후성코퍼레이션(주) (주)에프씨스페셜티 재무분석 재무현황 전체보기 사업분석 툴팁 기업의 주력 사업...",
+          "url": "https://www.jobkorea.co.kr/company/1932866",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-02-28",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        },
+        {
+          "title": "(주) 트래닛 진행 중인 채용 정보 총 0건 - 채용 히스토리 통계 | 잡코리아",
+          "summary": "본문 바로가기 현재 브라우저의 보안 설정에 따라 복사가 허용되지 않습니다. 아래 URL 주소를 드래그 후 Ctrl+C를 눌러 복사하시기 바랍니다. 주소복사 닫기 주소가 복사되었습니다. Ctrl+V를 눌러 붙여넣기...",
+          "url": "https://www.jobkorea.co.kr/company/1452329/recruit",
+          "outlet": "jobkorea.co.kr",
+          "provider": "카카오",
+          "published": "2026-01-18",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        }
+      ],
+      "total": 5,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%ED%8A%B8%EB%9E%98%EB%8B%9B"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%ED%8A%B8%EB%9E%98%EB%8B%9B"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%ED%8A%B8%EB%9E%98%EB%8B%9B+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    },
+    {
+      "company": "평화산업",
+      "enabled": true,
+      "jobs": [
+        {
+          "title": "기계조립 사원 모집",
+          "summary": "법률에 의거 연장 근로할 수 있고, 위에 제시된 채용 조건(수습기간/ 급여 등)은 회사사정에 따라 변경될 수...클릭하면 확인하실 수 있습니다. (자) 평화산업 산업 용기계설비(자동차부품)제조업 근로자수: 30 명...",
+          "url": "https://www.invione.com/jobs/recruitment/all/detail/K171112604150032",
+          "outlet": "invione.com",
+          "provider": "카카오",
+          "published": "2026-04-17",
+          "confidence_label": "공식 후보",
+          "confidence_level": "official"
+        },
+        {
+          "title": "34명이 참여한 통계 & 리뷰",
+          "summary": "평화산업 (주) 채용 중 공유하기 그 외 자동차용 신품 부품 제조업 중견기업,1000대기업 직원수 801명 업력 21년차 황순용/김주영 직원들이 뽑은 BEST 기업문화 프리한 복장 가능 평균 연령 40대 이상 커리어 발전...",
+          "url": "https://www.saramin.co.kr/zf_user/company-review/view/csn/UVRWWWsvczRYM2toUDRXWmt4VGJNZz09/company_nm/%ED%8F%89%ED%99%94%EC%82%B0%EC%97%85(%EC%A3%BC)",
+          "outlet": "saramin.co.kr",
+          "provider": "카카오",
+          "published": "2026-03-30",
+          "confidence_label": "채용플랫폼",
+          "confidence_level": "platform"
+        }
+      ],
+      "total": 2,
+      "error": "",
+      "providers": [
+        "카카오"
+      ],
+      "search_links": [
+        {
+          "label": "고용24",
+          "url": "https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do"
+        },
+        {
+          "label": "잡코리아",
+          "url": "https://www.jobkorea.co.kr/Search/?stext=%ED%8F%89%ED%99%94%EC%82%B0%EC%97%85"
+        },
+        {
+          "label": "사람인",
+          "url": "https://www.saramin.co.kr/zf_user/search?searchword=%ED%8F%89%ED%99%94%EC%82%B0%EC%97%85"
+        },
+        {
+          "label": "네이버",
+          "url": "https://search.naver.com/search.naver?where=web&query=%ED%8F%89%ED%99%94%EC%82%B0%EC%97%85+%EC%B1%84%EC%9A%A9"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

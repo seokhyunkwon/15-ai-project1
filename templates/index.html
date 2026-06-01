@@ -3,29 +3,621 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>현대자동차 1차 협력사 경상권 뉴스</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <title>BriefJob - 취업 뉴스 브리핑</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=asset_version) }}">
 </head>
 <body>
-  <main class="container">
-    <h1>현대자동차 1차 협력사 경상권 최신 뉴스</h1>
-    <p class="notice">THN 관련 뉴스는 자동 제외됩니다.</p>
+  <div class="app-shell">
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="{{ url_for('index') }}">
+          <img class="brand-logo" src="{{ url_for('static', filename='briefjob-logo.svg', v=asset_version) }}" alt="BriefJob">
+        </a>
+        <nav class="main-nav" aria-label="주요 메뉴">
+          <a href="{{ url_for('index') }}#search">검색</a>
+          <a href="{{ url_for('companies') }}">기업정보</a>
+          <a href="{{ url_for('jobs') }}">채용공고</a>
+          <a href="#brief">브리핑</a>
+          <a href="#news">뉴스</a>
+        </nav>
+      </div>
+    </header>
 
-    {% if news_items %}
-      <ul class="news-list">
-        {% for item in news_items %}
-          <li class="news-item">
-            <span class="badge">{{ item.company }}</span>
-            <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">
-              {{ item.title }}
-            </a>
-            <small>({{ item.source }})</small>
-          </li>
-        {% endfor %}
-      </ul>
-    {% else %}
-      <p>아직 수집된 뉴스가 없습니다. 먼저 수집 스크립트를 실행하세요.</p>
-    {% endif %}
-  </main>
+    <main>
+      <section id="search" class="command-center">
+        <div class="command-copy">
+          <span class="product-badge">BriefJob Intelligence</span>
+          <h1>뉴스로 보는 기업·산업 인사이트</h1>
+          {% if updated_at %}
+            <p class="hero-meta">최근 업데이트 <time datetime="{{ updated_at }}">{{ updated_at[:16] | replace('-', '.') | replace('T', ' ') }}</time></p>
+          {% else %}
+            <p class="hero-meta">아직 수집된 뉴스가 없습니다.</p>
+          {% endif %}
+        </div>
+
+        <form class="search-console" method="post" action="{{ url_for('collect') }}" data-loading-form data-loading-message="뉴스를 수집하고 필터링하는 중입니다..." data-loading-button="수집 중...">
+          <div class="console-head">
+            <span>통합 검색</span>
+            <span class="console-state">뉴스 수집</span>
+          </div>
+          <label for="keywords">회사명, 산업, 직무 키워드</label>
+          <div class="search-input-wrap">
+            <span class="search-glyph" aria-hidden="true"></span>
+            <input id="keywords" type="text" name="keywords" value="{{ selected_keyword or company or '' }}" placeholder="예: 현대위아, 전기차, 품질관리">
+            <button type="submit">검색</button>
+          </div>
+          <div class="popular-keywords">
+            <span>추천 키워드</span>
+            {% for keyword_name in recommended_keywords %}
+              <a href="{{ url_for('collect', keywords=keyword_name) }}" data-loading-link data-loading-message="{{ keyword_name }} 뉴스를 수집하는 중입니다...">{{ keyword_name }}</a>
+            {% endfor %}
+          </div>
+        </form>
+      </section>
+
+      <section class="workspace">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <ul class="flash-list">
+              {% for category, message in messages %}
+                <li class="flash {{ category }}">{{ message }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+
+        <section id="recommend" class="recommendation-rail" aria-label="추천 기업">
+          <div class="rail-heading">
+            <div>
+              <p class="section-kicker">Recommended</p>
+              <h2>추천 기업</h2>
+            </div>
+          </div>
+          <div class="recommendation-grid">
+            {% for company_name in recommended_companies %}
+              <a href="{{ url_for('collect', keywords=company_name) }}" data-loading-link data-loading-message="{{ company_name }} 뉴스를 수집하는 중입니다...">{{ company_name }}</a>
+            {% endfor %}
+          </div>
+        </section>
+
+        <div class="workspace-grid">
+          <aside class="side-panel">
+            <section class="panel filter-panel">
+              <div class="panel-title-row">
+                <h2>빠른 필터</h2>
+              </div>
+              <form class="filter-form" method="get" action="{{ url_for('index') }}" data-loading-form data-loading-message="필터를 적용하는 중입니다..." data-loading-button="적용 중...">
+                <input type="hidden" name="keyword" value="{{ selected_keyword }}">
+                <input type="hidden" name="company" value="{{ company }}">
+                <label>
+                  기사 내 검색
+                  <input type="search" name="q" value="{{ search_q }}" placeholder="배터리, 공장, 채용">
+                </label>
+                <label>
+                  카테고리
+                  <select name="category">
+                    {% for cat in categories %}
+                      <option value="{{ cat }}" {% if cat == selected_category %}selected{% endif %}>{{ cat }}</option>
+                    {% endfor %}
+                  </select>
+                </label>
+                <div class="button-row">
+                  <button type="submit" class="btn primary">적용</button>
+                  <a class="btn ghost" href="{{ url_for('index') }}">초기화</a>
+                </div>
+              </form>
+            </section>
+
+            {% if used_keywords %}
+              <section class="panel keyword-panel">
+                <div class="panel-title-row">
+                  <h2>최근 키워드</h2>
+                </div>
+                <div class="keyword-cloud">
+                  {% for word in used_keywords %}
+                    <span>{{ word }}</span>
+                  {% endfor %}
+                </div>
+              </section>
+            {% endif %}
+          </aside>
+
+          <div class="main-column">
+            {% if landing_mode %}
+              <section class="intro-panel">
+                <div class="intro-copy">
+                  <p class="section-kicker">Start Here</p>
+                  <h2>기업명을 검색하면 뉴스와 공개 자료를 모아 AI 리서치를 생성합니다</h2>
+                  <p>저장된 이전 뉴스 목록을 바로 보여주지 않고, 검색 이후에만 결과와 브리핑을 표시합니다.</p>
+                </div>
+                <div class="intro-steps">
+                  <div>
+                    <span>1</span>
+                    <strong>기업명 입력</strong>
+                    <p>현대위아, 에스엘, 아진산업처럼 관심 기업을 검색합니다.</p>
+                  </div>
+                  <div>
+                    <span>2</span>
+                    <strong>뉴스 수집</strong>
+                    <p>네이버와 카카오 공개 검색 결과에서 기사 중심 자료를 정리합니다.</p>
+                  </div>
+                  <div>
+                    <span>3</span>
+                    <strong>AI 기업 리서치</strong>
+                    <p>기업 개요, 최근 이슈, 복리후생 신호, 면접 질문을 근거 링크와 함께 확인합니다.</p>
+                  </div>
+                </div>
+              </section>
+            {% endif %}
+
+            {% if not landing_mode %}
+              <section class="analysis-panel">
+                <div class="analysis-head">
+                  <div>
+                    <p class="section-kicker">Data Check</p>
+                    <h2>데이터분석 요약</h2>
+                  </div>
+                  <span class="count">근거 {{ analysis_summary.filtered_count }}건</span>
+                </div>
+                <div class="analysis-metrics">
+                  <div>
+                    <strong>{{ analysis_summary.raw_count }}</strong>
+                    <span>저장 데이터</span>
+                  </div>
+                  <div>
+                    <strong>{{ analysis_summary.filtered_count }}</strong>
+                    <span>현재 분석 대상</span>
+                  </div>
+                  <div>
+                    <strong>{{ analysis_summary.excluded_count }}</strong>
+                    <span>검색/필터 제외</span>
+                  </div>
+                </div>
+                <div class="analysis-breakdown">
+                  <section>
+                    <h3>출처 분포</h3>
+                    {% for row in analysis_summary.source_counts %}
+                      <div class="mini-bar">
+                        <span>{{ row.label }}</span>
+                        <div><i style="width: {{ row.share }}%"></i></div>
+                        <b>{{ row.count }}</b>
+                      </div>
+                    {% else %}
+                      <p class="empty">분석할 출처가 없습니다.</p>
+                    {% endfor %}
+                  </section>
+                  <section>
+                    <h3>분류 TOP</h3>
+                    {% for row in analysis_summary.category_counts %}
+                      <div class="mini-bar">
+                        <span>{{ row.label }}</span>
+                        <div><i style="width: {{ row.share }}%"></i></div>
+                        <b>{{ row.count }}</b>
+                      </div>
+                    {% else %}
+                      <p class="empty">분석할 분류가 없습니다.</p>
+                    {% endfor %}
+                  </section>
+                  <section>
+                    <h3>검증 기준</h3>
+                    <ul>
+                      {% for note in analysis_summary.notes %}
+                        <li>{{ note }}</li>
+                      {% endfor %}
+                    </ul>
+                  </section>
+                </div>
+              </section>
+            {% endif %}
+
+            {% if brief_requested and brief_topic %}
+              <section id="brief" class="panel brief-panel">
+                <div class="panel-heading">
+                  <div>
+                    <p class="section-kicker">AI Briefing</p>
+                    <h2>{{ brief_topic }} {{ '기업 브리핑' if brief_mode == 'company' else '산업 브리핑' }}</h2>
+                  </div>
+                  <span class="count">뉴스 {{ pagination.total_count }}건 기반</span>
+                </div>
+
+                {% if search_warning %}
+                  <p class="flash error">{{ search_warning }}</p>
+                {% else %}
+                  <div class="info-box">
+                    <strong>AI 분석 기준</strong>
+                    {% if brief_mode == 'company' %}
+                      <p>현재 표시된 뉴스와 공개 검색 결과를 근거로 기업 정보, 복지·근무제도, 면접 준비 방향을 생성합니다.</p>
+                    {% else %}
+                      <p>현재 표시된 뉴스 제목, 요약, 발행처, 출처 링크를 근거로 산업 동향과 준비 키워드를 생성합니다.</p>
+                    {% endif %}
+                  </div>
+
+                  {% if brief_mode == 'company' and company_research %}
+                    <section class="research-section">
+                      <div class="research-head">
+                        <div>
+                          <p class="section-kicker">Company Research</p>
+                          <h3>AI 기업 리서치</h3>
+                        </div>
+                        <span class="count">공개 자료 {{ research_docs | length }}건</span>
+                      </div>
+
+                      {% if company_research.error %}
+                        <p class="flash error">{{ company_research.error }}</p>
+                      {% endif %}
+                      {% if company_research.search_error %}
+                        <p class="flash error">{{ company_research.search_error }}</p>
+                      {% endif %}
+
+                      {% if company_research.generated_queries %}
+                        <div class="query-strip">
+                          {% for query in company_research.generated_queries %}
+                            <span>{{ query }}</span>
+                          {% endfor %}
+                        </div>
+                      {% endif %}
+
+                      <div class="research-grid">
+                        <article class="research-card wide">
+                          <h4>공개 채용공고 후보</h4>
+                          {% if work24_jobs and work24_jobs.enabled %}
+                            {% if work24_jobs["items"] %}
+                              <ul>
+                                {% for job in work24_jobs["items"] %}
+                                  <li>
+                                    <strong>{{ job.title }}</strong>
+                                    <p class="meta-inline">
+                                      {% if job.confidence_label %}{{ job.confidence_label }} · {% endif %}
+                                      {{ job.outlet or job.provider or '공개 검색' }}
+                                      {% if job.published %} · {{ job.published }}{% endif %}
+                                      {% if job.close_at %} · 마감 {{ job.close_at }}{% endif %}
+                                      {% if job.salary %} · {{ job.salary_type }} {{ job.salary }}{% endif %}
+                                    </p>
+                                    {% if job.summary %}
+                                      <p class="meta-inline">{{ job.summary }}</p>
+                                    {% endif %}
+                                    {% if job.url %}
+                                      <p class="meta-inline"><a href="{{ job.url }}" target="_blank" rel="noopener noreferrer">공고 보기</a></p>
+                                    {% endif %}
+                                  </li>
+                                {% endfor %}
+                              </ul>
+                            {% else %}
+                              <p class="empty">공개 검색에서 채용공고 후보를 찾지 못했습니다.</p>
+                            {% endif %}
+                          {% elif work24_jobs and work24_jobs.error %}
+                            <p class="empty">{{ work24_jobs.error }}</p>
+                          {% else %}
+                            <p class="empty">네이버 또는 카카오 검색 API 키가 있으면 공개 채용공고 후보를 표시할 수 있습니다.</p>
+                          {% endif %}
+                        </article>
+                      </div>
+
+                      {% if company_info_docs %}
+                        <h4 class="research-subhead">공개 회사정보 복리후생</h4>
+                        <ul class="research-list">
+                          {% for doc in company_info_docs[:3] %}
+                            <li>
+                              <strong>{{ doc.title }}</strong>
+                              <p>{{ doc.summary }}</p>
+                              {% if doc.link %}
+                                <p class="meta-inline">근거: <a href="{{ doc.link }}" target="_blank" rel="noopener noreferrer">{{ doc.outlet or doc.link }}</a></p>
+                              {% endif %}
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+
+                      {% if interview_review_docs %}
+                        <h4 class="research-subhead">사람인 면접후기 요약</h4>
+                        <ul class="research-list">
+                          {% for doc in interview_review_docs[:3] %}
+                            <li>
+                              <strong>{{ doc.title }}</strong>
+                              <p>{{ doc.summary }}</p>
+                              {% if doc.link %}
+                                <p class="meta-inline">근거: <a href="{{ doc.link }}" target="_blank" rel="noopener noreferrer">{{ doc.outlet or doc.link }}</a></p>
+                              {% endif %}
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+
+                      <div class="research-grid">
+                        <article class="research-card wide">
+                          <h4>기업 개요</h4>
+                          {% if company_research.company_overview %}
+                            <ul>
+                              {% for item in company_research.company_overview %}
+                                <li>{{ item }}</li>
+                              {% endfor %}
+                            </ul>
+                          {% else %}
+                            <p class="empty">공개 자료에서 기업 개요를 충분히 찾지 못했습니다.</p>
+                          {% endif %}
+                        </article>
+
+                        <article class="research-card">
+                          <h4>사업·제품 키워드</h4>
+                          {% if company_research.business_keywords %}
+                            <div class="tag-row">
+                              {% for word in company_research.business_keywords %}
+                                <span class="badge keyword">{{ word }}</span>
+                              {% endfor %}
+                            </div>
+                          {% else %}
+                            <p class="empty">추출된 키워드가 없습니다.</p>
+                          {% endif %}
+                        </article>
+
+                        <article class="research-card">
+                          <h4>지원자 참고 포인트</h4>
+                          {% if company_research.work_life_notes %}
+                            <ul>
+                              {% for item in company_research.work_life_notes %}
+                                <li>{{ item }}</li>
+                              {% endfor %}
+                            </ul>
+                          {% else %}
+                            <p class="empty">공개 자료만으로 판단하기 어렵습니다.</p>
+                          {% endif %}
+                        </article>
+                      </div>
+
+                      {% if company_research.recent_issues %}
+                        <h4 class="research-subhead">최근 이슈</h4>
+                        <ul class="research-list">
+                          {% for issue in company_research.recent_issues %}
+                            <li>
+                              <strong>{{ issue.point }}</strong>
+                              {% if issue.evidence_links %}
+                                <p class="meta-inline">근거:
+                                  {% for link in issue.evidence_links %}
+                                    <a href="{{ link }}" target="_blank" rel="noopener noreferrer">{{ link }}</a>{% if not loop.last %}, {% endif %}
+                                  {% endfor %}
+                                </p>
+                              {% endif %}
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+
+                      {% if company_research.welfare_signals %}
+                        <h4 class="research-subhead">복리후생·근무제도</h4>
+                        <ul class="research-list">
+                          {% for signal in company_research.welfare_signals %}
+                            <li>
+                              <strong>{{ signal.signal }}</strong>
+                              {% if signal.evidence_links %}
+                                <p class="meta-inline">근거:
+                                  {% for link in signal.evidence_links %}
+                                    <a href="{{ link }}" target="_blank" rel="noopener noreferrer">{{ link }}</a>{% if not loop.last %}, {% endif %}
+                                  {% endfor %}
+                                </p>
+                              {% endif %}
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+
+                      {% if company_research.likely_interview_questions %}
+                        <h4 class="research-subhead">예상 면접 질문·답변 방향</h4>
+                        <ol class="research-list">
+                          {% for q in company_research.likely_interview_questions %}
+                            <li>
+                              <strong>{{ q.question }}</strong>
+                              {% if q.intent %}<p><span class="meta-inline">의도</span> {{ q.intent }}</p>{% endif %}
+                              {% if q.answer_direction %}
+                                <ul>
+                                  {% for line in q.answer_direction %}
+                                    <li>{{ line }}</li>
+                                  {% endfor %}
+                                </ul>
+                              {% endif %}
+                            </li>
+                          {% endfor %}
+                        </ol>
+                      {% endif %}
+
+                      {% if company_research.answer_strategy %}
+                        <h4 class="research-subhead">답변 준비 방향</h4>
+                        <ul class="research-list">
+                          {% for item in company_research.answer_strategy %}
+                            <li>{{ item }}</li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+
+                      {% if company_research.sources %}
+                        <h4 class="research-subhead">근거 링크</h4>
+                        <ul class="source-list">
+                          {% for src in company_research.sources %}
+                            {% if loop.index <= 8 and src.link %}
+                              <li>
+                                <a href="{{ src.link }}" target="_blank" rel="noopener noreferrer">{{ src.title or src.link }}</a>
+                                {% if src.outlet %}<span>{{ src.outlet }}</span>{% endif %}
+                              </li>
+                            {% endif %}
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+                    </section>
+                  {% endif %}
+
+                  {% if news_brief and news_brief.error %}
+                    <p class="flash error">{{ news_brief.error }}</p>
+                  {% endif %}
+
+                  {% if news_brief %}
+                    <h3 class="subhead">최신 동향 핵심 요약</h3>
+                    {% if news_brief.highlights %}
+                      <ul class="brief-list">
+                        {% for h in news_brief.highlights %}
+                          <li class="brief-item">
+                            <strong>{{ h.claim }}</strong>
+                            {% if h.why_it_matters %}<p>{{ h.why_it_matters }}</p>{% endif %}
+                            {% if h.evidence_links %}
+                              <p class="meta-inline">근거:
+                                {% for link in h.evidence_links %}
+                                  <a href="{{ link }}" target="_blank" rel="noopener noreferrer">{{ link }}</a>{% if not loop.last %}, {% endif %}
+                                {% endfor %}
+                              </p>
+                            {% endif %}
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    {% else %}
+                      <p class="empty">하이라이트를 만들기에 표시된 뉴스가 부족합니다.</p>
+                    {% endif %}
+
+                    {% if news_brief.keywords_to_prepare %}
+                      <h3 class="subhead">준비 키워드</h3>
+                      <div class="tag-row">
+                        {% for word in news_brief.keywords_to_prepare %}
+                          <span class="badge keyword">{{ word }}</span>
+                        {% endfor %}
+                      </div>
+                    {% endif %}
+
+                    {% if brief_mode == 'company' and not (company_research and company_research.likely_interview_questions) %}
+                      <h3 class="subhead">면접 질문</h3>
+                      {% if interview and interview.questions %}
+                        <p class="meta-inline">LLM이 표시된 기사 근거로 생성한 예상 질문입니다.</p>
+                        <ol class="brief-list">
+                          {% for q in interview.questions %}
+                            <li class="brief-item">
+                              <strong>{{ q.question if q.question else q }}</strong>
+                              {% if q.intent %}<p><span class="meta-inline">의도</span> {{ q.intent }}</p>{% endif %}
+                              {% if q.answer_outline %}
+                                <ul>
+                                  {% for line in q.answer_outline %}
+                                    <li>{{ line }}</li>
+                                  {% endfor %}
+                                </ul>
+                              {% endif %}
+                            </li>
+                          {% endfor %}
+                        </ol>
+                      {% else %}
+                        <p class="empty">표시된 뉴스가 부족해 면접 질문을 만들지 못했습니다.</p>
+                      {% endif %}
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+              </section>
+            {% endif %}
+
+            {% if not landing_mode %}
+            <section id="news" class="panel results-panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="section-kicker">News Results</p>
+                  <h2>뉴스 목록 <span class="count">({{ pagination.total_count }}건)</span></h2>
+                  {% if pagination.total_count %}
+                    <p class="result-range">{{ pagination.start }}-{{ pagination.end }}건 표시 / {{ pagination.total_pages }}페이지</p>
+                  {% endif %}
+                </div>
+                {% if news_items and (selected_keyword or search_q or company) %}
+                  <a class="btn primary" href="{{ url_for('index', keyword=selected_keyword, company=company, q=search_q, category=selected_category, page=pagination.page, brief='1') }}" data-loading-link data-loading-message="AI 브리핑을 생성하는 중입니다...">뉴스 요약</a>
+                {% endif %}
+              </div>
+
+              {% if search_warning %}
+                <p class="flash error">{{ search_warning }}</p>
+              {% elif news_items %}
+                <ul class="news-list">
+                  {% for item in news_items %}
+                    <li id="news-{{ item.article_id }}" class="news-item {% if article_summary_id == item.article_id %}is-expanded{% endif %}">
+                      <div class="news-thumb">
+                        {% if item.thumbnail %}
+                          <img src="{{ item.thumbnail }}" alt="">
+                        {% else %}
+                          <span>{{ source_labels.get(item.source, item.source)[:1] }}</span>
+                        {% endif %}
+                      </div>
+                      <div class="news-main">
+                        <div class="news-meta">
+                          <span class="badge source">{{ source_labels.get(item.source, item.source) }}</span>
+                          <span class="badge category">{{ item.category }}</span>
+                          <span class="badge keyword">{{ item.keyword }}</span>
+                          {% if item.outlet and item.outlet|string|lower not in ['', 'nan', 'none'] %}
+                            <span class="outlet">{{ item.outlet }}</span>
+                          {% endif %}
+                        </div>
+                        <h3 class="news-title">
+                          <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+                        </h3>
+                        {% if item.summary %}
+                          <p class="summary">{{ item.summary }}</p>
+                        {% endif %}
+                        {% if article_summary_id == item.article_id and article_summary %}
+                          <div class="article-ai-summary">
+                            <div class="article-ai-head">
+                              <span>AI 기사 요약</span>
+                              {% if article_summary.cached %}
+                                <em>cached</em>
+                              {% endif %}
+                            </div>
+                            {% if article_summary.error %}
+                              <p class="article-ai-error">{{ article_summary.error }}</p>
+                            {% endif %}
+                            {% if article_summary.one_line %}
+                              <strong>{{ article_summary.one_line }}</strong>
+                            {% endif %}
+                            {% if article_summary.key_points %}
+                              <ul>
+                                {% for point in article_summary.key_points %}
+                                  <li>{{ point }}</li>
+                                {% endfor %}
+                              </ul>
+                            {% endif %}
+                            {% if article_summary.why_it_matters %}
+                              <p><span>왜 중요한가</span>{{ article_summary.why_it_matters }}</p>
+                            {% endif %}
+                            {% if article_summary.jobseeker_takeaway %}
+                              <p><span>취업 준비 포인트</span>{{ article_summary.jobseeker_takeaway }}</p>
+                            {% endif %}
+                          </div>
+                        {% endif %}
+                      </div>
+                      <div class="news-side">
+                        {% if item.published %}
+                          <time class="date">{{ item.published }}</time>
+                        {% endif %}
+                        <a class="detail-link ai-summary-link" href="{{ url_for('index', keyword=selected_keyword, company=company, q=search_q, category=selected_category, page=pagination.page, brief=('1' if brief_requested else none), article=item.article_id) }}#news-{{ item.article_id }}" data-loading-link data-loading-message="선택한 기사만 AI 요약하는 중입니다...">AI 요약</a>
+                        <a class="detail-link" href="{{ item.link }}" target="_blank" rel="noopener noreferrer">기사 보기</a>
+                      </div>
+                    </li>
+                  {% endfor %}
+                </ul>
+                {% if pagination.total_pages > 1 %}
+                  <nav class="pagination" aria-label="뉴스 페이지">
+                    {% if pagination.has_prev %}
+                      <a class="page-link" href="{{ url_for('index', keyword=selected_keyword, company=company, q=search_q, category=selected_category, page=pagination.prev_page, brief=('1' if brief_requested else none)) }}">이전</a>
+                    {% else %}
+                      <span class="page-link disabled">이전</span>
+                    {% endif %}
+                    <span class="page-current">{{ pagination.page }} / {{ pagination.total_pages }}</span>
+                    {% if pagination.has_next %}
+                      <a class="page-link" href="{{ url_for('index', keyword=selected_keyword, company=company, q=search_q, category=selected_category, page=pagination.next_page, brief=('1' if brief_requested else none)) }}">다음</a>
+                    {% else %}
+                      <span class="page-link disabled">다음</span>
+                    {% endif %}
+                  </nav>
+                {% endif %}
+              {% else %}
+                <div class="empty-state">
+                  <strong>표시할 뉴스가 없습니다.</strong>
+                  <p>상단 검색창에 회사명이나 산업 키워드를 입력하고 뉴스 검색을 실행해 주세요.</p>
+                </div>
+              {% endif %}
+            </section>
+            {% endif %}
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="{{ url_for('static', filename='app.js', v=asset_version) }}" defer></script>
 </body>
 </html>
