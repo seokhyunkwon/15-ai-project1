@@ -1,115 +1,113 @@
 <!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>산업 키워드 뉴스 대시보드</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-  <main class="container">
-    <header class="page-header">
-      <h1>산업 키워드 뉴스 대시보드</h1>
-      <p class="subtitle">네이버 뉴스 API·카카오 웹 검색 API로 키워드별 최신 기사를 수집합니다.</p>
-      {% if updated_at %}
-        <p class="meta">최신 업데이트: <time>{{ updated_at }}</time></p>
-      {% else %}
-        <p class="meta">아직 수집 기록이 없습니다.</p>
-      {% endif %}
-    </header>
-
-    <section class="panel api-status">
-      <span class="status-pill {{ 'ok' if api_status.naver else 'off' }}">네이버 API {{ '연결됨' if api_status.naver else '미설정' }}</span>
-      <span class="status-pill {{ 'ok' if api_status.kakao else 'off' }}">카카오 API {{ '연결됨' if api_status.kakao else '미설정' }}</span>
-      {% if used_keywords %}
-        <span class="meta-inline">마지막 검색 키워드: {{ used_keywords | join(', ') }}</span>
-      {% endif %}
-    </section>
-
-    {% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-        <ul class="flash-list">
-          {% for category, message in messages %}
-            <li class="flash {{ category }}">{{ message }}</li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-    {% endwith %}
-
-    <section class="panel">
-      <h2>1. 산업 키워드 입력 &amp; 수집</h2>
-      <form class="collect-form" method="post" action="{{ url_for('collect') }}">
-        <label for="keywords">키워드 (쉼표로 구분)</label>
-        <textarea id="keywords" name="keywords" rows="2" placeholder="예: 에스엘, 전기차, 자동차 부품, 공급망">{{ default_keywords }}</textarea>
-        <div class="checkbox-row">
-          <label><input type="checkbox" name="include_companies"> 1차 협력사 목록 포함 검색</label>
-          <label><input type="checkbox" name="region_only"> 경상권 키워드만 표시</label>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자동차 부품 산업 취업 인텔리전스 대시보드</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Automotive Industry News Engine</p>
+          <h1>자동차 부품 산업 취업 매니저</h1>
+          <p class="hero-copy">
+            네이버와 카카오 검색 API를 통해 실제 뉴스만 수집하고, 기업 버튼을 클릭하면
+            주요 뉴스와 AI 분석 리포트를 확인할 수 있습니다.
+          </p>
         </div>
-        <button type="submit" class="btn primary">뉴스 수집 실행</button>
-      </form>
-      <p class="hint">대표 테스트: 키워드에 <strong>에스엘</strong>만 입력 후 수집을 누르세요.</p>
-    </section>
+      </header>
 
-    <section class="panel">
-      <h2>2. 검색 &amp; 필터</h2>
-      <form class="filter-form" method="get" action="{{ url_for('index') }}">
-        <div class="filter-grid">
-          <label>
-            제목/요약 검색
-            <input type="search" name="q" value="{{ search_q }}" placeholder="예: 배터리, 공장">
-          </label>
-          <label>
-            수집 키워드
-            <input type="text" name="keyword" value="{{ selected_keyword }}" placeholder="예: 에스엘">
-          </label>
-          <label>
-            카테고리
-            <select name="category">
-              {% for cat in categories %}
-                <option value="{{ cat }}" {% if cat == selected_category %}selected{% endif %}>{{ cat }}</option>
-              {% endfor %}
-            </select>
-          </label>
-          <label class="checkbox-inline">
-            <input type="checkbox" name="region_only" value="1" {% if region_only %}checked{% endif %}>
-            경상권만
-          </label>
+      <section class="company-quick-section">
+        <div class="section-title-row">
+          <h2>대표 9개 기업 AI 분석 리포트</h2>
         </div>
-        <button type="submit" class="btn">필터 적용</button>
-        <a class="btn ghost" href="{{ url_for('index') }}">초기화</a>
-      </form>
-    </section>
-
-    <section class="panel">
-      <h2>3. 뉴스 목록 <span class="count">({{ news_items | length }}건)</span></h2>
-      {% if news_items %}
-        <ul class="news-list">
-          {% for item in news_items %}
-            <li class="news-item">
-              <div class="news-meta">
-                <span class="badge category">{{ item.category }}</span>
-                <span class="badge keyword">{{ item.keyword }}</span>
-                <span class="badge source">{{ source_labels.get(item.source, item.source) }}</span>
-                {% if item.outlet and item.outlet|string|lower not in ['', 'nan', 'none'] %}
-                  <span class="badge outlet">{{ item.outlet }}</span>
-                {% endif %}
-                {% if item.published %}
-                  <time class="date">{{ item.published }}</time>
-                {% endif %}
-              </div>
-              <h3 class="news-title">
-                <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
-              </h3>
-              {% if item.summary %}
-                <p class="summary">{{ item.summary }}</p>
-              {% endif %}
-            </li>
+        <div class="company-quick-grid">
+          {% for comp in target_companies %}
+          <a
+            class="company-quick-btn"
+            href="{{ url_for('company_detail', company_name=comp) }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ comp }} 리포트
+          </a>
           {% endfor %}
-        </ul>
-      {% else %}
-        <p class="empty">표시할 뉴스가 없습니다. API 키를 설정한 뒤 위에서 키워드를 입력하고 수집을 실행하세요.</p>
+        </div>
+      </section>
+
+      <section class="control-panel-bar">
+        <form action="/" method="POST" class="horizontal-form">
+          <div class="input-group-item">
+            <label for="roleInput">뉴스 수집/검색 통합 키워드</label>
+            <input
+              type="text"
+              id="roleInput"
+              name="role"
+              class="custom-input-field"
+              value="{{ role }}"
+              placeholder="예: 자동차 부품, 전장부품, 전기차, 공급망"
+            />
+          </div>
+          <div class="action-btn-group">
+            <button type="submit" class="analysis-trigger-btn">
+              실시간 뉴스 수집
+            </button>
+          </div>
+        </form>
+      </section>
+
+      {% if notice %}
+      <div class="alert-notice">{{ notice }}</div>
       {% endif %}
-    </section>
-  </main>
-</body>
+
+      <main class="content-display-area" style="width: 100%">
+        <div class="panel-head">
+          <h2>뉴스 타임라인</h2>
+          <span class="badge-count">{{ news_items|length }}건 검색됨</span>
+        </div>
+
+        <div id="newsContainer" class="news-list">
+          {% if news_items %} {% for item in news_items %}
+          <article class="news-card">
+            <div class="news-meta-row">
+              <span class="pill-badge-src">
+                {{ source_labels.get(item.source, item.source) }}
+              </span>
+              <span class="news-date-text">{{ item.published }}</span>
+            </div>
+            <h3>
+              <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">
+                {{ item.title }}
+              </a>
+            </h3>
+            <p>{{ item.summary }}</p>
+            <div class="news-card-footer">
+              <span class="keyword-tag">#{{ item.keyword }}</span>
+            </div>
+          </article>
+          {% endfor %} {% else %}
+          <div class="info-placeholder-card" id="emptyPlaceholder">
+            <h3>현재 동기화된 뉴스 데이터가 없습니다.</h3>
+            <p>
+              상단 입력창에 수집할 키워드를 입력하고 실시간 뉴스 수집 버튼을 눌러 주세요.
+              검색 결과가 없으면 실제 뉴스가 검색되지 않았다고 표시합니다.
+            </p>
+          </div>
+          {% endif %}
+        </div>
+      </main>
+    </div>
+
+  </body>
 </html>

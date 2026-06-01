@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ company_name }} - AI 기업 분석 리포트</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body style="background: #f8fafc">
+    <div
+      class="page-shell"
+      style="max-width: 1100px; margin: 0 auto; padding: 30px 20px"
+    >
+      <header
+        class="hero"
+        style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%)"
+      >
+        <div>
+          <p class="eyebrow" style="color: #bfdbfe">
+            COMPANY INTELLIGENCE REPORT
+          </p>
+          <h1>{{ company_name }} AI 실시간 인텔리전스</h1>
+          <p class="hero-copy" style="color: #eff6ff">
+            실제 검색된 뉴스만 근거로 핵심 분석과 예상 면접 질문을 생성합니다.
+          </p>
+        </div>
+      </header>
+
+      <div
+        class="main-layout-grid"
+        style="
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
+          align-items: stretch;
+        "
+      >
+        <section
+          class="sidebar-panel"
+          id="leftPanel"
+          style="
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+          "
+        >
+          <div class="panel-head">
+            <h2>{{ company_name }} AI 동향 요약 및 예상 면접 질문</h2>
+          </div>
+
+          <div class="info-card-panel">
+            <h3>최신 이슈 종합 요약</h3>
+            <p class="summary-body">{{ analysis.summary }}</p>
+          </div>
+
+          <div class="info-card-panel">
+            <h3>산업 및 기업 트렌드 분석</h3>
+            <p class="summary-body">{{ analysis.industry_trend }}</p>
+          </div>
+
+          <div
+            class="info-card-panel highlight-border-blue"
+            style="
+              background: #f0f9ff;
+              border-left: 4px solid var(--accent);
+              margin-bottom: 0;
+            "
+          >
+            <h3>최신 이슈 연계 예상 면접 질문</h3>
+            <div class="interview-flex-list">
+              {% for q in analysis.interview_questions %}
+              <div
+                class="interview-question-box"
+                style="
+                  background: #ffffff;
+                  border: 1px solid #e0f2fe;
+                  border-radius: 6px;
+                  padding: 11px;
+                  margin-bottom: 6px;
+                  color: #0369a1;
+                  font-size: 0.84rem;
+                  font-weight: bold;
+                "
+              >
+                {{ q }}
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </section>
+
+        <main
+          class="content-display-area"
+          style="
+            display: flex;
+            flex-direction: column;
+            background: var(--panel);
+            border: 1px solid var(--panel-border);
+            border-radius: var(--radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+          "
+        >
+          <div class="panel-head" style="flex-shrink: 0">
+            <h2>분석 근거 뉴스 목록</h2>
+            <span class="badge-count">{{ news_items|length }}건 관련됨</span>
+          </div>
+
+          <div
+            class="news-list"
+            style="
+              flex: 1;
+              min-height: 200px;
+              max-height: 650px;
+              overflow-y: auto;
+              padding-right: 4px;
+              gap: 12px;
+            "
+          >
+            {% if news_items %} {% for item in news_items %}
+            <article
+              class="news-card"
+              style="background: #ffffff; margin-bottom: 0"
+            >
+              <div class="news-meta-row">
+                <span class="pill-badge-src">
+                  {{ source_labels.get(item.source, item.source) }}
+                </span>
+                <span class="news-date-text">{{ item.published }}</span>
+              </div>
+              <h3 style="font-size: 0.92rem">
+                <a
+                  href="{{ item.link }}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {{ item.title }}
+                </a>
+              </h3>
+              <p style="font-size: 0.82rem; line-height: 1.4">
+                {{ item.summary }}
+              </p>
+            </article>
+            {% endfor %} {% else %}
+            <div class="info-placeholder-card">
+              <h3>이 기업과 직접 관련된 실제 뉴스가 검색되지 않았습니다.</h3>
+              <p>
+                검색 결과가 없는 경우 임의의 뉴스를 만들지 않고, 검색되지
+                않았다고 표시합니다.
+              </p>
+            </div>
+            {% endif %}
+          </div>
+        </main>
+      </div>
+
+      <div style="text-align: center; margin-top: 30px">
+        <button
+          type="button"
+          class="analysis-trigger-btn"
+          style="width: auto; padding: 12px 30px; background: #64748b"
+          onclick="window.close()"
+        >
+          창 닫기
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

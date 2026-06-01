@@ -1,0 +1,29 @@
+!pip install llama-cpp-python
+
+*   **사용할 무료 로컬 모델:** `Llama-3-Korean-Bllossom-8B-Q4_K_M.gguf` (약 4.8GB 수준의 초경량 파일 하나로 구동 가능)
+
+---
+
+## 2. 기존 파일(`config.py`, `news_collector.py`) 재사용 여부
+
+**무조건 재사용하는 것이 좋습니다.** 
+*   **`config.py`**: API 키나 고정 기업 리스트 같은 민감하고 중요한 설정값을 `app.py`에 하드코딩하지 않고 격리할 수 있어 유지보수에 필수적입니다.
+*   **`news_collector.py`**: 앞서 제가 예시로 든 `app.py` 내부의 뉴스 수집 로직을 이 파일로 완전히 분리해 내면, 백엔드 코드가 깔끔해지고 대시보드 구동 속도가 빨라집니다.
+
+---
+
+## 3. 최종 통합 프로젝트 구조 (전체 파일 구성)
+
+```text
+hyundai-job-dashboard/
+│
+├── config.py               # 설정 파일 (API 키, 기업 정보 고정 데이터 관리)
+├── news_collector.py       # 뉴스 수집 전문 엔진 (네이버/카카오 API + 점수 필터링)
+├── local_llm.py            # [수정] torch 없이 구동되는 초경량 로컬 AI 엔진
+├── app.py                  # Flask 라우팅 및 컨트롤러
+│
+├── templates/
+│   └── index.html          # 단일 화면 통합 대시보드 UI
+│
+└── static/
+    └── style.css       # A 프로젝트 스타일 기준의 커스텀 CSS

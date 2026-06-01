@@ -1,237 +1,548 @@
 {
-  "updated_at": "2026-05-26T23:26:07",
+  "updated_at": "2026-06-01 17:23:52",
   "keywords": [
-    "에스엘"
-  ],
-  "excluded_company": "THN",
-  "categories": [
-    "전체",
-    "자동차 부품",
-    "전장 부품",
-    "전기차",
-    "공급망",
-    "기타"
+    "현대자동차"
   ],
   "items": [
     {
-      "keyword": "에스엘",
-      "category": "자동차 부품",
-      "title": "매출 40조 넘겼지만…대구 전통산단 가동률 60%대 쇼크",
-      "summary": "산단별로는 자동차부품 분야 앵커기업인 평화발레오· 에스엘 ·경창산업·효림엑스이 등의 지속적인 성장세에 힘입어 성서산단(1~5차)의 매출 비중이 가장 컸다. 지난해 성서산단의 매출액은 18조9천535억 원으로...",
+      "title": "5월 2주 주요 제조업 전망",
+      "summary": "출시 - 현대자동차가 새로 디자인하고 상품성을 강화한 주력 상용 모델 3종을 출시. △더 뉴 2027 마이티... 현대위아, 금호타이어, HL만도, 에스엘, 한국단자, 성우하이텍, DN오토모티브, 넥센타이어, 화신, 계양전기...",
+      "link": "https://www.laborplus.co.kr/news/articleView.html?idxno=40813",
       "source": "naver",
-      "publisher": "네이버",
-      "published": "Tue, 26 May 2026 16:06:00 +0900",
-      "link": "https://www.idaegu.com/news/articleView.html?idxno=662793",
-      "outlet": "idaegu.com"
+      "published": "Tue, 12 May 2026",
+      "keyword": "화신 현대자동차",
+      "category": "湲고?"
     },
     {
-      "keyword": "에스엘",
-      "category": "기타",
+      "title": "서연이화·화신 등 브라질 진출 車 부품 업체 '혈' 뚫렸다... 현지 정부...",
+      "summary": "서연이화·화신·엠에스오토텍·THN 4개사 현대차와 동반 진출 12년 만에 승인 삐라시까바시와... 기자] 현대자동차와 함께 브라질 시장에 동반 진출했던 자동차 부품사들의 12년간 막혔던 맥이...",
+      "link": "https://www.theguru.co.kr/news/article.html?no=65590",
+      "source": "naver",
+      "published": "Tue, 23 Jan 2024",
+      "keyword": "THN 현대자동차",
+      "category": "자동차 부품"
+    },
+    {
+      "title": "[데이터 뉴스룸] 車업체 50곳 작년 영업곳간 30% 줄어 울상…성우하이텍...",
+      "summary": "◆화신정공, 영업이익 증가율 779%…KG모빌리티도 300%대 상승 조사 대상 50개 車 업체 중 재작년 대비... 다음으로 현대자동차가 3조 5150억 원으로 넘버2를 보였다. 다만, 연결 기준으로 따로 살펴보면 현대차가...",
+      "link": "https://www.greened.kr/news/articleView.html?idxno=339551",
+      "source": "naver",
+      "published": "Tue, 21 Apr 2026",
+      "keyword": "화신 현대자동차",
+      "category": "湲고?"
+    },
+    {
+      "title": "현대차·기아도 반한 모터 기술력… 계양전기, 글로벌 영토 넓힌다",
+      "summary": "현대모비스, HL만도, 현대위아, 에스엘, 한온시스템, 명신산업, 화신, 서연이화 등은 전기차 플랫폼 확대와 글로벌 수주 증가 기대를 반영하며 상승세를 보이고 있다. 특히 전기차 전환 과정에서 차량당 전장부품 탑재...",
+      "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=454322",
+      "source": "naver",
+      "published": "Thu, 21 May 2026",
+      "keyword": "서연이화",
+      "category": "자동차 부품"
+    },
+    {
+      "title": "SK하이닉스, 500대 기업 평가 2년 연속 1위…AI 반도체가 순위 갈랐다",
+      "summary": "현대자동차는 563.9점으로 2년 연속 5위를 기록했다. 이어 네이버 557.8점, 기아 557.6점, 삼성물산 549.5점... 일자리창출 부문 1위는 서연이화였다. 서연이화의 고용증감률은 13.74%로, 직원 수가 939명에서 1068명으로...",
+      "link": "https://www.thepowernews.co.kr/view.php?ud=202605201006011897de3f0aa1be_7",
+      "source": "naver",
+      "published": "Wed, 20 May 2026",
+      "keyword": "서연이화 현대자동차",
+      "category": "전장 부품"
+    },
+    {
+      "title": "SK하이닉스, 2년 연속 경영평가 1위...카카오 톱10 진입",
+      "summary": "또한 글로벌 자동차 메이커로 도약한 현대자동차는 올해 563.9점으로 2년 연속 종합순위 5위를... 일자리창출 부문에서는 서연이화, SK하이닉스, 네이버, SK인천석유화학, LIG디펜스앤에어로스페이스가...",
+      "link": "http://www.efnews.co.kr/news/articleView.html?idxno=129851",
+      "source": "naver",
+      "published": "Wed, 20 May 2026",
+      "keyword": "서연이화 현대자동차",
+      "category": "湲고?"
+    },
+    {
+      "title": "‘반도체 슈퍼사이클’ SK하이닉스·삼성전자, 대기업 경영평가 1·2위 ...",
+      "summary": "현대자동차(563.9점)는 2년 연속 5위를 지켰다. 이어 네이버(6위, 557.8점), 기아(7위... 일자리창출 부문에서는 서연이화, SK하이닉스, 네이버, SK인천석유화학...",
+      "link": "http://www.breaknews.com/1208434",
+      "source": "naver",
+      "published": "Wed, 20 May 2026",
+      "keyword": "서연이화 현대자동차",
+      "category": "전장 부품"
+    },
+    {
+      "title": "삼성 또 제쳤다…대기업 경영평가 1위는 여기",
+      "summary": "삼양식품 등이, 일자리창출 부문에서는 서연이화와 네이버 등이 우수 기업으로 뽑혔다. 양성평등 부문은 영원무역과 한세실업이, 사회공헌 및 환경보호 부문은 LG생활건강과 현대자동차가 우수한 평가를 받았다.",
+      "link": "https://magazine.hankyung.com/business/article/202605207740b",
+      "source": "naver",
+      "published": "Wed, 20 May 2026",
+      "keyword": "서연이화 현대자동차",
+      "category": "湲고?"
+    },
+    {
+      "title": "김명수 매경AX 대표 “기술은 따라잡혀도 신뢰는 복제 못해”",
+      "summary": "그랜저(현대자동차), 라우체(화신세라믹) 등이 국가대표 브랜드에 이름을 올렸다. 특히 KGB의 ‘KGB포장이사’는 국내에서 처음으로 포장이사 서비스를 도입하고 물류업계 최초로 품질경영시스템 인증을 획득하는 등 고객...",
+      "link": "https://www.mk.co.kr/article/12049173",
+      "source": "naver",
+      "published": "Fri, 15 May 2026",
+      "keyword": "화신 현대자동차",
+      "category": "공급망"
+    },
+    {
+      "title": "AI 시대에도 결국 통했다 … 소비자가 선택한 36개 브랜드",
+      "summary": "그랜저(현대자동차), 라우체(화신세라믹) 등이 국가대표 브랜드에 이름을 올렸다. 특히 KGB의 'KGB포장이사'는 국내에서 처음으로 포장이사 서비스를 도입하고 물류업계 최초로 품질경영시스템 인증을 획득하는 등 고객...",
+      "link": "https://www.mk.co.kr/article/12047720",
+      "source": "naver",
+      "published": "Thu, 14 May 2026",
+      "keyword": "화신 현대자동차",
+      "category": "공급망"
+    },
+    {
+      "title": "“그랜저, 진짜 망했다” 비웃다 충격…벌써 ‘대박예감’, 아직 배고픈...",
+      "summary": "욕망의 화신으로 돌아온 신형 그랜저 플레오스 커넥트로 SDV 시대 본격화 4천만원대 ‘완성형 아빠차’로... 2022년 11월 이후 3년5개월 만에 또 한번의 출사표를 던진 현대자동차 신형 그랜저(The new Grandeur)’가 히딩크...",
+      "link": "https://www.mk.co.kr/article/12046800",
+      "source": "naver",
+      "published": "Thu, 14 May 2026",
+      "keyword": "화신 현대자동차",
+      "category": "湲고?"
+    },
+    {
+      "title": "[이넷뉴스 브랜드평판] 현대차, 전기차 상장기업 5월 1위···삼성SDI·LG...",
+      "summary": "한국기업평판연구소 구창환 소장은 \"2026년 5월 전기차 관련 상장기업 브랜드평판 결과, 현대자동차... 상신이디피, 화신, 엠플러스, 한국단자, 파워로직스, 삼보모터스, 네오티스, 원익피앤이, 아이에이...",
+      "link": "https://www.enetnews.co.kr/news/articleView.html?idxno=49697",
+      "source": "naver",
+      "published": "Thu, 07 May 2026",
+      "keyword": "화신 현대자동차",
+      "category": "전기차"
+    },
+    {
+      "title": "차량 경량화가 핵심…아진산업, 부품 모듈화로 수익성 잡는다",
+      "summary": "경북 경산시에 본사와 생산 거점을 둔 아진산업은 현대자동차와 기아의 주요 협력사로서 차체 보강... 씨아이에스, 아모그린텍, 솔루스첨단소재, 화신, 한온시스템, LS ELECTRIC, 인지컨트롤스, 디아이씨, HL만도 등은 전기차...",
+      "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=449201",
+      "source": "naver",
+      "published": "Tue, 28 Apr 2026",
+      "keyword": "화신 현대자동차",
+      "category": "자동차 부품"
+    },
+    {
+      "title": "[외부감사 진단] 화신, 재고자산서 확인된 '성장 모멘텀'",
+      "summary": "화신은 현대자동차그룹에 섀시를 공급하는 1차 협력사다. 해마다 실적이 성장함에 따라 재고자산도 증가하고 있는데 이를 들여다보면 성장 모멘텀을 엿볼 수 있다. 해외 생산기지의 본격적인 가동을 위해 설비를...",
+      "link": "https://www.bloter.net/news/articleView.html?idxno=659158",
+      "source": "naver",
+      "published": "Fri, 10 Apr 2026",
+      "keyword": "화신 현대자동차",
+      "category": "자동차 부품"
+    },
+    {
+      "title": "[마켓인]화신, 신용등급 ‘BBB+’ 상향…현대차 동반성장·수익성 개선",
+      "summary": "나신평은 화신이 현대자동차·기아의 1차 협력사로서 안정적인 사업 기반을 구축하고 있다고 평가했다. 특히 섀시 부문에서 현대차그룹 글로벌 물량의 약 55%를 공급하며 국내 수위권 시장 지위를 확보하고 있다는...",
+      "link": "http://www.edaily.co.kr/news/newspath.asp?newsid=03703126645414152",
+      "source": "naver",
+      "published": "Wed, 08 Apr 2026",
+      "keyword": "화신 현대자동차",
+      "category": "자동차 부품"
+    },
+    {
+      "title": "[이넷뉴스 브랜드평판] 현대차, 전기차 상장기업 4월 1위···삼성SDI·기...",
+      "summary": "솔루스첨단소재, 화신, 상아프론테크, 한일단조, 디아이씨, 피에스텍, 삼보모터스 순이었다. 전기차... 한국기업평판연구소 구창환 소장은 \"2026년 4월 전기차 관련 상장기업 브랜드평판 결과, 현대자동차...",
+      "link": "https://www.enetnews.co.kr/news/articleView.html?idxno=48400",
+      "source": "naver",
+      "published": "Fri, 03 Apr 2026",
+      "keyword": "화신 현대자동차",
+      "category": "전기차"
+    },
+    {
+      "title": "외국인 매도 폭탄 맞은 車부품주…그래도 살아남는 종목은 SJG세종 화신...",
+      "summary": "또 다른 약세 종목군으로는 한국앤컴퍼니, 명신산업, 디와이, 세원정공, 우리산업홀딩스, 대원강업, 삼기, 일진하이솔루스 등이 꼽힌다. 2차전지 연계 사업 기대감이 일부 존재하지만 단기적으로는 시장 전체 리스크 회피...",
+      "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453370",
+      "source": "naver",
+      "published": "Mon, 18 May 2026",
+      "keyword": "세원정공",
+      "category": "자동차 부품"
+    },
+    {
+      "title": "성우하이텍의 성장판은 해외에 있다…유럽·북미 매출 비중 확대",
+      "summary": "성우하이텍은 지난해 현대자동차와 기아에서 각각 1조86억원, 9018억원의 매출을 기록했다. 여기에 해외 현지법인을 통한 폭스바겐, BMW, GM 등 글로벌 완성차 업체 공급이 더해지며 매출처 다변화를 추진하고...",
+      "link": "https://www.thepowernews.co.kr/view.php?ud=202605211118371964de3f0aa1be_7",
+      "source": "naver",
+      "published": "Fri, 22 May 2026",
+      "keyword": "성우하이텍 현대자동차",
+      "category": "湲고?"
+    },
+    {
+      "title": "성우하이텍, 4조 매출 체력 확인…올해 수익성 방어가 관건",
+      "summary": "성우하이텍은 현대자동차, 기아, 현대모비스, 한국GM 등과 기본계약을 체결하고 있으며, 신차종별 아이템은 공개입찰과 개발요청서에 따라 수주와 발주가 이뤄지는 구조다. OEM 부품업체 특성상 고객사 생산계획에...",
+      "link": "https://www.thepowernews.co.kr/view.php?ud=20260520153015792de3f0aa1be_7",
+      "source": "naver",
+      "published": "Wed, 20 May 2026",
+      "keyword": "성우하이텍 현대자동차",
+      "category": "자동차 부품"
+    },
+    {
+      "title": "일진하이솔루스, Type 4 수소탱크 앞세워 북미·유럽 시장 공략 박차",
+      "summary": "일진하이솔루스는 현대자동차의 수소전기차 '넥쏘'에 수소탱크를 독점 공급하며 기술력을 인정받았다.... 엔지니어링 플라스틱의 코오롱ENP와 모터 부품 전문 SNT모티브, 수소 충전소 부품의 디와이와 대원강업이...",
+      "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=432112",
+      "source": "naver",
+      "published": "Wed, 25 Feb 2026",
+      "keyword": "대원강업 현대자동차",
+      "category": "자동차 부품"
+    },
+    {
+      "title": "\"에스엘, 현대차 로봇 사업 최대 수혜 기업될 것…목표가↑\"-다올",
+      "summary": "다올투자증권은 26일 에스엘에 대해 \"현대자동차그룹 로봇 파운드리(위탁생산) 사업의 최대 수혜 기업이 될 것\"이라며 목표주가를 기존 10만원에서 11만원으로 상향조정했다. 투자의견 '매수'도 유지했다. 이 증권사...",
+      "link": "https://www.hankyung.com/article/2026052679346",
+      "source": "naver",
+      "published": "Tue, 26 May 2026",
+      "keyword": "에스엘 현대자동차",
+      "category": "湲고?"
+    },
+    {
+      "title": "중국發 부품난에 현대차 울산 공장 2주 연속 특근 중단",
+      "summary": "현대자동차 울산공장 전체가 2주 연속 주말 특근을 하지 않기로 했다. 현대차는 코로나19 여파와 반도체... 국내 부품업체인 유라코퍼레이션, 경신, THN 등은 중국 산둥성 지역에 있는 공장에서 제품을 생산한 뒤 국내로...",
+      "link": "https://biz.chosun.com/industry/car/2022/03/23/K7IOZZAJL5E7ZLHJQIU7ONPHJA/?utm_source=naver&utm_medium=original&utm_campaign=biz",
+      "source": "naver",
+      "published": "Wed, 23 Mar 2022",
+      "keyword": "THN 현대자동차",
+      "category": "자동차 부품"
+    },
+    {
+      "title": "기아 쏘렌토·스포티지도 부품없다...중국發 수급 차질",
+      "summary": "현대자동차와 제네시스도 상황은 마찬가지다. 기아에 앞서 현대차 울산공장도 부품 재고 상황에 맞춰... 노동집약적 부품으로 현대차그룹에 이를 공급하는 유라코퍼레이션, 경신, 티에이치엔(THN) 등은 중국 공장에서...",
+      "link": "http://www.etnews.com/20220318000155",
+      "source": "naver",
+      "published": "Sun, 20 Mar 2022",
+      "keyword": "THN 현대자동차",
+      "category": "자동차 부품"
+    },
+    {
+      "title": "\"도대체 내 차 언제 나와\"…현대차그룹, 중국산 부품 공급난에 생산 차...",
+      "summary": "공급난으로 현대자동차그룹이 잇단 생산 차질을 겪고 있다. 코로나19 재확산 때문에 중국 정부가 주요... 쉽게 말하면 '자동차의 신경망'으로, 핵심 부품으로 꼽힌다. 국내 부품사인 유라코퍼레이션, 경신, THN 등이 중국...",
+      "link": "http://news.mk.co.kr/newsRead.php?no=251620&year=2022",
+      "source": "naver",
+      "published": "Fri, 18 Mar 2022",
+      "keyword": "THN 현대자동차",
+      "category": "자동차 부품"
+    },
+    {
+      "title": "중국산 전선뭉치 공급대란…현대차 인기차종 줄줄이 감산",
+      "summary": "공급난으로 현대자동차그룹이 잇단 생산에 차질을 겪고 있다. 코로나19 재확산 때문에 중국 정부가 주요... 쉽게 말하면 '자동차의 신경망'으로, 핵심 부품으로 꼽힌다. 국내 부품사인 유라코퍼레이션, 경신, THN 등이...",
+      "link": "http://news.mk.co.kr/newsRead.php?no=251612&year=2022",
+      "source": "naver",
+      "published": "Fri, 18 Mar 2022",
+      "keyword": "THN 현대자동차",
+      "category": "자동차 부품"
+    },
+    {
+      "title": "2021년 파라과이 자동차 산업 정보",
+      "summary": "주요 기업 현황 자동차 케이블 생산업체를 중심으로 자동차부품 업체의 파라과이 투자진출이 늘어나고 있으며, 현대자동차 협력업체인 THN은 한국기업 중 최초로 마킬라 제도를 활용하여 파라과이에 투자...",
+      "link": "http://news.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=191734",
+      "source": "naver",
+      "published": "Thu, 11 Nov 2021",
+      "keyword": "THN 현대자동차",
+      "category": "자동차 부품"
+    },
+    {
+      "title": "2021년 파라과이 산업 개관",
+      "summary": "자동차용 케이블을 생산하는 전 세계 기업 중 한국 기업이 파라과이에 최초로 투자 진출했으며, 여기서 생산된 제품을 브라질 현대자동차에 납품하고 있다. * 파라과이 자동차용 케이블 투자진출 기업: THN...",
+      "link": "http://news.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=191730",
+      "source": "naver",
+      "published": "Wed, 10 Nov 2021",
+      "keyword": "THN 현대자동차",
+      "category": "공급망"
+    },
+    {
+      "title": "[인터뷰] 김선태 코트라 아순시온무역관장",
+      "summary": "또 LG, 현대자동차 등 많은 한국제품이 각 분야에서 프리미엄 대우를 받고 있습니다. 그런데 전체 파라과이... 진출한 자동차부품공장인 THN은 해당 산업에서 대단히 중요한 위치를 점하고 있습니다. 임: 한국의...",
+      "link": "http://www.dongponews.net/news/articleView.html?idxno=42496",
+      "source": "naver",
+      "published": "Mon, 10 Aug 2020",
+      "keyword": "THN 현대자동차",
+      "category": "자동차 부품"
+    },
+    {
+      "title": "신종 코로나로 멈췄던 공장, 일부 가동 재개",
+      "summary": "이날 업계에 따르면 현대자동차의 GV80과 팰리세이드를 비롯해 싼타페, 투싼 등을 생산하는 울산2공장이 생산을 재개했다. 중국 THN사와 경신의 와이어링 하니스(자동차 부품)가 지난 10일 인천항, 평택항, 인천공항...",
+      "link": "http://www.fnnews.com/news/202002111713018961",
+      "source": "naver",
+      "published": "Tue, 11 Feb 2020",
+      "keyword": "THN 현대자동차",
+      "category": "자동차 부품"
+    },
+    {
       "title": "[데이터 뉴스룸] 車업체 50곳 중 작년 직원 급여 4위는 현대차…그럼 1~...",
-      "summary": "▲ 에스엘 (4276억 원) ▲HL만도(4175억 원) ▲KG모빌리티(4029억 원) ▲현대위아(3760억 원) ▲성우하이텍... 이들 연봉군에는 ▲디와이덕양 8900만 원(月741만 원) ▲ 에스엘 8800만 원(733만 원) ▲현대공업 8600만 원...",
-      "source": "naver",
-      "publisher": "네이버",
-      "published": "Tue, 26 May 2026 10:51:00 +0900",
+      "summary": "▲에스엘(4276억 원) ▲HL만도(4175억 원) ▲KG모빌리티(4029억 원) ▲현대위아(3760억 원) ▲성우하이텍(1437억 원) ▲서연이화(1099억 원) 순으로 높았다. 100억 원이 넘는 곳은 조사 대상 50곳 중 41곳으로 파악됐다....",
       "link": "https://www.greened.kr/news/articleView.html?idxno=341278",
-      "outlet": "greened.kr"
-    },
-    {
-      "keyword": "에스엘",
-      "category": "기타",
-      "title": "대구 수성구 '어나드 범어', 커뮤니티 및 컨시어지 서비스 본격 운영",
-      "summary": "어나드 범어는 ㈜ 에스엘 플랫폼(SLP)과 협업해 문화·여가 예약, 하우스키핑, 세탁, 방문세차, 가정식 딜리버리 등 다양한 생활 지원 서비스를 제공하고 있다. 입주민들은 전용 앱을 통해 필요한 서비스를 예약하고 이용할 수...",
       "source": "naver",
-      "publisher": "네이버",
-      "published": "Tue, 26 May 2026 09:50:00 +0900",
-      "link": "https://www.ksilbo.co.kr/news/articleView.html?idxno=1057688",
-      "outlet": "ksilbo.co.kr"
+      "published": "Tue, 26 May 2026",
+      "keyword": "서연이화",
+      "category": "湲고?"
     },
     {
-      "keyword": "에스엘",
-      "category": "기타",
-      "title": "[52주] 최고가 63개, 최저가 18개... 코스피 8100 돌파",
-      "summary": "8% 10,990 ★★★★ 46 에스엘 76,300 ▲0.7% 78,300 ★★★★★ 47 한국공항 76,200 ▲0.5% 78,700 ★★★★★ 48 한양디지텍 42,700 ▲0.5% 44,300 ★★★★★ 49 대덕 22,500 ▲0.5% 23,600...",
+      "title": "SK하이닉스, 대기업 경영평가 2년연속 1위…카카오 톱10 진입",
+      "summary": "글로벌 자동차 메이커로 도약한 현대자동차는 올해 563.9점으로 2년 연속 종합순위 5위를 기록했다. 이어... 일자리창출 부문에서는 서연이화, SK하이닉스, 네이버, SK인천석유화학, LIG디펜스앤에어로스페이스가...",
+      "link": "http://www.worktoday.co.kr/news/articleView.html?idxno=84778",
       "source": "naver",
-      "publisher": "네이버",
-      "published": "Tue, 26 May 2026 09:38:00 +0900",
-      "link": "https://www.itooza.com/common/iview.php?no=2026052609340106088",
-      "outlet": "itooza.com"
+      "published": "Wed, 20 May 2026",
+      "keyword": "서연이화 현대자동차",
+      "category": "湲고?"
     },
     {
-      "keyword": "에스엘",
-      "category": "자동차 부품",
-      "title": "\" 에스엘 , 현대차 로봇 사업 최대 수혜 기업될 것…목표가↑\"-다올",
-      "summary": "다올투자증권은 26일 에스엘 에 대해 \"현대자동차그룹 로봇 파운드리(위탁생산) 사업의 최대 수혜 기업이 될... 이 증권사 유지웅 연구원은 \" 에스엘 은 광학·발열·전장모듈 등에 특화된 기술을 보유하고 있다\"며 \"로봇에...",
+      "title": "SK하이닉스, 500대 기업 경영평가 2년 연속 최우수…삼성전자는 2위",
+      "summary": "부문은 서연이화와 SK하이닉스가 높은 점수를 받았다. 양성평등 부문에서는 영원무역과 한세실업이, 사회공헌 및 환경보호 부문에서는 LG생활건강과 현대자동차가 각각 우수 기업 그룹에 선정되며 다방면의 질적...",
+      "link": "http://www.press9.kr/news/articleView.html?idxno=76783",
       "source": "naver",
-      "publisher": "네이버",
-      "published": "Tue, 26 May 2026 08:31:00 +0900",
-      "link": "https://n.news.naver.com/mnews/article/015/0005290953?sid=101",
-      "outlet": "hankyung.com"
+      "published": "Wed, 20 May 2026",
+      "keyword": "서연이화 현대자동차",
+      "category": "전장 부품"
     },
     {
-      "keyword": "에스엘",
-      "category": "기타",
-      "title": "[리스트] MVP 상위 20선...이오테크닉스, 엘케이켐 등 - 26일",
-      "summary": "피에스케이, 에스엘 , NHN KCP 등이다. 이날 새로 편입된 종목은 13개로 엘케이켐, 지앤비에스 에코, 디아이티, GST, 피에스케이, 에스엘 , HD현대에너지솔루션, 유진테크, NHN KCP, LG씨엔에스...",
+      "title": "SK하이닉스, 500대 기업 경영평가 '2년 연속' 정상",
+      "summary": "투자 부문 상위권에는 삼성전자, SK하이닉스, 카카오, 현대자동차, LG화학이 이름을 올렸다. 대규모... ◇ 일자리·양성평등·사회공헌 평가는 기업별 차이 일자리창출 부문에선 서연이화, SK하이닉스, 네이버...",
+      "link": "https://www.safetimes.co.kr/news/articleView.html?idxno=242894",
       "source": "naver",
-      "publisher": "네이버",
-      "published": "Tue, 26 May 2026 07:20:00 +0900",
-      "link": "https://www.itooza.com/common/iview.php?no=2026052607152509057",
-      "outlet": "itooza.com"
+      "published": "Wed, 20 May 2026",
+      "keyword": "서연이화 현대자동차",
+      "category": "전장 부품"
     },
     {
-      "keyword": "에스엘",
-      "category": "기타",
-      "title": "[이웃사랑]하나뿐인 어린 아들 두고, 무단횡단 교통사고 구속 갈림길 선...",
-      "summary": "▷ 에스엘 ㈜ 200만원 ▷피에이치씨큰나무복지재단 200만원 ▷건화문화장학재단 150만원 ▷㈜세븐스타컴퍼니(김동진) 100만원 ▷㈜일지테크 100만원 ▷㈜태원전기 100만원 ▷한성철강㈜ 100만원 ▷송곡문화장학재단 50만원...",
+      "title": "SK하이닉스, 2년 연속 경영평가 1위…카카오 '톱10' 진입",
+      "summary": "현대자동차는 올해 563.9점으로 2년 연속 종합순위 5위를 기록했다. 이어 네이버(557.8점), 기아(557.6점)... 일자리창출 부문에서는 서연이화, SK하이닉스, 네이버, SK인천석유화학, LIG디펜스앤에어로스페이스가...",
+      "link": "https://www.shinailbo.co.kr/news/articleView.html?idxno=5022662",
       "source": "naver",
-      "publisher": "네이버",
-      "published": "Tue, 26 May 2026 06:30:00 +0900",
-      "link": "https://n.news.naver.com/mnews/article/088/0001011546?sid=102",
-      "outlet": "imaeil.com"
+      "published": "Wed, 20 May 2026",
+      "keyword": "서연이화 현대자동차",
+      "category": "湲고?"
     },
     {
-      "keyword": "에스엘",
-      "category": "기타",
-      "title": "에스엘 - 로봇 수주 더블 업",
-      "summary": "https://drive.google.com/file/d/1E9GRQFvginGAbOodGvR0jfjZBlGSpWVK/view?usp=sharing 에스엘 ［005850］_20260521_Samsung_1099948.pdf 에스엘 ［005850］_20260521_Samsung_1099948.pdf drive.google.com",
-      "source": "kakao",
-      "publisher": "카카오",
-      "published": "Tue, 26 May 2026 00:00:00 +0900",
-      "link": "https://gall.dcinside.com/mgallery/board/view/?id=jaetae&no=1786618",
-      "outlet": "gall.dcinside.com"
-    },
-    {
-      "keyword": "에스엘",
-      "category": "기타",
-      "title": "KISVAN_agency_list.pdf",
-      "summary": "통신 에스에이치솔루션 SH SOL 에스에이치정보 에스에이치통신 에스에이치티(SHT) 에스에프씨 에스엔테크 에스엘 홀딩스주식회사 에스엠(SM)정보통신 에스엠정보통신 에스엠플래닛 에스이엔에스 주식회사 에스정보...",
-      "source": "kakao",
-      "publisher": "카카오",
-      "published": "Tue, 26 May 2026 00:00:00 +0900",
-      "link": "https://www.kisvan.co.kr/download/KISVAN_agency_list.pdf",
-      "outlet": "kisvan.co.kr"
-    },
-    {
-      "keyword": "에스엘",
-      "category": "기타",
-      "title": "하루주식보고서 20260504 상한가 하한가 급등락종목 거래량상위 대원전선우 썬테크 삼성증권 선샤인푸드...",
-      "summary": "실시간 상승률 1위 | 2026.01.28 09:25 [매일신문] 대구경북 기업 주가 끌어올리는 로봇…엘앤에프· 에스엘 수혜 | 2026.01.22 16:26 LS마린솔루션 060370 [부산일보] LS전선, 국제 해양전시회서 ‘해저케이블...",
-      "source": "kakao",
-      "publisher": "카카오",
-      "published": "Tue, 26 May 2026 00:00:00 +0900",
-      "link": "https://report.hangyeong.com/top20260504",
-      "outlet": "report.hangyeong.com"
-    },
-    {
-      "keyword": "에스엘",
-      "category": "기타",
-      "title": "[국내 상장 보안기업 매출분석-2] 생체인식·출입통제 분야, AI로 장밋빛 미래 앞당긴다",
-      "summary": "총수 대비 5.04%에 해당한다. 전환청구기간은 2026년 4월 14일부터 2026년 4월 14일까지다. 매수자는 에스엘 1호 조합과 원마인드1호 조합 2곳이다. 각 조합은 권면금액 12억5000만원씩을 매수해 50%씩 나눠 취득...",
-      "source": "kakao",
-      "publisher": "카카오",
-      "published": "Tue, 26 May 2026 00:00:00 +0900",
-      "link": "https://www.boannews.com/media/view.asp?idx=143436&skind=7",
-      "outlet": "boannews.com"
-    },
-    {
-      "keyword": "에스엘",
-      "category": "기타",
-      "title": "0240",
-      "summary": "상담, 상품안내, 업셀링, 민 원 처리, 가입자 모집 및 유치 비즈아이솔루션 이메일 서버 유지보수 삼성 에스엘 고객에게 제공하는 할부서비스를 위한 제품의 배 송/설치 및 A/S 보상처리 소만사 가족긴급보호...",
-      "source": "kakao",
-      "publisher": "카카오",
-      "published": "Tue, 26 May 2026 00:00:00 +0900",
-      "link": "https://www.skylife.co.kr/api/api/pms/privacy/download/0240",
-      "outlet": "skylife.co.kr"
-    },
-    {
-      "keyword": "에스엘",
-      "category": "전장 부품",
-      "title": "주식·투자",
-      "summary": "1 작성시간15분 북마크 물렸음청년 4일차 3일차에 익절한 금액 조금 진입 오늘 한전 50% 익절 진행 +1 에스엘 디티 · l********* 조회수435 좋아요좋아요 댓글15 작성시간17분 북마크 삼성전자 10년 동안 영업...",
-      "source": "kakao",
-      "publisher": "카카오",
-      "published": "Tue, 26 May 2026 00:00:00 +0900",
-      "link": "https://www.teamblind.com/kr/topics/%EC%A3%BC%EC%8B%9D%C2%B7%ED%88%AC%EC%9E%90",
-      "outlet": "teamblind.com"
-    },
-    {
-      "keyword": "에스엘",
-      "category": "전장 부품",
-      "title": "2026년 대기업 중견기업 초봉 연봉 모음 (26.04.22 수정)",
-      "summary": "코코리아 (KLA) ⓘ 네이버, 넥슨 ㉠ 한화생명, 미래에셋증권, 신영증권 ㉨ 삼천리, 이수페타시스, 에스엘 (SL) ㉨ 세방전지 ➖➖➖➖➖➖➖➖➖➖➖➖ 🔺6,500만🔺 - SK바이오사이언스 - 세메스 - LG전자, LGCNS, LG이노텍...",
-      "source": "kakao",
-      "publisher": "카카오",
-      "published": "Tue, 26 May 2026 00:00:00 +0900",
-      "link": "https://www.teamblind.com/kr/post/2026%EB%85%84-%EB%8C%80%EA%B8%B0%EC%97%85-%EC%A4%91%EA%B2%AC%EA%B8%B0%EC%97%85-%EC%B4%88%EB%B4%89-%EC%97%B0%EB%B4%89-%EB%AA%A8%EC%9D%8C-260422-%EC%88%98%EC%A0%95-ylc6v8dv",
-      "outlet": "teamblind.com"
-    },
-    {
-      "keyword": "에스엘",
-      "category": "공급망",
-      "title": "(주)에스 에스엘 재무분석, 재무위험도 및 수익성정보 | 비즈탑",
-      "summary": "(주)에스 에스엘 박찬림 맞춤정책자금 100건과 AI기술로 분석한 듀퐁분석, 자금수급, 경영목표치, 현금흐름, 기업가치평가액 등의 재무제표분석 결과를 확인하세요.",
-      "source": "kakao",
-      "publisher": "카카오",
-      "published": "Tue, 26 May 2026 00:00:00 +0900",
-      "link": "https://www.biztop.co.kr/v2/api_member/analysis.php?bncode=qTism0zs9eBz",
-      "outlet": "biztop.co.kr"
-    },
-    {
-      "keyword": "에스엘",
-      "category": "기타",
-      "title": "에스엘 왜 대기업 아니냐",
-      "summary": "연매출이 5조인데 왜 중견기업이냐 - dc official App",
-      "source": "kakao",
-      "publisher": "카카오",
-      "published": "Tue, 26 May 2026 00:00:00 +0900",
-      "link": "https://gall.dcinside.com/board/view/?id=bluecollar&no=760211",
-      "outlet": "gall.dcinside.com"
-    },
-    {
-      "keyword": "에스엘",
-      "category": "기타",
-      "title": "하루주식보고서 20260225 상한가 하한가 급등락종목 거래량상위 참엔지니어링 스테이지원엔터 아이티켐...",
-      "summary": "07:00 [SBS Biz] 오늘장 탑픽 2차전지주 부진 끝날까…업황 전망은? | 2025.08.21 09:36 에스엘 005850 [블로터] 에스엘 , 분리과세가 부른 ‘고배당’…일몰 후 유지할까 | 2026.02.23 14:51 [조선비즈] DB證...",
-      "source": "kakao",
-      "publisher": "카카오",
-      "published": "Tue, 26 May 2026 00:00:00 +0900",
-      "link": "https://report.hangyeong.com/top20260225",
-      "outlet": "report.hangyeong.com"
-    },
-    {
-      "keyword": "에스엘",
-      "category": "자동차 부품",
-      "title": "코스피 반등에 웃은 업종은…반도체‧‧차‧금융 강세",
-      "summary": "에스엘 은 28.69%, HL만도는 19.77%, 현대위아는 16.62% 상승하는 등 자동차 부품주까지 매수세가 확산했다. 삼성전자(5.98%), SK하이닉스(11.23%) 등이 포진한 전기전자는 9.14% 상승했다. AI 서버용 핵심 부품 공급 확대...",
+      "title": "SK하이닉스, 대기업 경영평가 2년연속 1위…카카오 첫 톱10 들어",
+      "summary": "이어 삼성전자(615.4점), KT&G(587.0점), 셀트리온(584.0점), 현대자동차(563.9점), 네이버(557.8점), 기아(557.6점)... 이 밖에 지배구조 부문 카카오, 건실경영 부문 SK하이닉스, 일자리창출 부문 서연이화, 양성평등 부문...",
+      "link": "http://www.newsfc.co.kr/news/articleView.html?idxno=78788",
       "source": "naver",
-      "publisher": "네이버",
-      "published": "Mon, 25 May 2026 16:02:00 +0900",
-      "link": "https://www.etoday.co.kr/news/view/2587404",
-      "outlet": "etoday.co.kr"
+      "published": "Wed, 20 May 2026",
+      "keyword": "서연이화 현대자동차",
+      "category": "전장 부품"
     },
     {
-      "keyword": "에스엘",
-      "category": "기타",
-      "title": "[성금내역] 보조기 절실한 전신마비 김명석 씨에 2,218만원 전달",
-      "summary": "▷ 에스엘 ㈜ 200만원 ▷피에이치씨큰나무복지재단 200만원 ▷건화문화장학재단 150만원 ▷㈜세븐스타컴퍼니(김동진) 100만원 ▷㈜일지테크 100만원 ▷㈜태원전기 100만원 ▷한성철강㈜ 100만원 ▷송곡문화장학재단...",
+      "title": "SK하이닉스, 2년 연속 경영평가 1위…삼성전자 2위 수성",
+      "summary": "일자리창출 부문에서는 서연이화, SK하이닉스, 네이버, SK인천석유화학, LIG디펜스앤에어로스페이스가 우수기업에 선정됐다. 사회공헌 및 환경보호 부문에선 LG생활건강, 현대자동차, 현대백화점, LS일렉트릭...",
+      "link": "https://view.asiae.co.kr/article/2026052009474374447",
       "source": "naver",
-      "publisher": "네이버",
-      "published": "Mon, 25 May 2026 13:41:00 +0900",
-      "link": "https://n.news.naver.com/mnews/article/088/0001011443?sid=102",
-      "outlet": "imaeil.com"
+      "published": "Wed, 20 May 2026",
+      "keyword": "서연이화 현대자동차",
+      "category": "전장 부품"
     },
     {
-      "keyword": "에스엘",
-      "category": "기타",
-      "title": "중소벤처기업진흥공단, 경북 로봇산업 밸류체인 스케일업 업무협약",
-      "summary": "참여 기업으로는 삼광, 아진산업, 에스엘 , 한중엔시에스, 화신 등이 포함됐다. 이들 기업은 협력업체의 스마트 제조 전환과 로봇 활용 확대, 공동 사업 발굴 등에 협력할 예정이다.중진공은 앞으로 대구·경북 제조산업의...",
+      "title": "SK하이닉스, 대기업 경영평가 2년 연속 1위",
+      "summary": "서연이화와 SK하이닉스, 네이버 등이 상위권에 포함됐다. 양성평등 부문에서는 영원무역과 한세실업, 셀트리온 등이 주요 기업으로 이름을 올렸다. 사회공헌 및 환경보호 부문에서는 LG생활건강과 현대자동차...",
+      "link": "http://www.nongaek.com/news/articleView.html?idxno=95438",
       "source": "naver",
-      "publisher": "네이버",
-      "published": "Mon, 25 May 2026 11:24:00 +0900",
-      "link": "https://www.kbsm.net/news/view.php?idx=520512",
-      "outlet": "kbsm.net"
+      "published": "Wed, 20 May 2026",
+      "keyword": "서연이화 현대자동차",
+      "category": "湲고?"
+    },
+    {
+      "title": "[포토] 아이오닉 9·EV3, 英 ‘최고의 전기차’",
+      "summary": "이 ‘최고의 7인승 전기차’, 기아 EV3가 &lsquo... 2 현대차·기아와 바다 건넌 부품사 690곳…벤츠·BMW도 고객사 자동차 도어트림 제조사인 서연이화는 2004년 매출 4099억원의 로컬 부품업체였다. 현대자동차...",
+      "link": "https://www.hankyung.com/article/2025050935831",
+      "source": "kakao",
+      "published": "2025-05-09",
+      "keyword": "서연이화 현대자동차",
+      "category": "자동차 부품"
+    },
+    {
+      "title": "[자동차 밸류체인] [화신그룹] 화신, 이익 체력 '뚝'…해외 법인 부침에...",
+      "summary": "화신은 현대자동차·기아에 대한 매출 의존도가 높고, 구조상 현지 물량 변동에 따른 자연스러운 흐름일 뿐 수익성 측면에서 유의미한 감소는 아니라는 입장이다. 20일 금융감독원 전자공시시스템에 따르면...",
+      "link": "https://www.topdaily.kr/articles/110193",
+      "source": "naver",
+      "published": "Wed, 20 May 2026",
+      "keyword": "화신 현대자동차",
+      "category": "전장 부품"
+    },
+    {
+      "title": "화신정공, 1분기 영업익 122억…작년 한해 실적 석 달 만에 넘었다",
+      "summary": "화신정공은 알루미늄 소재 로어암 등 경량 샤시 부품을 자체 개발해 현대자동차·기아의 전기차 전용 플랫폼(E-GMP) 차종에 공급해 왔다. 납품 모델은 2022년 GV70 전기차와 아이오닉6를 시작으로 매년 늘어났다....",
+      "link": "https://www.imaeil.com/page/view/2026051909544059840",
+      "source": "naver",
+      "published": "Tue, 19 May 2026",
+      "keyword": "화신 현대자동차",
+      "category": "자동차 부품"
+    },
+    {
+      "title": "전북환경단체 \"새만금 농생명용지, 재벌기업 발전소 아냐...3공구 발전부...",
+      "summary": "전북환경운동연합은 현대자동차그룹(이하 현대차)의 새만금 투자 자체에 대해서는 환영 입장을 밝힌 바... 공간이다 현대차가 태양광 발전부지로 지목한 농생명용지 3공구는 수라갯벌 남쪽과 인접해 있으며, 부지 내 화신...",
+      "link": "http://www.jbsori.com/news/articleView.html?idxno=17252",
+      "source": "naver",
+      "published": "Sat, 02 May 2026",
+      "keyword": "화신 현대자동차",
+      "category": "湲고?"
+    },
+    {
+      "title": "전북환경단체 \"새만금농생명용지 3공구, 발전부지 전용 중단\"촉구…\"투...",
+      "summary": "그러면서 \"전북환경운동연합은 현대자동차그룹(이하 현대차)의 새만금 투자 자체에 대해서는 환영 입장을... 현대차가 태양광 발전부지로 지목한 농생명용지 3공구는 수라갯벌 남쪽과 인접해 있으며, 부지 내 화신습지...",
+      "link": "https://www.pressian.com/pages/articles/2026050116151821472?utm_source=naver&utm_medium=search",
+      "source": "naver",
+      "published": "Fri, 01 May 2026",
+      "keyword": "화신 현대자동차",
+      "category": "湲고?"
+    },
+    {
+      "title": "자동차부품 상장기업 브랜드평판 4월 빅데이터 분석···1위 현대모비스...",
+      "summary": "4월 자동차부품 상장기업 브랜드평판 30위 순위는 현대모비스, 한온시스템, 현대위아, 성우하이텍, HL만도, 한국타이어앤테크놀로지, 금호타이어, 에스엘, DN오토모티브, 화신, 모베이스전자, 명신산업...",
+      "link": "http://www.wsobi.com/news/articleView.html?idxno=309493",
+      "source": "naver",
+      "published": "Wed, 08 Apr 2026",
+      "keyword": "화신 현대자동차",
+      "category": "자동차 부품"
+    },
+    {
+      "title": "[데이터 뉴스룸] 자동차業 매출 엔진 1%대 성장 그쳐…기아·현대차·현...",
+      "summary": "특히 케이비아이동국실업의 매출 증가율은 20%로 가장 높았고, 화신과 화신정공, 아진산업도 20... 이와 달리 현대모비스(3472억 원↓)와 현대자동차(2939억 원↓)는 최근 1년 새 별도 기준 매출이 1% 미만...",
+      "link": "https://www.greened.kr/news/articleView.html?idxno=338978",
+      "source": "naver",
+      "published": "Tue, 07 Apr 2026",
+      "keyword": "화신 현대자동차",
+      "category": "湲고?"
+    },
+    {
+      "title": "전기차 관련주, '웃음꽃' 금호에이치티·신흥에스이씨·삼성SDI·LG에너지...",
+      "summary": "스모트로닉, 현대위아, 이닉스, 아진산업, 파워로직스, 인팩, 한빛레이저, 우리산업, 경창산업, 화신... 전동공구 전문 제조업체 계양전기가 현대자동차그룹의 로보틱스 사업망에 새롭게 참여했다. 계양전기는 최근...",
+      "link": "http://www.finomy.com/news/articleView.html?idxno=252745",
+      "source": "naver",
+      "published": "Tue, 07 Apr 2026",
+      "keyword": "화신 현대자동차",
+      "category": "전기차"
+    },
+    {
+      "title": "전기차 관련주, '어깨춤 으쓱으쓱' 상신이디피·한일단조·LS머트리얼즈...",
+      "summary": "원익피앤이, 화신, 한중엔시에스, 인지컨트롤스, 아이윈, 삼화전기, 지엠비코리아, 이지트로닉스... 전동공구 전문 제조업체 계양전기가 현대자동차그룹의 로보틱스 사업망에 새롭게 참여했다. 계양전기는 최근...",
+      "link": "http://www.finomy.com/news/articleView.html?idxno=252659",
+      "source": "naver",
+      "published": "Sat, 04 Apr 2026",
+      "keyword": "화신 현대자동차",
+      "category": "전기차"
+    },
+    {
+      "title": "전기차 관련주, '어깨춤 으쓱으쓱' 에코플라스틱·계양전기·상신이디피...",
+      "summary": "삼보모터스, 화신, 피에스텍, 삼화전자, 원익피앤이, 삼기, 현대위아, 한중엔시에스, 강원에너지... 전동공구 전문 제조업체 계양전기가 현대자동차그룹의 로보틱스 사업망에 새롭게 참여했다. 계양전기는 최근...",
+      "link": "http://www.finomy.com/news/articleView.html?idxno=252574",
+      "source": "naver",
+      "published": "Fri, 03 Apr 2026",
+      "keyword": "화신 현대자동차",
+      "category": "전장 부품"
+    },
+    {
+      "title": "자동차부품 관련주, '봄날의 햇살' 유니온머티리얼,·한일단조·남선알...",
+      "summary": "이외에 한국피아이엠, LG이노텍, DN오토모티브, 캐스텍코리아, 디와이씨, 티피씨글로벌, 세원정공... 오리엔트정공은 자동차 수동변속기 및 엔진 부품 하우징 서모스탯 등을 생산하는 자동차 부품 업체다. 현대자동차...",
+      "link": "http://www.finomy.com/news/articleView.html?idxno=251719",
+      "source": "naver",
+      "published": "Fri, 20 Mar 2026",
+      "keyword": "세원정공 현대자동차",
+      "category": "자동차 부품"
+    },
+    {
+      "title": "자동차부품 관련주, '웃음꽃' 한주라이트메탈·에코캡·삼보모터스·삼...",
+      "summary": "폴라리스세원, 대성파인텍, 화신정공, 한온시스템, 동원금속, 세아메카닉스, 경창산업, 탑런토탈솔루션... 정공은 자동차 수동변속기 및 엔진 부품 하우징 서모스탯 등을 생산하는 자동차 부품 업체다. 현대자동차...",
+      "link": "http://www.finomy.com/news/articleView.html?idxno=247654",
+      "source": "naver",
+      "published": "Tue, 13 Jan 2026",
+      "keyword": "세원정공 현대자동차",
+      "category": "자동차 부품"
+    },
+    {
+      "title": "대기업 CEO, 재무통 지고, 현장기술 전문가 뜨고",
+      "summary": "최영일 현대자동차 국내생산담당 대표 부사장은 차량 개발·생산에서 잔뼈가 굵은 기술 전문가다.... 강병중 넥센그룹 회장 겸 넥센타이어 대표(87), 손경식 CJ그룹 회장 겸 CJ제일제당 대표(87), 이명근 성우하이텍...",
+      "link": "http://www.globalepic.co.kr/view.php?ud=20260519143546505448439a4874_29",
+      "source": "naver",
+      "published": "Tue, 19 May 2026",
+      "keyword": "성우하이텍 현대자동차",
+      "category": "湲고?"
+    },
+    {
+      "title": "성우하이텍, 올해도 외형 성장가도 지속 '주목'",
+      "summary": "이 같은 실적 성장세는 현대자동차 및 기아의 호조와 발을 맞춘 것으로 평가된다. 현대차·기아의 대표적인 1차 협력사인 성우하이텍은 차체 부품을 주력으로 삼고 있으며, 특히 전기차 시대로의 전환 흐름 속에...",
+      "link": "https://www.sisaweek.com/news/articleView.html?idxno=235590",
+      "source": "naver",
+      "published": "Tue, 19 May 2026",
+      "keyword": "성우하이텍 현대자동차",
+      "category": "자동차 부품"
+    },
+    {
+      "title": "내부·기술형 CEO 시대 … 대기업 리더십 지형 바뀐다",
+      "summary": "현대자동차, LG전자, LG화학 등은 생산·소재·개발 경험이 풍부한 기술형 CEO를 잇달아 발탁하며 체질... (82) 성우하이텍 회장, 김동녕(81) 한세그룹 회장 겸 한세예스24홀딩스·한세실업 대표 등이 80대 고령에...",
+      "link": "http://www.worktoday.co.kr/news/articleView.html?idxno=84740",
+      "source": "naver",
+      "published": "Tue, 19 May 2026",
+      "keyword": "성우하이텍 현대자동차",
+      "category": "전장 부품"
+    },
+    {
+      "title": "수소에너지·수소차·연료전지 관련주, '싱글벙글' 에스에너지·국일제...",
+      "summary": "성창오토텍, 대원강업, 효성중공업, 우리산업, LS ELECTRIC, 인지컨트롤스, 유니크, 삼보모터스, 아진산업... 일지테크의 알루미늄 제진소재는 현대자동차 아이오닉5 전기차의 통합 충전 제어장치 어퍼 및 사이드 커버에...",
+      "link": "http://www.finomy.com/news/articleView.html?idxno=251790",
+      "source": "naver",
+      "published": "Fri, 20 Mar 2026",
+      "keyword": "대원강업 현대자동차",
+      "category": "전기차"
+    },
+    {
+      "title": "수소에너지·수소차·연료전지 관련주, '껑충껑충' 한온시스템·한화솔...",
+      "summary": "일진다이아, 대원강업, 평화산업, 상아프론테크, 디와이, 제이엔케이글로벌, SJG세종, 영화테크, 미코... 현대자동차그룹이 전북 새만금에 9조원을 투입해 로봇·인공지능(AI)·수소 중심의 미래 산업 거점을 조성하는 데...",
+      "link": "http://www.finomy.com/news/articleView.html?idxno=251223",
+      "source": "naver",
+      "published": "Wed, 11 Mar 2026",
+      "keyword": "대원강업 현대자동차",
+      "category": "전기차"
+    },
+    {
+      "title": "수소에너지·수소차·연료전지 관련주, '미소천사' 에스에너지·한화솔...",
+      "summary": "아진전자부품, 대원강업, 삼보모터스, HS효성첨단소재, 일지테크, 유니크, 우리산업, 엘티씨, 동아화성... 현대자동차그룹이 전북 새만금에 9조원을 투입해 로봇·인공지능(AI)·수소 중심의 미래 산업 거점을 조성하는...",
+      "link": "http://www.finomy.com/news/articleView.html?idxno=250920",
+      "source": "naver",
+      "published": "Sun, 08 Mar 2026",
+      "keyword": "대원강업 현대자동차",
+      "category": "자동차 부품"
+    },
+    {
+      "title": "수소에너지·수소차·연료전지 관련주, '웃음꽃' 현대로템·에스에너지...",
+      "summary": "대원강업, 미코, 효성중공업, SJG세종, 티에이치엔, HS효성첨단소재, LS ELECTRIC 등은 하락했다. 현대로템이... 현대자동차그룹이 전북 새만금에 9조원을 투입해 로봇·인공지능(AI)·수소 중심의 미래 산업 거점을 조성하는...",
+      "link": "http://www.finomy.com/news/articleView.html?idxno=250629",
+      "source": "naver",
+      "published": "Tue, 03 Mar 2026",
+      "keyword": "대원강업 현대자동차",
+      "category": "전기차"
+    },
+    {
+      "title": "수소차 관련주, '어깨춤 으쓱으쓱' 현대제철·대창솔루션·엔케이·에스...",
+      "summary": "삼기, 대원강업, 에스퓨얼셀, 삼화전자, 일지테크, 동아화성, 아진전자부품, 영화테크, 유니크, 우리산업... 아진산업은 현대자동차·기아와의 지속적인 협업을 통해 차체 경량화 분야에서 기술 경쟁력을 축적해 왔다....",
+      "link": "http://www.finomy.com/news/articleView.html?idxno=250014",
+      "source": "naver",
+      "published": "Sun, 22 Feb 2026",
+      "keyword": "대원강업 현대자동차",
+      "category": "자동차 부품"
+    },
+    {
+      "title": "설명절 앞두고 대기업 '돈 푼다'...협력사 대금 조기지급",
+      "summary": "현대자동차그룹은 2조768억원의 대금 지급일을 최대 12일 앞당기기로 했다. 현대자동차·기아·현대모비스... 현대지에프홀딩스·현대홈쇼핑·현대그린푸드·현대리바트·한섬·현대에버다임·대원강업·현대바이오...",
+      "link": "https://www.newstree.kr/newsView/ntr202602120003",
+      "source": "naver",
+      "published": "Thu, 12 Feb 2026",
+      "keyword": "대원강업 현대자동차",
+      "category": "湲고?"
+    },
+    {
+      "title": "삼성전자 성과급 최대 6억 받을때 대구 중소기업 133만원…노동시장 양...",
+      "summary": "자동차 부품업체 에스엘은 수백만원대 성과급을 1년에 두 번 나눠 지급한 것으로 파악됐다. 농기계 제조사... 현대자동차나 HD현대중공업 등 대형 제조사 노동조합에서도 영업이익을 연동한 보상을 요구하는 목소리가...",
+      "link": "https://www.yeongnam.com/web/view.php?key=20260521020075587",
+      "source": "naver",
+      "published": "Thu, 21 May 2026",
+      "keyword": "에스엘 현대자동차",
+      "category": "자동차 부품"
+    },
+    {
+      "title": "이동수단 넘어 '움직이는 AI'로…車부품업계, 미래 전쟁 가속",
+      "summary": "현대자동차그룹의 휴머노이드 로봇 '아틀라스'. 사진=현대자동차그룹 제공 매일일보 = 김채은 기자... 지난해 기준 국내 자동차 램프 시장 점유율 1위 업체인 에스엘 역시 로보틱스 사업 확대에 속도를 내고 있다. 회사는...",
+      "link": "https://www.m-i.kr/news/articleView.html?idxno=1374679",
+      "source": "naver",
+      "published": "Wed, 20 May 2026",
+      "keyword": "에스엘 현대자동차",
+      "category": "자동차 부품"
     }
   ]
 }
