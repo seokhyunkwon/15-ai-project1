@@ -1,0 +1,109 @@
+<article class="news-card" data-category="{{ item.category | default('etc', true) }}">
+  <div class="article-head">
+    <h2>{{ item.title }}</h2>
+
+    <div class="meta">
+      <span class="tag">키워드 {{ item.keyword }}</span>
+      <span class="tag">회사 {{ item.company_name | default(item.keyword, true) }}</span>
+      <span class="tag tag-category">{{ item.category_label | default("기타", true) }}</span>
+      <span class="tag">출처 {{ item.source }}</span>
+      <span class="tag">게시일 {{ item.published }}</span>
+      {% if item.analysis_status == "failed" or item.analysis_status == "skipped" %}
+        <span class="tag tag-warning">AI 재분석 가능</span>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="article-body">
+    <p class="summary">{{ item.summary }}</p>
+
+    <div class="article-actions">
+      <a class="source-link" href="{{ item.link }}" target="_blank">기사 원문 보기</a>
+      {% if item.analysis_status == "failed" or item.analysis_status == "skipped" %}
+        <a class="retry-link" href="{{ url_for('results', keyword=item.keyword, target_job=user_profile.target_job, major=user_profile.major, certificates=user_profile.certificates, experience=user_profile.experience, strengths=user_profile.strengths) }}">다시 분석</a>
+      {% endif %}
+    </div>
+
+    {% if item.analysis_status == "failed" %}
+      <section class="analysis-alert">
+        이 기사는 AI 분석이 완료되지 않았습니다. 실패 결과는 저장하지 않으므로 다시 분석하면 새로 시도합니다.
+      </section>
+    {% endif %}
+
+    <section class="strategy">
+      <h3>한 줄 취업 전략</h3>
+      <pre>{{ item.career_strategy | default("새로 검색하면 표시됩니다.", true) }}</pre>
+    </section>
+
+    <div class="compact-list">
+      <section class="compact-row">
+        <h3>뉴스 3줄 요약</h3>
+        <pre>{{ item.ai_summary | default("새로 검색하면 표시됩니다.", true) }}</pre>
+      </section>
+
+      <section class="compact-row">
+        <h3>연결 직무</h3>
+        <pre>{{ item.related_jobs | default("새로 검색하면 표시됩니다.", true) }}</pre>
+      </section>
+
+      <section class="compact-row">
+        <h3>스펙/활동</h3>
+        <pre>{{ item.spec_activities | default("새로 검색하면 표시됩니다.", true) }}</pre>
+      </section>
+    </div>
+
+    <details class="readability-panel">
+      <summary>자기소개서·면접 핵심 보기</summary>
+
+      <section class="spotlight-grid">
+        <div class="spotlight-panel">
+          <h3>자기소개서 초안</h3>
+          <pre>{{ item.cover_letter_draft | default("새로 검색하면 표시됩니다.", true) }}</pre>
+        </div>
+
+        <div class="spotlight-panel">
+          <h3>답변 방향</h3>
+          <pre>{{ item.answer_direction | default("새로 검색하면 표시됩니다.", true) }}</pre>
+        </div>
+
+        <div class="spotlight-panel">
+          <h3>개인 맞춤 보완점</h3>
+          <pre>{{ item.profile_gap | default("새로 검색하면 표시됩니다.", true) }}</pre>
+        </div>
+      </section>
+    </details>
+
+    <details class="readability-panel">
+      <summary>세부 분석 전체 보기</summary>
+
+      <section class="analysis-grid">
+        <div class="analysis-section">
+          <h3>포트폴리오 소재</h3>
+          <pre>{{ item.portfolio_ideas | default("새로 검색하면 표시됩니다.", true) }}</pre>
+        </div>
+
+        <div class="analysis-section">
+          <h3>회사 인재상 연결</h3>
+          <pre>{{ item.talent_fit | default("새로 검색하면 표시됩니다.", true) }}</pre>
+        </div>
+
+        <div class="analysis-section">
+          <h3>자기소개서에 녹일 방향</h3>
+          <pre>{{ item.cover_letter_direction | default("새로 검색하면 표시됩니다.", true) }}</pre>
+        </div>
+
+        <div class="analysis-section">
+          <h3>면접 예상 질문</h3>
+          <pre>{{ item.interview_questions | default("새로 검색하면 표시됩니다.", true) }}</pre>
+        </div>
+      </section>
+    </details>
+
+    {% if item.related_jobs is not defined or not item.related_jobs %}
+    <section class="legacy">
+      <h3>기존 분석 결과</h3>
+      <pre>{{ item.ai_analysis }}</pre>
+    </section>
+    {% endif %}
+  </div>
+</article>

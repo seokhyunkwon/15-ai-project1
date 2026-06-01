@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block title %}{{ keyword or "검색 결과" }} 분석 결과{% endblock %}
+
+{% block body %}
+  <main class="content">
+    <div class="section-head">
+      <div>
+        <h2>{{ keyword or "최근" }} 분석 결과</h2>
+        <p>관련 없는 기사와 비슷한 기사는 걸러내고, 기사별 취업 활용 포인트를 정리했습니다.</p>
+      </div>
+      <a href="{{ url_for('home') }}">새 검색</a>
+    </div>
+
+    {% include "_featured_companies.html" %}
+
+    {% if error_message %}
+      <div class="error-state">{{ error_message }}</div>
+    {% endif %}
+
+    {% if company_profile %}
+      <section class="company-summary">
+        <div class="company-summary-head">
+          <div>
+            <span class="eyebrow">회사 정보 DB 기반</span>
+            <h2>{{ company_profile.name }}</h2>
+            <p>{{ company_profile.business }}</p>
+          </div>
+
+          {% if company_profile.career_page %}
+            <a class="source-link" href="{{ company_profile.career_page }}" target="_blank">채용 페이지</a>
+          {% endif %}
+        </div>
+
+        <div class="company-summary-grid">
+          <div>
+            <h3>주요 직무</h3>
+            <p>{{ company_profile.jobs | join(", ") }}</p>
+          </div>
+          <div>
+            <h3>인재상/핵심 역량</h3>
+            <p>{{ company_profile.talent | join(", ") }}</p>
+          </div>
+          <div>
+            <h3>기사 선별 기준</h3>
+            <p>{{ company_profile.industry_terms | join(", ") }}</p>
+          </div>
+        </div>
+
+        {% if support_strategy %}
+          <div class="support-strategy">
+            <h3>이 회사 준비 방향</h3>
+            <p>{{ support_strategy.headline }}</p>
+            <ul>
+              {% for bullet in support_strategy.bullets %}
+                <li>{{ bullet }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      </section>
+    {% endif %}
+
+    <div class="result-bar">
+      <div>
+        <div class="result-count">검색 결과 {{ items|length }}건</div>
+        <p class="hint">AI가 실패한 기사는 캐시에 저장하지 않아 다시 분석할 수 있습니다.</p>
+      </div>
+
+      {% if category_filters|length > 1 %}
+        <div class="filter-tabs" aria-label="기사 카테고리 필터">
+          {% for filter in category_filters %}
+            <button
+              class="filter-tab{% if loop.first %} is-active{% endif %}"
+              type="button"
+              data-filter="{{ filter.key }}"
+            >
+              {{ filter.label }} {{ filter.count }}
+            </button>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    <section class="news-list">
+      {% for item in items %}
+        {% include "_news_card.html" %}
+      {% else %}
+        <div class="empty-state">
+          검색 결과가 없습니다. 다른 회사명이나 산업 키워드로 다시 검색해보세요.
+        </div>
+      {% endfor %}
+    </section>
+
+    <div class="empty-state is-filter-empty" hidden>
+      선택한 카테고리에 해당하는 기사가 없습니다.
+    </div>
+  </main>
+{% endblock %}

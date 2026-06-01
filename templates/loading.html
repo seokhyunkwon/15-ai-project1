@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}{{ keyword }} 분석 중{% endblock %}
+
+{% block body %}
+  <main class="content">
+    <section class="loading-card">
+      <div class="loading-spinner"></div>
+      <h1>{{ keyword }} 뉴스를 분석하고 있습니다</h1>
+      <p id="loading-message">뉴스를 수집하고 있습니다.</p>
+      <a href="{{ url_for('home') }}">홈으로 돌아가기</a>
+    </section>
+  </main>
+
+  <script>
+    const startUrl = {{ start_url|tojson }};
+    const messageEl = document.getElementById("loading-message");
+    let statusUrl = "";
+
+    async function checkStatus() {
+      try {
+        const response = await fetch(statusUrl);
+        const payload = await response.json();
+
+        if (payload.message) {
+          messageEl.textContent = payload.message;
+        }
+
+        if (payload.status === "done" || payload.status === "error") {
+          window.location.href = payload.redirect_url;
+          return;
+        }
+      } catch (error) {
+        messageEl.textContent = "상태를 확인하는 중입니다. 잠시만 기다려주세요.";
+      }
+
+      setTimeout(checkStatus, 1800);
+    }
+
+    async function startAnalysis() {
+      try {
+        const response = await fetch(startUrl);
+        const payload = await response.json();
+
+        if (payload.status === "error") {
+          messageEl.textContent = payload.message || "분석을 시작하지 못했습니다.";
+
+          if (payload.redirect_url) {
+            setTimeout(function () {
+              window.location.href = payload.redirect_url;
+            }, 1600);
+          }
+
+          return;
+        }
+
+        statusUrl = payload.status_url;
+        messageEl.textContent = "분석 작업을 시작했습니다.";
+        checkStatus();
+      } catch (error) {
+        messageEl.textContent = "분석을 시작하는 중 문제가 발생했습니다. 서버를 새로고침해 주세요.";
+      }
+    }
+
+    startAnalysis();
+  </script>
+{% endblock %}

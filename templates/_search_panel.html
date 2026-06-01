@@ -1,0 +1,80 @@
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <h1>미래를 향한 취업의 여정</h1>
+        <p>
+          자동차 기업 뉴스를 기반으로 직무, 스펙, 자기소개서 소재와 면접 질문까지
+          취업 준비에 필요한 방향을 정리합니다.
+        </p>
+
+        <div class="mini-stats">
+          <div class="mini-stat">
+            <strong>6개</strong>
+            <span>추천 기업 바로 분석</span>
+          </div>
+          <div class="mini-stat">
+            <strong>20개</strong>
+            <span>관련 기사 선별</span>
+          </div>
+          <div class="mini-stat">
+            <strong>AI</strong>
+            <span>직무·자소서·면접 분석</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="search-card">
+        <h2>기업 뉴스 분석 시작</h2>
+
+        <form class="search-panel" method="GET" action="{{ url_for('results') }}">
+          <input
+            type="text"
+            name="keyword"
+            placeholder="회사명 예: 현대모비스, 에스엘"
+            value="{{ keyword }}"
+          />
+
+          <input
+            type="text"
+            name="target_job"
+            placeholder="관심 직무 예: 생산기술, 품질관리"
+            value="{{ user_profile.target_job }}"
+          />
+
+          <input
+            type="text"
+            name="major"
+            placeholder="전공 예: 기계공학, 전기전자"
+            value="{{ user_profile.major }}"
+          />
+
+          <input
+            type="text"
+            name="certificates"
+            placeholder="자격증 예: 컴활, 품질경영기사 준비 중"
+            value="{{ user_profile.certificates }}"
+          />
+
+          <textarea
+            class="field-wide"
+            name="experience"
+            placeholder="경험/활동 예: 캡스톤, 공모전, 인턴, 프로젝트"
+          >{{ user_profile.experience }}</textarea>
+
+          <input
+            class="field-wide"
+            type="text"
+            name="strengths"
+            placeholder="강점 예: 데이터 분석, 꼼꼼함, 현장 경험"
+            value="{{ user_profile.strengths }}"
+          />
+
+          <div class="field-wide">
+            <button class="primary-button" type="submit">뉴스 분석하기</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

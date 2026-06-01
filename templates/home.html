@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}AI 취업 뉴스 분석{% endblock %}
+
+{% block body %}
+  {% include "_search_panel.html" %}
+
+  <main class="content">
+    {% include "_featured_companies.html" %}
+
+    <section class="empty-state">
+      회사명을 검색하거나 추천 기업을 선택하면 관련 기사와 AI 취업 분석 결과 페이지로 이동합니다.
+    </section>
+  </main>
+{% endblock %}
