@@ -3,9 +3,10 @@ import json
 import re
 from datetime import datetime
 from email.utils import parsedate_to_datetime
+from functools import lru_cache
 from pathlib import Path
 from typing import Dict, List, Optional
-from urllib.parse import urlparse
+from urllib.parse import urljoin, urlparse
 
 import pandas as pd
 import requests
@@ -22,6 +23,7 @@ from config import (
 BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "data"
 OUTPUT_FILE = DATA_DIR / "news.json"
+THUMB_CACHE_FILE = DATA_DIR / "news_thumbnails.json"
 
 COMPANY_ALIASES = {
     "아진": "아진산업",
@@ -146,7 +148,8 @@ def _parse_published(value: str) -> Optional[datetime]:
     if not value:
         return None
     try:
-        return parsedate_to_datetime(value)
+        parsed = parsedate_to_datetime(value)
+        return parsed.replace(tzinfo=None)
     except (TypeError, ValueError, IndexError):
         pass
     for fmt in ("%Y-%m-%d", "%Y.%m.%d", "%Y/%m/%d"):
@@ -279,6 +282,67 @@ def _outlet_from_link(link: str) -> str:
     return host
 
 
+@lru_cache(maxsize=256)
+def _thumbnail_for_url(url: str) -> str:
+    if not url:
+        return ""
+    cache = _load_thumbnail_cache()
+    if url in cache:
+        return cache[url]
+    thumbnail = _fetch_og_image(url)
+    cache[url] = thumbnail
+    _save_thumbnail_cache(cache)
+    return thumbnail
+
+
+def _fetch_og_image(url: str) -> str:
+    try:
+        resp = requests.get(
+            url,
+            headers={"User-Agent": "Mozilla/5.0"},
+            timeout=3,
+            allow_redirects=True,
+        )
+        resp.raise_for_status()
+    except requests.RequestException:
+        return ""
+    content_type = resp.headers.get("Content-Type", "")
+    if "html" not in content_type.lower():
+        return ""
+    soup = BeautifulSoup(resp.text[:200000], "html.parser")
+    for selector in (
+        {"property": "og:image"},
+        {"name": "twitter:image"},
+        {"property": "twitter:image"},
+    ):
+        tag = soup.find("meta", attrs=selector)
+        if tag and tag.get("content"):
+            return urljoin(resp.url, str(tag.get("content")).strip())
+    return ""
+
+
+def _load_thumbnail_cache() -> Dict[str, str]:
+    if not THUMB_CACHE_FILE.exists():
+        return {}
+    try:
+        with open(THUMB_CACHE_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception:  # noqa: BLE001
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def _save_thumbnail_cache(cache: Dict[str, str]) -> None:
+    try:
+        DATA_DIR.mkdir(parents=True, exist_ok=True)
+        if len(cache) > 500:
+            cache = dict(list(cache.items())[-400:])
+        with open(THUMB_CACHE_FILE, "w", encoding="utf-8") as f:
+            json.dump(cache, f, ensure_ascii=False, indent=2)
+    except Exception:  # noqa: BLE001
+        return
+
+
 def classify_category(text: str, search_keyword: str = "") -> str:
     blob = f"{text} {search_keyword}".lower()
     for category, tokens in CATEGORY_RULES.items():
@@ -301,6 +365,7 @@ def _build_item(
     published: str,
     category: str,
     outlet: str = "",
+    thumbnail: str = "",
 ) -> Dict[str, str]:
     item = {
         "keyword": keyword,
@@ -314,6 +379,8 @@ def _build_item(
     }
     if outlet:
         item["outlet"] = outlet
+    if thumbnail:
+        item["thumbnail"] = thumbnail
     return item
 
 
@@ -361,6 +428,7 @@ def collect_from_naver(keywords: List[str], display: int = 10) -> List[Dict[str,
                 outlet = _outlet_from_link(original_link) or _outlet_from_link(link)
                 if _is_blocked_source(original_link or link, text_blob):
                     continue
+                thumbnail = _thumbnail_for_url(original_link or link)
 
                 items.append(
                     _build_item(
@@ -373,6 +441,7 @@ def collect_from_naver(keywords: List[str], display: int = 10) -> List[Dict[str,
                         outlet=outlet,
                         published=raw.get("pubDate", ""),
                         category=classify_category(text_blob, keyword),
+                        thumbnail=thumbnail,
                     )
                 )
                 if _accepted_count(items, keyword) >= MAX_RESULTS_PER_PROVIDER_KEYWORD:
@@ -433,6 +502,7 @@ def collect_from_kakao(keywords: List[str], size: int = 10) -> List[Dict[str, st
                     published = parsed.strftime("%a, %d %b %Y %H:%M:%S +0900") if parsed else str(dt_raw)
 
                 outlet = _publisher_from_url(link)
+                thumbnail = _thumbnail_for_url(link)
 
                 items.append(
                     _build_item(
@@ -445,6 +515,7 @@ def collect_from_kakao(keywords: List[str], size: int = 10) -> List[Dict[str, st
                         outlet=outlet,
                         published=published,
                         category=classify_category(text_blob, keyword),
+                        thumbnail=thumbnail,
                     )
                 )
                 if _accepted_count(items, keyword) >= MAX_RESULTS_PER_PROVIDER_KEYWORD:

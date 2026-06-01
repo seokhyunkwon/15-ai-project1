@@ -2833,5 +2833,453 @@
       "model": "gpt-4o-mini"
     },
     "cached": false
+  },
+  "d7975c28af8869343c955d5fb21a96e78f9a592e70946579577a58e09cc61cec": {
+    "company": "현대파워텍",
+    "highlights": [
+      {
+        "claim": "현대파워텍은 현대자동차 그룹의 핵심 부품사로, 파워트레인과 시트를 공급한다.",
+        "why_it_matters": "이 회사는 현대자동차 그룹의 수직계열화 구조에서 중요한 역할을 하며, 그룹의 외형 상승세에 기여하고 있다.",
+        "evidence_links": [
+          "https://n.news.naver.com/mnews/article/293/0000078681?sid=101",
+          "https://v.daum.net/v/bGwe9EnQry"
+        ]
+      },
+      {
+        "claim": "2019년 현대다이모스에 흡수합병되며 현대트랜시스가 출범했다.",
+        "why_it_matters": "합병 이후 현대파워텍의 부채비율이 증가하고 있으며, 이는 회사의 재무 안정성에 영향을 미칠 수 있다.",
+        "evidence_links": [
+          "https://n.news.naver.com/mnews/article/293/0000078465?sid=101",
+          "https://v.daum.net/v/yHW6nbFYj8"
+        ]
+      }
+    ],
+    "risks_and_watchouts": [
+      {
+        "item": "부채비율 증가",
+        "evidence_links": [
+          "https://n.news.naver.com/mnews/article/293/0000078681?sid=101",
+          "https://www.sisajournal-e.com/news/articleView.html?idxno=414961"
+        ]
+      }
+    ],
+    "keywords_to_prepare": [
+      "현대자동차 그룹",
+      "부품사",
+      "파워트레인",
+      "부채비율",
+      "합병"
+    ],
+    "sources": [
+      {
+        "title": "14174257",
+        "link": "http://home.konkuk.ac.kr/cms/Common/MessageBoard/ArticleFile.do?id=14174257",
+        "published": "Fri, 01 May 2026 00:00:00 +0900",
+        "outlet": "home.konkuk.ac.kr"
+      },
+      {
+        "title": "KASHIFUJI, NIDEC, KARATS, 공작기계 · 레이저가공 · 용접",
+        "link": "https://www.daara.co.kr/sell/s_view.php?no=1649235",
+        "published": "Thu, 16 Apr 2026 00:00:00 +0900",
+        "outlet": "daara.co.kr"
+      },
+      {
+        "title": "[ 현대 트랜시스 is]③ 높아진 자본시장 접근성 '투자 부담' 완화",
+        "link": "https://n.news.naver.com/mnews/article/293/0000078681?sid=101",
+        "published": "Fri, 30 Jan 2026 15:23:00 +0900",
+        "outlet": "bloter.net"
+      },
+      {
+        "title": "[ 현대 트랜시스 is]③ 높아진 자본시장 접근성 '투자 부담' 완화 - 콘텐츠뷰",
+        "link": "https://v.daum.net/v/bGwe9EnQry",
+        "published": "Fri, 30 Jan 2026 00:00:00 +0900",
+        "outlet": "kakao"
+      },
+      {
+        "title": "[ 현대 트랜시스 is]① 설비투자 부담 '자본 관리' 집중",
+        "link": "https://n.news.naver.com/mnews/article/293/0000078465?sid=101",
+        "published": "Tue, 27 Jan 2026 15:18:00 +0900",
+        "outlet": "bloter.net"
+      },
+      {
+        "title": "[ 현대 트랜시스 is]① 설비투자 부담 '자본 관리' 집중 - 콘텐츠뷰",
+        "link": "https://v.daum.net/v/yHW6nbFYj8",
+        "published": "Tue, 27 Jan 2026 00:00:00 +0900",
+        "outlet": "kakao"
+      },
+      {
+        "title": "2000억원 투자했는데··· 현대 트랜시스 자회사 손실 이유는?",
+        "link": "https://www.sisajournal-e.com/news/articleView.html?idxno=414961",
+        "published": "Wed, 03 Sep 2025 16:28:00 +0900",
+        "outlet": "naver"
+      },
+      {
+        "title": "[더벨][ 현대 차그룹의 CFO]김두홍 현대 로템 전무, 부채 관리에 집중",
+        "link": "https://www.thebell.co.kr/free/content/ArticleView.asp?key=202508121659154160102423",
+        "published": "Fri, 22 Aug 2025 08:08:00 +0900",
+        "outlet": "naver"
+      }
+    ],
+    "answer_strategy": [],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "8cde57972ff1c0d0d4e830a8dc3e9767c18326a5df8effb4ec65ec938379687d": {
+    "company": "현대파워텍",
+    "company_overview": [
+      "현대파워텍은 현대자동차그룹의 계열사로, 자동차 변속기 전문 제조업체입니다.",
+      "2019년 1월 현대다이모스에 흡수합병되어 현대트랜시스라는 이름으로 운영되고 있습니다."
+    ],
+    "recent_issues": [
+      {
+        "point": "현대트랜시스의 부채비율이 상승세를 보이고 있음.",
+        "evidence_links": [
+          "https://v.daum.net/v/bGwe9EnQry",
+          "https://v.daum.net/v/yHW6nbFYj8"
+        ]
+      }
+    ],
+    "business_keywords": [
+      "자동차 변속기",
+      "부품 제조",
+      "현대자동차그룹"
+    ],
+    "welfare_signals": [
+      {
+        "signal": "복리후생이 좋다는 언급이 있음.",
+        "confidence": "신호",
+        "evidence_links": [
+          "https://vop.co.kr/A00001167054.html"
+        ]
+      },
+      {
+        "signal": "사회 복지 시설에 차량 기탁 등의 사회적 책임 활동을 하고 있음.",
+        "confidence": "신호",
+        "evidence_links": [
+          "http://www.ccnewsline.co.kr/news/articleView.html?idxno=13770",
+          "http://www.npnews.co.kr/news/articleView.html?idxno=18182"
+        ]
+      }
+    ],
+    "work_life_notes": [
+      "근무환경 및 복리후생에 대한 구체적인 정보는 확인이 필요함."
+    ],
+    "likely_interview_questions": [
+      {
+        "question": "현대파워텍의 주요 제품에 대해 설명해 주세요.",
+        "intent": "제품 이해도 확인",
+        "answer_direction": [
+          "자동차 변속기의 종류 및 특징",
+          "현대파워텍의 시장 내 위치"
+        ],
+        "evidence_links": [
+          "https://v.daum.net/v/gUEY1kI8sK"
+        ]
+      },
+      {
+        "question": "현대파워텍의 최근 경영 이슈에 대해 알고 있나요?",
+        "intent": "업계 동향 파악",
+        "answer_direction": [
+          "부채비율 상승 관련 내용",
+          "합병 후 변화"
+        ],
+        "evidence_links": [
+          "https://v.daum.net/v/bGwe9EnQry"
+        ]
+      }
+    ],
+    "answer_strategy": [
+      "제품 및 사업에 대한 이해를 바탕으로 답변 준비",
+      "복리후생 및 근무환경에 대한 확인된 정보에 대한 질문 준비"
+    ],
+    "generated_queries": [
+      "현대파워텍 기업정보",
+      "현대파워텍 사업 제품",
+      "현대파워텍 복리후생",
+      "현대파워텍 근무제도"
+    ],
+    "sources": [
+      {
+        "title": "[ 현대 트랜시스 is]③ 높아진 자본시장 접근성 '투자 부담' 완화 - 콘텐츠뷰",
+        "link": "https://v.daum.net/v/bGwe9EnQry",
+        "outlet": "v.daum.net",
+        "source_type": "news"
+      },
+      {
+        "title": "[ 현대 트랜시스 is]① 설비투자 부담 '자본 관리' 집중 - 콘텐츠뷰",
+        "link": "https://v.daum.net/v/yHW6nbFYj8",
+        "outlet": "v.daum.net",
+        "source_type": "news"
+      },
+      {
+        "title": "현대파워텍 채용, 사원 평균 연봉이 5천만원을 넘는다?::민중의소리",
+        "link": "https://vop.co.kr/A00001167054.html",
+        "outlet": "vop.co.kr",
+        "source_type": "public"
+      },
+      {
+        "title": "현대파워텍 서산시 아동, 장애인 복지 증진을 위한 차량기탁",
+        "link": "http://www.ccnewsline.co.kr/news/articleView.html?idxno=13770",
+        "outlet": "ccnewsline.co.kr",
+        "source_type": "news"
+      },
+      {
+        "title": "현대파워텍, 2011 임금인상 회사위임 - 콘텐츠뷰",
+        "link": "https://v.daum.net/v/nbmhnqkjA7",
+        "outlet": "v.daum.net",
+        "source_type": "news"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "265eb9b6205bf6549457541f1f3b4928938c5b2d4f8ff078f42dd728a877c4e4": {
+    "company": "현대파워텍",
+    "likely_interview_questions": [
+      {
+        "question": "현대파워텍의 최근 재무 구조에 대해 설명해 주세요.",
+        "intent": "재무 이해도 평가",
+        "answer_outline": [
+          "2019년 1월 현대다이모스와의 합병 당시 부채비율은 134%로 안정적이었음.",
+          "대규모 투자가 지속되면서 부채비율이 188.9%로 증가함.",
+          "재무 구조의 변화가 기업 운영에 미치는 영향에 대해 논의."
+        ],
+        "evidence_links": [
+          "https://n.news.naver.com/mnews/article/293/0000078681?sid=101",
+          "https://v.daum.net/v/bGwe9EnQry"
+        ]
+      },
+      {
+        "question": "현대파워텍의 합병 과정에서 어떤 역할을 했는지 설명해 주세요.",
+        "intent": "합병 및 조직 이해도 평가",
+        "answer_outline": [
+          "2019년 1월 현대다이모스에 흡수합병됨.",
+          "합병의 목적과 기대 효과에 대해 설명.",
+          "합병 후 현대트랜시스의 역할과 중요성에 대해 논의."
+        ],
+        "evidence_links": [
+          "https://n.news.naver.com/mnews/article/293/0000078465?sid=101",
+          "https://v.daum.net/v/yHW6nbFYj8"
+        ]
+      },
+      {
+        "question": "현대파워텍의 주요 제품 및 시장에 대해 설명해 주세요.",
+        "intent": "제품 및 시장 이해도 평가",
+        "answer_outline": [
+          "자동차 부품, 특히 파워트레인 관련 제품을 공급.",
+          "현대 자동차 그룹 내에서의 위치와 역할.",
+          "경쟁사와의 차별점 및 시장 내 위치."
+        ],
+        "evidence_links": [
+          "https://www.daara.co.kr/sell/s_view.php?no=1649235"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "14174257",
+        "link": "http://home.konkuk.ac.kr/cms/Common/MessageBoard/ArticleFile.do?id=14174257",
+        "published": "Fri, 01 May 2026 00:00:00 +0900",
+        "outlet": "home.konkuk.ac.kr"
+      },
+      {
+        "title": "[ 현대 트랜시스 is]③ 높아진 자본시장 접근성 '투자 부담' 완화",
+        "link": "https://n.news.naver.com/mnews/article/293/0000078681?sid=101",
+        "published": "Fri, 30 Jan 2026 15:23:00 +0900",
+        "outlet": "bloter.net"
+      },
+      {
+        "title": "[ 현대 트랜시스 is]① 설비투자 부담 '자본 관리' 집중",
+        "link": "https://n.news.naver.com/mnews/article/293/0000078465?sid=101",
+        "published": "Tue, 27 Jan 2026 15:18:00 +0900",
+        "outlet": "bloter.net"
+      },
+      {
+        "title": "2000억원 투자했는데··· 현대 트랜시스 자회사 손실 이유는?",
+        "link": "https://www.sisajournal-e.com/news/articleView.html?idxno=414961",
+        "published": "Wed, 03 Sep 2025 16:28:00 +0900",
+        "outlet": "sisajournal-e.com"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "f0fbcb13577dfbf601aae1bf11bdc064a1e1085765bba4ef9b26d9ffcbfd4145": {
+    "company": "영진정공",
+    "highlights": [
+      {
+        "claim": "영진정공이 이공계 산업체 구직 희망 청년 취업 프로그램에 참여한다.",
+        "why_it_matters": "이 프로그램은 기업 채용 정보 제공 및 채용 면담을 통해 청년 구직자들에게 직접적인 취업 기회를 제공할 수 있다.",
+        "evidence_links": [
+          "http://www.newsmaeil.kr/news/articleView.html?idxno=65855"
+        ]
+      }
+    ],
+    "risks_and_watchouts": [],
+    "keywords_to_prepare": [
+      "청년 취업",
+      "채용 프로그램",
+      "이공계 산업"
+    ],
+    "sources": [
+      {
+        "title": "이공계 산업체 구직 희망 청년 취업 프로그램 지원",
+        "link": "http://www.newsmaeil.kr/news/articleView.html?idxno=65855",
+        "published": "Fri, 16 Sep 2022 00:00:00 +0900",
+        "outlet": "newsmaeil.kr"
+      }
+    ],
+    "answer_strategy": [],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "cbe57b4296451a225ed3242f9d3f3d36abb490f5117d5e58e3dc01a4b050cc1c": {
+    "company": "영진정공",
+    "company_overview": [
+      "영진정공은 전기차 동력전달장치 및 변속기 부품을 제조하는 중소기업입니다.",
+      "본사는 경기도 시흥시에 위치하고 있습니다."
+    ],
+    "recent_issues": [
+      {
+        "point": "이공계 산업체 구직 희망 청년 취업 프로그램에 참여",
+        "evidence_links": [
+          "http://www.newsmaeil.kr/news/articleView.html?idxno=65855"
+        ]
+      }
+    ],
+    "business_keywords": [
+      "전기차",
+      "동력전달장치",
+      "변속기 부품",
+      "제조업"
+    ],
+    "welfare_signals": [
+      {
+        "signal": "복지비 수준 및 복지 제도에 대한 정보가 존재하지만 구체적인 내용은 확인 필요.",
+        "confidence": "신호",
+        "evidence_links": [
+          "https://www.jobkorea.co.kr/Review/ServiceView?ucoNo=45467174"
+        ]
+      }
+    ],
+    "work_life_notes": [
+      "초과근무가 있을 수 있다는 언급이 있으나, 구체적인 근무제도에 대한 정보는 확인 필요."
+    ],
+    "likely_interview_questions": [
+      {
+        "question": "영진정공의 전기차 부품 제조에 대한 이해도는?",
+        "intent": "직무 관련 지식 평가",
+        "answer_direction": [
+          "전기차 시장 동향",
+          "영진정공의 제품 특징"
+        ],
+        "evidence_links": []
+      },
+      {
+        "question": "팀워크와 협업 경험에 대해 설명해 주세요.",
+        "intent": "인성 및 협업 능력 평가",
+        "answer_direction": [
+          "구체적인 사례 제시",
+          "협업의 중요성 강조"
+        ],
+        "evidence_links": []
+      }
+    ],
+    "answer_strategy": [
+      "영진정공의 제품 및 사업에 대한 이해를 바탕으로 질문 준비",
+      "복리후생 및 근무환경에 대한 확인된 제도에 대한 질문 준비"
+    ],
+    "generated_queries": [
+      "영진정공 기업정보",
+      "영진정공 사업 제품",
+      "영진정공 복리후생",
+      "영진정공 근무제도",
+      "영진정공 면접"
+    ],
+    "sources": [
+      {
+        "title": "영진 정공 정책자금 108건 - 비즈탑",
+        "link": "https://www.biztop.co.kr/v2/api_member/policy_fund.php?bncode=13YPdsdwI7gJ",
+        "outlet": "biztop.co.kr",
+        "source_type": "public"
+      },
+      {
+        "title": "[구인의뢰] (주) 영진 정공 신규채용 공고",
+        "link": "https://career.jvision.ac.kr/main/?menu=54&mode=view&no=8141",
+        "outlet": "career.jvision.ac.kr",
+        "source_type": "public"
+      },
+      {
+        "title": "영진 정공 ㈜",
+        "link": "https://www.jobkorea.co.kr/Review/ServiceView?ucoNo=45467174",
+        "outlet": "jobkorea.co.kr",
+        "source_type": "company_info"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "3b1ad126a01901fa4b002e6d34f3f2c49b131d1938e28c4d17176bc25728be41": {
+    "company": "영진정공",
+    "likely_interview_questions": [
+      {
+        "question": "영진정공의 채용 프로그램에 대해 어떻게 알게 되었나요?",
+        "intent": "지원자의 정보 탐색 능력 평가",
+        "answer_outline": [
+          "정심화국제문화회관에서 열린 취업 프로그램에 참여했다.",
+          "다양한 기업의 채용 정보를 접할 수 있었다.",
+          "영진정공의 채용 면담 프로그램에 관심을 가졌다."
+        ],
+        "evidence_links": [
+          "http://www.newsmaeil.kr/news/articleView.html?idxno=65855"
+        ]
+      },
+      {
+        "question": "영진정공에서 어떤 역할을 하고 싶나요?",
+        "intent": "지원자의 직무 이해도 및 목표 확인",
+        "answer_outline": [
+          "회사의 비전과 목표에 맞는 역할을 수행하고 싶다.",
+          "이공계 전공을 살려 기술적 기여를 하고 싶다.",
+          "팀워크와 협업을 통해 성과를 내고 싶다."
+        ],
+        "evidence_links": [
+          "http://www.newsmaeil.kr/news/articleView.html?idxno=65855"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "이공계 산업체 구직 희망 청년 취업 프로그램 지원",
+        "link": "http://www.newsmaeil.kr/news/articleView.html?idxno=65855",
+        "published": "Fri, 16 Sep 2022 00:00:00 +0900",
+        "outlet": "newsmaeil.kr"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
   }
 }

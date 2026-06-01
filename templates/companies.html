@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기업정보 - BriefJob</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="{{ url_for('index') }}">
+          <span class="brand-mark">B</span>
+          <span>BriefJob</span>
+        </a>
+        <nav class="main-nav" aria-label="주요 메뉴">
+          <a href="{{ url_for('index') }}#search">검색</a>
+          <a href="{{ url_for('companies') }}">기업정보</a>
+          <a href="{{ url_for('jobs') }}">채용공고</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="subpage">
+      <section class="page-hero">
+        <p class="section-kicker">Company Directory</p>
+        <h1>현대/기아 1차 협력사 기업정보</h1>
+        <p>프로젝트 기준 추천 기업 목록을 업종/제품 키워드, 리서치 포인트, 면접 준비 키워드 중심으로 정리했습니다.</p>
+      </section>
+
+      <section class="directory-toolbar">
+        <form method="get" action="{{ url_for('companies') }}" data-loading-form data-loading-message="기업정보 목록을 필터링하는 중입니다..." data-loading-button="조회 중...">
+          <input type="search" name="q" value="{{ q }}" placeholder="기업명 또는 키워드 검색">
+          <select name="group">
+            {% for group in groups %}
+              <option value="{{ group }}" {% if group == selected_group %}selected{% endif %}>{{ group }}</option>
+            {% endfor %}
+          </select>
+          <button class="btn primary" type="submit">조회</button>
+        </form>
+      </section>
+
+      <section class="company-card-grid">
+        {% for profile in profiles %}
+          <article class="company-card">
+            <div class="company-card-head">
+              <div>
+                <h2>{{ profile.name }}</h2>
+              </div>
+              <span class="company-group">{{ profile.group }}</span>
+            </div>
+            <p>{{ profile.summary }}</p>
+            <div class="tag-row">
+              {% for word in profile.specialties %}
+                <span class="badge keyword">{{ word }}</span>
+              {% endfor %}
+            </div>
+            <h3>리서치 포인트</h3>
+            <ul>
+              {% for point in profile.research_points %}
+                <li>{{ point }}</li>
+              {% endfor %}
+            </ul>
+            <div class="company-detail-grid">
+              {% for block in profile.detail_blocks %}
+                <section>
+                  <h3>{{ block.title }}</h3>
+                  <ul>
+                    {% for item in block["items"] %}
+                      <li>{{ item }}</li>
+                    {% endfor %}
+                  </ul>
+                </section>
+              {% endfor %}
+            </div>
+            <h3>면접 준비 키워드</h3>
+            <div class="tag-row">
+              {% for word in profile.prep_keywords %}
+                <span class="badge category">{{ word }}</span>
+              {% endfor %}
+            </div>
+            <div class="card-actions">
+              <a class="btn primary" href="{{ url_for('collect', keywords=profile.name) }}" data-loading-link data-loading-message="{{ profile.name }} 뉴스를 수집하는 중입니다...">뉴스 수집</a>
+              <a class="btn ghost" href="{{ url_for('index', keyword=profile.name, brief='1') }}" data-loading-link data-loading-message="{{ profile.name }} AI 리서치를 생성하는 중입니다...">AI 리서치</a>
+              <a class="btn ghost" href="{{ url_for('jobs', q=profile.name) }}" data-loading-link data-loading-message="{{ profile.name }} 채용공고 후보를 검색하는 중입니다...">채용공고</a>
+            </div>
+          </article>
+        {% else %}
+          <div class="empty-state">
+            <strong>검색 결과가 없습니다.</strong>
+            <p>기업명이나 제품 키워드를 다시 입력해 주세요.</p>
+          </div>
+        {% endfor %}
+      </section>
+    </main>
+  </div>
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</body>
+</html>

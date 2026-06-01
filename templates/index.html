@@ -15,15 +15,12 @@
           <span>BriefJob</span>
         </a>
         <nav class="main-nav" aria-label="주요 메뉴">
-          <a href="#search">검색</a>
-          <a href="#recommend">추천</a>
+          <a href="{{ url_for('index') }}#search">검색</a>
+          <a href="{{ url_for('companies') }}">기업정보</a>
+          <a href="{{ url_for('jobs') }}">채용공고</a>
           <a href="#brief">브리핑</a>
           <a href="#news">뉴스</a>
         </nav>
-        <div class="header-actions">
-          <span class="status-dot {{ 'ok' if llm_status.enabled else 'off' }}"></span>
-          <span>AI {{ '연결됨' if llm_status.enabled else '미설정' }}</span>
-        </div>
       </div>
     </header>
 
@@ -37,23 +34,9 @@
           {% else %}
             <p class="hero-meta">아직 수집된 뉴스가 없습니다.</p>
           {% endif %}
-          <div class="hero-stats" aria-label="서비스 상태 요약">
-            <div>
-              <strong>{{ pagination.total_count }}</strong>
-              <span>뉴스</span>
-            </div>
-            <div>
-              <strong>{{ 'ON' if llm_status.enabled else 'OFF' }}</strong>
-              <span>AI</span>
-            </div>
-            <div>
-              <strong>{{ 'ON' if api_status.naver or api_status.kakao else 'OFF' }}</strong>
-              <span>API</span>
-            </div>
-          </div>
         </div>
 
-        <form class="search-console" method="post" action="{{ url_for('collect') }}">
+        <form class="search-console" method="post" action="{{ url_for('collect') }}" data-loading-form data-loading-message="뉴스를 수집하고 필터링하는 중입니다..." data-loading-button="수집 중...">
           <div class="console-head">
             <span>통합 검색</span>
             <span class="console-state">뉴스 수집</span>
@@ -67,7 +50,7 @@
           <div class="popular-keywords">
             <span>추천 키워드</span>
             {% for keyword_name in recommended_keywords %}
-              <a href="{{ url_for('collect', keywords=keyword_name) }}">{{ keyword_name }}</a>
+              <a href="{{ url_for('collect', keywords=keyword_name) }}" data-loading-link data-loading-message="{{ keyword_name }} 뉴스를 수집하는 중입니다...">{{ keyword_name }}</a>
             {% endfor %}
           </div>
         </form>
@@ -84,50 +67,27 @@
           {% endif %}
         {% endwith %}
 
+        <section id="recommend" class="recommendation-rail" aria-label="추천 기업">
+          <div class="rail-heading">
+            <div>
+              <p class="section-kicker">Recommended</p>
+              <h2>추천 기업</h2>
+            </div>
+          </div>
+          <div class="recommendation-grid">
+            {% for company_name in recommended_companies %}
+              <a href="{{ url_for('collect', keywords=company_name) }}" data-loading-link data-loading-message="{{ company_name }} 뉴스를 수집하는 중입니다...">{{ company_name }}</a>
+            {% endfor %}
+          </div>
+        </section>
+
         <div class="workspace-grid">
           <aside class="side-panel">
-            <section id="recommend" class="panel recommendation-panel">
-              <div class="panel-title-row">
-                <h2>추천 기업</h2>
-                <span class="tiny-label">{{ recommended_companies | length }}개</span>
-              </div>
-              <div class="recommendation-grid">
-                {% for company_name in recommended_companies %}
-                  <a href="{{ url_for('collect', keywords=company_name) }}">{{ company_name }}</a>
-                {% endfor %}
-              </div>
-            </section>
-
-            <section class="panel status-panel">
-              <div class="panel-title-row">
-                <h2>연동 상태</h2>
-                <span class="tiny-label">Live</span>
-              </div>
-              <div class="connector-list">
-                <div class="connector-item">
-                  <span class="connector-name">네이버</span>
-                  <span class="status-pill {{ 'ok' if api_status.naver else 'off' }}">{{ '연결됨' if api_status.naver else '미설정' }}</span>
-                </div>
-                <div class="connector-item">
-                  <span class="connector-name">카카오</span>
-                  <span class="status-pill {{ 'ok' if api_status.kakao else 'off' }}">{{ '연결됨' if api_status.kakao else '미설정' }}</span>
-                </div>
-                <div class="connector-item">
-                  <span class="connector-name">LLM</span>
-                  <span class="status-pill {{ 'ok' if llm_status.enabled else 'off' }}">{{ '연결됨' if llm_status.enabled else '미설정' }}</span>
-                </div>
-                <div class="connector-item">
-                  <span class="connector-name">고용24</span>
-                  <span class="status-pill {{ 'ok' if work24_status.jobs else 'off' }}">{{ '연결됨' if work24_status.jobs else '미설정' }}</span>
-                </div>
-              </div>
-            </section>
-
             <section class="panel filter-panel">
               <div class="panel-title-row">
                 <h2>빠른 필터</h2>
               </div>
-              <form class="filter-form" method="get" action="{{ url_for('index') }}">
+              <form class="filter-form" method="get" action="{{ url_for('index') }}" data-loading-form data-loading-message="필터를 적용하는 중입니다..." data-loading-button="적용 중...">
                 <input type="hidden" name="keyword" value="{{ selected_keyword }}">
                 <input type="hidden" name="company" value="{{ company }}">
                 <label>
@@ -164,6 +124,93 @@
           </aside>
 
           <div class="main-column">
+            {% if landing_mode %}
+              <section class="intro-panel">
+                <div class="intro-copy">
+                  <p class="section-kicker">Start Here</p>
+                  <h2>기업명을 검색하면 뉴스와 공개 자료를 모아 AI 리서치를 생성합니다</h2>
+                  <p>저장된 이전 뉴스 목록을 바로 보여주지 않고, 검색 이후에만 결과와 브리핑을 표시합니다.</p>
+                </div>
+                <div class="intro-steps">
+                  <div>
+                    <span>1</span>
+                    <strong>기업명 입력</strong>
+                    <p>현대위아, 에스엘, 아진산업처럼 관심 기업을 검색합니다.</p>
+                  </div>
+                  <div>
+                    <span>2</span>
+                    <strong>뉴스 수집</strong>
+                    <p>네이버와 카카오 공개 검색 결과에서 기사 중심 자료를 정리합니다.</p>
+                  </div>
+                  <div>
+                    <span>3</span>
+                    <strong>AI 기업 리서치</strong>
+                    <p>기업 개요, 최근 이슈, 복리후생 신호, 면접 질문을 근거 링크와 함께 확인합니다.</p>
+                  </div>
+                </div>
+              </section>
+            {% endif %}
+
+            {% if not landing_mode %}
+              <section class="analysis-panel">
+                <div class="analysis-head">
+                  <div>
+                    <p class="section-kicker">Data Check</p>
+                    <h2>데이터분석 요약</h2>
+                  </div>
+                  <span class="count">근거 {{ analysis_summary.filtered_count }}건</span>
+                </div>
+                <div class="analysis-metrics">
+                  <div>
+                    <strong>{{ analysis_summary.raw_count }}</strong>
+                    <span>저장 데이터</span>
+                  </div>
+                  <div>
+                    <strong>{{ analysis_summary.filtered_count }}</strong>
+                    <span>현재 분석 대상</span>
+                  </div>
+                  <div>
+                    <strong>{{ analysis_summary.excluded_count }}</strong>
+                    <span>검색/필터 제외</span>
+                  </div>
+                </div>
+                <div class="analysis-breakdown">
+                  <section>
+                    <h3>출처 분포</h3>
+                    {% for row in analysis_summary.source_counts %}
+                      <div class="mini-bar">
+                        <span>{{ row.label }}</span>
+                        <div><i style="width: {{ row.share }}%"></i></div>
+                        <b>{{ row.count }}</b>
+                      </div>
+                    {% else %}
+                      <p class="empty">분석할 출처가 없습니다.</p>
+                    {% endfor %}
+                  </section>
+                  <section>
+                    <h3>분류 TOP</h3>
+                    {% for row in analysis_summary.category_counts %}
+                      <div class="mini-bar">
+                        <span>{{ row.label }}</span>
+                        <div><i style="width: {{ row.share }}%"></i></div>
+                        <b>{{ row.count }}</b>
+                      </div>
+                    {% else %}
+                      <p class="empty">분석할 분류가 없습니다.</p>
+                    {% endfor %}
+                  </section>
+                  <section>
+                    <h3>검증 기준</h3>
+                    <ul>
+                      {% for note in analysis_summary.notes %}
+                        <li>{{ note }}</li>
+                      {% endfor %}
+                    </ul>
+                  </section>
+                </div>
+              </section>
+            {% endif %}
+
             {% if brief_requested and brief_topic %}
               <section id="brief" class="panel brief-panel">
                 <div class="panel-heading">
@@ -171,7 +218,7 @@
                     <p class="section-kicker">AI Briefing</p>
                     <h2>{{ brief_topic }} {{ '기업 브리핑' if brief_mode == 'company' else '산업 브리핑' }}</h2>
                   </div>
-                  <span class="count">{{ pagination.start }}-{{ pagination.end }}건 분석</span>
+                  <span class="count">뉴스 {{ pagination.total_count }}건 기반</span>
                 </div>
 
                 {% if search_warning %}
@@ -213,32 +260,36 @@
 
                       <div class="research-grid">
                         <article class="research-card wide">
-                          <h4>고용24 채용 현황</h4>
+                          <h4>공개 채용공고 후보</h4>
                           {% if work24_jobs and work24_jobs.enabled %}
                             {% if work24_jobs["items"] %}
                               <ul>
                                 {% for job in work24_jobs["items"] %}
                                   <li>
                                     <strong>{{ job.title }}</strong>
-                                    {% if job.company %}<span class="meta-inline"> · {{ job.company }}</span>{% endif %}
                                     <p class="meta-inline">
-                                      {{ job.region or '지역 미표기' }}
+                                      {% if job.confidence_label %}{{ job.confidence_label }} · {% endif %}
+                                      {{ job.outlet or job.provider or '공개 검색' }}
+                                      {% if job.published %} · {{ job.published }}{% endif %}
                                       {% if job.close_at %} · 마감 {{ job.close_at }}{% endif %}
                                       {% if job.salary %} · {{ job.salary_type }} {{ job.salary }}{% endif %}
                                     </p>
+                                    {% if job.summary %}
+                                      <p class="meta-inline">{{ job.summary }}</p>
+                                    {% endif %}
                                     {% if job.url %}
-                                      <p class="meta-inline"><a href="{{ job.url }}" target="_blank" rel="noopener noreferrer">고용24 공고 보기</a></p>
+                                      <p class="meta-inline"><a href="{{ job.url }}" target="_blank" rel="noopener noreferrer">공고 보기</a></p>
                                     {% endif %}
                                   </li>
                                 {% endfor %}
                               </ul>
                             {% else %}
-                              <p class="empty">고용24 기준 현재 표시할 채용공고가 없습니다.</p>
+                              <p class="empty">공개 검색에서 채용공고 후보를 찾지 못했습니다.</p>
                             {% endif %}
                           {% elif work24_jobs and work24_jobs.error %}
                             <p class="empty">{{ work24_jobs.error }}</p>
                           {% else %}
-                            <p class="empty">고용24 API 키를 설정하면 현재 채용중 여부를 표시할 수 있습니다.</p>
+                            <p class="empty">네이버 또는 카카오 검색 API 키가 있으면 공개 채용공고 후보를 표시할 수 있습니다.</p>
                           {% endif %}
                         </article>
                       </div>
@@ -457,6 +508,7 @@
               </section>
             {% endif %}
 
+            {% if not landing_mode %}
             <section id="news" class="panel results-panel">
               <div class="panel-heading">
                 <div>
@@ -467,7 +519,7 @@
                   {% endif %}
                 </div>
                 {% if news_items and (selected_keyword or search_q or company) %}
-                  <a class="btn primary" href="{{ url_for('index', keyword=selected_keyword, company=company, q=search_q, category=selected_category, page=pagination.page, brief='1') }}">뉴스 요약</a>
+                  <a class="btn primary" href="{{ url_for('index', keyword=selected_keyword, company=company, q=search_q, category=selected_category, page=pagination.page, brief='1') }}" data-loading-link data-loading-message="AI 브리핑을 생성하는 중입니다...">뉴스 요약</a>
                 {% endif %}
               </div>
 
@@ -475,6 +527,13 @@
                 <ul class="news-list">
                   {% for item in news_items %}
                     <li class="news-item">
+                      <div class="news-thumb">
+                        {% if item.thumbnail %}
+                          <img src="{{ item.thumbnail }}" alt="">
+                        {% else %}
+                          <span>{{ source_labels.get(item.source, item.source)[:1] }}</span>
+                        {% endif %}
+                      </div>
                       <div class="news-main">
                         <div class="news-meta">
                           <span class="badge source">{{ source_labels.get(item.source, item.source) }}</span>
@@ -522,10 +581,12 @@
                 </div>
               {% endif %}
             </section>
+            {% endif %}
           </div>
         </div>
       </section>
     </main>
   </div>
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
 </body>
 </html>

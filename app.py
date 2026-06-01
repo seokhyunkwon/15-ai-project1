@@ -60,13 +60,15 @@ from news_collector import (
     save_items,
 )
 from company_research import collect_company_research
+from company_directory import company_profiles, vendor_jobs_snapshot
+from job_collector import collect_public_jobs
 from llm import (
     build_company_research,
     build_interview_questions_fallback,
     build_news_brief,
     llm_status,
 )
-from work24_client import fetch_jobs, work24_status
+from work24_client import work24_status
 
 
 def create_app() -> Flask:
@@ -82,18 +84,21 @@ def create_app() -> Flask:
         category = request.args.get("category", "전체")
         keyword = request.args.get("keyword", "").strip()
         brief_requested = request.args.get("brief") == "1"
+        landing_mode = not any([company, search_q, keyword, brief_requested])
         page = _positive_int(request.args.get("page"), default=1)
         per_page = 50
         brief_topic = company or keyword or search_q
         search_warning = _search_validation_message(brief_topic) if brief_topic else ""
         brief_mode = _brief_mode(brief_topic)
 
-        filtered_news_items = filter_loaded_items(
-            payload,
-            keyword_filter=company or keyword,
-            category_filter=category,
-            search_query=search_q,
-        )
+        filtered_news_items = []
+        if not landing_mode:
+            filtered_news_items = filter_loaded_items(
+                payload,
+                keyword_filter=company or keyword,
+                category_filter=category,
+                search_query=search_q,
+            )
         if search_warning:
             filtered_news_items = []
 
@@ -128,7 +133,7 @@ def create_app() -> Flask:
                 company_profile={},
             )
             if brief_mode == "company":
-                work24_jobs = fetch_jobs(keyword=_work24_company_query(brief_topic), display=5)
+                work24_jobs = _public_jobs_for_brief(brief_topic)
                 try:
                     research_payload = collect_company_research(brief_topic)
                 except Exception as exc:  # noqa: BLE001
@@ -180,9 +185,11 @@ def create_app() -> Flask:
             api_status=_api_status(),
             source_labels=SOURCE_LABELS,
             llm_status=llm_status(),
+            analysis_summary=_analysis_summary(payload, filtered_news_items),
             brief_requested=brief_requested,
             brief_topic=brief_topic,
             brief_mode=brief_mode,
+            landing_mode=landing_mode,
             search_warning=search_warning,
             news_brief=news_brief,
             interview=interview,
@@ -228,6 +235,49 @@ def create_app() -> Flask:
 
         redirect_params = {"keyword": keywords[0] if keywords else ""}
         return redirect(url_for("index", **redirect_params))
+
+    @app.route("/companies", methods=["GET"])
+    def companies():
+        q = request.args.get("q", "").strip()
+        group = request.args.get("group", "전체").strip() or "전체"
+        profiles = company_profiles()
+        groups = ["전체"] + sorted({profile["group"] for profile in profiles})
+        if q:
+            normalized_q = _normalize_search_term(q)
+            profiles = [
+                profile for profile in profiles
+                if normalized_q in _normalize_search_term(profile["name"])
+                or any(normalized_q in _normalize_search_term(word) for word in profile["specialties"])
+            ]
+        if group != "전체":
+            profiles = [profile for profile in profiles if profile["group"] == group]
+        return render_template(
+            "companies.html",
+            profiles=profiles,
+            groups=groups,
+            selected_group=group,
+            q=q,
+        )
+
+    @app.route("/jobs", methods=["GET"])
+    def jobs():
+        refresh = request.args.get("refresh") == "1"
+        job_query = request.args.get("q", "").strip()
+        snapshot = vendor_jobs_snapshot(query=job_query, refresh=refresh)
+        rows = snapshot.get("rows", [])
+        active_rows = [row for row in rows if row.get("jobs")]
+        return render_template(
+            "jobs.html",
+            rows=rows,
+            active_rows=active_rows,
+            job_query=job_query,
+            api_blocked=bool(snapshot.get("api_blocked")),
+            notice=snapshot.get("notice", ""),
+            mode=snapshot.get("mode", ""),
+            updated_at=snapshot.get("updated_at", ""),
+            errors=snapshot.get("errors", []),
+            refreshed=refresh,
+        )
 
     return app
 
@@ -278,6 +328,49 @@ def _work24_company_query(value: str) -> str:
     return value
 
 
+def _public_jobs_for_brief(company: str) -> dict:
+    result = collect_public_jobs(company, limit=5)
+    return {
+        "enabled": bool(result.get("providers")),
+        "items": result.get("items", []),
+        "error": result.get("error", ""),
+        "providers": result.get("providers", []),
+    }
+
+
+def _analysis_summary(payload: dict, filtered_items: list[dict]) -> dict:
+    raw_items = payload.get("items", [])
+    raw_count = len(raw_items)
+    filtered_count = len(filtered_items)
+    excluded_count = max(0, raw_count - filtered_count)
+    return {
+        "raw_count": raw_count,
+        "filtered_count": filtered_count,
+        "excluded_count": excluded_count,
+        "source_counts": _top_counts(filtered_items, "source", labels=SOURCE_LABELS),
+        "category_counts": _top_counts(filtered_items, "category"),
+        "keyword_counts": _top_counts(filtered_items, "keyword", limit=5),
+        "notes": [
+            "커뮤니티·파일·이미지성 결과는 수집 단계에서 제외",
+            "제목/요약 기준 회사명 또는 산업 맥락 일치 여부 확인",
+            "중복 제목·링크 제거 후 최신순 정렬",
+        ],
+    }
+
+
+def _top_counts(items: list[dict], key: str, *, labels: dict | None = None, limit: int = 4) -> list[dict]:
+    counts = {}
+    for item in items:
+        value = item.get(key) or "미분류"
+        label = labels.get(value, value) if labels else value
+        counts[label] = counts.get(label, 0) + 1
+    total = max(1, len(items))
+    return [
+        {"label": label, "count": count, "share": round(count / total * 100)}
+        for label, count in sorted(counts.items(), key=lambda entry: entry[1], reverse=True)[:limit]
+    ]
+
+
 def _unique_docs_by_outlet(docs: list[dict], *, limit: int = 3) -> list[dict]:
     best_by_outlet = {}
     for doc in docs:
@@ -310,7 +403,6 @@ def _api_status() -> dict:
         "naver": bool(cfg.NAVER_CLIENT_ID and cfg.NAVER_CLIENT_SECRET),
         "kakao": bool(cfg.KAKAO_REST_API_KEY),
     }
-
 
 if __name__ == "__main__":
     app = create_app()
