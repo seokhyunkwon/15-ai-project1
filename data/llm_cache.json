@@ -3281,5 +3281,305 @@
       "model": "gpt-4o-mini"
     },
     "cached": false
+  },
+  "484938e095def8289251b06d476a795420ed9de5554d11b545a84506abf71a05": {
+    "company": "현대위아",
+    "highlights": [
+      {
+        "claim": "현대위아는 자동차 부품 산업에서 중요한 역할을 하고 있으며, 최근 AI 기반 모빌리티 플랫폼으로의 전환이 기대되고 있다.",
+        "why_it_matters": "자동차 산업의 변화에 발맞추어 현대위아가 기술 혁신을 통해 경쟁력을 유지하고 있다는 점은 면접에서 긍정적으로 평가될 수 있다.",
+        "evidence_links": [
+          "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456251"
+        ]
+      },
+      {
+        "claim": "현대위아는 그룹 내 다른 계열사들과 함께 노조의 공동 투쟁에 참여하고 있다.",
+        "why_it_matters": "노조 활동은 기업의 내부 문화와 직원들의 사기를 반영하며, 면접에서 이러한 사회적 이슈에 대한 이해도를 보여주는 것이 중요하다.",
+        "evidence_links": [
+          "https://www.ulsanpress.net/news/articleView.html?idxno=576241",
+          "https://n.news.naver.com/mnews/article/015/0005293005?sid=101"
+        ]
+      },
+      {
+        "claim": "현대위아는 비수도권에 위치한 주요 기업 중 하나로, 지역 경제에 기여하고 있다.",
+        "why_it_matters": "지역 사회와의 관계 및 기업의 사회적 책임에 대한 이해는 면접에서 긍정적인 인상을 줄 수 있다.",
+        "evidence_links": [
+          "https://www.econovill.com/news/articleView.html?idxno=741221"
+        ]
+      }
+    ],
+    "risks_and_watchouts": [
+      {
+        "item": "자동차 업종 전반의 투자심리 위축이 현대위아의 실적에 영향을 미치고 있다.",
+        "evidence_links": [
+          "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456841"
+        ]
+      },
+      {
+        "item": "중국차의 저가 공세가 현대위아와 같은 협력사에 압박을 가하고 있다.",
+        "evidence_links": [
+          "https://v.daum.net/v/HKJo3jrNS6"
+        ]
+      }
+    ],
+    "keywords_to_prepare": [
+      "AI 기반 모빌리티 플랫폼",
+      "노조 활동",
+      "비수도권 기업",
+      "자동차 부품 산업",
+      "투자심리"
+    ],
+    "sources": [
+      {
+        "title": "글로벌 공급망 회복의 숨은 진주… 태양기계, 극단적 저평가 매력 부각",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456841",
+        "published": "Mon, 01 Jun 2026 14:46:00 +0900",
+        "outlet": "pinpointnews.co.kr"
+      },
+      {
+        "title": "“중국차 저가 공세에 현대 차가 꺼낸 비장의 카드” 협력사에 ‘이렇게’ 압박한다고?",
+        "link": "https://v.daum.net/v/HKJo3jrNS6",
+        "published": "Mon, 01 Jun 2026 00:00:00 +0900",
+        "outlet": "v.daum.net"
+      },
+      {
+        "title": "현대 차그룹 원·하청 연대 투쟁 가시화",
+        "link": "https://www.ulsanpress.net/news/articleView.html?idxno=576241",
+        "published": "Sun, 31 May 2026 21:43:00 +0900",
+        "outlet": "ulsanpress.net"
+      },
+      {
+        "title": "매출 1000대 상장사 10곳 중 7곳, 서울·경기·인천 수도권에 집중",
+        "link": "https://www.econovill.com/news/articleView.html?idxno=741221",
+        "published": "Sun, 31 May 2026 13:38:00 +0900",
+        "outlet": "econovill.com"
+      },
+      {
+        "title": "현대위아 의 ‘공조’ 출사표와 제어기 개발",
+        "link": "https://www.autoelectronics.co.kr/article/articleView.asp?idx=5908",
+        "published": "Sat, 30 May 2026 00:00:00 +0900",
+        "outlet": "autoelectronics.co.kr"
+      },
+      {
+        "title": "현대 차그룹·한화·오리온…산업계 '하투' 본격화",
+        "link": "https://n.news.naver.com/mnews/article/015/0005293005?sid=101",
+        "published": "Fri, 29 May 2026 18:26:00 +0900",
+        "outlet": "hankyung.com"
+      },
+      {
+        "title": "[단독] 현대 차그룹 계열사 노조, 사상 첫 9만명 동맹파업 시동",
+        "link": "https://n.news.naver.com/mnews/article/015/0005292903?sid=101",
+        "published": "Fri, 29 May 2026 16:49:00 +0900",
+        "outlet": "hankyung.com"
+      },
+      {
+        "title": "공장 바닥 뒤흔드는 AI... 현대글로비스· 현대위아 , '모빌리티 플랫폼' ...",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456251",
+        "published": "Fri, 29 May 2026 13:40:00 +0900",
+        "outlet": "pinpointnews.co.kr"
+      }
+    ],
+    "answer_strategy": [],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "b93cdaf3234508ff8aef4b9374bd5bc70bcb6467640824879b98f5c5ac468b61": {
+    "company": "현대위아",
+    "company_overview": [
+      "현대위아는 자동차 부품 및 기계 제조업체로, 현대자동차 그룹의 일원이다.",
+      "회사는 전동화 부품 및 로봇 기술 개발에 집중하고 있으며, 미래 모빌리티 솔루션을 제공하고 있다."
+    ],
+    "recent_issues": [
+      {
+        "point": "현대위아의 방산 사업부 매각 추진",
+        "evidence_links": [
+          "https://v.daum.net/v/5E0xLB2u3f"
+        ]
+      },
+      {
+        "point": "중국 시장에서의 전동화 전환 노력",
+        "evidence_links": [
+          "https://v.daum.net/v/6uqDj7DgIg"
+        ]
+      },
+      {
+        "point": "AI 교육을 통한 직원 역량 강화",
+        "evidence_links": [
+          "https://www.hyundai-wia.com/pr/press_view.asp?keyIdx=6221&keyField=&keyWord=&gubun=KO&flag=CAST&keyCate=&page=1"
+        ]
+      }
+    ],
+    "business_keywords": [
+      "자동차 부품",
+      "전동화",
+      "로봇 기술",
+      "모빌리티 솔루션",
+      "AI 교육"
+    ],
+    "welfare_signals": [
+      {
+        "signal": "직원 복지 프로그램으로 월급의 1%를 모아 지역 사회에 기여하는 프로그램 운영",
+        "confidence": "신뢰할 수 있음",
+        "evidence_links": [
+          "https://www.mk.co.kr/news/business/11510315"
+        ]
+      },
+      {
+        "signal": "정기휴가 및 리프레시 휴가 제공",
+        "confidence": "신뢰할 수 있음",
+        "evidence_links": [
+          "https://www.jobkorea.co.kr/company/1791771/Info"
+        ]
+      }
+    ],
+    "work_life_notes": [
+      "정기휴가 및 리프레시 휴가가 제공되며, 직원 복지에 대한 관심이 있는 것으로 보인다."
+    ],
+    "likely_interview_questions": [
+      {
+        "question": "현대위아의 전동화 전략에 대해 어떻게 생각하십니까?",
+        "intent": "전동화 관련 지식 평가",
+        "answer_direction": [
+          "전동화의 필요성",
+          "현대위아의 시장 위치",
+          "미래 전망"
+        ],
+        "evidence_links": [
+          "https://v.daum.net/v/6uqDj7DgIg"
+        ]
+      },
+      {
+        "question": "AI 교육이 현대위아의 업무에 미치는 영향은 무엇이라고 생각하십니까?",
+        "intent": "AI 활용 능력 평가",
+        "answer_direction": [
+          "AI의 중요성",
+          "업무 효율성 향상",
+          "미래 기술 트렌드"
+        ],
+        "evidence_links": [
+          "https://www.hyundai-wia.com/pr/press_view.asp?keyIdx=6221&keyField=&keyWord=&gubun=KO&flag=CAST&keyCate=&page=1"
+        ]
+      }
+    ],
+    "answer_strategy": [
+      "현대위아의 전동화 및 로봇 기술 관련 사업에 대한 질문 준비",
+      "AI 교육과 관련된 현대위아의 전략에 대한 질문 준비"
+    ],
+    "generated_queries": [
+      "현대위아 기업정보",
+      "현대위아 사업 제품",
+      "현대위아 복리후생",
+      "현대위아 근무제도",
+      "현대위아 면접"
+    ],
+    "sources": [
+      {
+        "title": "현대위아 A011210 기업 분석 리포트 및 투자 정보 (IR)",
+        "link": "https://www.forwarder.kr/krx/A011210",
+        "outlet": "forwarder.kr",
+        "source_type": "public"
+      },
+      {
+        "title": "현대위아 , 전 직원 대상 AI 교육 실시… AX 전환 본격화",
+        "link": "https://www.hyundai-wia.com/pr/press_view.asp?keyIdx=6221&keyField=&keyWord=&gubun=KO&flag=CAST&keyCate=&page=1",
+        "outlet": "hyundai-wia.com",
+        "source_type": "public"
+      },
+      {
+        "title": "현대위아 , 월급 1% 모아 복지 시설에 드림카 전달",
+        "link": "https://www.mk.co.kr/news/business/11510315",
+        "outlet": "mk.co.kr",
+        "source_type": "news"
+      },
+      {
+        "title": "현대위아 기업 정보 - 직원수, 근무환경, 복리후생 등 | 잡코리아",
+        "link": "https://www.jobkorea.co.kr/company/1791771/Info",
+        "outlet": "jobkorea.co.kr",
+        "source_type": "company_info"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "eb6fee71aa2be7dd8b74b9d85df7c23f3f8d7ecc4ed6fcf86753a07a7e7698ef": {
+    "company": "현대위아",
+    "likely_interview_questions": [
+      {
+        "question": "현대위아가 최근 AI 기반 모빌리티 플랫폼으로 변화하고 있다는 평가에 대해 어떻게 생각하십니까?",
+        "intent": "지원자의 산업 이해도 및 혁신에 대한 태도 평가",
+        "answer_outline": [
+          "AI와 자동화의 중요성",
+          "현대위아의 변화 방향",
+          "개인적인 의견 및 경험"
+        ],
+        "evidence_links": [
+          "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456251"
+        ]
+      },
+      {
+        "question": "현대위아의 1차 협력사로서의 역할에 대해 어떻게 준비하고 있습니까?",
+        "intent": "지원자의 협력사 이해도 및 준비성 평가",
+        "answer_outline": [
+          "협력사의 중요성",
+          "목표 달성을 위한 전략",
+          "팀워크와 협업의 중요성"
+        ],
+        "evidence_links": [
+          "https://v.daum.net/v/HKJo3jrNS6"
+        ]
+      },
+      {
+        "question": "최근 현대위아와 관련된 노조의 공동 투쟁에 대해 어떻게 생각하십니까?",
+        "intent": "지원자의 사회적 이슈에 대한 인식 및 태도 평가",
+        "answer_outline": [
+          "노조의 역할과 중요성",
+          "기업과 직원 간의 관계",
+          "개인적인 의견 및 해결 방안"
+        ],
+        "evidence_links": [
+          "https://www.ulsanpress.net/news/articleView.html?idxno=576241"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "글로벌 공급망 회복의 숨은 진주… 태양기계, 극단적 저평가 매력 부각",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456841",
+        "published": "Mon, 01 Jun 2026 14:46:00 +0900",
+        "outlet": "pinpointnews.co.kr"
+      },
+      {
+        "title": "“중국차 저가 공세에 현대 차가 꺼낸 비장의 카드” 협력사에 ‘이렇게’ 압박한다고?",
+        "link": "https://v.daum.net/v/HKJo3jrNS6",
+        "published": "Mon, 01 Jun 2026 00:00:00 +0900",
+        "outlet": "v.daum.net"
+      },
+      {
+        "title": "현대 차그룹 원·하청 연대 투쟁 가시화",
+        "link": "https://www.ulsanpress.net/news/articleView.html?idxno=576241",
+        "published": "Sun, 31 May 2026 21:43:00 +0900",
+        "outlet": "ulsanpress.net"
+      },
+      {
+        "title": "공장 바닥 뒤흔드는 AI... 현대글로비스· 현대위아 , '모빌리티 플랫폼' ...",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=456251",
+        "published": "Fri, 29 May 2026 13:40:00 +0900",
+        "outlet": "pinpointnews.co.kr"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
   }
 }
