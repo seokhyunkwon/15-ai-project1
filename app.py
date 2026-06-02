@@ -45,9 +45,11 @@ from search_policy import normalize_search_query, validate_search_query
 from company_research import collect_company_research
 from company_directory import company_profiles, vendor_jobs_snapshot
 from job_collector import collect_public_jobs
+from job_posting_parser import collect_job_posting
 from llm import (
     build_article_summary,
     build_company_research,
+    build_cover_letter,
     build_interview_questions_fallback,
     build_news_brief,
     llm_status,
@@ -291,6 +293,44 @@ def create_app() -> Flask:
             refreshed=refresh,
         )
 
+    @app.route("/cover-letter", methods=["GET", "POST"])
+    def cover_letter():
+        form = _cover_letter_form(request.form if request.method == "POST" else {})
+        result = None
+        job_posting = None
+        if request.method == "POST":
+            complete_questions = [question for question in form["questions"] if question]
+            complete_stars = _complete_star_experiences(form["star_experiences"])
+            missing = [
+                label for value, label in (
+                    (form["job_url"], "지원공고 링크"),
+                    (complete_questions, "자소서 문항"),
+                    (complete_stars, "STAR 경험"),
+                )
+                if not value
+            ]
+            if missing:
+                flash(f"{', '.join(missing)} 항목을 입력해 주세요.", "error")
+            else:
+                job_posting = collect_job_posting(form["job_url"])
+                if job_posting.get("error"):
+                    flash(job_posting["error"], "error")
+                result = build_cover_letter(
+                    job_url=form["job_url"],
+                    questions=complete_questions,
+                    star_experiences=complete_stars,
+                    strengths=form["strengths"],
+                    target_length=form["target_length"],
+                    job_posting=job_posting,
+                )
+        return render_template(
+            "cover_letter.html",
+            form=form,
+            result=result,
+            job_posting=job_posting,
+            llm_status=llm_status(),
+        )
+
     return app
 
 
@@ -350,6 +390,56 @@ def _article_id(item: dict) -> str:
         for key in ("link", "title", "published", "outlet")
     )
     return sha1(material.encode("utf-8")).hexdigest()[:12]
+
+
+def _cover_letter_form(source) -> dict:
+    getlist = getattr(source, "getlist", None)
+    raw_questions = getlist("questions") if getlist else []
+    questions = [str(question).strip() for question in raw_questions if str(question).strip()]
+
+    if getlist:
+        titles = getlist("star_titles")
+        situations = getlist("star_situations")
+        tasks = getlist("star_tasks")
+        actions = getlist("star_actions")
+        results = getlist("star_results")
+    else:
+        titles = situations = tasks = actions = results = []
+
+    star_count = max(len(titles), len(situations), len(tasks), len(actions), len(results), 1)
+    stars = []
+    for idx in range(star_count):
+        star = {
+            "title": _list_get(titles, idx),
+            "situation": _list_get(situations, idx),
+            "task": _list_get(tasks, idx),
+            "action": _list_get(actions, idx),
+            "result": _list_get(results, idx),
+        }
+        if any(star.values()) or star_count == 1:
+            stars.append(star)
+
+    return {
+        "job_url": str(source.get("job_url", "")).strip(),
+        "questions": questions or [""],
+        "star_experiences": stars,
+        "strengths": str(source.get("strengths", "")).strip(),
+        "target_length": str(source.get("target_length", "700")).strip() or "700",
+    }
+
+
+def _list_get(values: list, index: int) -> str:
+    try:
+        return str(values[index]).strip()
+    except IndexError:
+        return ""
+
+
+def _complete_star_experiences(stars: list[dict]) -> list[dict]:
+    return [
+        star for star in stars
+        if all(star.get(key) for key in ("situation", "task", "action", "result"))
+    ]
 
 
 def _analysis_summary(payload: dict, filtered_items: list[dict]) -> dict:

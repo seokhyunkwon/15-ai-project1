@@ -17,6 +17,7 @@
           <a href="{{ url_for('index') }}#search">검색</a>
           <a href="{{ url_for('companies') }}">기업정보</a>
           <a href="{{ url_for('jobs') }}">채용공고</a>
+          <a href="{{ url_for('cover_letter') }}">자소서</a>
           <a href="#brief">브리핑</a>
           <a href="#news">뉴스</a>
         </nav>
@@ -265,16 +266,15 @@
                               <ul>
                                 {% for job in work24_jobs["items"] %}
                                   <li>
-                                    <strong>{{ job.title }}</strong>
+                                    <strong>{{ job.display_title or job.title }}</strong>
                                     <p class="meta-inline">
                                       {% if job.confidence_label %}{{ job.confidence_label }} · {% endif %}
                                       {{ job.outlet or job.provider or '공개 검색' }}
                                       {% if job.published %} · {{ job.published }}{% endif %}
-                                      {% if job.close_at %} · 마감 {{ job.close_at }}{% endif %}
                                       {% if job.salary %} · {{ job.salary_type }} {{ job.salary }}{% endif %}
                                     </p>
-                                    {% if job.summary %}
-                                      <p class="meta-inline">{{ job.summary }}</p>
+                                    {% if job.display_summary %}
+                                      <p class="meta-inline">{{ job.display_summary }}</p>
                                     {% endif %}
                                     {% if job.url %}
                                       <p class="meta-inline"><a href="{{ job.url }}" target="_blank" rel="noopener noreferrer">공고 보기</a></p>

@@ -357,17 +357,128 @@ def build_company_research(
     return parsed
 
 
+def build_cover_letter(
+    *,
+    job_url: str = "",
+    questions: List[str] | None = None,
+    star_experiences: List[Dict[str, str]] | None = None,
+    question: str = "",
+    situation: str = "",
+    task: str = "",
+    action: str = "",
+    result: str = "",
+    strengths: str = "",
+    target_length: str = "700",
+    job_posting: Dict[str, Any] | None = None,
+    company: str = "",
+    role: str = "",
+) -> Dict[str, Any]:
+    """
+    Build a Korean cover letter draft from STAR inputs.
+    """
+    job_posting = job_posting or {}
+    company = company or job_posting.get("company_guess", "")
+    role = role or job_posting.get("role_guess", "")
+    questions = _normalize_cover_letter_questions(questions, question)
+    star_experiences = _normalize_star_experiences(
+        star_experiences,
+        situation=situation,
+        task=task,
+        action=action,
+        result=result,
+    )
+    payload = {
+        "job_url": job_url,
+        "company": company,
+        "role": role,
+        "job_posting": job_posting,
+        "questions": questions,
+        "star_experiences": star_experiences,
+        "strengths": strengths,
+        "target_length": target_length,
+    }
+    status = llm_status()
+
+    if not status["enabled"]:
+        return _fallback_cover_letter(payload)
+
+    api_key = (os.getenv("OPENAI_API_KEY") or "").strip()
+    model = (os.getenv("OPENAI_MODEL") or "gpt-4o-mini").strip() or "gpt-4o-mini"
+    cache_key = _cache_key(
+        kind="cover_letter",
+        company=f"{job_url}|{company}|{role}",
+        model=model,
+        articles=[],
+        company_profile=payload,
+    )
+    cached = _cache_get(cache_key)
+    if cached:
+        cached.setdefault("llm", {"enabled": True, "provider": "openai", "model": model})
+        cached["cached"] = True
+        return cached
+
+    prompt = _cover_letter_prompt(payload)
+    try:
+        data = _openai_chat_with_retry(
+            api_key=api_key,
+            model=model,
+            max_tokens=_cover_letter_max_tokens(),
+            timeout_s=_cover_letter_timeout(),
+            messages=[
+                {
+                    "role": "system",
+                    "content": (
+                        "You are a Korean career writing coach. "
+                        "Write truthful, specific cover letters from the user's STAR inputs only. "
+                        "Do not invent awards, numbers, company facts, or experiences. Return JSON only."
+                    ),
+                },
+                {"role": "user", "content": prompt},
+            ],
+        )
+    except Exception as exc:  # noqa: BLE001
+        out = _fallback_cover_letter(payload)
+        out["error"] = f"AI 응답이 지연되어 기본 초안을 표시했습니다. 다시 생성하면 품질이 개선될 수 있습니다. ({_format_openai_exception(exc)})"
+        return out
+
+    parsed = _safe_parse_json(data)
+    if not parsed:
+        out = _fallback_cover_letter(payload)
+        out["error"] = "LLM 응답을 JSON으로 파싱하지 못했습니다."
+        return out
+
+    parsed.setdefault("title", f"{company or '지원공고'} {role or '직무'} 자기소개서 초안")
+    parsed.setdefault("answers", [])
+    parsed["answers"] = _normalize_cover_letter_answers(parsed.get("answers"), questions)
+    parsed.setdefault("draft", parsed["answers"][0]["draft"] if parsed["answers"] else "")
+    parsed.setdefault("star_review", [])
+    parsed.setdefault("strength_keywords", [])
+    parsed.setdefault("revision_tips", [])
+    parsed["llm"] = {"enabled": True, "provider": "openai", "model": model}
+    parsed["cached"] = False
+    _cache_set(cache_key, parsed)
+    return parsed
+
+
 def _openai_chat_with_retry(
     *,
     api_key: str,
     model: str,
     messages: List[Dict[str, str]],
+    max_tokens: int | None = None,
+    timeout_s: int | None = None,
     max_retries: int = 2,
 ) -> str:
     last_exc: Exception | None = None
     for attempt in range(max_retries + 1):
         try:
-            return _openai_chat(api_key=api_key, model=model, messages=messages)
+            return _openai_chat(
+                api_key=api_key,
+                model=model,
+                messages=messages,
+                max_tokens=max_tokens,
+                timeout_s=timeout_s,
+            )
         except requests.HTTPError as exc:
             last_exc = exc
             resp = getattr(exc, "response", None)
@@ -390,20 +501,41 @@ def _openai_chat_with_retry(
     raise RuntimeError("LLM 호출 실패")
 
 
-def _openai_chat(*, api_key: str, model: str, messages: List[Dict[str, str]]) -> str:
+def _openai_chat(
+    *,
+    api_key: str,
+    model: str,
+    messages: List[Dict[str, str]],
+    max_tokens: int | None = None,
+    timeout_s: int | None = None,
+) -> str:
     url = "https://api.openai.com/v1/chat/completions"
     headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
     payload = {
         "model": model,
         "messages": messages,
         "temperature": 0.2,
-        "max_tokens": _openai_max_tokens(),
+        "max_tokens": max_tokens or _openai_max_tokens(),
         "response_format": {"type": "json_object"},
     }
-    resp = requests.post(url, headers=headers, json=payload, timeout=30)
+    resp = requests.post(url, headers=headers, json=payload, timeout=timeout_s or _openai_timeout())
     resp.raise_for_status()
     body = resp.json()
     return body["choices"][0]["message"]["content"]
+
+
+def _openai_timeout() -> int:
+    try:
+        return max(30, int(os.getenv("OPENAI_REQUEST_TIMEOUT") or "45"))
+    except ValueError:
+        return 45
+
+
+def _cover_letter_timeout() -> int:
+    try:
+        return max(45, int(os.getenv("OPENAI_COVER_LETTER_TIMEOUT") or "75"))
+    except ValueError:
+        return 75
 
 
 def _openai_max_tokens() -> int:
@@ -411,6 +543,13 @@ def _openai_max_tokens() -> int:
         return max(600, int(os.getenv("OPENAI_MAX_TOKENS") or "1600"))
     except ValueError:
         return 1600
+
+
+def _cover_letter_max_tokens() -> int:
+    try:
+        return max(1800, int(os.getenv("OPENAI_COVER_LETTER_MAX_TOKENS") or "3600"))
+    except ValueError:
+        return 3600
 
 
 def _news_brief_prompt(*, company: str, articles: List[Dict[str, str]], company_profile: Dict[str, Any]) -> str:
@@ -561,6 +700,104 @@ def _company_research_prompt(
     )
 
 
+def _cover_letter_prompt(payload: Dict[str, str]) -> str:
+    posting = payload.get("job_posting") or {}
+    questions = payload.get("questions") or []
+    star_experiences = payload.get("star_experiences") or []
+    posting_context = {
+        "url": payload.get("job_url", ""),
+        "title": posting.get("title", ""),
+        "description": posting.get("description", ""),
+        "company_guess": posting.get("company_guess", ""),
+        "role_guess": posting.get("role_guess", ""),
+        "requirements": posting.get("requirements", []),
+        "snippet": posting.get("snippet", ""),
+        "source_error": posting.get("error", ""),
+    }
+    return (
+        f"지원공고 링크/수집 정보: {posting_context}\n"
+        f"추정 지원 회사: {payload.get('company', '') or '공고에서 명확히 확인 필요'}\n"
+        f"추정 지원 직무: {payload.get('role', '') or '공고에서 명확히 확인 필요'}\n"
+        f"자소서 문항 목록: {questions}\n"
+        f"각 문항 희망 분량: {payload.get('target_length', '700')}자 내외\n"
+        f"강조 역량/키워드: {payload.get('strengths', '')}\n\n"
+        f"사용자 STAR 경험 목록: {star_experiences}\n\n"
+        "위 지원공고 정보와 사용자 STAR 경험 목록만 근거로 각 자소서 문항에 대한 한국어 자기소개서 답변을 모두 작성하라.\n"
+        "각 문항마다 가장 관련 있는 STAR 경험을 1개 이상 선택해 자연스럽게 버무려라.\n"
+        "같은 경험을 여러 문항에 사용할 수 있지만, 문항의 의도에 따라 강조점은 다르게 작성하라.\n"
+        "STAR 라벨을 본문에 노출하지 말고 자연스러운 문단으로 구성하라.\n"
+        "공고에서 확인되지 않은 회사명, 직무명, 요구역량, 성과 수치는 지어내지 마라.\n"
+        "공고 정보가 부족하면 특정 회사 사실 대신 직무 적합성과 경험 연결에 집중하라.\n"
+        "채용공고 제목 전체를 회사명이나 직무명처럼 반복하지 말고, 회사명과 직무명을 짧게 분리해 사용하라.\n"
+        "문장은 과장된 미사여구보다 구체적인 행동과 배운 점 중심으로 작성하라.\n\n"
+        "출력은 JSON 하나로만 반환하라. 스키마:\n"
+        "{\n"
+        '  "title": string,\n'
+        '  "answers": [{"question_label": "Q1", "question": string, "draft": string, "used_star_titles": [string], "character_count": number, "byte_count": number}],\n'
+        '  "star_review": [{"star_title": string, "fit": string, "usable_questions": ["Q1"]}],\n'
+        '  "strength_keywords": [string],\n'
+        '  "revision_tips": [string]\n'
+        "}\n"
+    )
+
+
+def _normalize_cover_letter_questions(
+    questions: List[str] | None,
+    legacy_question: str,
+) -> List[str]:
+    out = [str(question).strip() for question in (questions or []) if str(question).strip()]
+    if not out and legacy_question:
+        out = [legacy_question.strip()]
+    return out or ["지원 직무와 관련된 경험을 작성해 주세요."]
+
+
+def _normalize_star_experiences(
+    star_experiences: List[Dict[str, str]] | None,
+    *,
+    situation: str,
+    task: str,
+    action: str,
+    result: str,
+) -> List[Dict[str, str]]:
+    out: List[Dict[str, str]] = []
+    for idx, star in enumerate(star_experiences or [], start=1):
+        normalized = {
+            "title": str(star.get("title") or f"STAR {idx}").strip(),
+            "situation": str(star.get("situation") or "").strip(),
+            "task": str(star.get("task") or "").strip(),
+            "action": str(star.get("action") or "").strip(),
+            "result": str(star.get("result") or "").strip(),
+        }
+        if all(normalized.get(key) for key in ("situation", "task", "action", "result")):
+            out.append(normalized)
+    if not out and any([situation, task, action, result]):
+        out.append({
+            "title": "STAR 1",
+            "situation": situation,
+            "task": task,
+            "action": action,
+            "result": result,
+        })
+    return out
+
+
+def _normalize_cover_letter_answers(value: Any, questions: List[str]) -> List[Dict[str, Any]]:
+    answers = value if isinstance(value, list) else []
+    out = []
+    for idx, question in enumerate(questions, start=1):
+        raw = answers[idx - 1] if idx - 1 < len(answers) and isinstance(answers[idx - 1], dict) else {}
+        draft = str(raw.get("draft") or "").strip()
+        out.append({
+            "question_label": str(raw.get("question_label") or f"Q{idx}"),
+            "question": str(raw.get("question") or question),
+            "draft": draft,
+            "used_star_titles": raw.get("used_star_titles") if isinstance(raw.get("used_star_titles"), list) else [],
+            "character_count": int(raw.get("character_count") or len(draft)),
+            "byte_count": int(raw.get("byte_count") or len(draft.encode("utf-8"))),
+        })
+    return out
+
+
 def _fallback_news_brief(*, company: str, articles: List[Dict[str, str]]) -> Dict[str, Any]:
     sources = _sources_from_articles(articles)
     highlights = []
@@ -689,6 +926,83 @@ def _fallback_company_research(
     }
 
 
+def _fallback_cover_letter(payload: Dict[str, str]) -> Dict[str, Any]:
+    posting = payload.get("job_posting") or {}
+    company = (payload.get("company", "") or posting.get("company_guess", "")).strip() or "지원 회사"
+    role = (payload.get("role", "") or posting.get("role_guess", "")).strip() or "지원 직무"
+    questions = payload.get("questions") or ["지원 직무와 관련된 경험을 작성해 주세요."]
+    star_experiences = payload.get("star_experiences") or []
+    first_star = star_experiences[0] if star_experiences else {
+        "title": "STAR 경험",
+        "situation": "",
+        "task": "",
+        "action": "",
+        "result": "",
+    }
+    strengths = payload.get("strengths", "").strip()
+    context = _cover_letter_context(company, role)
+
+    answers = []
+    for idx, question in enumerate(questions, start=1):
+        star = star_experiences[(idx - 1) % len(star_experiences)] if star_experiences else first_star
+        star_title = star.get("title") or f"STAR {idx}"
+        draft = (
+            f"{context}에서 요구되는 역량을 생각했을 때, 저는 {star_title} 경험을 통해 문제를 구조화하고 실행으로 옮기는 태도를 길렀습니다.\n\n"
+            f"{star.get('situation', '')} 이 과정에서 제 역할은 {star.get('task', '')}였습니다. "
+            f"저는 상황을 정리한 뒤 {star.get('action', '')} "
+            f"그 결과 {star.get('result', '')}\n\n"
+            f"이 경험은 {question}이라는 문항에 대해 제가 단순히 관심을 가진 지원자가 아니라, 실제 상황에서 맡은 일을 끝까지 개선해 본 사람이라는 점을 보여줍니다. "
+            f"{strengths + ' 역량을 바탕으로 ' if strengths else ''}"
+            f"입사 후에도 업무 흐름을 빠르게 파악하고, 구성원들이 더 안정적으로 일할 수 있는 실행 지원을 만들어가겠습니다."
+        )
+        answers.append({
+            "question_label": f"Q{idx}",
+            "question": question,
+            "draft": draft,
+            "used_star_titles": [star_title],
+            "character_count": len(draft),
+            "byte_count": len(draft.encode("utf-8")),
+        })
+
+    return {
+        "title": f"{company} {role} 자기소개서 초안",
+        "draft": answers[0]["draft"] if answers else "",
+        "answers": answers,
+        "star_review": [
+            {
+                "star_title": star.get("title") or f"STAR {idx}",
+                "fit": star.get("result", ""),
+                "usable_questions": [f"Q{i}" for i in range(1, len(questions) + 1)],
+            }
+            for idx, star in enumerate(star_experiences, start=1)
+        ],
+        "strength_keywords": [
+            word.strip()
+            for word in strengths.replace("\n", ",").split(",")
+            if word.strip()
+        ][:6],
+        "revision_tips": [
+            "성과가 있다면 수치, 기간, 개선 폭을 추가하면 설득력이 높아집니다.",
+            "지원 회사의 사업/제품 키워드와 내 행동을 한 문장으로 연결해 보세요.",
+            "문항 글자 수 제한에 맞춰 도입부와 마무리를 조절하세요.",
+        ],
+        "llm": {"enabled": False, "provider": "", "model": ""},
+    }
+
+
+def _cover_letter_context(company: str, role: str) -> str:
+    has_company = bool(company and company != "지원 회사")
+    has_role = bool(role and role != "지원 직무")
+    role_label = role if not has_role or "직무" in role else f"{role} 직무"
+    if has_company and has_role:
+        return f"{company}의 {role_label}"
+    if has_role:
+        return role_label
+    if has_company:
+        return f"{company}의 지원 직무"
+    return "지원공고"
+
+
 def _sanitize_answer_strategy(items: Any) -> List[str]:
     if not isinstance(items, list):
         return []
@@ -801,6 +1115,8 @@ def _format_openai_exception(exc: Exception) -> str:
     """
     Provide actionable OpenAI error details without leaking secrets.
     """
+    if isinstance(exc, requests.Timeout):
+        return "OpenAI 응답 시간이 초과되었습니다"
     if isinstance(exc, requests.HTTPError):
         resp = getattr(exc, "response", None)
         status = getattr(resp, "status_code", None)

@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자소서 작성 - BriefJob</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=asset_version) }}">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="{{ url_for('index') }}">
+          <img class="brand-logo" src="{{ url_for('static', filename='briefjob-logo.svg', v=asset_version) }}" alt="BriefJob">
+        </a>
+        <nav class="main-nav" aria-label="주요 메뉴">
+          <a href="{{ url_for('index') }}#search">검색</a>
+          <a href="{{ url_for('companies') }}">기업정보</a>
+          <a href="{{ url_for('jobs') }}">채용공고</a>
+          <a href="{{ url_for('cover_letter') }}">자소서</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="subpage">
+      <section class="page-hero">
+        <p class="section-kicker">STAR Writer</p>
+        <h1>STAR 기반 자기소개서 작성</h1>
+        <p>지원공고 링크와 경험의 상황·과제·행동·결과를 입력하면<br>AI가 공고 정보와 STAR 경험을 연결해 자소서 초안을 정리합니다.</p>
+      </section>
+
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <ul class="flash-list cover-letter-flashes">
+            {% for category, message in messages %}
+              <li class="flash {{ category }}">{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+
+      <section class="cover-letter-layout">
+        <form class="cover-letter-form" method="post" action="{{ url_for('cover_letter') }}" data-cover-letter-form data-loading-form data-loading-message="여러 문항과 STAR 경험을 버무려 자소서 초안을 작성하는 중입니다..." data-loading-button="작성 중...">
+          <div class="form-section-title">
+            <div>
+              <p class="section-kicker">Input</p>
+              <h2>지원공고 링크</h2>
+            </div>
+            <span>{{ 'AI 연결됨' if llm_status.enabled else '기본 초안 모드' }}</span>
+          </div>
+
+          <label class="job-url-field">
+            지원공고 링크
+            <input type="url" name="job_url" value="{{ form.job_url }}" placeholder="예: https://www.jobkorea.co.kr/Recruit/GI_Read/...">
+            <small>사람인, 잡코리아, 고용24, 회사 채용 페이지 등 공개 채용공고 링크를 붙여넣어 주세요.</small>
+          </label>
+
+          <div class="form-grid two">
+            <label>
+              강조하고 싶은 역량
+              <input type="text" name="strengths" value="{{ form.strengths }}" placeholder="예: 문제해결, 협업, 데이터 분석">
+            </label>
+            <label>
+            희망 분량
+              <input type="text" name="target_length" value="{{ form.target_length }}" placeholder="예: 700">
+            </label>
+          </div>
+
+          <section class="question-builder" data-question-builder>
+            <div class="question-tabs" data-question-tabs>
+              {% for question in form.questions %}
+                <button type="button" class="question-tab {% if loop.first %}active{% endif %}" data-question-tab="{{ loop.index0 }}" aria-pressed="{{ 'true' if loop.first else 'false' }}">Q{{ loop.index }}</button>
+              {% endfor %}
+              <button type="button" class="question-add" data-add-question aria-label="문항 추가">+</button>
+              <button type="button" class="question-remove" data-remove-question {% if form.questions|length == 1 %}hidden{% endif %}>삭제</button>
+            </div>
+            <div class="question-panels" data-question-panels>
+              {% for question in form.questions %}
+                <label class="question-panel {% if loop.first %}active{% endif %}" data-question-panel="{{ loop.index0 }}">
+                  <span class="question-panel-title">Q{{ loop.index }}.</span>
+                  <input type="text" name="questions" value="{{ question }}" placeholder="예: 핵심역량 및 자기소개">
+                </label>
+              {% endfor %}
+            </div>
+          </section>
+
+          <section class="star-builder" data-star-builder>
+            <div class="builder-head">
+              <div>
+                <h3>STAR 경험</h3>
+                <p>여러 경험을 추가하면 AI가 문항별로 가장 어울리는 경험을 골라 섞습니다.</p>
+              </div>
+              <button type="button" class="builder-add-button" data-add-star><span>+</span> STAR 추가</button>
+            </div>
+
+            <div class="star-card-list" data-star-list>
+              {% for star in form.star_experiences %}
+                <article class="star-card" data-star-card>
+                  <div class="star-title-row">
+                    <label>
+                      경험 이름
+                      <input type="text" name="star_titles" value="{{ star.title }}" placeholder="예: AI 뉴스 브리핑 프로젝트">
+                    </label>
+                    <button type="button" class="star-remove" data-remove-star {% if loop.length == 1 %}hidden{% endif %}>삭제</button>
+                  </div>
+                  <div class="star-input-grid">
+                    <label>
+                      <span>S</span> Situation
+                      <textarea name="star_situations" rows="4" placeholder="어떤 상황이었나요?">{{ star.situation }}</textarea>
+                    </label>
+                    <label>
+                      <span>T</span> Task
+                      <textarea name="star_tasks" rows="4" placeholder="내가 맡은 역할이나 해결해야 할 과제는 무엇이었나요?">{{ star.task }}</textarea>
+                    </label>
+                    <label>
+                      <span>A</span> Action
+                      <textarea name="star_actions" rows="5" placeholder="내가 실제로 한 행동을 구체적으로 적어 주세요.">{{ star.action }}</textarea>
+                    </label>
+                    <label>
+                      <span>R</span> Result
+                      <textarea name="star_results" rows="4" placeholder="결과, 성과, 배운 점은 무엇이었나요?">{{ star.result }}</textarea>
+                    </label>
+                  </div>
+                </article>
+              {% endfor %}
+            </div>
+          </section>
+
+          <template id="question-template">
+            <button type="button" class="question-tab" data-question-tab="">Q</button>
+            <label class="question-panel" data-question-panel="">
+              Q 문항
+              <input type="text" name="questions" placeholder="예: 핵심역량 및 자기소개">
+            </label>
+          </template>
+
+          <template id="star-template">
+            <article class="star-card" data-star-card>
+              <div class="star-title-row">
+                <label>
+                  경험 이름
+                  <input type="text" name="star_titles" placeholder="예: AI 뉴스 브리핑 프로젝트">
+                </label>
+                <button type="button" class="star-remove" data-remove-star>삭제</button>
+              </div>
+              <div class="star-input-grid">
+                <label>
+                  <span>S</span> Situation
+                  <textarea name="star_situations" rows="4" placeholder="어떤 상황이었나요?"></textarea>
+                </label>
+                <label>
+                  <span>T</span> Task
+                  <textarea name="star_tasks" rows="4" placeholder="내가 맡은 역할이나 해결해야 할 과제는 무엇이었나요?"></textarea>
+                </label>
+                <label>
+                  <span>A</span> Action
+                  <textarea name="star_actions" rows="5" placeholder="내가 실제로 한 행동을 구체적으로 적어 주세요."></textarea>
+                </label>
+                <label>
+                  <span>R</span> Result
+                  <textarea name="star_results" rows="4" placeholder="결과, 성과, 배운 점은 무엇이었나요?"></textarea>
+                </label>
+              </div>
+            </article>
+          </template>
+
+          <button class="btn primary cover-letter-submit" type="submit">전체 문항 초안 생성</button>
+        </form>
+
+        <aside class="cover-letter-result">
+          {% if job_posting %}
+            <div class="job-posting-preview">
+              <p class="section-kicker">Posting</p>
+              <h3>{{ job_posting.title or '지원공고 정보' }}</h3>
+              <div class="posting-meta">
+                {% if job_posting.company_guess %}<span>회사 {{ job_posting.company_guess }}</span>{% endif %}
+                {% if job_posting.role_guess %}<span>직무 {{ job_posting.role_guess }}</span>{% endif %}
+                {% if job_posting.host %}<span>{{ job_posting.host }}</span>{% endif %}
+              </div>
+              {% if job_posting.description %}
+                <p>{{ job_posting.description }}</p>
+              {% elif job_posting.snippet %}
+                <p>{{ job_posting.snippet[:180] }}{% if job_posting.snippet|length > 180 %}...{% endif %}</p>
+              {% endif %}
+            </div>
+          {% endif %}
+
+          {% if result %}
+            <div class="result-head">
+              <div>
+                <p class="section-kicker">Draft</p>
+                <h2>{{ result.title }}</h2>
+              </div>
+              {% if result.cached %}
+                <span>cached</span>
+              {% endif %}
+            </div>
+            {% if result.error %}
+              <p class="flash error">{{ result.error }}</p>
+            {% endif %}
+
+            {% if result.answers %}
+            <div class="answer-tabs" data-answer-tabs>
+                {% for answer in result.answers %}
+                  <button type="button" class="answer-tab {% if loop.first %}active{% endif %}" data-answer-tab="{{ loop.index0 }}" aria-pressed="{{ 'true' if loop.first else 'false' }}">{{ answer.question_label or 'Q' ~ loop.index }}</button>
+                {% endfor %}
+              </div>
+
+              <div class="answer-panels" data-answer-panels>
+                {% for answer in result.answers %}
+                  <section class="answer-panel {% if loop.first %}active{% endif %}" data-answer-panel="{{ loop.index0 }}">
+                    <h3>{{ answer.question }}</h3>
+                    <p class="answer-stats">
+                      {{ answer.character_count or answer.draft|length }}자 / {{ form.target_length }}자
+                      {% if answer.byte_count %} {{ answer.byte_count }} byte{% endif %}
+                    </p>
+                    {% if answer.used_star_titles %}
+                      <div class="used-stars">
+                        {% for title in answer.used_star_titles %}
+                          <span>{{ title }}</span>
+                        {% endfor %}
+                      </div>
+                    {% endif %}
+                    <div class="draft-box">{{ answer.draft }}</div>
+                  </section>
+                {% endfor %}
+              </div>
+            {% else %}
+              <div class="draft-box">{{ result.draft }}</div>
+            {% endif %}
+
+            {% if result.strength_keywords %}
+              <h3>드러나는 역량</h3>
+              <div class="tag-row">
+                {% for word in result.strength_keywords %}
+                  <span class="badge keyword">{{ word }}</span>
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            {% if result.star_review %}
+              <h3>STAR 활용 확인</h3>
+              <ul class="star-review-list">
+                {% for item in result.star_review %}
+                  <li>
+                    <strong>{{ item.star_title or item.part }}</strong>
+                    <span>{{ item.fit or item.content }}</span>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+
+            {% if result.revision_tips %}
+              <h3>보완 포인트</h3>
+              <ul class="revision-list">
+                {% for tip in result.revision_tips %}
+                  <li>{{ tip }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          {% else %}
+            <div class="empty-state cover-letter-empty">
+              <strong>문항과 STAR 경험을 입력하면 초안이 여기에 표시됩니다.</strong>
+              <p>Q1부터 시작해 문항을 추가하고, STAR 경험도 여러 개 입력해 문항별 답변을 한 번에 생성할 수 있습니다.</p>
+            </div>
+          {% endif %}
+        </aside>
+      </section>
+    </main>
+  </div>
+  <script src="{{ url_for('static', filename='app.js', v=asset_version) }}" defer></script>
+</body>
+</html>
