@@ -14,7 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "data"
 JOBS_CACHE_FILE = DATA_DIR / "vendor_jobs_cache.json"
 JOBS_CACHE_TTL_SECONDS = 60 * 60
-JOBS_CACHE_VERSION = 3
+JOBS_CACHE_VERSION = 7
 
 COMPANY_SPECIALTIES = {
     "현대위아": ["파워트레인", "모빌리티 부품", "생산기술"],
@@ -66,6 +66,7 @@ def vendor_jobs_snapshot(*, query: str = "", refresh: bool = False) -> Dict[str,
                 limit=8 if query else 5,
                 max_queries=3 if query else 1,
                 provider_strategy="all" if query else "first",
+                refresh=refresh,
             )
         except Exception as exc:  # noqa: BLE001
             result = {"items": [], "error": str(exc), "providers": []}

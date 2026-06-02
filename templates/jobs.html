@@ -17,6 +17,7 @@
           <a href="{{ url_for('index') }}#search">검색</a>
           <a href="{{ url_for('companies') }}">기업정보</a>
           <a href="{{ url_for('jobs') }}">채용공고</a>
+          <a href="{{ url_for('cover_letter') }}">자소서</a>
         </nav>
       </div>
     </header>
@@ -82,7 +83,7 @@
                 {% for job in row.jobs %}
                   <li>
                     <div>
-                      <strong>{{ job.title }}</strong>
+                      <strong>{{ job.display_title or job.title }}</strong>
                       <p>
                         {% if job.confidence_label %}
                           <span class="job-trust {{ job.confidence_level }}">{{ job.confidence_label }}</span>
@@ -90,11 +91,10 @@
                         {{ job.outlet or job.provider or '공개 검색' }}
                         {% if job.published %} · {{ job.published }}{% endif %}
                         {% if job.region %} · {{ job.region }}{% endif %}
-                        {% if job.close_at %} · 마감 {{ job.close_at }}{% endif %}
                         {% if job.salary %} · {{ job.salary_type }} {{ job.salary }}{% endif %}
                       </p>
-                      {% if job.summary %}
-                        <p class="job-summary">{{ job.summary }}</p>
+                      {% if job.display_summary %}
+                        <p class="job-summary">{{ job.display_summary }}</p>
                       {% endif %}
                     </div>
                     {% if job.url %}
