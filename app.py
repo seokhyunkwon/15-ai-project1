@@ -455,9 +455,10 @@ def _analysis_summary(payload: dict, filtered_items: list[dict]) -> dict:
         "category_counts": _top_counts(filtered_items, "category"),
         "keyword_counts": _top_counts(filtered_items, "keyword", limit=5),
         "notes": [
+            "관련도 점수: 제목 일치 +3, 요약 일치 +2, 신뢰 출처 +1",
             "커뮤니티·파일·이미지성 결과는 수집 단계에서 제외",
             "제목/요약 기준 회사명 또는 산업 맥락 일치 여부 확인",
-            "중복 제목·링크 제거 후 최신순 정렬",
+            "중복 제목·링크 제거 후 관련도 점수 우선, 같은 점수는 최신순 정렬",
         ],
     }
 

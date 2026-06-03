@@ -540,10 +540,18 @@
                           <span class="badge source">{{ source_labels.get(item.source, item.source) }}</span>
                           <span class="badge category">{{ item.category }}</span>
                           <span class="badge keyword">{{ item.keyword }}</span>
+                          <span class="badge relevance">관련도 {{ item.relevance_score or 0 }}점</span>
                           {% if item.outlet and item.outlet|string|lower not in ['', 'nan', 'none'] %}
                             <span class="outlet">{{ item.outlet }}</span>
                           {% endif %}
                         </div>
+                        {% if item.relevance_reasons %}
+                          <div class="score-reasons" aria-label="관련도 산정 근거">
+                            {% for reason in item.relevance_reasons %}
+                              <span>{{ reason }}</span>
+                            {% endfor %}
+                          </div>
+                        {% endif %}
                         <h3 class="news-title">
                           <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
                         </h3>

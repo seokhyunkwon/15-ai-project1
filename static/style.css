@@ -895,6 +895,30 @@ select:focus {
   color: var(--green);
 }
 
+.badge.relevance {
+  border: 1px solid #d7e0ee;
+  background: #f8fafc;
+  color: #334155;
+}
+
+.score-reasons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: -2px 0 8px;
+}
+
+.score-reasons span {
+  min-height: 21px;
+  padding: 3px 7px;
+  border: 1px solid #e0e7f2;
+  border-radius: 999px;
+  background: #fff;
+  color: #64748b;
+  font-size: 0.7rem;
+  font-weight: 900;
+}
+
 .source-list {
   display: grid;
   gap: 7px;
