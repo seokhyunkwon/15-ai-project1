@@ -509,19 +509,26 @@ select:focus {
   align-items: start;
 }
 
+.workspace-grid > * {
+  min-width: 0;
+}
+
 .main-column {
   order: 1;
   display: grid;
   gap: 14px;
+  min-width: 0;
 }
 
 .side-panel {
   order: 2;
   display: grid;
   gap: 14px;
+  min-width: 0;
 }
 
 .panel {
+  min-width: 0;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -676,6 +683,7 @@ select:focus {
 }
 
 .analysis-panel {
+  min-width: 0;
   padding: 18px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -699,7 +707,7 @@ select:focus {
 
 .analysis-metrics {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 10px;
   margin-top: 14px;
 }
@@ -728,13 +736,14 @@ select:focus {
 
 .analysis-breakdown {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 14px;
   margin-top: 14px;
 }
 
 .analysis-breakdown section {
   min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .analysis-breakdown h3 {
@@ -747,6 +756,7 @@ select:focus {
   padding-left: 18px;
   color: var(--muted);
   font-size: 0.84rem;
+  overflow-wrap: anywhere;
 }
 
 .analysis-breakdown li {
@@ -755,13 +765,20 @@ select:focus {
 
 .mini-bar {
   display: grid;
-  grid-template-columns: 82px minmax(0, 1fr) 30px;
+  grid-template-columns: minmax(72px, 0.56fr) minmax(0, 1fr) 30px;
   gap: 8px;
   align-items: center;
   margin: 8px 0;
   color: var(--muted);
   font-size: 0.78rem;
   font-weight: 900;
+}
+
+.mini-bar span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .mini-bar div {
@@ -893,6 +910,30 @@ select:focus {
 .badge.keyword {
   background: var(--green-soft);
   color: var(--green);
+}
+
+.badge.relevance {
+  border: 1px solid #d7e0ee;
+  background: #f8fafc;
+  color: #334155;
+}
+
+.score-reasons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: -2px 0 8px;
+}
+
+.score-reasons span {
+  min-height: 21px;
+  padding: 3px 7px;
+  border: 1px solid #e0e7f2;
+  border-radius: 999px;
+  background: #fff;
+  color: #64748b;
+  font-size: 0.7rem;
+  font-weight: 900;
 }
 
 .source-list {

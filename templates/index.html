@@ -145,7 +145,7 @@
                   <div>
                     <span>3</span>
                     <strong>AI 기업 리서치</strong>
-                    <p>기업 개요, 최근 이슈, 복리후생 신호, 면접 질문을 근거 링크와 함께 확인합니다.</p>
+                    <p>기업 개요, 최근 이슈, 복리후생·근무제도, 면접 질문을 근거 링크와 함께 확인합니다.</p>
                   </div>
                 </div>
               </section>
@@ -530,7 +530,8 @@
                     <li id="news-{{ item.article_id }}" class="news-item {% if article_summary_id == item.article_id %}is-expanded{% endif %}">
                       <div class="news-thumb">
                         {% if item.thumbnail %}
-                          <img src="{{ item.thumbnail }}" alt="">
+                          <img src="{{ item.thumbnail }}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.hidden=true; this.nextElementSibling.hidden=false;">
+                          <span hidden>{{ source_labels.get(item.source, item.source)[:1] }}</span>
                         {% else %}
                           <span>{{ source_labels.get(item.source, item.source)[:1] }}</span>
                         {% endif %}
@@ -540,10 +541,18 @@
                           <span class="badge source">{{ source_labels.get(item.source, item.source) }}</span>
                           <span class="badge category">{{ item.category }}</span>
                           <span class="badge keyword">{{ item.keyword }}</span>
+                          <span class="badge relevance">관련도 {{ item.relevance_score or 0 }}점</span>
                           {% if item.outlet and item.outlet|string|lower not in ['', 'nan', 'none'] %}
                             <span class="outlet">{{ item.outlet }}</span>
                           {% endif %}
                         </div>
+                        {% if item.relevance_reasons %}
+                          <div class="score-reasons" aria-label="관련도 산정 근거">
+                            {% for reason in item.relevance_reasons %}
+                              <span>{{ reason }}</span>
+                            {% endfor %}
+                          </div>
+                        {% endif %}
                         <h3 class="news-title">
                           <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
                         </h3>

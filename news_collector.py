@@ -139,6 +139,40 @@ BLOCKED_TEXT_HINTS = [
     "보배드림",
     "아카라이브",
 ]
+TRUSTED_SOURCE_DOMAINS = (
+    "news.naver.com",
+    "v.daum.net",
+    "yna.co.kr",
+    "newsis.com",
+    "mk.co.kr",
+    "hankyung.com",
+    "sedaily.com",
+    "edaily.co.kr",
+    "etnews.com",
+    "zdnet.co.kr",
+    "thelec.kr",
+    "chosun.com",
+    "joongang.co.kr",
+    "donga.com",
+    "khan.co.kr",
+    "hani.co.kr",
+    "ytn.co.kr",
+    "sbs.co.kr",
+    "mbc.co.kr",
+    "kbs.co.kr",
+    "mt.co.kr",
+    "fnnews.com",
+    "heraldcorp.com",
+    "businesspost.co.kr",
+    "bizwatch.co.kr",
+    "bloter.net",
+    "inews24.com",
+    "digitaltoday.co.kr",
+    "autodaily.co.kr",
+    "autotimes.co.kr",
+    "autoelectronics.co.kr",
+)
+
 
 def _strip_html(text: str) -> str:
     return BeautifulSoup(text or "", "html.parser").get_text(" ", strip=True)
@@ -247,6 +281,67 @@ def _contains_keyword(text: str, keyword: str) -> bool:
     return keyword_norm in text_norm or canonical_norm in text_norm
 
 
+def _relevance_terms(keyword: str, search_query: str = "") -> List[str]:
+    raw_terms = [keyword, _canonical_keyword(keyword)]
+    if search_query:
+        raw_terms.append(search_query)
+
+    terms = []
+    seen = set()
+    for term in raw_terms:
+        cleaned = str(term or "").strip()
+        normalized = re.sub(r"\s+", "", cleaned.lower())
+        if cleaned and normalized and normalized not in seen:
+            terms.append(cleaned)
+            seen.add(normalized)
+    return terms
+
+
+def _contains_any_keyword(text: str, terms: List[str]) -> bool:
+    return any(_contains_keyword(text, term) for term in terms if term)
+
+
+def _host_from_value(value: str) -> str:
+    raw = str(value or "").strip().lower()
+    if not raw:
+        return ""
+    parsed = urlparse(raw if "://" in raw else f"https://{raw}")
+    host = parsed.netloc or parsed.path.split("/")[0]
+    return host.removeprefix("www.")
+
+
+def _is_trusted_source(item: Dict[str, str]) -> bool:
+    candidates = [
+        item.get("outlet", ""),
+        item.get("link", ""),
+        item.get("publisher", ""),
+    ]
+    for value in candidates:
+        host = _host_from_value(value)
+        if any(host == domain or host.endswith(f".{domain}") for domain in TRUSTED_SOURCE_DOMAINS):
+            return True
+    return False
+
+
+def _score_relevance(item: Dict[str, str], search_query: str = "") -> tuple[int, List[str]]:
+    terms = _relevance_terms(str(item.get("keyword", "")), search_query)
+    title = str(item.get("title", ""))
+    summary = str(item.get("summary", ""))
+    score = 0
+    reasons = []
+
+    if _contains_any_keyword(title, terms):
+        score += 3
+        reasons.append("제목 일치 +3")
+    if _contains_any_keyword(summary, terms):
+        score += 2
+        reasons.append("요약 일치 +2")
+    if _is_trusted_source(item):
+        score += 1
+        reasons.append("신뢰 출처 +1")
+    return score, reasons
+
+
 def _has_relevant_context(text: str) -> bool:
     blob = re.sub(r"\s+", "", text.lower())
     return any(term.lower() in blob for term in RELEVANT_CONTEXT_TERMS)
@@ -288,7 +383,7 @@ def _thumbnail_for_url(url: str) -> str:
         return ""
     cache = _load_thumbnail_cache()
     if url in cache:
-        return cache[url]
+        return cache[url] if _is_valid_thumbnail_url(cache[url]) else ""
     thumbnail = _fetch_og_image(url)
     cache[url] = thumbnail
     _save_thumbnail_cache(cache)
@@ -317,8 +412,57 @@ def _fetch_og_image(url: str) -> str:
     ):
         tag = soup.find("meta", attrs=selector)
         if tag and tag.get("content"):
-            return urljoin(resp.url, str(tag.get("content")).strip())
+            thumbnail = urljoin(resp.url, str(tag.get("content")).strip())
+            return thumbnail if _is_valid_thumbnail_url(thumbnail) else ""
     return ""
+
+
+def _is_valid_thumbnail_url(value: object) -> bool:
+    if not isinstance(value, str):
+        return False
+    url = value.strip()
+    if not url:
+        return False
+
+    lowered = url.lower()
+    if lowered in {"nan", "none", "null"}:
+        return False
+    if "null" in lowered or "undefined" in lowered:
+        return False
+
+    parsed = urlparse(url)
+    if parsed.scheme not in {"http", "https"} or not parsed.netloc:
+        return False
+
+    compact_path = re.sub(r"[^a-z0-9]", "", parsed.path.lower())
+    generic_markers = (
+        "logo",
+        "ogimage",
+        "shareimg",
+        "snslogo",
+        "facebook",
+        "meta",
+        "headerlogo",
+        "tagimg",
+    )
+    if any(marker in compact_path for marker in generic_markers):
+        return False
+
+    image_markers = (
+        ".jpg",
+        ".jpeg",
+        ".png",
+        ".webp",
+        ".gif",
+        "thumbnail",
+        "thumb",
+        "getimage",
+        "restmb",
+        "photo",
+        "image",
+    )
+    blob = lowered.split("?", 1)[0]
+    return any(marker in blob for marker in image_markers)
 
 
 def _load_thumbnail_cache() -> Dict[str, str]:
@@ -381,6 +525,9 @@ def _build_item(
         item["outlet"] = outlet
     if thumbnail:
         item["thumbnail"] = thumbnail
+    score, reasons = _score_relevance(item)
+    item["relevance_score"] = score
+    item["relevance_reasons"] = reasons
     return item
 
 
@@ -544,6 +691,10 @@ def process_dataframe(
                 "published",
                 "published_dt",
                 "link",
+                "outlet",
+                "thumbnail",
+                "relevance_score",
+                "relevance_reasons",
             ]
         )
 
@@ -598,9 +749,19 @@ def process_dataframe(
         df = df[mask]
 
     df = df.drop_duplicates(subset=["title", "link"], keep="first")
+    if df.empty:
+        df["relevance_score"] = pd.Series(dtype="int")
+        df["relevance_reasons"] = pd.Series(dtype="object")
+    else:
+        relevance = df.apply(
+            lambda row: _score_relevance(row.to_dict(), search_query or ""),
+            axis=1,
+        )
+        df["relevance_score"] = relevance.apply(lambda value: value[0]).astype(int)
+        df["relevance_reasons"] = relevance.apply(lambda value: value[1])
     df = df.sort_values(
-        by="published_dt",
-        ascending=False,
+        by=["relevance_score", "published_dt"],
+        ascending=[False, False],
         na_position="last",
     )
     return df.reset_index(drop=True)
@@ -616,6 +777,16 @@ def dataframe_to_records(df: pd.DataFrame) -> List[Dict[str, str]]:
     if "outlet" in out.columns:
         out["outlet"] = out["outlet"].fillna("").astype(str)
         out.loc[out["outlet"].str.lower() == "nan", "outlet"] = ""
+    if "thumbnail" in out.columns:
+        out["thumbnail"] = out["thumbnail"].apply(
+            lambda value: value if _is_valid_thumbnail_url(value) else ""
+        )
+    if "relevance_score" in out.columns:
+        out["relevance_score"] = out["relevance_score"].fillna(0).astype(int)
+    if "relevance_reasons" in out.columns:
+        out["relevance_reasons"] = out["relevance_reasons"].apply(
+            lambda value: value if isinstance(value, list) else []
+        )
     records = out.drop(columns=["published_dt"], errors="ignore").to_dict(orient="records")
     return [
         {k: v for k, v in row.items() if k != "outlet" or (v and str(v).lower() != "nan")}
