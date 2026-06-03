@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "skills": {
+    "gpt-image-slide": {
+      "source": "bytonylee/future-slide-skill",
+      "sourceType": "github",
+      "skillPath": "skills/gpt-image-slide/SKILL.md",
+      "computedHash": "84e02ac985657066450d346bdf80dde850cea48ce3b2c22a9e182a664db0da1c"
+    },
+    "gpt-image-slide-plan": {
+      "source": "bytonylee/future-slide-skill",
+      "sourceType": "github",
+      "skillPath": "skills/gpt-image-slide-plan/SKILL.md",
+      "computedHash": "c9bcec8c26d45da3949a138a0c607da9a27034de7391b6497a84ef25c5c12141"
+    },
+    "gpt-image-slide-prompt": {
+      "source": "bytonylee/future-slide-skill",
+      "sourceType": "github",
+      "skillPath": "skills/gpt-image-slide-prompt/SKILL.md",
+      "computedHash": "987b1b4967c6a28256d0a89609988e86d6d86677ed0dab713a4c924eeb5145d3"
+    },
+    "gpt-image-slide-render": {
+      "source": "bytonylee/future-slide-skill",
+      "sourceType": "github",
+      "skillPath": "skills/gpt-image-slide-render/SKILL.md",
+      "computedHash": "0173a4576c2f10a7057cc035da7381b38cdc72ae0351ffb1964145752ffa2d9b"
+    },
+    "slide-design": {
+      "source": "bytonylee/future-slide-skill",
+      "sourceType": "github",
+      "skillPath": "skills/slide-design/SKILL.md",
+      "computedHash": "0807b8355080a688279d6a581d05f952a7c1c656476d8e7260a3ac0ca1002ce5"
+    },
+    "tightened-slide": {
+      "source": "bytonylee/future-slide-skill",
+      "sourceType": "github",
+      "skillPath": "skills/tightened-slide/SKILL.md",
+      "computedHash": "997aa56d65c77f07b4c460c54dfbf2a52f4c6d1a69ba4c62d4e57369c1828554"
+    }
+  }
+}
