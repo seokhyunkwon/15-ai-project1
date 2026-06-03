@@ -4240,5 +4240,304 @@
       "model": "gpt-4o-mini"
     },
     "cached": false
+  },
+  "5f03a603a34817cbc4e2138e3866bb4074b021da6c646849808ea6de1ed7595b": {
+    "title": "티에이치엔 , 본업 실적 호조에 로봇 모멘텀 가세…PER 1.7배 '저평가'",
+    "one_line": "티에이치엔이 로봇 시장 진출로 성장 동력을 확보하며 재평가되고 있다는 분석.",
+    "key_points": [
+      "티에이치엔은 현대자동차그룹의 전동화 수혜를 받고 있음.",
+      "로봇 시장 진출로 인해 강력한 성장 동력을 확보.",
+      "현재 PER이 1.7배로 저평가 상태."
+    ],
+    "why_it_matters": "티에이치엔의 성장은 전동화와 로봇 시장의 융합으로, 관련 산업의 미래를 보여주는 사례로 중요.",
+    "jobseeker_takeaway": "로봇 및 전동화 관련 분야에서의 경력 개발 기회를 고려할 필요가 있음.",
+    "evidence_links": [
+      "https://n.news.naver.com/mnews/article/008/0005362545?sid=101"
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "dfeac850869a0a029d60dfcb2d2ea9e23107c513736d5c9e687370db7792608a": {
+    "company": "티에이치엔",
+    "highlights": [
+      {
+        "claim": "티에이치엔은 로봇 시장 진출로 강력한 성장 동력을 확보하고 있다.",
+        "why_it_matters": "로봇 시장의 확장은 티에이치엔의 본업 실적을 넘어서는 성장 가능성을 보여준다.",
+        "evidence_links": [
+          "https://n.news.naver.com/mnews/article/008/0005362545?sid=101",
+          "https://www.greened.kr/news/articleView.html?idxno=341317"
+        ]
+      },
+      {
+        "claim": "전기차 및 하이브리드차 확산에 따른 구조적 성장이 기대된다.",
+        "why_it_matters": "전기차 시장의 성장과 함께 티에이치엔의 핵심 부품인 와이어링 하네스의 수요가 증가할 것으로 예상된다.",
+        "evidence_links": [
+          "https://n.news.naver.com/mnews/article/277/0005767434?sid=101",
+          "https://www.etoday.co.kr/news/view/2587569"
+        ]
+      }
+    ],
+    "risks_and_watchouts": [
+      {
+        "item": "로봇 시장으로의 사업 확장에 따른 불확실성",
+        "evidence_links": [
+          "https://www.asiatime.co.kr/article/20260526500162"
+        ]
+      }
+    ],
+    "keywords_to_prepare": [
+      "로봇 시장",
+      "전기차",
+      "하이브리드차",
+      "와이어링 하네스",
+      "성장 동력"
+    ],
+    "sources": [
+      {
+        "title": "티에이치엔 , 본업 실적 호조에 로봇 모멘텀 가세…PER 1.7배 '저평가'",
+        "link": "https://n.news.naver.com/mnews/article/008/0005362545?sid=101",
+        "published": "Tue, 26 May 2026 09:02:00 +0900",
+        "outlet": "mt.co.kr"
+      },
+      {
+        "title": "[클릭 e종목] 티에이치엔 , 자동차 신경망에서 로봇 전장까지…초저평가...",
+        "link": "https://n.news.naver.com/mnews/article/277/0005767434?sid=101",
+        "published": "Tue, 26 May 2026 08:03:00 +0900",
+        "outlet": "view.asiae.co.kr"
+      },
+      {
+        "title": "\"티에이치엔 , 전기차·로봇 수혜 기대…초저평가 부각\"-리서치알음",
+        "link": "https://www.greened.kr/news/articleView.html?idxno=341317",
+        "published": "Tue, 26 May 2026 14:26:00 +0900",
+        "outlet": "greened.kr"
+      },
+      {
+        "title": "[특징주] 티에이치엔 , \"로봇 시장으로 사업 확장 가능성\" '상한가'",
+        "link": "https://www.asiatime.co.kr/article/20260526500162",
+        "published": "Tue, 26 May 2026 11:40:00 +0900",
+        "outlet": "asiatime.co.kr"
+      },
+      {
+        "title": "리서치알음 “티에이치엔 , 현대차 전동화·로봇 수혜 기대…PER 1배대 초...",
+        "link": "https://www.etoday.co.kr/news/view/2587569",
+        "published": "Tue, 26 May 2026 08:28:00 +0900",
+        "outlet": "etoday.co.kr"
+      },
+      {
+        "title": "부곡동 자동차 부품사 티에이치엔 군포시에 1천만원 성금 기탁",
+        "link": "http://www.gunponews.net/front/news/view.do?articleId=ARTICLE_00020361",
+        "published": "Fri, 26 Dec 2025 00:00:00 +0900",
+        "outlet": "gunponews.net"
+      }
+    ],
+    "answer_strategy": [],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "b1cd151d4b1e184478d8511331dffc0df38a13a5a9c1140d251737dad9ad64e4": {
+    "company": "티에이치엔",
+    "company_overview": [
+      "티에이치엔은 1986년에 설립된 자동차 전장부품 제조업체로, 주로 와이어링 하네스를 생산하고 있습니다.",
+      "최근 현대자동차그룹의 전동화 수혜와 로봇 시장 진출로 인해 강력한 성장 모멘텀을 확보하고 있습니다."
+    ],
+    "recent_issues": [
+      {
+        "point": "티에이치엔이 로봇 시장으로 사업 확장 가능성이 기대되고 있습니다.",
+        "evidence_links": [
+          "https://www.greened.kr/news/articleView.html?idxno=341317",
+          "https://www.asiatime.co.kr/article/20260526500162"
+        ]
+      }
+    ],
+    "business_keywords": [
+      "와이어링 하네스",
+      "전기차",
+      "로봇",
+      "자동차 전장부품"
+    ],
+    "welfare_signals": [
+      {
+        "signal": "티에이치엔은 고용노동부가 선정한 강소기업으로, 초임과 근로시간, 복지혜택이 우수하다고 알려져 있습니다.",
+        "confidence": "신뢰할 수 있는 정보",
+        "evidence_links": [
+          "https://www.jobkorea.co.kr/company/1336832/Info"
+        ]
+      },
+      {
+        "signal": "직원 건강을 우선시하며 멘토링 제도와 구내식당, 장기근속수당 등을 제공하는 것으로 보입니다.",
+        "confidence": "신뢰할 수 있는 정보",
+        "evidence_links": [
+          "https://www.saramin.co.kr/zf_user/company-info/view/csn/aHc5ZTBEbkJoQ1F5WXF3MldzNWtVZz09/company_nm/(%EC%A3%BC)%ED%8B%B0%EC%97%90%EC%9D%B4%EC%B9%98%EC%97%94"
+        ]
+      }
+    ],
+    "work_life_notes": [
+      "티에이치엔은 통근버스를 운영하고 있으며, 남성 출산휴가 제도를 갖추고 있는 것으로 보입니다."
+    ],
+    "likely_interview_questions": [
+      {
+        "question": "티에이치엔의 주요 제품군은 무엇인가요?",
+        "intent": "제품 및 사업 이해도 평가",
+        "answer_direction": [
+          "와이어링 하네스에 대한 설명",
+          "전기차 및 로봇 관련 제품 언급"
+        ],
+        "evidence_links": [
+          "https://v.daum.net/v/xidM0HMUH4",
+          "https://infobloging.co.kr/%ed%8b%b0%ec%97%90%ec%9d%b4%ec%b9%98%ec%97%94-%ec%a3%bc%ea%b0%80-%ed%9d%90%eb%a6%84-%eb%b6%84%ec%84%9d%ea%b3%bc-%ed%98%84%eb%aa%85%ed%95%9c-%ec%86%90%ec%a0%88%ec%95%a1-%ec%84%a4%ec%a0%95-%ec%a0%84/"
+        ]
+      },
+      {
+        "question": "티에이치엔의 최근 성장 동력은 무엇인가요?",
+        "intent": "시장 및 성장 전략 이해도 평가",
+        "answer_direction": [
+          "현대자동차그룹의 전동화 수혜 언급",
+          "로봇 시장 진출 가능성 설명"
+        ],
+        "evidence_links": [
+          "https://n.news.naver.com/mnews/article/008/0005362545?sid=101",
+          "https://www.etoday.co.kr/news/view/2587569"
+        ]
+      }
+    ],
+    "answer_strategy": [
+      "제품 및 사업에 대한 이해도를 높이고, 복리후생 및 근무환경에 대한 확인된 제도에 대한 질문 준비"
+    ],
+    "generated_queries": [
+      "티에이치엔 기업정보",
+      "티에이치엔 사업 제품",
+      "티에이치엔 복지",
+      "티에이치엔 근무제도",
+      "티에이치엔 면접"
+    ],
+    "sources": [
+      {
+        "title": "티에이치엔 , 본업 실적 호조에 로봇 모멘텀 가세…PER 1.7배 '저평가'",
+        "link": "https://n.news.naver.com/mnews/article/008/0005362545?sid=101",
+        "outlet": "mt.co.kr",
+        "source_type": "news"
+      },
+      {
+        "title": "[클릭 e종목] 티에이치엔 , 자동차 신경망에서 로봇 전장까지…초저평가...",
+        "link": "https://n.news.naver.com/mnews/article/277/0005767434?sid=101",
+        "outlet": "view.asiae.co.kr",
+        "source_type": "news"
+      },
+      {
+        "title": "티에이치엔 A019180 기업 분석 리포트 및 투자 정보(IR)",
+        "link": "https://www.forwarder.kr/krx/A019180",
+        "outlet": "forwarder.kr",
+        "source_type": "public"
+      },
+      {
+        "title": "(주) 티에이치엔 기업 정보",
+        "link": "https://www.jobkorea.co.kr/company/1336832/Info",
+        "outlet": "jobkorea.co.kr",
+        "source_type": "company_info"
+      },
+      {
+        "title": "(주) 티에이치엔 기업 정보",
+        "link": "https://www.saramin.co.kr/zf_user/company-info/view/csn/aHc5ZTBEbkJoQ1F5WXF3MldzNWtVZz09/company_nm/(%EC%A3%BC)%ED%8B%B0%EC%97%90%EC%9D%B4%EC%B9%98%EC%97%94",
+        "outlet": "saramin.co.kr",
+        "source_type": "company_info"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "e3a55cbee992eedfde9c944c21a03a0a2ded939f929a92fdf106e00267f155ed": {
+    "title": "티에이치엔 , 본업 실적 호조에 로봇 모멘텀 가세…PER 1.7배 '저평가'",
+    "one_line": "티에이치엔이 로봇 시장 진출로 강력한 성장 동력을 확보하며 재평가되고 있다.",
+    "key_points": [
+      "티에이치엔의 본업 실적이 호조를 보이고 있다.",
+      "현대자동차그룹의 전동화 수혜를 받고 있다.",
+      "로봇 시장 진출로 새로운 성장 동력을 확보했다.",
+      "PER이 1.7배로 저평가되고 있다는 분석이 있다."
+    ],
+    "why_it_matters": "티에이치엔의 성장은 로봇 산업의 확장과 현대자동차그룹의 전동화 전략에 기인하며, 이는 향후 관련 분야에서의 일자리 창출 가능성을 시사한다.",
+    "jobseeker_takeaway": "로봇 및 전동화 관련 산업의 성장 가능성을 염두에 두고, 관련 기술 및 경험을 쌓는 것이 중요하다.",
+    "evidence_links": [
+      "https://n.news.naver.com/mnews/article/008/0005362545?sid=101"
+    ],
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
+  },
+  "82036aad7365119cca72799ad9d65a557eb78998b0f87a491c244e06c9b5ef65": {
+    "title": "(주)티에이치엔 원가기획부문 경력자 지원 자기소개서",
+    "answers": [
+      {
+        "question_label": "Q1",
+        "question": "성격",
+        "draft": "저는 문제 해결을 중시하는 성격을 가지고 있습니다. 인공지능 프로젝트를 수행하면서, 기존 LLM의 한계로 인해 최신 정보에 대한 정확한 답변을 제공하지 못하는 상황에 직면했습니다. 이 문제를 해결하기 위해, 실시간 뉴스를 기반으로 LLM의 답변 퀄리티를 혁신적으로 높이기 위한 RAG 시스템을 구축했습니다. 이러한 경험을 통해 문제를 직시하고, 해결책을 모색하는 과정에서 제 성격이 더욱 확고해졌습니다. 저는 항상 도전적인 상황에서도 긍정적인 태도로 문제를 해결하려고 노력합니다.",
+        "used_star_titles": [
+          "인공지능 프로젝트"
+        ],
+        "character_count": 661,
+        "byte_count": 1322
+      },
+      {
+        "question_label": "Q2",
+        "question": "직무관련기술",
+        "draft": "원가기획부문에서 요구되는 분석적 사고와 문제 해결 능력은 제가 인공지능 프로젝트에서 쌓은 경험과 잘 맞아떨어집니다. 프로젝트에서 저는 Spring Batch를 활용하여 매일 주식 관련 뉴스 데이터를 자동으로 크롤링하는 프로세스를 구축했습니다. 이 과정에서 데이터의 수집과 분석을 통해 최신 정보를 효과적으로 활용할 수 있는 방법을 배웠습니다. 또한, 수집된 데이터를 Vector DB에 저장하고, 사용자 질문에 대한 유사도를 계산하여 가장 관련성 높은 최신 뉴스를 추출하는 시스템을 설계했습니다. 이러한 기술적 경험은 원가기획부문에서의 업무에 큰 도움이 될 것입니다.",
+        "used_star_titles": [
+          "인공지능 프로젝트"
+        ],
+        "character_count": 688,
+        "byte_count": 1376
+      },
+      {
+        "question_label": "Q3",
+        "question": "입사후포부",
+        "draft": "입사 후에는 원가기획부문에서의 경험을 바탕으로 회사의 목표 달성에 기여하고 싶습니다. 특히, 인공지능 프로젝트에서의 경험을 통해 쌓은 데이터 분석 및 문제 해결 능력을 활용하여, 원가 관리 및 기획 업무에서 혁신적인 아이디어를 제안하고 실행할 것입니다. 또한, 팀원들과의 협업을 통해 다양한 관점을 수렴하고, 최적의 솔루션을 도출하는 데 기여하고자 합니다. 저는 항상 학습하고 성장하는 자세로 임할 것이며, 회사와 함께 발전해 나가고 싶습니다.",
+        "used_star_titles": [
+          "인공지능 프로젝트"
+        ],
+        "character_count": 670,
+        "byte_count": 1340
+      }
+    ],
+    "star_review": [
+      {
+        "star_title": "인공지능 프로젝트",
+        "fit": "프로젝트 경험이 원가기획부문에서 요구되는 문제 해결 능력과 직무 관련 기술에 적합함.",
+        "usable_questions": [
+          "Q1",
+          "Q2",
+          "Q3"
+        ]
+      }
+    ],
+    "strength_keywords": [
+      "문제해결",
+      "데이터 분석",
+      "협업"
+    ],
+    "revision_tips": [
+      "문단 간 연결을 부드럽게 하여 자연스러운 흐름을 유지하세요.",
+      "각 문항에서 강조하고자 하는 포인트를 명확히 하세요."
+    ],
+    "draft": "저는 문제 해결을 중시하는 성격을 가지고 있습니다. 인공지능 프로젝트를 수행하면서, 기존 LLM의 한계로 인해 최신 정보에 대한 정확한 답변을 제공하지 못하는 상황에 직면했습니다. 이 문제를 해결하기 위해, 실시간 뉴스를 기반으로 LLM의 답변 퀄리티를 혁신적으로 높이기 위한 RAG 시스템을 구축했습니다. 이러한 경험을 통해 문제를 직시하고, 해결책을 모색하는 과정에서 제 성격이 더욱 확고해졌습니다. 저는 항상 도전적인 상황에서도 긍정적인 태도로 문제를 해결하려고 노력합니다.",
+    "llm": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "cached": false
   }
 }

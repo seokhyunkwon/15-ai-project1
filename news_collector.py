@@ -383,7 +383,7 @@ def _thumbnail_for_url(url: str) -> str:
         return ""
     cache = _load_thumbnail_cache()
     if url in cache:
-        return cache[url]
+        return cache[url] if _is_valid_thumbnail_url(cache[url]) else ""
     thumbnail = _fetch_og_image(url)
     cache[url] = thumbnail
     _save_thumbnail_cache(cache)
@@ -412,8 +412,57 @@ def _fetch_og_image(url: str) -> str:
     ):
         tag = soup.find("meta", attrs=selector)
         if tag and tag.get("content"):
-            return urljoin(resp.url, str(tag.get("content")).strip())
+            thumbnail = urljoin(resp.url, str(tag.get("content")).strip())
+            return thumbnail if _is_valid_thumbnail_url(thumbnail) else ""
     return ""
+
+
+def _is_valid_thumbnail_url(value: object) -> bool:
+    if not isinstance(value, str):
+        return False
+    url = value.strip()
+    if not url:
+        return False
+
+    lowered = url.lower()
+    if lowered in {"nan", "none", "null"}:
+        return False
+    if "null" in lowered or "undefined" in lowered:
+        return False
+
+    parsed = urlparse(url)
+    if parsed.scheme not in {"http", "https"} or not parsed.netloc:
+        return False
+
+    compact_path = re.sub(r"[^a-z0-9]", "", parsed.path.lower())
+    generic_markers = (
+        "logo",
+        "ogimage",
+        "shareimg",
+        "snslogo",
+        "facebook",
+        "meta",
+        "headerlogo",
+        "tagimg",
+    )
+    if any(marker in compact_path for marker in generic_markers):
+        return False
+
+    image_markers = (
+        ".jpg",
+        ".jpeg",
+        ".png",
+        ".webp",
+        ".gif",
+        "thumbnail",
+        "thumb",
+        "getimage",
+        "restmb",
+        "photo",
+        "image",
+    )
+    blob = lowered.split("?", 1)[0]
+    return any(marker in blob for marker in image_markers)
 
 
 def _load_thumbnail_cache() -> Dict[str, str]:
@@ -728,6 +777,10 @@ def dataframe_to_records(df: pd.DataFrame) -> List[Dict[str, str]]:
     if "outlet" in out.columns:
         out["outlet"] = out["outlet"].fillna("").astype(str)
         out.loc[out["outlet"].str.lower() == "nan", "outlet"] = ""
+    if "thumbnail" in out.columns:
+        out["thumbnail"] = out["thumbnail"].apply(
+            lambda value: value if _is_valid_thumbnail_url(value) else ""
+        )
     if "relevance_score" in out.columns:
         out["relevance_score"] = out["relevance_score"].fillna(0).astype(int)
     if "relevance_reasons" in out.columns:
